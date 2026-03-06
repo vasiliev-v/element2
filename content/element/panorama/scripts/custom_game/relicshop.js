@@ -149,7 +149,16 @@ function UpgradeButton()
                 //$("#dustlabeltxt").text = Number($("#dustlabeltxt").text) - dust;
                 upgradestone = upgradestone.substring(0,7) + qual.toString() + upgradestone.substring(8);
                 UpdtUpgrade();
-                $("#forupgradepartpanel").BCreateChildren("<DOTAScenePanel id='testtt' hittest='false' particleonly='true' style='margin-top:0px; margin-left:114px; height:350px;width:350px;' map='cameras' camera='partcamera3' />");
+                $("#forupgradepartpanel").RemoveAndDeleteChildren();
+                var upgradePartPanel = $.CreatePanel("DOTAScenePanel", $("#forupgradepartpanel"), "testtt");
+                upgradePartPanel.hittest = false;
+                upgradePartPanel.particleonly = "true";
+                upgradePartPanel.style.marginTop = "0px";
+                upgradePartPanel.style.marginLeft = "114px";
+                upgradePartPanel.style.height = "350px";
+                upgradePartPanel.style.width = "350px";
+                upgradePartPanel.map = "cameras";
+                upgradePartPanel.camera = "partcamera3";
             }
         }
     }
@@ -236,9 +245,41 @@ function UpdtUpgrade()
                 break;
             }
         }
-        $("#forupitem").BCreateChildren("<Panel hittest='false' id='upitem"+upgradestone+"' class='"+estlivslote+"' style='margin-top:0px; margin-left:0px;' onmouseover='UIShowCustomLayoutParametersTooltip(RSTooltip,file://{resources}/layout/custom_game/rs_tooltips.xml,num="+upgradestone+boolestlivslote+")' onmouseout='UIHideCustomLayoutTooltip(RSTooltip)'/>");
-        $("#upitem"+upgradestone).BCreateChildren("<Image src='file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+upgradestone.charAt(2)+".png' style='height:60px;width:80px;' onactivate='ClickItemOnInv("+upgradestone+")'/>");
-        $("#upitem"+upgradestone).BCreateChildren("<Panel hittest='false' class='"+myclass+"' style='height:60px;width:5px; margin-left:80px;'/>");
+        var upItemPanel = $.CreatePanel("Panel", $("#forupitem"), "upitem"+upgradestone);
+        upItemPanel.hittest = false;
+        upItemPanel.AddClass(estlivslote);
+        upItemPanel.style.marginTop = "0px";
+        upItemPanel.style.marginLeft = "0px";
+        upItemPanel.SetPanelEvent("onmouseover", (function(rsid, inSlot)
+        {
+            return function()
+            {
+                $.DispatchEvent("UIShowCustomLayoutParametersTooltip", "RSTooltip", "file://{resources}/layout/custom_game/rs_tooltips.xml", "num=" + rsid + inSlot);
+            };
+        })(upgradestone, boolestlivslote));
+        upItemPanel.SetPanelEvent("onmouseout", function()
+        {
+            $.DispatchEvent("UIHideCustomLayoutTooltip", "RSTooltip");
+        });
+
+        var upItemImage = $.CreatePanel("Image", upItemPanel, "");
+        upItemImage.SetImage("file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+upgradestone.charAt(2)+".png");
+        upItemImage.style.height = "60px";
+        upItemImage.style.width = "80px";
+        upItemImage.SetPanelEvent("onactivate", (function(rsid)
+        {
+            return function()
+            {
+                ClickItemOnInv(rsid);
+            };
+        })(upgradestone));
+
+        var upItemClassPanel = $.CreatePanel("Panel", upItemPanel, "");
+        upItemClassPanel.hittest = false;
+        upItemClassPanel.AddClass(myclass);
+        upItemClassPanel.style.height = "60px";
+        upItemClassPanel.style.width = "5px";
+        upItemClassPanel.style.marginLeft = "80px";
 
         if (upgradestone.charAt(0) == '4')
         {
@@ -310,7 +351,6 @@ function UpdtPureDust()
         }
     }
     $("#puredustlabel").text = dust;
-    //$("#puredustlabel").BCreateChildren("<DOTAScenePanel id='testtt"+dust+"' hittest='false' particleonly='true' style='height:100px;width:100px;' map='cameras' camera='partcamera2' />");
 }
 
 function PureButton()
@@ -581,9 +621,34 @@ function RefreshInventory(upslots)
                         {
                             estlivslote = "selectedfditemborder";
                         }
-                        $("#savespanelitems").BCreateChildren("<Panel hittest='false' id='save"+i+"sitem"+locarr[y]+"' class='"+estlivslote+"' style='margin-top:"+mtop+"px; margin-left:"+mleft+"px;' onmouseover='UIShowCustomLayoutParametersTooltip(RSTooltip,file://{resources}/layout/custom_game/rs_tooltips.xml,num="+locarr[y]+boolestlivslote+")' onmouseout='UIHideCustomLayoutTooltip(RSTooltip)'/>");
-                        $("#save"+i+"sitem"+locarr[y]).BCreateChildren("<Image src='file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+locarr[y].charAt(2)+".png' style='height:30px;width:40px;'/>");
-                        $("#save"+i+"sitem"+locarr[y]).BCreateChildren("<Panel hittest='false' class='"+myclass+"' style='height:30px;width:3px; margin-left:40px;'/>");
+                        var saveItemPanel = $.CreatePanel("Panel", $("#savespanelitems"), "save"+i+"sitem"+locarr[y]);
+                        saveItemPanel.hittest = false;
+                        saveItemPanel.AddClass(estlivslote);
+                        saveItemPanel.style.marginTop = mtop + "px";
+                        saveItemPanel.style.marginLeft = mleft + "px";
+                        saveItemPanel.SetPanelEvent("onmouseover", (function(rsid, inSlot)
+                        {
+                            return function()
+                            {
+                                $.DispatchEvent("UIShowCustomLayoutParametersTooltip", "RSTooltip", "file://{resources}/layout/custom_game/rs_tooltips.xml", "num=" + rsid + inSlot);
+                            };
+                        })(locarr[y], boolestlivslote));
+                        saveItemPanel.SetPanelEvent("onmouseout", function()
+                        {
+                            $.DispatchEvent("UIHideCustomLayoutTooltip", "RSTooltip");
+                        });
+
+                        var saveItemImage = $.CreatePanel("Image", saveItemPanel, "");
+                        saveItemImage.SetImage("file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+locarr[y].charAt(2)+".png");
+                        saveItemImage.style.height = "30px";
+                        saveItemImage.style.width = "40px";
+
+                        var saveItemClassPanel = $.CreatePanel("Panel", saveItemPanel, "");
+                        saveItemClassPanel.hittest = false;
+                        saveItemClassPanel.AddClass(myclass);
+                        saveItemClassPanel.style.height = "30px";
+                        saveItemClassPanel.style.width = "3px";
+                        saveItemClassPanel.style.marginLeft = "40px";
                     }
                 }
             }
@@ -677,14 +742,35 @@ function RefreshInventory(upslots)
                     elem = "shadow";
                     break
                 }
-                //$("#rsinv").BCreateChildren("<Panel hittest='false' id='item"+inventory[prop]+"' class='"+estlivslote+"' style='margin-top:"+mtop+"px; margin-left:"+mleft+"px;' onmouseover='UIShowCustomLayoutParametersTooltip(RSTooltip,file://{resources}/layout/custom_game/rs_tooltips.xml,num="+inventory[prop]+boolestlivslote+")' onmouseout='UIHideCustomLayoutTooltip(RSTooltip)'/>");
-                //$("#item"+inventory[prop]).BCreateChildren("<Image src='file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+inventory[prop].charAt(2)+".png' style='height:60px;width:80px;'/>");
-                //$("#item"+inventory[prop]).BCreateChildren("<Panel hittest='false' class='"+myclass+"' style='height:60px;width:5px; margin-left:80px;'/>");
                 $("#slot"+prop+"anim1").visible = true;
                 $("#slot"+prop+"anim2").visible = true;
                 $("#slot"+prop+"anim1").AddClass(elem+"1");
                 $("#slot"+prop+"anim2").AddClass(elem+"2");
-                $("#imgslots").BCreateChildren("<Image id='imgslot"+prop+"' class='inslotitem' src='file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+slots[prop].charAt(2)+".png' style='height:39px;width:52px; margin-top:"+coords[prop][0]+"px; margin-left:"+coords[prop][1]+"px;' onmouseover='UIShowCustomLayoutParametersTooltip(RSTooltip,file://{resources}/layout/custom_game/rs_tooltips.xml,num="+slots[prop]+")' onmouseout='UIHideCustomLayoutTooltip(RSTooltip)' onactivate='ClickItemOnSlot("+prop+")'/>");
+                var imgSlot = $.CreatePanel("Image", $("#imgslots"), "imgslot"+prop);
+                imgSlot.AddClass("inslotitem");
+                imgSlot.SetImage("file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+slots[prop].charAt(2)+".png");
+                imgSlot.style.height = "39px";
+                imgSlot.style.width = "52px";
+                imgSlot.style.marginTop = coords[prop][0] + "px";
+                imgSlot.style.marginLeft = coords[prop][1] + "px";
+                imgSlot.SetPanelEvent("onmouseover", (function(rsid)
+                {
+                    return function()
+                    {
+                        $.DispatchEvent("UIShowCustomLayoutParametersTooltip", "RSTooltip", "file://{resources}/layout/custom_game/rs_tooltips.xml", "num=" + rsid);
+                    };
+                })(slots[prop]));
+                imgSlot.SetPanelEvent("onmouseout", function()
+                {
+                    $.DispatchEvent("UIHideCustomLayoutTooltip", "RSTooltip");
+                });
+                imgSlot.SetPanelEvent("onactivate", (function(slotId)
+                {
+                    return function()
+                    {
+                        ClickItemOnSlot(slotId);
+                    };
+                })(prop));
             }
         }
     }
@@ -775,9 +861,41 @@ function MiniFunc(numininv,prop)
             break;
         }
     }
-    $("#rsinv").BCreateChildren("<Panel hittest='false' id='item"+inventory[prop]+"' class='"+estlivslote+"' style='margin-top:"+mtop+"px; margin-left:"+mleft+"px;' onmouseover='UIShowCustomLayoutParametersTooltip(RSTooltip,file://{resources}/layout/custom_game/rs_tooltips.xml,num="+inventory[prop]+boolestlivslote+")' onmouseout='UIHideCustomLayoutTooltip(RSTooltip)'/>");
-    $("#item"+inventory[prop]).BCreateChildren("<Image src='file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+inventory[prop].charAt(2)+".png' style='height:60px;width:80px;' onactivate='ClickItemOnInv("+inventory[prop]+")'/>");
-    $("#item"+inventory[prop]).BCreateChildren("<Panel hittest='false' class='"+myclass+"' style='height:60px;width:5px; margin-left:80px;'/>");
+    var invItemPanel = $.CreatePanel("Panel", $("#rsinv"), "item"+inventory[prop]);
+    invItemPanel.hittest = false;
+    invItemPanel.AddClass(estlivslote);
+    invItemPanel.style.marginTop = mtop + "px";
+    invItemPanel.style.marginLeft = mleft + "px";
+    invItemPanel.SetPanelEvent("onmouseover", (function(rsid, inSlot)
+    {
+        return function()
+        {
+            $.DispatchEvent("UIShowCustomLayoutParametersTooltip", "RSTooltip", "file://{resources}/layout/custom_game/rs_tooltips.xml", "num=" + rsid + inSlot);
+        };
+    })(inventory[prop], boolestlivslote));
+    invItemPanel.SetPanelEvent("onmouseout", function()
+    {
+        $.DispatchEvent("UIHideCustomLayoutTooltip", "RSTooltip");
+    });
+
+    var invItemImage = $.CreatePanel("Image", invItemPanel, "");
+    invItemImage.SetImage("file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+inventory[prop].charAt(2)+".png");
+    invItemImage.style.height = "60px";
+    invItemImage.style.width = "80px";
+    invItemImage.SetPanelEvent("onactivate", (function(rsid)
+    {
+        return function()
+        {
+            ClickItemOnInv(rsid);
+        };
+    })(inventory[prop]));
+
+    var invItemClassPanel = $.CreatePanel("Panel", invItemPanel, "");
+    invItemClassPanel.hittest = false;
+    invItemClassPanel.AddClass(myclass);
+    invItemClassPanel.style.height = "60px";
+    invItemClassPanel.style.width = "5px";
+    invItemClassPanel.style.marginLeft = "80px";
 }
 
 function NeedRefresh(info)

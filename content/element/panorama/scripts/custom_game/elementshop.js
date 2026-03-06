@@ -155,12 +155,71 @@ function UpdateShop( table_name, key, data )
     {
         var mtop = 10+38*(i-1)-380*Math.floor((i-1)/10);
         var mleft = 15+270*Math.floor((i-1)/10);
-        $("#ShopInfo").BCreateChildren("<Panel hittest='false' id='craft"+i+"'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+elems[crafts[i-1][0]-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+mleft+"px;' onactivate='Buy("+crafts[i-1][0]+")'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+elems[crafts[i-1][1]-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+(mleft+50)+"px;' onactivate='Buy("+crafts[i-1][1]+")'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+elems[crafts[i-1][2]-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+(mleft+100)+"px;' onactivate='Buy("+crafts[i-1][2]+")'/>");
-        $("#craft"+i).BCreateChildren("<Image src='file://{images}/custom_game/game_info/str.png' style='height:32px;width:32px; margin-top:"+mtop+"px; margin-left:"+(mleft+150)+"px;'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+items[i-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+(mleft+190)+"px;' onactivate='BuyItem("+i+")'/>");
+        var craftPanel = $.CreatePanel("Panel", $("#ShopInfo"), "craft"+i);
+        craftPanel.hittest = false;
+
+        var craftItem1 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        craftItem1.itemname = elems[crafts[i-1][0]-1];
+        craftItem1.style.height = "32px";
+        craftItem1.style.width = "44px";
+        craftItem1.style.marginTop = mtop + "px";
+        craftItem1.style.marginLeft = mleft + "px";
+        craftItem1.SetPanelEvent("onactivate", (function(value)
+        {
+            return function()
+            {
+                Buy(value);
+            };
+        })(crafts[i-1][0]));
+
+        var craftItem2 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        craftItem2.itemname = elems[crafts[i-1][1]-1];
+        craftItem2.style.height = "32px";
+        craftItem2.style.width = "44px";
+        craftItem2.style.marginTop = mtop + "px";
+        craftItem2.style.marginLeft = (mleft + 50) + "px";
+        craftItem2.SetPanelEvent("onactivate", (function(value)
+        {
+            return function()
+            {
+                Buy(value);
+            };
+        })(crafts[i-1][1]));
+
+        var craftItem3 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        craftItem3.itemname = elems[crafts[i-1][2]-1];
+        craftItem3.style.height = "32px";
+        craftItem3.style.width = "44px";
+        craftItem3.style.marginTop = mtop + "px";
+        craftItem3.style.marginLeft = (mleft + 100) + "px";
+        craftItem3.SetPanelEvent("onactivate", (function(value)
+        {
+            return function()
+            {
+                Buy(value);
+            };
+        })(crafts[i-1][2]));
+
+        var strImage = $.CreatePanel("Image", craftPanel, "");
+        strImage.SetImage("file://{images}/custom_game/game_info/str.png");
+        strImage.style.height = "32px";
+        strImage.style.width = "32px";
+        strImage.style.marginTop = mtop + "px";
+        strImage.style.marginLeft = (mleft + 150) + "px";
+
+        var resultItem = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        resultItem.itemname = items[i-1];
+        resultItem.style.height = "32px";
+        resultItem.style.width = "44px";
+        resultItem.style.marginTop = mtop + "px";
+        resultItem.style.marginLeft = (mleft + 190) + "px";
+        resultItem.SetPanelEvent("onactivate", (function(value)
+        {
+            return function()
+            {
+                BuyItem(value);
+            };
+        })(i));
     }
     UpdateShop( "Elements_Tabel", Players.GetLocalPlayer(), CustomNetTables.GetTableValue( "Elements_Tabel", Players.GetLocalPlayer() ) )
 })();
