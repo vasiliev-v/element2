@@ -1,3 +1,8 @@
+function ToggleInfo()
+{
+    $.GetContextPanel().ToggleClass('gameinfo_visible');
+}
+
 
 var names = new Array("DEVELOPER", "WINNER", "HELPER", "TOP", "DISCORD", "BUTTERFLIES", "DONATOR", "ALLHEROES", "NEW YEAR", "BIRTHDAY", "PATRON LVL 1", "PATRON LVL 2", "PATRON LVL 3", "PATRON LVL 4", "PATRON LVL 5", "HARD WINNER", "BIRTHDAY 2019", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39");
 var needs = new Array(false, "#winner", "#helper", "#top", "#discord", false, "#donator", "#allheroes", "#newyear", "#birthday", "#patron1", "#patron2", "#patron3", "#patron4", "#patron5", "#hardwinner", false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);

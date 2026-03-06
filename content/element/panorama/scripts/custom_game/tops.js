@@ -1,3 +1,8 @@
+function ToggleInfo()
+{
+    $.GetContextPanel().ToggleClass('gameinfo_visible');
+}
+
 function UpdateTopPlays(info)
 {
     for (var i = 1; i <= 10;i++)
