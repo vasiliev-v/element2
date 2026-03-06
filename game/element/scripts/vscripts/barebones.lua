@@ -723,24 +723,24 @@ function GameMode:OnConnectFull(keys)
 	DeepPrintTable(keys)
 	GameMode:CaptureGameMode()
 
-	local entIndex = keys.index+1
+	--local entIndex = keys.index+1
 	-- The Player entity of the joining user
-	local ply = EntIndexToHScript(entIndex)
+	--local ply = EntIndexToHScript(entIndex)
 
 	-- The Player ID of the joining player
-	local playerID = ply:GetPlayerID()
+	--local playerID = ply:GetPlayerID()
 
 	-- Update the user ID table with this user
-	self.vUserIds[keys.userid] = ply
+	--self.vUserIds[keys.userid] = ply
 
 	-- Update the Steam ID table
-	self.vSteamIds[PlayerResource:GetSteamAccountID(playerID)] = ply
+	--self.vSteamIds[PlayerResource:GetSteamAccountID(playerID)] = ply
 
 	-- If the player is a broadcaster flag it in the Broadcasters table
-	if PlayerResource:IsBroadcaster(playerID) then
-		self.vBroadcasters[keys.userid] = 1
-		return
-	end
+	--if PlayerResource:IsBroadcaster(playerID) then
+	--	self.vBroadcasters[keys.userid] = 1
+	--	return
+	--end
 end
 
 -- This function is called as the first player loads and sets up the GameMode parameters
@@ -2155,7 +2155,7 @@ function GameMode:OnEntityKilled( keys )
                 local pos = killedUnit:GetAbsOrigin()
                 local drop = CreateItemOnPositionSync( pos, item )
                 local pos_launch = pos+RandomVector(RandomFloat(150,200))
-                item:LaunchLoot(false, 200, 0.75, pos_launch)
+                item:LaunchLootInitialHeight(false, 200, 0.75, pos_launch)
             end
         end
         -- if not GameRules:IsCheatMode() then
@@ -2230,7 +2230,7 @@ function RollDrops(unit)
                                 local pos = unit:GetAbsOrigin()
                                 local drop = CreateItemOnPositionSync( pos, item )
                                 local pos_launch = pos+RandomVector(RandomFloat(100,125))
-                                item:LaunchLoot(false, 200, 0.75, pos_launch)
+                                item:LaunchLootInitialHeight(false, 200, 0.75, pos_launch)
                                 item.bIsRelic = true
                                 local PlayerIDs = {}
                                 print( "CDungeon:OnRelicSpawned - New Relic " .. item:GetAbilityName() .. " created." )
@@ -2540,7 +2540,7 @@ function RollDrops(unit)
                         local pos = unit:GetAbsOrigin()
                         local drop = CreateItemOnPositionSync( pos, item )
                         local pos_launch = pos+RandomVector(RandomFloat(150,200))
-                        item:LaunchLoot(false, 200, 0.75, pos_launch)
+                        item:LaunchLootInitialHeight(false, 200, 0.75, pos_launch)
                     end
                 end
             end

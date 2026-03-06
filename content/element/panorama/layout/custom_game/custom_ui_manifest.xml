@@ -20,12 +20,15 @@
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/relicshop.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/elementshop.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/profile.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/patreon.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tops.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/boss_hp.xml" />
+        
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/boss_hp.xml" /> 
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/damagetop.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/endswaves.xml" />
+		<!-- 
+		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/patreon.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tops.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
+		-->
 	</Panel>
 </root>
 
