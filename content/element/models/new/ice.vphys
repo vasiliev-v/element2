@@ -1,0 +1,2327 @@
+VPhysXAggregateData_t
+{
+	uint16 m_nFlags = 0x0000
+	uint16 m_nRefCounter = 0x0000
+	uint32 m_bonesHash[0] =
+	[
+	]
+	CResourceString m_boneNames[0] =
+	[
+	]
+	uint16 m_indexNames[0] =
+	[
+	]
+	uint16 m_indexHash[0] =
+	[
+	]
+	matrix3x4a_t m_bindPose[0] =
+	[
+	]
+	Struct m_parts[1] =
+	[
+		VPhysXBodyPart_t
+		{
+			uint32 m_nFlags = 0x00000000
+			float32 m_flMass = 0.000000
+			Struct m_rnShape = VPhysics2ShapeDef_t
+			{
+				Struct m_spheres[0] =
+				[
+				]
+				Struct m_capsules[0] =
+				[
+				]
+				Struct m_hulls[2] =
+				[
+					RnHullDesc_t
+					{
+						Struct m_Hull = RnHull_t
+						{
+							Vector3D m_vCentroid = (0.290275, 3.663316, 96.436760)
+							float32 m_flMaxAngularRadius = 113.733192
+							Vector3D m_Vertices[40] =
+							[
+								(-13.368710, 105.168861, 127.306808)
+								(-17.132826, 21.091909, 3.699715)
+								(92.220734, 46.875088, 99.609451)
+								(-90.762955, -54.513508, 89.940430)
+								(-4.696865, 0.956697, 199.458801)
+								(99.722328, -28.181795, 129.055313)
+								(-94.572075, 46.219845, 87.247467)
+								(88.133438, -38.191250, 67.580490)
+								(38.083172, 86.239609, 58.619888)
+								(-20.961775, -68.671219, 172.106491)
+								(44.166271, 30.150072, 188.641174)
+								(-85.068092, 41.906567, 142.199188)
+								(83.096481, 22.800005, 49.153492)
+								(59.991459, 91.475891, 105.222267)
+								(-42.677536, 68.111900, 47.727711)
+								(27.379988, -89.478516, 135.732025)
+								(-36.098179, -75.252327, 57.901802)
+								(-95.017731, 2.561302, 69.103371)
+								(-39.447464, -92.593201, 109.637512)
+								(-87.634514, -39.074165, 123.721382)
+								(52.714329, -57.893585, 52.700569)
+								(-21.271931, 89.827415, 150.263397)
+								(-16.679426, 96.564865, 75.696793)
+								(23.788723, 30.142744, 199.438782)
+								(93.337723, -48.538063, 93.303802)
+								(27.160311, -104.533554, 99.600159)
+								(-4.273688, 6.875693, 4.093536)
+								(71.246704, 81.601166, 111.346375)
+								(-24.346621, 103.471306, 109.238983)
+								(39.784050, 76.654274, 48.068958)
+								(-93.367905, 51.777874, 100.126358)
+								(-16.474876, 34.859020, 8.934357)
+								(-31.250071, -71.188545, 163.206772)
+								(100.095543, -22.699783, 131.689819)
+								(3.316792, -108.445511, 83.579720)
+								(-88.761307, 40.262196, 138.854568)
+								(-8.678272, 8.365573, 2.742828)
+								(79.836800, 25.187492, 46.710003)
+								(-90.790268, -54.414955, 89.720566)
+								(10.869234, -108.944771, 84.489212)
+							]
+							Struct m_Planes[22] =
+							[
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.396010, 0.387078, 0.832674)
+									float32 m_flOffset = 168.314575
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.633492, -0.715589, 0.294313)
+									float32 m_flOffset = 121.322510
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.568369, -0.717080, -0.403426)
+									float32 m_flOffset = 50.214745
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.317674, 0.734206, 0.600020)
+									float32 m_flOffset = 149.355423
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.549635, 0.784497, -0.287168)
+									float32 m_flOffset = 63.184807
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.654595, 0.295810, -0.695703)
+									float32 m_flOffset = 14.880356
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.073058, 0.732296, -0.677056)
+									float32 m_flOffset = 20.681721
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.641060, -0.673864, 0.367353)
+									float32 m_flOffset = 127.959152
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.426046, -0.415270, 0.803763)
+									float32 m_flOffset = 157.919312
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.981691, 0.023981, -0.188968)
+									float32 m_flOffset = 72.833389
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.807298, 0.320006, 0.495850)
+									float32 m_flOffset = 138.841202
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.106775, -0.917568, 0.382972)
+									float32 m_flOffset = 131.160706
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.624376, -0.154906, 0.765610)
+									float32 m_flOffset = 155.492035
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.597635, 0.746313, 0.293000)
+									float32 m_flOffset = 123.779449
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.061930, -0.563656, -0.823685)
+									float32 m_flOffset = -7.511978
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.717671, 0.569106, -0.401330)
+									float32 m_flOffset = 52.884789
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.478417, -0.217527, -0.850764)
+									float32 m_flOffset = -7.022896
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.373836, 0.313973, -0.872736)
+									float32 m_flOffset = -3.011452
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.564329, -0.317609, -0.762009)
+									float32 m_flOffset = 0.150352
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.489020, -0.817021, -0.305509)
+									float32 m_flOffset = 61.445961
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.993560, -0.034686, 0.107867)
+									float32 m_flOffset = 101.770935
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.130738, 0.976526, -0.171185)
+									float32 m_flOffset = 79.159317
+								}
+							]
+							Struct m_Edges[120] =
+							[
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x10
+									uint8 m_nTwin = 0x01
+									uint8 m_nOrigin = 0x17
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x37
+									uint8 m_nTwin = 0x00
+									uint8 m_nOrigin = 0x15
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x29
+									uint8 m_nTwin = 0x03
+									uint8 m_nOrigin = 0x0B
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x45
+									uint8 m_nTwin = 0x02
+									uint8 m_nOrigin = 0x04
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0C
+									uint8 m_nTwin = 0x05
+									uint8 m_nOrigin = 0x19
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x08
+									uint8 m_nTwin = 0x04
+									uint8 m_nOrigin = 0x18
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3A
+									uint8 m_nTwin = 0x07
+									uint8 m_nOrigin = 0x05
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2C
+									uint8 m_nTwin = 0x06
+									uint8 m_nOrigin = 0x0F
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x38
+									uint8 m_nTwin = 0x09
+									uint8 m_nOrigin = 0x19
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3B
+									uint8 m_nTwin = 0x08
+									uint8 m_nOrigin = 0x27
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x72
+									uint8 m_nTwin = 0x0B
+									uint8 m_nOrigin = 0x14
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5A
+									uint8 m_nTwin = 0x0A
+									uint8 m_nOrigin = 0x07
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x06
+									uint8 m_nTwin = 0x0D
+									uint8 m_nOrigin = 0x18
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x73
+									uint8 m_nTwin = 0x0C
+									uint8 m_nOrigin = 0x05
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x47
+									uint8 m_nTwin = 0x0F
+									uint8 m_nOrigin = 0x0D
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x53
+									uint8 m_nTwin = 0x0E
+									uint8 m_nOrigin = 0x00
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x02
+									uint8 m_nTwin = 0x11
+									uint8 m_nOrigin = 0x15
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x46
+									uint8 m_nTwin = 0x10
+									uint8 m_nOrigin = 0x0B
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2E
+									uint8 m_nTwin = 0x13
+									uint8 m_nOrigin = 0x0A
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x27
+									uint8 m_nTwin = 0x12
+									uint8 m_nOrigin = 0x1B
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1F
+									uint8 m_nTwin = 0x15
+									uint8 m_nOrigin = 0x1C
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x75
+									uint8 m_nTwin = 0x14
+									uint8 m_nOrigin = 0x16
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x71
+									uint8 m_nTwin = 0x17
+									uint8 m_nOrigin = 0x0E
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1C
+									uint8 m_nTwin = 0x16
+									uint8 m_nOrigin = 0x06
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x64
+									uint8 m_nTwin = 0x19
+									uint8 m_nOrigin = 0x1F
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x60
+									uint8 m_nTwin = 0x18
+									uint8 m_nOrigin = 0x01
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x17
+									uint8 m_nTwin = 0x1B
+									uint8 m_nOrigin = 0x11
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x63
+									uint8 m_nTwin = 0x1A
+									uint8 m_nOrigin = 0x06
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x18
+									uint8 m_nTwin = 0x1D
+									uint8 m_nOrigin = 0x0E
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1E
+									uint8 m_nTwin = 0x1C
+									uint8 m_nOrigin = 0x1F
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x77
+									uint8 m_nTwin = 0x1F
+									uint8 m_nOrigin = 0x0E
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x16
+									uint8 m_nTwin = 0x1E
+									uint8 m_nOrigin = 0x16
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x61
+									uint8 m_nTwin = 0x21
+									uint8 m_nOrigin = 0x08
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x52
+									uint8 m_nTwin = 0x20
+									uint8 m_nOrigin = 0x1D
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6E
+									uint8 m_nTwin = 0x23
+									uint8 m_nOrigin = 0x20
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x40
+									uint8 m_nTwin = 0x22
+									uint8 m_nOrigin = 0x13
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3D
+									uint8 m_nTwin = 0x25
+									uint8 m_nOrigin = 0x03
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6D
+									uint8 m_nTwin = 0x24
+									uint8 m_nOrigin = 0x12
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x36
+									uint8 m_nTwin = 0x27
+									uint8 m_nOrigin = 0x21
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x33
+									uint8 m_nTwin = 0x26
+									uint8 m_nOrigin = 0x0A
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x42
+									uint8 m_nTwin = 0x29
+									uint8 m_nOrigin = 0x17
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x00
+									uint8 m_nTwin = 0x28
+									uint8 m_nOrigin = 0x04
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x07
+									uint8 m_nTwin = 0x2B
+									uint8 m_nOrigin = 0x09
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x41
+									uint8 m_nTwin = 0x2A
+									uint8 m_nOrigin = 0x0F
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x26
+									uint8 m_nTwin = 0x2D
+									uint8 m_nOrigin = 0x05
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0D
+									uint8 m_nTwin = 0x2C
+									uint8 m_nOrigin = 0x21
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0E
+									uint8 m_nTwin = 0x2F
+									uint8 m_nOrigin = 0x1B
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x35
+									uint8 m_nTwin = 0x2E
+									uint8 m_nOrigin = 0x0D
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x58
+									uint8 m_nTwin = 0x31
+									uint8 m_nOrigin = 0x07
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0B
+									uint8 m_nTwin = 0x30
+									uint8 m_nOrigin = 0x0C
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2D
+									uint8 m_nTwin = 0x33
+									uint8 m_nOrigin = 0x02
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x34
+									uint8 m_nTwin = 0x32
+									uint8 m_nOrigin = 0x21
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x13
+									uint8 m_nTwin = 0x35
+									uint8 m_nOrigin = 0x02
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x59
+									uint8 m_nTwin = 0x34
+									uint8 m_nOrigin = 0x1B
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x28
+									uint8 m_nTwin = 0x37
+									uint8 m_nOrigin = 0x0A
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x12
+									uint8 m_nTwin = 0x36
+									uint8 m_nOrigin = 0x17
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0A
+									uint8 m_nTwin = 0x39
+									uint8 m_nOrigin = 0x27
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4D
+									uint8 m_nTwin = 0x38
+									uint8 m_nOrigin = 0x14
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x04
+									uint8 m_nTwin = 0x3B
+									uint8 m_nOrigin = 0x0F
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2B
+									uint8 m_nTwin = 0x3A
+									uint8 m_nOrigin = 0x19
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6A
+									uint8 m_nTwin = 0x3D
+									uint8 m_nOrigin = 0x20
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x22
+									uint8 m_nTwin = 0x3C
+									uint8 m_nOrigin = 0x12
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x23
+									uint8 m_nTwin = 0x3F
+									uint8 m_nOrigin = 0x23
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x55
+									uint8 m_nTwin = 0x3E
+									uint8 m_nOrigin = 0x13
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x43
+									uint8 m_nTwin = 0x41
+									uint8 m_nOrigin = 0x20
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3C
+									uint8 m_nTwin = 0x40
+									uint8 m_nOrigin = 0x09
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2A
+									uint8 m_nTwin = 0x43
+									uint8 m_nOrigin = 0x04
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x03
+									uint8 m_nTwin = 0x42
+									uint8 m_nOrigin = 0x09
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x11
+									uint8 m_nTwin = 0x45
+									uint8 m_nOrigin = 0x23
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3E
+									uint8 m_nTwin = 0x44
+									uint8 m_nOrigin = 0x0B
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x74
+									uint8 m_nTwin = 0x47
+									uint8 m_nOrigin = 0x15
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x01
+									uint8 m_nTwin = 0x46
+									uint8 m_nOrigin = 0x00
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x54
+									uint8 m_nTwin = 0x49
+									uint8 m_nOrigin = 0x1C
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x14
+									uint8 m_nTwin = 0x48
+									uint8 m_nOrigin = 0x1E
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5B
+									uint8 m_nTwin = 0x4B
+									uint8 m_nOrigin = 0x24
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5E
+									uint8 m_nTwin = 0x4A
+									uint8 m_nOrigin = 0x1A
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x09
+									uint8 m_nTwin = 0x4D
+									uint8 m_nOrigin = 0x22
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4E
+									uint8 m_nTwin = 0x4C
+									uint8 m_nOrigin = 0x27
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x68
+									uint8 m_nTwin = 0x4F
+									uint8 m_nOrigin = 0x22
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6B
+									uint8 m_nTwin = 0x4E
+									uint8 m_nOrigin = 0x10
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x21
+									uint8 m_nTwin = 0x51
+									uint8 m_nOrigin = 0x25
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5C
+									uint8 m_nTwin = 0x50
+									uint8 m_nOrigin = 0x1D
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2F
+									uint8 m_nTwin = 0x53
+									uint8 m_nOrigin = 0x08
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x76
+									uint8 m_nTwin = 0x52
+									uint8 m_nOrigin = 0x0D
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x44
+									uint8 m_nTwin = 0x55
+									uint8 m_nOrigin = 0x1E
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x70
+									uint8 m_nTwin = 0x54
+									uint8 m_nOrigin = 0x23
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x50
+									uint8 m_nTwin = 0x57
+									uint8 m_nOrigin = 0x0C
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x31
+									uint8 m_nTwin = 0x56
+									uint8 m_nOrigin = 0x25
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x32
+									uint8 m_nTwin = 0x59
+									uint8 m_nOrigin = 0x0C
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x56
+									uint8 m_nTwin = 0x58
+									uint8 m_nOrigin = 0x02
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5D
+									uint8 m_nTwin = 0x5B
+									uint8 m_nOrigin = 0x14
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x39
+									uint8 m_nTwin = 0x5A
+									uint8 m_nOrigin = 0x1A
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4B
+									uint8 m_nTwin = 0x5D
+									uint8 m_nOrigin = 0x25
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x57
+									uint8 m_nTwin = 0x5C
+									uint8 m_nOrigin = 0x1A
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x19
+									uint8 m_nTwin = 0x5F
+									uint8 m_nOrigin = 0x24
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x69
+									uint8 m_nTwin = 0x5E
+									uint8 m_nOrigin = 0x01
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x51
+									uint8 m_nTwin = 0x61
+									uint8 m_nOrigin = 0x1F
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1D
+									uint8 m_nTwin = 0x60
+									uint8 m_nOrigin = 0x1D
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x65
+									uint8 m_nTwin = 0x63
+									uint8 m_nOrigin = 0x26
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6C
+									uint8 m_nTwin = 0x62
+									uint8 m_nOrigin = 0x11
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1A
+									uint8 m_nTwin = 0x65
+									uint8 m_nOrigin = 0x01
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5F
+									uint8 m_nTwin = 0x64
+									uint8 m_nOrigin = 0x11
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x62
+									uint8 m_nTwin = 0x67
+									uint8 m_nOrigin = 0x10
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4F
+									uint8 m_nTwin = 0x66
+									uint8 m_nOrigin = 0x26
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4A
+									uint8 m_nTwin = 0x69
+									uint8 m_nOrigin = 0x10
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x66
+									uint8 m_nTwin = 0x68
+									uint8 m_nOrigin = 0x24
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4C
+									uint8 m_nTwin = 0x6B
+									uint8 m_nOrigin = 0x12
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x25
+									uint8 m_nTwin = 0x6A
+									uint8 m_nOrigin = 0x22
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6F
+									uint8 m_nTwin = 0x6D
+									uint8 m_nOrigin = 0x26
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x67
+									uint8 m_nTwin = 0x6C
+									uint8 m_nOrigin = 0x03
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x24
+									uint8 m_nTwin = 0x6F
+									uint8 m_nOrigin = 0x13
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3F
+									uint8 m_nTwin = 0x6E
+									uint8 m_nOrigin = 0x03
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1B
+									uint8 m_nTwin = 0x71
+									uint8 m_nOrigin = 0x1E
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x49
+									uint8 m_nTwin = 0x70
+									uint8 m_nOrigin = 0x06
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x05
+									uint8 m_nTwin = 0x73
+									uint8 m_nOrigin = 0x07
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x30
+									uint8 m_nTwin = 0x72
+									uint8 m_nOrigin = 0x18
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x48
+									uint8 m_nTwin = 0x75
+									uint8 m_nOrigin = 0x00
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0F
+									uint8 m_nTwin = 0x74
+									uint8 m_nOrigin = 0x1C
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x15
+									uint8 m_nTwin = 0x77
+									uint8 m_nOrigin = 0x08
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x20
+									uint8 m_nTwin = 0x76
+									uint8 m_nOrigin = 0x16
+									uint8 m_nFace = 0x06
+								}
+							]
+							Struct m_Faces[22] =
+							[
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x00
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x04
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x08
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x2E
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x49
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x18
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x1D
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x22
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x26
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x2D
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x33
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x4C
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x3E
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x44
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x4A
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x50
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x57
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x5C
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x62
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x67
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x6C
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x75
+								}
+							]
+							Vector3D m_vOrthographicAreas = (0.679012, 0.691358, 0.802469)
+							Matrix3x4 m_MassProperties = 
+							10839473152.0000 -16212197.0000 12081198.0000 1.0913
+							-16212197.0000 10359783424.0000 86346192.0000 3.0966
+							12081198.0000 86346192.0000 12243192832.0000 102.1106
+							float32 m_flVolume = 3231761.000000
+							float32 m_flMaxMotionRadius = 113.733192
+							float32 m_flMinMotionThickness = 73.968391
+							Struct m_Bounds = AABB_t
+							{
+								Vector3D m_vMinBounds = (-95.017731, -108.944771, 2.742828)
+								Vector3D m_vMaxBounds = (100.095543, 105.168861, 199.458801)
+							}
+							uint32 m_nFlags = 0x00000002
+						}
+						uint32 m_nCollisionAttributeIndex = 0x00000000
+						uint32 m_nSurfacePropertyIndex = 0x00000000
+					}
+					RnHullDesc_t
+					{
+						Struct m_Hull = RnHull_t
+						{
+							Vector3D m_vCentroid = (0.290275, 3.663316, 96.436760)
+							float32 m_flMaxAngularRadius = 113.733192
+							Vector3D m_Vertices[40] =
+							[
+								(-13.368710, 105.168861, 127.306808)
+								(-17.132826, 21.091909, 3.699715)
+								(92.220734, 46.875088, 99.609451)
+								(-90.762955, -54.513508, 89.940430)
+								(-4.696865, 0.956697, 199.458801)
+								(99.722328, -28.181795, 129.055313)
+								(-94.572075, 46.219845, 87.247467)
+								(88.133438, -38.191250, 67.580490)
+								(38.083172, 86.239609, 58.619888)
+								(-20.961775, -68.671219, 172.106491)
+								(44.166271, 30.150072, 188.641174)
+								(-85.068092, 41.906567, 142.199188)
+								(83.096481, 22.800005, 49.153492)
+								(59.991459, 91.475891, 105.222267)
+								(-42.677536, 68.111900, 47.727711)
+								(27.379988, -89.478516, 135.732025)
+								(-36.098179, -75.252327, 57.901802)
+								(-95.017731, 2.561302, 69.103371)
+								(-39.447464, -92.593201, 109.637512)
+								(-87.634514, -39.074165, 123.721382)
+								(52.714329, -57.893585, 52.700569)
+								(-21.271931, 89.827415, 150.263397)
+								(-16.679426, 96.564865, 75.696793)
+								(23.788723, 30.142744, 199.438782)
+								(93.337723, -48.538063, 93.303802)
+								(27.160311, -104.533554, 99.600159)
+								(-4.273688, 6.875693, 4.093536)
+								(71.246704, 81.601166, 111.346375)
+								(-24.346621, 103.471306, 109.238983)
+								(39.784050, 76.654274, 48.068958)
+								(-93.367905, 51.777874, 100.126358)
+								(-16.474876, 34.859020, 8.934357)
+								(-31.250071, -71.188545, 163.206772)
+								(100.095543, -22.699783, 131.689819)
+								(3.316792, -108.445511, 83.579720)
+								(-88.761307, 40.262196, 138.854568)
+								(-8.678272, 8.365573, 2.742828)
+								(79.836800, 25.187492, 46.710003)
+								(-90.790268, -54.414955, 89.720566)
+								(10.869234, -108.944771, 84.489212)
+							]
+							Struct m_Planes[22] =
+							[
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.396010, 0.387078, 0.832674)
+									float32 m_flOffset = 168.314575
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.633492, -0.715589, 0.294313)
+									float32 m_flOffset = 121.322510
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.568369, -0.717080, -0.403426)
+									float32 m_flOffset = 50.214745
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.317674, 0.734206, 0.600020)
+									float32 m_flOffset = 149.355423
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.549635, 0.784497, -0.287168)
+									float32 m_flOffset = 63.184807
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.654595, 0.295810, -0.695703)
+									float32 m_flOffset = 14.880356
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.073058, 0.732296, -0.677056)
+									float32 m_flOffset = 20.681721
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.641060, -0.673864, 0.367353)
+									float32 m_flOffset = 127.959152
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.426046, -0.415270, 0.803763)
+									float32 m_flOffset = 157.919312
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.981691, 0.023981, -0.188968)
+									float32 m_flOffset = 72.833389
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.807298, 0.320006, 0.495850)
+									float32 m_flOffset = 138.841202
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.106775, -0.917568, 0.382972)
+									float32 m_flOffset = 131.160706
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.624376, -0.154906, 0.765610)
+									float32 m_flOffset = 155.492035
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.597635, 0.746313, 0.293000)
+									float32 m_flOffset = 123.779449
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.061930, -0.563656, -0.823685)
+									float32 m_flOffset = -7.511978
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.717671, 0.569106, -0.401330)
+									float32 m_flOffset = 52.884789
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.478417, -0.217527, -0.850764)
+									float32 m_flOffset = -7.022896
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.373836, 0.313973, -0.872736)
+									float32 m_flOffset = -3.011452
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.564329, -0.317609, -0.762009)
+									float32 m_flOffset = 0.150352
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.489020, -0.817021, -0.305509)
+									float32 m_flOffset = 61.445961
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (-0.993560, -0.034686, 0.107867)
+									float32 m_flOffset = 101.770935
+								}
+								RnPlane_t
+								{
+									Vector3D m_vNormal = (0.130738, 0.976526, -0.171185)
+									float32 m_flOffset = 79.159317
+								}
+							]
+							Struct m_Edges[120] =
+							[
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x10
+									uint8 m_nTwin = 0x01
+									uint8 m_nOrigin = 0x17
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x37
+									uint8 m_nTwin = 0x00
+									uint8 m_nOrigin = 0x15
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x29
+									uint8 m_nTwin = 0x03
+									uint8 m_nOrigin = 0x0B
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x45
+									uint8 m_nTwin = 0x02
+									uint8 m_nOrigin = 0x04
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0C
+									uint8 m_nTwin = 0x05
+									uint8 m_nOrigin = 0x19
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x08
+									uint8 m_nTwin = 0x04
+									uint8 m_nOrigin = 0x18
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3A
+									uint8 m_nTwin = 0x07
+									uint8 m_nOrigin = 0x05
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2C
+									uint8 m_nTwin = 0x06
+									uint8 m_nOrigin = 0x0F
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x38
+									uint8 m_nTwin = 0x09
+									uint8 m_nOrigin = 0x19
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3B
+									uint8 m_nTwin = 0x08
+									uint8 m_nOrigin = 0x27
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x72
+									uint8 m_nTwin = 0x0B
+									uint8 m_nOrigin = 0x14
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5A
+									uint8 m_nTwin = 0x0A
+									uint8 m_nOrigin = 0x07
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x06
+									uint8 m_nTwin = 0x0D
+									uint8 m_nOrigin = 0x18
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x73
+									uint8 m_nTwin = 0x0C
+									uint8 m_nOrigin = 0x05
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x47
+									uint8 m_nTwin = 0x0F
+									uint8 m_nOrigin = 0x0D
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x53
+									uint8 m_nTwin = 0x0E
+									uint8 m_nOrigin = 0x00
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x02
+									uint8 m_nTwin = 0x11
+									uint8 m_nOrigin = 0x15
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x46
+									uint8 m_nTwin = 0x10
+									uint8 m_nOrigin = 0x0B
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2E
+									uint8 m_nTwin = 0x13
+									uint8 m_nOrigin = 0x0A
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x27
+									uint8 m_nTwin = 0x12
+									uint8 m_nOrigin = 0x1B
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1F
+									uint8 m_nTwin = 0x15
+									uint8 m_nOrigin = 0x1C
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x75
+									uint8 m_nTwin = 0x14
+									uint8 m_nOrigin = 0x16
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x71
+									uint8 m_nTwin = 0x17
+									uint8 m_nOrigin = 0x0E
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1C
+									uint8 m_nTwin = 0x16
+									uint8 m_nOrigin = 0x06
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x64
+									uint8 m_nTwin = 0x19
+									uint8 m_nOrigin = 0x1F
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x60
+									uint8 m_nTwin = 0x18
+									uint8 m_nOrigin = 0x01
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x17
+									uint8 m_nTwin = 0x1B
+									uint8 m_nOrigin = 0x11
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x63
+									uint8 m_nTwin = 0x1A
+									uint8 m_nOrigin = 0x06
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x18
+									uint8 m_nTwin = 0x1D
+									uint8 m_nOrigin = 0x0E
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1E
+									uint8 m_nTwin = 0x1C
+									uint8 m_nOrigin = 0x1F
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x77
+									uint8 m_nTwin = 0x1F
+									uint8 m_nOrigin = 0x0E
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x16
+									uint8 m_nTwin = 0x1E
+									uint8 m_nOrigin = 0x16
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x61
+									uint8 m_nTwin = 0x21
+									uint8 m_nOrigin = 0x08
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x52
+									uint8 m_nTwin = 0x20
+									uint8 m_nOrigin = 0x1D
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6E
+									uint8 m_nTwin = 0x23
+									uint8 m_nOrigin = 0x20
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x40
+									uint8 m_nTwin = 0x22
+									uint8 m_nOrigin = 0x13
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3D
+									uint8 m_nTwin = 0x25
+									uint8 m_nOrigin = 0x03
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6D
+									uint8 m_nTwin = 0x24
+									uint8 m_nOrigin = 0x12
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x36
+									uint8 m_nTwin = 0x27
+									uint8 m_nOrigin = 0x21
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x33
+									uint8 m_nTwin = 0x26
+									uint8 m_nOrigin = 0x0A
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x42
+									uint8 m_nTwin = 0x29
+									uint8 m_nOrigin = 0x17
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x00
+									uint8 m_nTwin = 0x28
+									uint8 m_nOrigin = 0x04
+									uint8 m_nFace = 0x00
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x07
+									uint8 m_nTwin = 0x2B
+									uint8 m_nOrigin = 0x09
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x41
+									uint8 m_nTwin = 0x2A
+									uint8 m_nOrigin = 0x0F
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x26
+									uint8 m_nTwin = 0x2D
+									uint8 m_nOrigin = 0x05
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0D
+									uint8 m_nTwin = 0x2C
+									uint8 m_nOrigin = 0x21
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0E
+									uint8 m_nTwin = 0x2F
+									uint8 m_nOrigin = 0x1B
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x35
+									uint8 m_nTwin = 0x2E
+									uint8 m_nOrigin = 0x0D
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x58
+									uint8 m_nTwin = 0x31
+									uint8 m_nOrigin = 0x07
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0B
+									uint8 m_nTwin = 0x30
+									uint8 m_nOrigin = 0x0C
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2D
+									uint8 m_nTwin = 0x33
+									uint8 m_nOrigin = 0x02
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x34
+									uint8 m_nTwin = 0x32
+									uint8 m_nOrigin = 0x21
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x13
+									uint8 m_nTwin = 0x35
+									uint8 m_nOrigin = 0x02
+									uint8 m_nFace = 0x0A
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x59
+									uint8 m_nTwin = 0x34
+									uint8 m_nOrigin = 0x1B
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x28
+									uint8 m_nTwin = 0x37
+									uint8 m_nOrigin = 0x0A
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x12
+									uint8 m_nTwin = 0x36
+									uint8 m_nOrigin = 0x17
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0A
+									uint8 m_nTwin = 0x39
+									uint8 m_nOrigin = 0x27
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4D
+									uint8 m_nTwin = 0x38
+									uint8 m_nOrigin = 0x14
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x04
+									uint8 m_nTwin = 0x3B
+									uint8 m_nOrigin = 0x0F
+									uint8 m_nFace = 0x01
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2B
+									uint8 m_nTwin = 0x3A
+									uint8 m_nOrigin = 0x19
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6A
+									uint8 m_nTwin = 0x3D
+									uint8 m_nOrigin = 0x20
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x22
+									uint8 m_nTwin = 0x3C
+									uint8 m_nOrigin = 0x12
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x23
+									uint8 m_nTwin = 0x3F
+									uint8 m_nOrigin = 0x23
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x55
+									uint8 m_nTwin = 0x3E
+									uint8 m_nOrigin = 0x13
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x43
+									uint8 m_nTwin = 0x41
+									uint8 m_nOrigin = 0x20
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3C
+									uint8 m_nTwin = 0x40
+									uint8 m_nOrigin = 0x09
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2A
+									uint8 m_nTwin = 0x43
+									uint8 m_nOrigin = 0x04
+									uint8 m_nFace = 0x08
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x03
+									uint8 m_nTwin = 0x42
+									uint8 m_nOrigin = 0x09
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x11
+									uint8 m_nTwin = 0x45
+									uint8 m_nOrigin = 0x23
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3E
+									uint8 m_nTwin = 0x44
+									uint8 m_nOrigin = 0x0B
+									uint8 m_nFace = 0x0C
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x74
+									uint8 m_nTwin = 0x47
+									uint8 m_nOrigin = 0x15
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x01
+									uint8 m_nTwin = 0x46
+									uint8 m_nOrigin = 0x00
+									uint8 m_nFace = 0x03
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x54
+									uint8 m_nTwin = 0x49
+									uint8 m_nOrigin = 0x1C
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x14
+									uint8 m_nTwin = 0x48
+									uint8 m_nOrigin = 0x1E
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5B
+									uint8 m_nTwin = 0x4B
+									uint8 m_nOrigin = 0x24
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5E
+									uint8 m_nTwin = 0x4A
+									uint8 m_nOrigin = 0x1A
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x09
+									uint8 m_nTwin = 0x4D
+									uint8 m_nOrigin = 0x22
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4E
+									uint8 m_nTwin = 0x4C
+									uint8 m_nOrigin = 0x27
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x68
+									uint8 m_nTwin = 0x4F
+									uint8 m_nOrigin = 0x22
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6B
+									uint8 m_nTwin = 0x4E
+									uint8 m_nOrigin = 0x10
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x21
+									uint8 m_nTwin = 0x51
+									uint8 m_nOrigin = 0x25
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5C
+									uint8 m_nTwin = 0x50
+									uint8 m_nOrigin = 0x1D
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x2F
+									uint8 m_nTwin = 0x53
+									uint8 m_nOrigin = 0x08
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x76
+									uint8 m_nTwin = 0x52
+									uint8 m_nOrigin = 0x0D
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x44
+									uint8 m_nTwin = 0x55
+									uint8 m_nOrigin = 0x1E
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x70
+									uint8 m_nTwin = 0x54
+									uint8 m_nOrigin = 0x23
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x50
+									uint8 m_nTwin = 0x57
+									uint8 m_nOrigin = 0x0C
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x31
+									uint8 m_nTwin = 0x56
+									uint8 m_nOrigin = 0x25
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x32
+									uint8 m_nTwin = 0x59
+									uint8 m_nOrigin = 0x0C
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x56
+									uint8 m_nTwin = 0x58
+									uint8 m_nOrigin = 0x02
+									uint8 m_nFace = 0x0F
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5D
+									uint8 m_nTwin = 0x5B
+									uint8 m_nOrigin = 0x14
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x39
+									uint8 m_nTwin = 0x5A
+									uint8 m_nOrigin = 0x1A
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4B
+									uint8 m_nTwin = 0x5D
+									uint8 m_nOrigin = 0x25
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x57
+									uint8 m_nTwin = 0x5C
+									uint8 m_nOrigin = 0x1A
+									uint8 m_nFace = 0x10
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x19
+									uint8 m_nTwin = 0x5F
+									uint8 m_nOrigin = 0x24
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x69
+									uint8 m_nTwin = 0x5E
+									uint8 m_nOrigin = 0x01
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x51
+									uint8 m_nTwin = 0x61
+									uint8 m_nOrigin = 0x1F
+									uint8 m_nFace = 0x11
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1D
+									uint8 m_nTwin = 0x60
+									uint8 m_nOrigin = 0x1D
+									uint8 m_nFace = 0x06
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x65
+									uint8 m_nTwin = 0x63
+									uint8 m_nOrigin = 0x26
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6C
+									uint8 m_nTwin = 0x62
+									uint8 m_nOrigin = 0x11
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1A
+									uint8 m_nTwin = 0x65
+									uint8 m_nOrigin = 0x01
+									uint8 m_nFace = 0x05
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x5F
+									uint8 m_nTwin = 0x64
+									uint8 m_nOrigin = 0x11
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x62
+									uint8 m_nTwin = 0x67
+									uint8 m_nOrigin = 0x10
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4F
+									uint8 m_nTwin = 0x66
+									uint8 m_nOrigin = 0x26
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4A
+									uint8 m_nTwin = 0x69
+									uint8 m_nOrigin = 0x10
+									uint8 m_nFace = 0x0E
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x66
+									uint8 m_nTwin = 0x68
+									uint8 m_nOrigin = 0x24
+									uint8 m_nFace = 0x12
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x4C
+									uint8 m_nTwin = 0x6B
+									uint8 m_nOrigin = 0x12
+									uint8 m_nFace = 0x0B
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x25
+									uint8 m_nTwin = 0x6A
+									uint8 m_nOrigin = 0x22
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x6F
+									uint8 m_nTwin = 0x6D
+									uint8 m_nOrigin = 0x26
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x67
+									uint8 m_nTwin = 0x6C
+									uint8 m_nOrigin = 0x03
+									uint8 m_nFace = 0x13
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x24
+									uint8 m_nTwin = 0x6F
+									uint8 m_nOrigin = 0x13
+									uint8 m_nFace = 0x07
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x3F
+									uint8 m_nTwin = 0x6E
+									uint8 m_nOrigin = 0x03
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x1B
+									uint8 m_nTwin = 0x71
+									uint8 m_nOrigin = 0x1E
+									uint8 m_nFace = 0x14
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x49
+									uint8 m_nTwin = 0x70
+									uint8 m_nOrigin = 0x06
+									uint8 m_nFace = 0x04
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x05
+									uint8 m_nTwin = 0x73
+									uint8 m_nOrigin = 0x07
+									uint8 m_nFace = 0x02
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x30
+									uint8 m_nTwin = 0x72
+									uint8 m_nOrigin = 0x18
+									uint8 m_nFace = 0x09
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x48
+									uint8 m_nTwin = 0x75
+									uint8 m_nOrigin = 0x00
+									uint8 m_nFace = 0x0D
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x0F
+									uint8 m_nTwin = 0x74
+									uint8 m_nOrigin = 0x1C
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x15
+									uint8 m_nTwin = 0x77
+									uint8 m_nOrigin = 0x08
+									uint8 m_nFace = 0x15
+								}
+								RnHalfEdge_t
+								{
+									uint8 m_nNext = 0x20
+									uint8 m_nTwin = 0x76
+									uint8 m_nOrigin = 0x16
+									uint8 m_nFace = 0x06
+								}
+							]
+							Struct m_Faces[22] =
+							[
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x00
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x04
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x08
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x2E
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x49
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x18
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x1D
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x22
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x26
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x2D
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x33
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x4C
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x3E
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x44
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x4A
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x50
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x57
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x5C
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x62
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x67
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x6C
+								}
+								RnFace_t
+								{
+									uint8 m_nEdge = 0x75
+								}
+							]
+							Vector3D m_vOrthographicAreas = (0.679012, 0.691358, 0.802469)
+							Matrix3x4 m_MassProperties = 
+							10839473152.0000 -16212197.0000 12081198.0000 1.0913
+							-16212197.0000 10359783424.0000 86346192.0000 3.0966
+							12081198.0000 86346192.0000 12243192832.0000 102.1106
+							float32 m_flVolume = 3231761.000000
+							float32 m_flMaxMotionRadius = 113.733192
+							float32 m_flMinMotionThickness = 73.968391
+							Struct m_Bounds = AABB_t
+							{
+								Vector3D m_vMinBounds = (-95.017731, -108.944771, 2.742828)
+								Vector3D m_vMaxBounds = (100.095543, 105.168861, 199.458801)
+							}
+							uint32 m_nFlags = 0x00000002
+						}
+						uint32 m_nCollisionAttributeIndex = 0x00000000
+						uint32 m_nSurfacePropertyIndex = 0x00000000
+					}
+				]
+				Struct m_meshes[0] =
+				[
+				]
+				uint16 m_CollisionAttributeIndices[0] =
+				[
+				]
+			}
+			Struct m_pBreakablePartData* = (ptr) ->NULL
+			uint8[0] m_nSurfacepropertyIndices =
+			[
+			]
+			uint16 m_nCollisionAttributeIndex = 0x0000
+			uint16 m_nReserved = 0x0000
+			float32 m_flInertiaScale = 1.000000
+			float32 m_flLinearDamping = 0.000000
+			float32 m_flAngularDamping = 0.000000
+		}
+	]
+	Struct m_constraints2[0] =
+	[
+	]
+	Struct m_joints[0] =
+	[
+	]
+	Struct m_pFeModel* = (ptr) ->NULL
+	uint16 m_boneParents[0] =
+	[
+	]
+	uint32 m_surfacePropertyHashes[1] =
+	[
+		0x75DE364E
+	]
+	Struct m_collisionAttributes[1] =
+	[
+		VPhysXCollisionAttributes_t
+		{
+			uint32 m_CollisionGroup = 0x75DE364E
+			uint32 m_InteractAs[0] =
+			[
+			]
+			uint32 m_InteractWith[0] =
+			[
+			]
+			uint32 m_InteractExclude[0] =
+			[
+			]
+			CResourceString m_CollisionGroupString = "default"
+			CResourceString m_InteractAsStrings[0] =
+			[
+			]
+			CResourceString m_InteractWithStrings[0] =
+			[
+			]
+			CResourceString m_InteractExcludeStrings[0] =
+			[
+			]
+		}
+	]
+	CResourceString m_debugPartNames[0] =
+	[
+	]
+	CResourceString m_embeddedKeyvalues = ""
+}

@@ -1,0 +1,171 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{261b3cba-02c7-424f-854b-c432c6f018d1} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/props_frostivus/frostivus_ancient/frostivus_ancient_destruction.vmdl"
+				},
+			]
+			m_bOrientZ = true
+			m_nLOD = 1
+			m_bAnimated = true
+			m_nBodyGroupField = "19"
+			m_nAnimationField = "9"
+			m_bForceLoopingAnimation = true
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_nMaxConstraintPasses = 0
+		},
+		{
+			_class = "C_OP_RemapNamedModelSequenceOnceTimed"
+			m_inNames = 
+			[
+				"frostivus_ancient_destroyed",
+			]
+			m_bModelFromRenderer = true
+			m_nFieldOutput = "9"
+			m_flRemapTime = 6.600000
+			m_outNames = 
+			[
+				"frostivus_ancient_destroyed",
+			]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 7.000000
+			m_fLifetimeMax = 7.000000
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RemapInitialCPDirectionToRotation"
+			m_flOffsetRot = -90.000000
+		},
+		{
+			_class = "C_INIT_RandomNamedModelSequence"
+			m_names = 
+			[
+				"frostivus_ancient_destroy",
+			]
+			m_bModelFromRenderer = true
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = 
+					[
+						0.000000,
+						0.000000,
+						0.000000,
+					]
+					m_angOffset = 
+					[
+						null,
+						null,
+						null,
+					]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = 
+					[
+						0.000000,
+						0.000000,
+						0.000000,
+					]
+					m_angOffset = 
+					[
+						null,
+						null,
+						null,
+					]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = 
+					[
+						0.000000,
+						0.000000,
+						0.000000,
+					]
+					m_angOffset = 
+					[
+						null,
+						null,
+						null,
+					]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = 
+					[
+						0.000000,
+						0.000000,
+						0.000000,
+					]
+					m_angOffset = 
+					[
+						null,
+						null,
+						null,
+					]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_PreEmissionOperators = 
+	[
+		{
+			_class = "C_OP_SetSingleControlPointPosition"
+			m_vecCP1Pos = 
+			[
+				0.000000,
+				0.000000,
+				150.000000,
+			]
+			m_nCP1 = 5
+		},
+	]
+	m_nBehaviorVersion = 8
+}

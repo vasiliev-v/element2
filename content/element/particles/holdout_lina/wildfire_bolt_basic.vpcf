@@ -1,0 +1,25 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{746dbe12-c97d-47a2-a445-9f9ceb7ef8f6} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 16
+	m_flConstantRadius = 30.000000
+	m_ConstantColor = 
+	[
+		187,
+		115,
+		30,
+		150,
+	]
+	m_nConstantSequenceNumber = 4
+	m_bShouldSort = false
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/holdout_lina/wildfire_bolt_core.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/holdout_lina/wildfire_bolt_beam.vpcf"
+		},
+	]
+	m_nBehaviorVersion = 8
+}

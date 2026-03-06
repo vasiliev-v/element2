@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/element_arena.png"
+	"VRF Original Textures"
+	{
+		"g_tColor"	"materials/overviews/element_arena_tga_c947122e.vtex"
+	}
+}

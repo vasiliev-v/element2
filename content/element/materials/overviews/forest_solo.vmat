@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/forest_solo.png"
+	"VRF Original Textures"
+	{
+		"g_tColor"	"materials/overviews/forest_solo_tga_81706e90.vtex"
+	}
+}

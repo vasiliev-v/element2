@@ -1,0 +1,11 @@
+"Layer0"
+{
+	"shader"	"projected_dota.vfx"
+	"F_ADDITIVE_BLENDING"	"1"
+	"TextureTranslucency"	"[1.000000 1.000000 1.000000 0.000000]"
+	"TextureColor"	"flash/textures/square_button.png"
+	"VRF Original Textures"
+	{
+		"g_tColor"	"flash/textures/square_button_psd_f0959a4.vtex"
+	}
+}

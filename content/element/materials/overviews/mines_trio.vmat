@@ -1,0 +1,10 @@
+"Layer0"
+{
+	"shader"	"ui.vfx"
+	"F_TRANSLUCENT"	"0"
+	"TextureColor"	"materials/overviews/mines_trio.png"
+	"VRF Original Textures"
+	{
+		"g_tColor"	"materials/overviews/mines_trio_tga_19640a1a.vtex"
+	}
+}
