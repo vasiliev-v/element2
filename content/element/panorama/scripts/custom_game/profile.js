@@ -155,11 +155,20 @@ function OnSteamIds(myids)
     GameEvents.Subscribe( "MyProfileInfo", UpdateMyInfo)
     GameEvents.Subscribe( "My_lvl", UpdtLvl);
     GameEvents.Subscribe( "SteamIds", OnSteamIds);
-    for (var x = 1; x < heroids.length+1; x = x + 1)
+    for (var x = 1; x < heroids.length + 1; x++)
     {
-        var mtop = 32*Math.floor((x-1)/11);
-        var mleft = 32*(x-1)-352*Math.floor((x-1)/11);
-        $("#ProfileHeroes").BCreateChildren("<DOTAHeroImage id='hero"+heroids[x-1]+"' class='Heroes' heroid='"+heroids[x-1]+"' heroimagestyle='icon' style='height:32px;width:32px; margin-top:"+mtop+"px; margin-left:"+mleft+"px;'/>");
+        var heroId = heroids[x - 1];
+        var mtop = 32 * Math.floor((x - 1) / 11);
+        var mleft = 32 * (x - 1) - 352 * Math.floor((x - 1) / 11);
+
+        var heroPanel = $.CreatePanel("DOTAHeroImage", $("#ProfileHeroes"), "hero" + heroId);
+        heroPanel.AddClass("Heroes");
+        heroPanel.heroid = heroId;
+        heroPanel.heroimagestyle = "icon";
+        heroPanel.style.height = "32px";
+        heroPanel.style.width = "32px";
+        heroPanel.style.marginTop = mtop + "px";
+        heroPanel.style.marginLeft = mleft + "px";
     }
     $("#MaxProfile").visible = false;
     $("#SelPlButton0").visible = false;

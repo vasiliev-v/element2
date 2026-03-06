@@ -1,6 +1,6 @@
 --local comp = SpawnEntityFromTableSynchronous("prop_dynamic",{model = "models/creeps/roshan/roshan.vmdl"})
 --print(comp:GetAbsOrigin())
-print("test")
+--print("test")
 --local comp2 = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/creeps/roshan/roshan.vmdl",targetname = "donkey",DefaultAnim=animation})
 --print(comp2:GetAbsOrigin())
 --print(CDOTAGameManager:GetHeroDataByName_Script("donkey"))--function CDOTAGameManager:GetHeroDataByName_Script( string_1 ) end

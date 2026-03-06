@@ -148,19 +148,74 @@ function UpdateShop( table_name, key, data )
 
 (function()
 {
-    CustomNetTables.SubscribeNetTableListener( "Elements_Tabel", UpdateShop );
-    // $("#Shop").visible = false;
-    // $("#ShopInfo").visible = false;
-    for (var i = 1; i <= 30;i++)
+    CustomNetTables.SubscribeNetTableListener("Elements_Tabel", UpdateShop);
+
+    var shopInfo = $("#ShopInfo");
+    shopInfo.RemoveAndDeleteChildren();
+
+    for (var i = 1; i <= 30; i++)
     {
-        var mtop = 10+38*(i-1)-380*Math.floor((i-1)/10);
-        var mleft = 15+270*Math.floor((i-1)/10);
-        $("#ShopInfo").BCreateChildren("<Panel hittest='false' id='craft"+i+"'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+elems[crafts[i-1][0]-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+mleft+"px;' onactivate='Buy("+crafts[i-1][0]+")'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+elems[crafts[i-1][1]-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+(mleft+50)+"px;' onactivate='Buy("+crafts[i-1][1]+")'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+elems[crafts[i-1][2]-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+(mleft+100)+"px;' onactivate='Buy("+crafts[i-1][2]+")'/>");
-        $("#craft"+i).BCreateChildren("<Image src='file://{images}/custom_game/game_info/str.png' style='height:32px;width:32px; margin-top:"+mtop+"px; margin-left:"+(mleft+150)+"px;'/>");
-        $("#craft"+i).BCreateChildren("<DOTAItemImage itemname='"+items[i-1]+"' style='height:32px;width:44px; margin-top:"+mtop+"px; margin-left:"+(mleft+190)+"px;' onactivate='BuyItem("+i+")'/>");
+        var mtop = 10 + 38 * (i - 1) - 380 * Math.floor((i - 1) / 10);
+        var mleft = 15 + 270 * Math.floor((i - 1) / 10);
+
+        var craftPanel = $.CreatePanel("Panel", shopInfo, "craft" + i);
+        craftPanel.hittest = false;
+
+        var img1 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        img1.itemname = elems[crafts[i - 1][0] - 1];
+        img1.style.height = "32px";
+        img1.style.width = "44px";
+        img1.style.marginTop = mtop + "px";
+        img1.style.marginLeft = mleft + "px";
+        img1.SetPanelEvent("onactivate", (function(num) {
+            return function() {
+                Buy(num);
+            };
+        })(crafts[i - 1][0]));
+
+        var img2 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        img2.itemname = elems[crafts[i - 1][1] - 1];
+        img2.style.height = "32px";
+        img2.style.width = "44px";
+        img2.style.marginTop = mtop + "px";
+        img2.style.marginLeft = (mleft + 50) + "px";
+        img2.SetPanelEvent("onactivate", (function(num) {
+            return function() {
+                Buy(num);
+            };
+        })(crafts[i - 1][1]));
+
+        var img3 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        img3.itemname = elems[crafts[i - 1][2] - 1];
+        img3.style.height = "32px";
+        img3.style.width = "44px";
+        img3.style.marginTop = mtop + "px";
+        img3.style.marginLeft = (mleft + 100) + "px";
+        img3.SetPanelEvent("onactivate", (function(num) {
+            return function() {
+                Buy(num);
+            };
+        })(crafts[i - 1][2]));
+
+        var arrow = $.CreatePanel("Image", craftPanel, "");
+        arrow.SetImage("file://{images}/custom_game/game_info/str.png");
+        arrow.style.height = "32px";
+        arrow.style.width = "32px";
+        arrow.style.marginTop = mtop + "px";
+        arrow.style.marginLeft = (mleft + 150) + "px";
+
+        var resultImg = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        resultImg.itemname = items[i - 1];
+        resultImg.style.height = "32px";
+        resultImg.style.width = "44px";
+        resultImg.style.marginTop = mtop + "px";
+        resultImg.style.marginLeft = (mleft + 190) + "px";
+        resultImg.SetPanelEvent("onactivate", (function(num) {
+            return function() {
+                BuyItem(num);
+            };
+        })(i));
     }
-    UpdateShop( "Elements_Tabel", Players.GetLocalPlayer(), CustomNetTables.GetTableValue( "Elements_Tabel", Players.GetLocalPlayer() ) )
+
+    UpdateShop("Elements_Tabel", Players.GetLocalPlayer(), CustomNetTables.GetTableValue("Elements_Tabel", Players.GetLocalPlayer()));
 })();

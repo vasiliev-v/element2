@@ -1124,7 +1124,7 @@ end
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
 	print("[BAREBONES] GameRules State Changed")
-	DeepPrintTable(keys)
+	-- DeepPrintTable(keys)
 
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
@@ -1902,8 +1902,8 @@ end
 
 -- A player leveled up
 function GameMode:OnPlayerLevelUp(keys)
-	print ('[BAREBONES] OnPlayerLevelUp')
-	DeepPrintTable(keys)
+	--print ('[BAREBONES] OnPlayerLevelUp')
+	-- DeepPrintTable(keys)
 
 	--local player = EntIndexToHScript(keys.player)
     local hero = EntIndexToHScript(keys.hero_entindex)
@@ -1976,7 +1976,7 @@ end
 -- A player picked a hero
 function GameMode:OnPlayerPickHero(keys)
 	print ('[BAREBONES] OnPlayerPickHero')
-	DeepPrintTable(keys)
+	-- DeepPrintTable(keys)
 
 	local heroClass = keys.hero
 	local heroEntity = EntIndexToHScript(keys.heroindex)
@@ -2155,7 +2155,7 @@ function GameMode:OnEntityKilled( keys )
                 local pos = killedUnit:GetAbsOrigin()
                 local drop = CreateItemOnPositionSync( pos, item )
                 local pos_launch = pos+RandomVector(RandomFloat(150,200))
-                item:LaunchLootInitialHeight(false, 200, 0.75, pos_launch)
+                item:LaunchLootInitialHeight(false, 0, 200, 0.75, pos_launch)
             end
         end
         -- if not GameRules:IsCheatMode() then
@@ -2230,7 +2230,7 @@ function RollDrops(unit)
                                 local pos = unit:GetAbsOrigin()
                                 local drop = CreateItemOnPositionSync( pos, item )
                                 local pos_launch = pos+RandomVector(RandomFloat(100,125))
-                                item:LaunchLootInitialHeight(false, 200, 0.75, pos_launch)
+                                item:LaunchLootInitialHeight(false, 0, 200, 0.75, pos_launch)
                                 item.bIsRelic = true
                                 local PlayerIDs = {}
                                 print( "CDungeon:OnRelicSpawned - New Relic " .. item:GetAbilityName() .. " created." )
@@ -2540,7 +2540,7 @@ function RollDrops(unit)
                         local pos = unit:GetAbsOrigin()
                         local drop = CreateItemOnPositionSync( pos, item )
                         local pos_launch = pos+RandomVector(RandomFloat(150,200))
-                        item:LaunchLootInitialHeight(false, 200, 0.75, pos_launch)
+                        item:LaunchLootInitialHeight(false, 0, 200, 0.75, pos_launch)
                     end
                 end
             end
