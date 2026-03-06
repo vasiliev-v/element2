@@ -53,7 +53,16 @@ function IntTick()
             }
             if (myclass == "immortal")
             {
-                $("#PanelForPart").BCreateChildren("<DOTAScenePanel hittest='false' id='immortalpart' particleonly='true' style='margin-top:-135px; margin-left:-52px; height:300px;width:300px;' map='cameras' camera='partcamera4' />");
+                $("#PanelForPart").RemoveAndDeleteChildren();
+                var immortalPart = $.CreatePanel("DOTAScenePanel", $("#PanelForPart"), "immortalpart");
+                immortalPart.hittest = false;
+                immortalPart.particleonly = "true";
+                immortalPart.style.marginTop = "-135px";
+                immortalPart.style.marginLeft = "-52px";
+                immortalPart.style.height = "300px";
+                immortalPart.style.width = "300px";
+                immortalPart.map = "cameras";
+                immortalPart.camera = "partcamera4";
             }
             if (myclass == "immortal")
             {
@@ -105,9 +114,33 @@ function IntTick()
                 break
             }
             $("#hero1").heroname = list[0]["hero"];
-            $("#Line1").BCreateChildren("<Panel hittest='false' id='item1' style='margin-top:4px; margin-left:82px;' onmouseover='UIShowCustomLayoutParametersTooltip(RSTooltip,file://{resources}/layout/custom_game/rs_tooltips.xml,num="+list[0]["rsid"]+")' onmouseout='UIHideCustomLayoutTooltip(RSTooltip)'/>");
-            $("#item1").BCreateChildren("<Image src='file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+list[0]["rsid"].charAt(2)+".png' style='height:36px;width:48px;'/>");
-            $("#item1").BCreateChildren("<Panel hittest='false' class='"+myclass+"' style='height:36px;width:3px; margin-left:48px;'/>");
+            var item1 = $.CreatePanel("Panel", $("#Line1"), "item1");
+            item1.hittest = false;
+            item1.style.marginTop = "4px";
+            item1.style.marginLeft = "82px";
+            item1.SetPanelEvent("onmouseover", (function(rsid)
+            {
+                return function()
+                {
+                    $.DispatchEvent("UIShowCustomLayoutParametersTooltip", "RSTooltip", "file://{resources}/layout/custom_game/rs_tooltips.xml", "num=" + rsid);
+                };
+            })(list[0]["rsid"]));
+            item1.SetPanelEvent("onmouseout", function()
+            {
+                $.DispatchEvent("UIHideCustomLayoutTooltip", "RSTooltip");
+            });
+
+            var itemImage = $.CreatePanel("Image", item1, "");
+            itemImage.SetImage("file://{images}/custom_game/relic_items/"+rares+"/"+elem+"/"+list[0]["rsid"].charAt(2)+".png");
+            itemImage.style.height = "36px";
+            itemImage.style.width = "48px";
+
+            var classPanel = $.CreatePanel("Panel", item1, "");
+            classPanel.hittest = false;
+            classPanel.AddClass(myclass);
+            classPanel.style.height = "36px";
+            classPanel.style.width = "3px";
+            classPanel.style.marginLeft = "48px";
             list.shift();
             //$("#immortalpart").visible = true;
             //$.Msg(list);
