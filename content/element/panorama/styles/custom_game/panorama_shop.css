@@ -413,7 +413,7 @@ DropDownMenu Label
 
 #QuickBuyClearButtonPanel
 {
-	background-image: url("s2r://panorama/images/control_icons/x_close_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/x_close.png");
 	background-size: cover;
 	background-position: 50% 50%;
 	width: 16px;
@@ -622,7 +622,7 @@ VerticalScrollBar .ScrollThumb
 	height: 28px;
 	width: 28px;
 
-	background-image: url("s2r://panorama/images/control_icons/grid_3x3_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/grid_3x3.png");
 	background-repeat: no-repeat;
 	background-size: 72%;
 	background-position: 50% 50%;

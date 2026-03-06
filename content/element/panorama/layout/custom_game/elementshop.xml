@@ -8,20 +8,20 @@
 	</scripts>
     
 	<Panel hittest="false" class="ElementShopPanel">
-        <Image hittest="false" id="BG_Image" src="s2r://panorama/images/custom_game/all/leftpanel_png.vtex"/>
+        <Image hittest="false" id="BG_Image" src="s2r://panorama/images/custom_game/all/leftpanel.png"/>
         <Panel hittest="false" id="ShopInfo" class="ShopInfoAnim">
-            <Image hittest="false" id="buttonBG2_Image" src="s2r://panorama/images/custom_game/all/elementshopinfo_png.vtex"/>
-            <Image hittest="false" src="s2r://panorama/images/custom_game/all/st2_png.vtex" style="height:400px;width:10px; margin-left:260px;"/>
-            <Image hittest="false" src="s2r://panorama/images/custom_game/all/st2_png.vtex" style="height:400px;width:10px; margin-left:530px;"/>
+            <Image hittest="false" id="buttonBG2_Image" src="s2r://panorama/images/custom_game/all/elementshopinfo.png"/>
+            <Image hittest="false" src="s2r://panorama/images/custom_game/all/st2.png" style="height:400px;width:10px; margin-left:260px;"/>
+            <Image hittest="false" src="s2r://panorama/images/custom_game/all/st2.png" style="height:400px;width:10px; margin-left:530px;"/>
             <Button id="ToggleX3mode" onactivate='ToggleX3mode()' style="height:20px;width:20px; margin-top:10px; margin-left:800px;" onmouseover='DOTAShowTextTooltip(x3 Mode)' onmouseout='DOTAHideTextTooltip()'>
-                <Image hittest="false" src="s2r://panorama/images/custom_game/all/x3_png.vtex" style="height:30px;width:30px;"/>
+                <Image hittest="false" src="s2r://panorama/images/custom_game/all/x3.png" style="height:30px;width:30px;"/>
 			</Button>
             <Button id="OffInfo" onactivate='OffInfo()' style="height:100px;width:20px; margin-top:150px; margin-left:800px;">
-                <Image hittest="false" src="s2r://panorama/images/custom_game/all/st5_png.vtex" style="height:100px;width:20px;"/>
+                <Image hittest="false" src="s2r://panorama/images/custom_game/all/st5.png" style="height:100px;width:20px;"/>
 			</Button>
         </Panel>
         <Panel hittest="false" id="Shop">
-            <Image hittest="false" id="buttonBG_Image" src="s2r://panorama/images/custom_game/all/test_png.vtex"/>
+            <Image hittest="false" id="buttonBG_Image" src="s2r://panorama/images/custom_game/all/test.png"/>
             <Label hittest="false" id="lvlmyitemtext1" text="x 0" style="height:24px;width:32px; margin-top:17px; margin-left:90px;"/>
             <Label hittest="false" id="lvlmyitemtext2" text="x 0" style="height:24px;width:32px; margin-top:55px; margin-left:90px;"/>
             <Label hittest="false" id="lvlmyitemtext3" text="x 0" style="height:24px;width:32px; margin-top:93px; margin-left:90px;"/>
@@ -43,12 +43,12 @@
             <DOTAItemImage id="myitem9" itemname="item_light" style="height:32px;width:44px; margin-top:317px; margin-left:20px;" onactivate='Buy(9)'/>
             <DOTAItemImage id="myitem10" itemname="item_shadow" style="height:32px;width:44px; margin-top:355px; margin-left:20px;" onactivate='Buy(10)'/>
             <Button id="OnInfo" onactivate='OnInfo()' style="height:30px;width:20px; margin-top:10px; margin-left:120px;">
-                <Image hittest="false" src="s2r://panorama/images/custom_game/all/st4_png.vtex" style="height:30px;width:20px;"/>
+                <Image hittest="false" src="s2r://panorama/images/custom_game/all/st4.png" style="height:30px;width:20px;"/>
 			</Button>
         </Panel>
 		<Panel hittest="false" id="ElementShop">
 			<Button id="Vote_Yes" onactivate='Open()'>
-				<Image id="yes_button" src="s2r://panorama/images/custom_game/all/buttonrelic_png.vtex"/>
+				<Image id="yes_button" src="s2r://panorama/images/custom_game/all/buttonrelic.png"/>
 			</Button>
             <Label hittest="false" id="readytext" class="ElementShopText" text="#elements"/>
 		</Panel>

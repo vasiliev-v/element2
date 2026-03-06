@@ -19,5 +19,5 @@
 		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_BADGUYS ] = "#ff0000;"; // { 243, 201, 9 }		--		Yellow
 
 		GameUI.CustomUIConfig().team_icons = {}
-		GameUI.CustomUIConfig().team_icons[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "s2r://panorama/images/custom_game/team_icons/team_icon_tiger_01_png.vtex";
-		GameUI.CustomUIConfig().team_icons[DOTATeam_t.DOTA_TEAM_BADGUYS ] = "s2r://panorama/images/custom_game/team_icons/team_icon_monkey_01_png.vtex";
+		GameUI.CustomUIConfig().team_icons[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "s2r://panorama/images/custom_game/team_icons/team_icon_tiger_01.png";
+		GameUI.CustomUIConfig().team_icons[DOTATeam_t.DOTA_TEAM_BADGUYS ] = "s2r://panorama/images/custom_game/team_icons/team_icon_monkey_01.png";

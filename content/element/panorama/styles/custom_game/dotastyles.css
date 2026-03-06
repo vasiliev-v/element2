@@ -120,7 +120,7 @@ DropDown, DOTASettingsEnumDropDown
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #292e2e ), to( #191e1e ) );
 
-	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown.png");
 	
 	background-repeat: no-repeat;
 	background-position: right 38px 35%;
@@ -160,7 +160,7 @@ DropDown:disabled
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #292e2e ), to( #191e1e ) );
 	border: 2px solid #3b414266;
-	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_disabled_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_disabled.png");
 }
 
 DropDown.DropDownMenuVisible:hover, DOTASettingsEnumDropDown.DropDownMenuVisible:hover
@@ -617,7 +617,7 @@ ToggleButton.ExpandCollapseToggleButton
 	width: 19px;
 	height: 19px;
 	vertical-align: middle;
-	background-image: url("s2r://panorama/images/control_icons/expand_collapse_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/expand_collapse.png");
 	background-size: 100% 100%;
 	background-color: none;
 	box-shadow: none;
@@ -640,7 +640,7 @@ ToggleButton.ExpandCollapseToggleButton
 	width: 19px;
 	height: 19px;
 	vertical-align: middle;
-	background-image: url("s2r://panorama/images/control_icons/expand_collapse_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/expand_collapse.png");
 	background-size: 100% 100%;
 	background-color: none;
 	box-shadow: none;
@@ -938,7 +938,7 @@ RadioButton:disabled > Label
 
 .ExternalIcon
 {
-	background-image: url("s2r://panorama/images/control_icons/arrow_popout_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_popout.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	wash-color: white;
@@ -1817,7 +1817,7 @@ ProgressBar
 	height: 24px;
 	wash-color: #888888;
 	
-	background-image: url("s2r://panorama/images/control_icons/x_close_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/x_close.png");
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -1946,7 +1946,7 @@ ProgressBar
 	width: 28px;
 	height: 28px;
 	wash-color: #888888;
-	background-image: url("s2r://panorama/images/control_icons/dota_logo_white_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/dota_logo_white.png");
 	background-size: 100% 100%;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -1974,7 +1974,7 @@ ProgressBar
 
 .SettingsButton
 {
-	background-image: url("s2r://panorama/images/control_icons/gear_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/gear.png");
 }
 
 .SettingsButton.Activated
@@ -2046,7 +2046,7 @@ ProgressBar
 
 .EditButton
 {
-	background-image: url("s2r://panorama/images/control_icons/edit_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/edit.png");
 	background-size: 65%;
 }
 
@@ -2101,7 +2101,7 @@ ProgressBar
 	height: 60px;
 	vertical-align: middle;
 	wash-color: #9db1b7;
-	background-image: url("s2r://panorama/images/control_icons/arrow_right_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_right.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -2170,7 +2170,7 @@ ProgressBar
 {
 	height: 16px;
 	width: 16px;
-	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown.png");
 	background-size: contain;
 	wash-color: #888888;
 	margin-left: 4px;
@@ -2373,7 +2373,7 @@ ProgressBar
 
 .RedBackgroundImageButton
 {
-	background-image: url("s2r://panorama/images/red_large_off_png.vtex");
+	background-image: url("s2r://panorama/images/red_large_off.png");
 	background-size: 100% 100%;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -2384,7 +2384,7 @@ ProgressBar
 
 .RedBackgroundImageButton:hover
 {
-	background-image: url("s2r://panorama/images/red_large_off_png.vtex");
+	background-image: url("s2r://panorama/images/red_large_off.png");
 	background-size: 100% 100%;
 	brightness: 3;
 	saturation: 1.4;
@@ -2433,7 +2433,7 @@ ProgressBar
 	vertical-align: center;
 	width: 62px;
 	height: 57px;
-	background-image: url("s2r://panorama/images/control_icons/return_to_game_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/return_to_game.png");
 	background-size: 27px;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -2554,7 +2554,7 @@ ProgressBar
 
 .Star
 {
-	background-image: url("s2r://panorama/images/status_icons/icon_star_empty_png.vtex");
+	background-image: url("s2r://panorama/images/status_icons/icon_star_empty.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	wash-color: #666666;
@@ -2565,7 +2565,7 @@ ProgressBar
 
 .StarLit
 {
-	background-image: url("s2r://panorama/images/status_icons/icon_star_png.vtex");
+	background-image: url("s2r://panorama/images/status_icons/icon_star.png");
 	wash-color: #ffffff;
 }
 
@@ -2722,12 +2722,12 @@ EdgeScrollBar.Horizontal .EdgeScrollButton
 EdgeScrollBar.Horizontal #MinButton
 {
 	horizontal-align: left;
-	background-image: url("s2r://panorama/images/control_icons/arrow_solid_left_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_left.png");
 }
 EdgeScrollBar.Horizontal #MaxButton
 {
 	horizontal-align: right;
-	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right.png");
 }
 
 EdgeScrollBar.Vertical .EdgeScrollButton
@@ -2738,19 +2738,19 @@ EdgeScrollBar.Vertical .EdgeScrollButton
 EdgeScrollBar.Vertical #MinButton
 {
 	vertical-align: top;
-	background-image: url("s2r://panorama/images/control_icons/arrow_solid_up_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_up.png");
 }
 EdgeScrollBar.Vertical #MaxButton
 {	
 	vertical-align: bottom;
-	background-image: url("s2r://panorama/images/control_icons/arrow_solid_down_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_down.png");
 }
 
 
 /* Pagination arrows and buttons */
 .PaginationArrow
 {
-	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right.png");
 	background-repeat: no-repeat;
 	background-color: #90a3a8;
 	background-size: 12px 12px;
@@ -2946,12 +2946,12 @@ DOTASortHeader .SortDirectionArrow
 
 DOTASortHeader.SortAscending .SortDirectionArrow
 {
-	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown.png");
 	transform: scaleY( -1.0 );
 }
 DOTASortHeader.SortDescending .SortDirectionArrow
 {
-	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown.png");
 }
 
 
@@ -2970,12 +2970,12 @@ DOTAPunchCard .StampPanel
 
 	background-size: 100% 100%;
 
-	background-image: url("s2r://panorama/images/punch_card/punch_card_arrow_pip_off_png.vtex");
+	background-image: url("s2r://panorama/images/punch_card/punch_card_arrow_pip_off.png");
 }
 
 DOTAPunchCard .StampPanel:selected
 {
-	background-image: url("s2r://panorama/images/punch_card/punch_card_arrow_pip_on_png.vtex");
+	background-image: url("s2r://panorama/images/punch_card/punch_card_arrow_pip_on.png");
 }
 
 DOTAPunchCard .StampPanel.StampIndex0
@@ -3006,7 +3006,7 @@ DOTAPunchCard #RewardPanel
 
 DOTAPunchCard.StampsFull #RewardPanel
 {
-	background-image: url("s2r://panorama/images/punch_card/punch_card_bonus_backer_on_png.vtex");
+	background-image: url("s2r://panorama/images/punch_card/punch_card_bonus_backer_on.png");
 	background-position: 0% 50%;
 }
 
@@ -3065,7 +3065,7 @@ EconItemImage #Overlay
 {
 	width: 100%;
 	height: 100%;
-	background-image: url("s2r://panorama/images/backgrounds/dashboard_vignette_png.vtex"); 
+	background-image: url("s2r://panorama/images/backgrounds/dashboard_vignette.png"); 
 	background-size: cover;
 
 	transition-property: opacity;
@@ -3110,7 +3110,7 @@ EconItemImage #Overlay
 	height: 16px;
 	vertical-align: middle;
 	horizontal-align: right;
-	background-image: url("s2r://panorama/images/control_icons/double_arrow_left_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/double_arrow_left.png");
 	background-position: 0% 50%;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -3345,7 +3345,7 @@ DOTATooltipProfileCard.TooltipVisible
 /* Use margins on the arrows to make sure that we don't try to show the arrow over top of the badge */
 DOTATooltipProfileCard #RightArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_right_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_right.png");
 	wash-color: #495757;
 	width: 16px;
 	height: 32px;
@@ -3355,7 +3355,7 @@ DOTATooltipProfileCard #RightArrow
 
 DOTATooltipProfileCard #TopArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_top_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_top.png");
 	wash-color: #495757;
 
 	width: 32px;
@@ -3366,7 +3366,7 @@ DOTATooltipProfileCard #TopArrow
 
 DOTATooltipProfileCard #LeftArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left.png");
 	wash-color: #495757;
 	width: 16px;
 	height: 32px;
@@ -3376,7 +3376,7 @@ DOTATooltipProfileCard #LeftArrow
 
 DOTATooltipProfileCard #BottomArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_bottom_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_bottom.png");
 	wash-color: #495757;
 
 	width: 32px;
@@ -3538,7 +3538,7 @@ DOTATooltipProfileCard #BottomArrow
 
 DOTAContextMenuPlayer #RightArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_right_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_right.png");
 	wash-color: #495757;
 
 	width: 16px;
@@ -3549,7 +3549,7 @@ DOTAContextMenuPlayer #RightArrow
 
 DOTAContextMenuPlayer #TopArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_top_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_top.png");
 	wash-color: #495757;
 
 	width: 32px;
@@ -3560,7 +3560,7 @@ DOTAContextMenuPlayer #TopArrow
 
 DOTAContextMenuPlayer #LeftArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left.png");
 	wash-color: #495757;
 
 	width: 16px;
@@ -3571,7 +3571,7 @@ DOTAContextMenuPlayer #LeftArrow
 
 DOTAContextMenuPlayer #BottomArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_bottom_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_bottom.png");
 	wash-color: #495757;
 
 	width: 32px;
@@ -3610,49 +3610,49 @@ DOTATooltipRune
 
 .ContextMenuGrayArrow #RightArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_right_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_right.png");
 	margin-left: 0px;
 }
 .ContextMenuGrayArrow #TopArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_top_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_top.png");
 	margin-bottom: 0px;
 }
 .ContextMenuGrayArrow #LeftArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left.png");
 	margin-right: 0px;
 }
 .ContextMenuGrayArrow #BottomArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_bottom_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_bottom.png");
 	margin-top: 0px;
 }
 
 .ContextMenuBlackArrow #RightArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_right_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_right.png");
 	height: 27px;
 	width: 14px;
 	margin-left: -1px;
 }
 .ContextMenuBlackArrow #TopArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_top_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_top.png");
 	height: 14px;
 	width: 27px;
 	margin-bottom: -1px;
 }
 .ContextMenuBlackArrow #LeftArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_left_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_left.png");
 	height: 27px;
 	width: 14px;
 	margin-bottom: -1px;
 }
 .ContextMenuBlackArrow #BottomArrow
 {
-	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_bottom_png.vtex");
+	background-image: url("s2r://panorama/images/tooltips/black_tooltip_arrow_bottom.png");
 	height: 14px;
 	width: 27px;
 	margin-top: -1px;
@@ -3763,7 +3763,7 @@ DOTAVRPopupManager
 
 DOTAItemImage
 {
-	background-image: url("s2r://panorama/images/items/emptyitembg_png.vtex");
+	background-image: url("s2r://panorama/images/items/emptyitembg.png");
 	background-repeat: no-repeat;
 	background-size: 100% 99%;
 	
@@ -3777,7 +3777,7 @@ DOTAItemImage #RecipeOutputImage
 	pre-transform-scale2d: .7;
 	transform: rotateZ(-8deg) rotateY(30deg) translateX(2px) translateY(1px);
 	border-radius: 1px;
-	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");	
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box.png");	
 }
 
 #RecipeContainer
@@ -3787,7 +3787,7 @@ DOTAItemImage #RecipeOutputImage
 	height: 100%;
 	contrast: .9;
 	background-color: black;
-	opacity-mask: url("s2r://panorama/images/items/recipe_opacity_mask_png.vtex");		
+	opacity-mask: url("s2r://panorama/images/items/recipe_opacity_mask.png");		
 }
 
 DOTAShopItem:not(.CanPurchase) #RecipeContainer
@@ -3981,7 +3981,7 @@ DOTAShopItem:not(.CanPurchase) #RecipeContainer
 
 .InspectIcon
 {
-	background-image: url("s2r://panorama/images/control_icons/icon_search_png.vtex");
+	background-image: url("s2r://panorama/images/control_icons/icon_search.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;

@@ -12,16 +12,16 @@
 		  	<Label hittest="false" html="true" id="itemrare" text="-"/>
   			<Panel id="itemqual" class="questmain">
 			  	<Label hittest="false" html="true" id="itemquallbl" text="#rsqual"/>
-                <Image id="nostar1" src="s2r://panorama/images/custom_game/all/nostar_png.vtex" style="height:20px;width:20px;" />
-                <Image id="nostar2" src="s2r://panorama/images/custom_game/all/nostar_png.vtex" style="height:20px;width:20px;" />
-                <Image id="nostar3" src="s2r://panorama/images/custom_game/all/nostar_png.vtex" style="height:20px;width:20px;" />
-                <Image id="nostar4" src="s2r://panorama/images/custom_game/all/nostar_png.vtex" style="height:20px;width:20px;" />
-                <Image id="nostar5" src="s2r://panorama/images/custom_game/all/nostar_png.vtex" style="height:20px;width:20px;" />
-                <Image id="star1" src="s2r://panorama/images/custom_game/all/star_png.vtex" style="height:20px;width:20px; margin-left:-100px;" />
-                <Image id="star2" src="s2r://panorama/images/custom_game/all/star_png.vtex" style="height:20px;width:20px;" />
-                <Image id="star3" src="s2r://panorama/images/custom_game/all/star_png.vtex" style="height:20px;width:20px;" />
-                <Image id="star4" src="s2r://panorama/images/custom_game/all/star_png.vtex" style="height:20px;width:20px;" />
-                <Image id="star5" src="s2r://panorama/images/custom_game/all/star_png.vtex" style="height:20px;width:20px;" />
+                <Image id="nostar1" src="s2r://panorama/images/custom_game/all/nostar.png" style="height:20px;width:20px;" />
+                <Image id="nostar2" src="s2r://panorama/images/custom_game/all/nostar.png" style="height:20px;width:20px;" />
+                <Image id="nostar3" src="s2r://panorama/images/custom_game/all/nostar.png" style="height:20px;width:20px;" />
+                <Image id="nostar4" src="s2r://panorama/images/custom_game/all/nostar.png" style="height:20px;width:20px;" />
+                <Image id="nostar5" src="s2r://panorama/images/custom_game/all/nostar.png" style="height:20px;width:20px;" />
+                <Image id="star1" src="s2r://panorama/images/custom_game/all/star.png" style="height:20px;width:20px; margin-left:-100px;" />
+                <Image id="star2" src="s2r://panorama/images/custom_game/all/star.png" style="height:20px;width:20px;" />
+                <Image id="star3" src="s2r://panorama/images/custom_game/all/star.png" style="height:20px;width:20px;" />
+                <Image id="star4" src="s2r://panorama/images/custom_game/all/star.png" style="height:20px;width:20px;" />
+                <Image id="star5" src="s2r://panorama/images/custom_game/all/star.png" style="height:20px;width:20px;" />
 			</Panel>
 		  	<Label hittest="false" html="true" id="itemstat1" text="-"/>
 		  	<Label hittest="false" html="true" id="itemstat2" text="-"/>

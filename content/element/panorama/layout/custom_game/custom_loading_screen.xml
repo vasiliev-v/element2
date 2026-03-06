@@ -7,8 +7,8 @@
 	<Panel class="OverthrowLoadingRoot">
 		<Panel id="seq" >
 			<Image id="seq_bg" class="SeqBg" src="s2r://panorama/images/custom_game/loading_screen/loading_seq_bg_psd.vtex" />
-			<Image id="seq_elems" class="SeqImg" src="s2r://panorama/images/custom_game/loading_screen/loading_seq_elems_png.vtex" />
-			<Image id="seq_invok" class="SeqImg" src="s2r://panorama/images/custom_game/loading_screen/loading_seq_invok_png.vtex" />
+			<Image id="seq_elems" class="SeqImg" src="s2r://panorama/images/custom_game/loading_screen/loading_seq_elems.png" />
+			<Image id="seq_invok" class="SeqImg" src="s2r://panorama/images/custom_game/loading_screen/loading_seq_invok.png" />
 		</Panel>
 	</Panel>
 </root>

@@ -33,10 +33,10 @@
 			</Button>
             <Panel hittest="false" class="EndScreenButtons">
                 <Button id="DisButton" onactivate="DOTADisplayURL('https://discord.gg/6KwBGp4');">
-                    <Image id="DisImg" src="s2r://panorama/images/custom_game/all/logo/dislogo_png.vtex"/>
+                    <Image id="DisImg" src="s2r://panorama/images/custom_game/all/logo/dislogo.png"/>
                 </Button>
                 <Button id="VKButton" onactivate="DOTADisplayURL('https://vk.com/elementarenadota');">
-                    <Image id="VKImg" src="s2r://panorama/images/custom_game/all/logo/vklogo_png.vtex"/>
+                    <Image id="VKImg" src="s2r://panorama/images/custom_game/all/logo/vklogo.png"/>
                 </Button>
             </Panel>
 		</Panel>

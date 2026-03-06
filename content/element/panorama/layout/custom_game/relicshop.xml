@@ -10,8 +10,8 @@
 	<Panel hittest="false" class="RelicShopPanel">
         <Panel hittest="false" id="AllRelicPanel">
             <Panel hittest="false" id="RelicPanel">
-                <Image hittest="false" id="BG_Image" src="s2r://panorama/images/custom_game/all/relicsfon_png.vtex"/>
-                <Image hittest="false" id="miniBG_Image" src="s2r://panorama/images/custom_game/all/relshopminifon_png.vtex"/>
+                <Image hittest="false" id="BG_Image" src="s2r://panorama/images/custom_game/all/relicsfon.png"/>
+                <Image hittest="false" id="miniBG_Image" src="s2r://panorama/images/custom_game/all/relshopminifon.png"/>
                 <Label hittest="false" id="rlabel" text="#reliclabel" style="margin-top:535px; margin-left:10px;"/>
                 <Label hittest="false" id="lvllabel" text="#lvllabel" style="margin-top:570px; margin-left:10px;"/>
                 <DOTAItemImage id="lvlmyitem1" class="riimg" itemname="item_corrupting_blade" style="height:32px;width:44px; margin-top:530px; margin-left:265px;" onactivate='Buy(1)'/>
@@ -42,23 +42,23 @@
                 <Button id="ColorButton10" class="nocolor" style="height:20px;width:20px; margin-top:577px;margin-left:781px;" onactivate='SetColor(10)' onmouseover='DOTAShowTextTooltip(Light)' onmouseout='DOTAHideTextTooltip()'/>
                 <Button id="ColorButton11" class="nocolor" style="height:20px;width:20px; margin-top:577px;margin-left:808px;" onactivate='SetColor(11)' onmouseover='DOTAShowTextTooltip(Shadow)' onmouseout='DOTAHideTextTooltip()'/>
                 <Button id="ColorButton12" class="nocolor" style="height:20px;width:20px; margin-top:577px;margin-left:835px;" onactivate='SetColor(12)' onmouseover='DOTAShowTextTooltip(Patreon)' onmouseout='DOTAHideTextTooltip()'/>
-                <!---<Image src="s2r://panorama/images/custom_game/relic_items/stones/ice/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/fire/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/water/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/energy/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/earth/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/life/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/void/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/air/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/light/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
-                <Image src="s2r://panorama/images/custom_game/relic_items/stones/shadow/4_png.vtex" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />  -->
+                <!---<Image src="s2r://panorama/images/custom_game/relic_items/stones/ice/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/fire/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/water/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/energy/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/earth/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/life/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/void/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/air/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/light/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />
+                <Image src="s2r://panorama/images/custom_game/relic_items/stones/shadow/4.png" style="height:43px;width:56px; margin-top:432px; margin-left:247px;" />  -->
                 <Panel hittest="false" id="dustlabel" >
-                    <Image hittest="false" src="s2r://panorama/images/custom_game/all/dustfon_png.vtex" style="height:44px;width:142px; margin-top:390px;margin-left:4px;"/>
+                    <Image hittest="false" src="s2r://panorama/images/custom_game/all/dustfon.png" style="height:44px;width:142px; margin-top:390px;margin-left:4px;"/>
                     <Label hittest="false" id="dustlabeltxt" text="0" style="margin-top:400px;margin-left:50px;"/>
-                    <Image hittest="false" src="s2r://panorama/images/custom_game/all/dust_png.vtex" style="height:24px;width:32px; margin-top:400px;margin-left:92px;"/>
+                    <Image hittest="false" src="s2r://panorama/images/custom_game/all/dust.png" style="height:24px;width:32px; margin-top:400px;margin-left:92px;"/>
                 </Panel>
                 <Panel hittest="false" id="upgradepanel" >
-                    <Image hittest="false" id="forupitem" src="s2r://panorama/images/custom_game/all/elementshopinfo_png.vtex" style="height:60px;width:88px; margin-top:150px;margin-left:254px;"/>
+                    <Image hittest="false" id="forupitem" src="s2r://panorama/images/custom_game/all/elementshopinfo.png" style="height:60px;width:88px; margin-top:150px;margin-left:254px;"/>
                     <Button id="UpgradeButton" class="PureButtondis" onactivate='UpgradeButton()' style="margin-top:325px;margin-left:200px;">
                         <Label hittest="false" id="upgradebuttontext" text="#noupgrade"/>
                     </Button>
@@ -133,11 +133,11 @@
                         </Button>
                     </Panel>
                     <Button id="SavesButton" onactivate='SavesButton()' >
-                        <Image hittest="false" id="SavesButtonimg" class="imgoff" src="s2r://panorama/images/custom_game/all/st5_png.vtex" style="height:90px;width:15px; margin-top:3px; margin-left:5px;"/>
+                        <Image hittest="false" id="SavesButtonimg" class="imgoff" src="s2r://panorama/images/custom_game/all/st5.png" style="height:90px;width:15px; margin-top:3px; margin-left:5px;"/>
                     </Button>
                 </Panel>
                 <Panel hittest="false" id="osnova">
-                    <Image src="s2r://panorama/images/custom_game/all/minirfon_png.vtex" style="height:456px;width:500px; margin-top:25px; margin-left:25px;" />
+                    <Image src="s2r://panorama/images/custom_game/all/minirfon.png" style="height:456px;width:500px; margin-top:25px; margin-left:25px;" />
                     <Panel hittest="false" id="animslot1" >
                         <Panel hittest="false" id="slot1anim1" />
                         <Panel hittest="false" id="slot1anim2" />
@@ -178,19 +178,19 @@
                     <Panel hittest="false" class="itemfon2" style="height:50px;width:50px; margin-top:78px; margin-left:413px;"/>
                     <Panel hittest="false" class="itemfon2" style="height:50px;width:50px; margin-top:379px; margin-left:87px;"/>
                     <Panel hittest="false" class="itemfon2" style="height:50px;width:50px; margin-top:378px; margin-left:413px;"/>
-                    <Image id="osnimg" src="s2r://panorama/images/custom_game/all/tttest2_png.vtex" style="height:476px;width:520px; margin-top:15px; margin-left:15px;" />
+                    <Image id="osnimg" src="s2r://panorama/images/custom_game/all/tttest2.png" style="height:476px;width:520px; margin-top:15px; margin-left:15px;" />
                     <Panel hittest="false" id="imgslots"/>
                     <Panel hittest="false" id="locks1">
-                        <Image id="lockimg1" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:38px; margin-left:259px;" />
-                        <Image id="lockimg2" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:237px; margin-left:469px;" />
-                        <Image id="lockimg3" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:435px; margin-left:259px;" />
-                        <Image id="lockimg4" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:237px; margin-left:49px;" />
+                        <Image id="lockimg1" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:38px; margin-left:259px;" />
+                        <Image id="lockimg2" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:237px; margin-left:469px;" />
+                        <Image id="lockimg3" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:435px; margin-left:259px;" />
+                        <Image id="lockimg4" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:237px; margin-left:49px;" />
                     </Panel>
                     <Panel hittest="false" id="locks2">
-                        <Image id="lockimg5" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:86px; margin-left:422px;" />
-                        <Image id="lockimg6" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:387px; margin-left:422px;" />
-                        <Image id="lockimg7" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:387px; margin-left:97px;" />
-                        <Image id="lockimg8" src="s2r://panorama/images/custom_game/all/lock_png.vtex" style="height:32px;width:32px; margin-top:86px; margin-left:97px;" />
+                        <Image id="lockimg5" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:86px; margin-left:422px;" />
+                        <Image id="lockimg6" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:387px; margin-left:422px;" />
+                        <Image id="lockimg7" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:387px; margin-left:97px;" />
+                        <Image id="lockimg8" src="s2r://panorama/images/custom_game/all/lock.png" style="height:32px;width:32px; margin-top:86px; margin-left:97px;" />
                     </Panel>
                     <DOTAScenePanel id="mysealcampart" hittest="false" style="height:400px;width:400px; margin-top:45px; margin-left:62px;" map="cameras" camera="partcamera1" />
                     <DOTAItemImage id="relicitem" itemname="" style="height:64px;width:88px; margin-top:221px; margin-left:231px;"/>
@@ -212,27 +212,27 @@
                 </Button>
             </Panel>
             <Button id="SelPlButton0" onactivate='SelectPl(0)' style="margin-bottom:794px; margin-left:30px;">
-                <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis_png.vtex" style="height:48px;"/>
-                <Image id="spba0" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact_png.vtex" />
-                <Image src="s2r://panorama/images/custom_game/all/noseal_png.vtex" style="height:42px;width:42px; margin-top:4px; margin-left:20px;"/>
+                <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" style="height:48px;"/>
+                <Image id="spba0" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
+                <Image src="s2r://panorama/images/custom_game/all/noseal.png" style="height:42px;width:42px; margin-top:4px; margin-left:20px;"/>
             </Button>
             <Button id="SelPlButton1" onactivate='SelectPl(1)' style="margin-bottom:794px; margin-left:120px;">
-                <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis_png.vtex" style="height:48px;"/>
-                <Image id="spba1" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact_png.vtex" />
-                <Image src="s2r://panorama/images/custom_game/all/nodust_png.vtex" style="height:26px;width:42px; margin-top:12px; margin-left:20px;"/>
+                <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" style="height:48px;"/>
+                <Image id="spba1" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
+                <Image src="s2r://panorama/images/custom_game/all/nodust.png" style="height:26px;width:42px; margin-top:12px; margin-left:20px;"/>
             </Button>
             <Button id="SelPlButton2" onactivate='SelectPl(2)' style="margin-bottom:794px; margin-left:210px;">
-                <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis_png.vtex" style="height:48px;"/>
-                <Image id="spba2" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact_png.vtex" />
-                <Image src="s2r://panorama/images/custom_game/all/anvil_png.vtex" style="height:28px;width:36px; margin-top:12px; margin-left:23px;"/>
+                <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" style="height:48px;"/>
+                <Image id="spba2" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
+                <Image src="s2r://panorama/images/custom_game/all/anvil.png" style="height:28px;width:36px; margin-top:12px; margin-left:23px;"/>
             </Button>
             <Button id="CloseButton" onactivate='Close()' style="margin-bottom:775px; margin-left:750px;">
-                <Image id="CloseButtonimg" src="s2r://panorama/images/custom_game/all/closeb_png.vtex" />
+                <Image id="CloseButtonimg" src="s2r://panorama/images/custom_game/all/closeb.png" />
             </Button>
 		</Panel>
 		<Panel hittest="false" id="RelicShop">
 			<Button id="Vote_Yes" onactivate='Yes()'>
-				<Image id="yes_button" src="s2r://panorama/images/custom_game/all/buttonrelic_png.vtex"/>
+				<Image id="yes_button" src="s2r://panorama/images/custom_game/all/buttonrelic.png"/>
 			</Button>
             <Label hittest="false" id="readytext" text="#relics"/>
 		</Panel>
