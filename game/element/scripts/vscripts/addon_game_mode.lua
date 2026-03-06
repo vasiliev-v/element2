@@ -1,14 +1,14 @@
 debug.oldTraceback = debug.oldTraceback or debug.traceback
-debug.traceback = function()
-	local result = debug.oldTraceback()
-	-- print(result)--CustomGameEventManager:Send_ServerToAllClients("DebugMessage", { msg = result })
-    local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/luadebug.php")
-    req:SetHTTPRequestGetOrPostParameter("debug", result)
-    req:Send(function(req_result)
-        print(req_result.Body)
-    end)
-	return result
-end
+--debug.traceback = function()
+--	local result = debug.oldTraceback()
+--	-- print(result)--CustomGameEventManager:Send_ServerToAllClients("DebugMessage", { msg = result })
+--    local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/luadebug.php")
+--    req:SetHTTPRequestGetOrPostParameter("debug", result)
+--    req:Send(function(req_result)
+--        print(req_result.Body)
+--    end)
+--	return result
+--end
 
 -- if IsClient() then
 --     print("IsClient()")
