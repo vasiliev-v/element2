@@ -4053,6 +4053,13 @@
 	"my_create_str_29_3"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_29_4"
+			"unit_count"					"1"
+			"spawn_radius"				"0"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"Modifiers"
@@ -4064,11 +4071,10 @@
 				
 				"OnDestroy"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_custom_creep_29_4"
-						"UnitCount"		"1"
-						"SpawnRadius"		"0"
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 				}
 			}
@@ -4078,6 +4084,13 @@
 	"my_create_str_29_2"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_29_3"
+			"unit_count"					"1"
+			"spawn_radius"				"0"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"Modifiers"
@@ -4089,11 +4102,10 @@
 				
 				"OnDestroy"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_custom_creep_29_3"
-						"UnitCount"		"1"
-						"SpawnRadius"		"0"
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 				}
 			}
@@ -4103,6 +4115,13 @@
 	"my_create_str_29_1"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_29_2"
+			"unit_count"					"1"
+			"spawn_radius"				"0"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"Modifiers"
@@ -4114,11 +4133,10 @@
 				
 				"OnDestroy"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_custom_creep_29_2"
-						"UnitCount"		"1"
-						"SpawnRadius"		"0"
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 				}
 			}
@@ -5585,6 +5603,13 @@
 	"phoenix_supernova_datadriven"
 	{
 		"BaseClass"						"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_phoenix_sun"
+			"unit_count"					"1"
+			"spawn_radius"				"0"
+		}
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -5680,26 +5705,10 @@
 						"EffectAttachType"	"PATTACH_ABSORIGIN"
 						"Target"			"CASTER"
 					}
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_phoenix_sun"
-						"UnitCount"		"1"
-						"SpawnRadius"	"0"
-						"Target"		"CASTER"
-						//	"Duration"		"%AbilityDuration"
-						"OnSpawn"
-						{
-							"ApplyModifier"
-							{
-								"Target"		"TARGET"
-								"ModifierName"	"modifier_supernova_sun_form_egg_datadriven"
-							}
-							"FireSound"
-							{
-								"EffectName"		"Hero_Phoenix.SuperNova.Begin"
-								"Target"			"TARGET"
-							}
-						}
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 					"ApplyModifier"
 					{
@@ -7610,18 +7619,23 @@
 	"my_spider_create_minions"
 	{
 		"BaseClass"						"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_9_2"
+			"unit_count"					"10"
+			"spawn_radius"				"400"
+		}
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"				"0.2"
 		"AbilityTextureName"			"broodmother_spawn_spiderlings"
 		"OnSpellStart"
 		{
-			"SpawnUnit"
+			"RunScript"
 			{
-				"UnitName"		"npc_dota_custom_creep_9_2"
-				"UnitCount"		"10"
-				"SpawnRadius"	"400"
-				"Duration"		"70"
+				"ScriptFile"	"spawn_units.lua"
+				"Function"		"SpawnUnitsFromEvent"
 			}
 		}
 		"Modifiers"
@@ -7923,18 +7937,23 @@
 	"my_boss_create_minions"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_5_2"
+			"unit_count"					"5"
+			"spawn_radius"				"400"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"					"0.2"
 		"AbilityTextureName"			"death_prophet_exorcism"
 		"OnSpellStart"
 		{
-			"SpawnUnit"
+			"RunScript"
 			{
-				"UnitName"		"npc_dota_custom_creep_5_2"
-				"UnitCount"		"5"
-				"SpawnRadius"		"400"
-				"Duration"		"13"
+				"ScriptFile"	"spawn_units.lua"
+				"Function"		"SpawnUnitsFromEvent"
 			}
 		}
 		"Modifiers"
@@ -7979,6 +7998,13 @@
 	"my_create_dva_new_2_2"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_4_2_2"
+			"unit_count"					"3"
+			"spawn_radius"				"100"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mud_golem_rock_destroy"
 		"Modifiers"
@@ -7989,11 +8015,10 @@
 				"IsHidden"   "1"
 				"OnDestroy"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_custom_creep_4_2_2"
-						"UnitCount"		"3"
-						"SpawnRadius"		"100"
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 				}
 			}
@@ -8003,6 +8028,13 @@
 	"my_create_dva_new_2_1"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_4_2_1"
+			"unit_count"					"3"
+			"spawn_radius"				"100"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mud_golem_rock_destroy"
 		"Modifiers"
@@ -8013,11 +8045,10 @@
 				"IsHidden"   "1"
 				"OnDestroy"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_custom_creep_4_2_1"
-						"UnitCount"		"3"
-						"SpawnRadius"		"100"
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 				}
 			}
@@ -8027,6 +8058,13 @@
 	"my_create_dva_new_1_2"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_4_1_2"
+			"unit_count"					"3"
+			"spawn_radius"				"100"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mud_golem_rock_destroy"
 		"Modifiers"
@@ -8037,12 +8075,10 @@
 				"IsHidden"   "1"
 				"OnDestroy"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_custom_creep_4_1_2"
-						"UnitCount"		"3"
-						"SpawnRadius"		"100"
-						"GrantsXP"		"20"
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 				}
 			}
@@ -8052,6 +8088,13 @@
 	"my_create_dva_new_1_1"
 	{
 		"BaseClass"							"ability_datadriven"
+		"AbilityScript"					"spawn_units.lua"
+		"AbilityValues"
+		{
+			"unit_name"					"npc_dota_custom_creep_4_1_1"
+			"unit_count"					"3"
+			"spawn_radius"				"100"
+		}
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mud_golem_rock_destroy"
 		"Modifiers"
@@ -8062,12 +8105,10 @@
 				"IsHidden"   "1"
 				"OnDestroy"
 				{
-					"SpawnUnit"
+					"RunScript"
 					{
-						"UnitName"		"npc_dota_custom_creep_4_1_1"
-						"UnitCount"		"3"
-						"SpawnRadius"		"100"
-						"GrantsXP"		"20"
+						"ScriptFile"	"spawn_units.lua"
+						"Function"		"SpawnUnitsFromEvent"
 					}
 				}
 			}
