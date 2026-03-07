@@ -4,24 +4,23 @@ end
 
 ability_spawn_units = spawn_units
 
-local function GetSpawnValues(ability)
-	local unitName = ability:GetSpecialValueFor("unit_name")
-	local unitCount = ability:GetSpecialValueFor("unit_count")
-	local spawnRadius = ability:GetSpecialValueFor("spawn_radius")
 
-	return unitName, unitCount, spawnRadius
-end
 
-local function SpawnUnitsForAbility(ability, caster)
+local function SpawnUnitsForAbility(keys, caster)
+	local ability = keys.ability
 	if not ability or not caster then
 		return
 	end
-
-	local unitName, unitCount, spawnRadius = GetSpawnValues(ability)
+	DeepPrintTable(keys)
+	local unitName = keys.UnitName
+	local unitCount = ability:GetSpecialValueFor("unit_count")
+	local spawnRadius = ability:GetSpecialValueFor("spawn_radius")
+print("print(unitName)")
+	print(unitName .. " " .. unitCount )
 	if not unitName or unitName == "" then
 		return
 	end
-
+	
 	local origin = caster:GetAbsOrigin()
 	for _ = 1, unitCount do
 		local spawnPos = origin + RandomVector(RandomInt(0, spawnRadius))
@@ -41,5 +40,5 @@ function SpawnUnitsFromEvent(keys)
 		return
 	end
 
-	SpawnUnitsForAbility(keys.ability, keys.caster)
+	SpawnUnitsForAbility(keys, keys.caster)
 end

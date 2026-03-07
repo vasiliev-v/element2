@@ -4053,13 +4053,13 @@
 	"my_create_str_29_3"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_29_4"
 			"unit_count"					"1"
 			"spawn_radius"				"0"
 		}
+		
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"Modifiers"
@@ -4075,6 +4075,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_29_4"	
 					}
 				}
 			}
@@ -4084,10 +4085,9 @@
 	"my_create_str_29_2"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_29_3"
 			"unit_count"					"1"
 			"spawn_radius"				"0"
 		}
@@ -4106,6 +4106,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_29_3"	
 					}
 				}
 			}
@@ -4115,10 +4116,9 @@
 	"my_create_str_29_1"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_29_2"
 			"unit_count"					"1"
 			"spawn_radius"				"0"
 		}
@@ -4137,6 +4137,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_29_2"	
 					}
 				}
 			}
@@ -5603,10 +5604,9 @@
 	"phoenix_supernova_datadriven"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_phoenix_sun"
 			"unit_count"					"1"
 			"spawn_radius"				"0"
 		}
@@ -5709,6 +5709,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_phoenix_sun"	
 					}
 					"ApplyModifier"
 					{
@@ -7619,10 +7620,9 @@
 	"my_spider_create_minions"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_9_2"
 			"unit_count"					"10"
 			"spawn_radius"				"400"
 		}
@@ -7636,6 +7636,7 @@
 			{
 				"ScriptFile"	"spawn_units.lua"
 				"Function"		"SpawnUnitsFromEvent"
+				"UnitName"		"npc_dota_custom_creep_9_2"	
 			}
 		}
 		"Modifiers"
@@ -7937,10 +7938,9 @@
 	"my_boss_create_minions"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_5_2"
 			"unit_count"					"5"
 			"spawn_radius"				"400"
 		}
@@ -7954,6 +7954,7 @@
 			{
 				"ScriptFile"	"spawn_units.lua"
 				"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_5_2"	
 			}
 		}
 		"Modifiers"
@@ -7998,10 +7999,9 @@
 	"my_create_dva_new_2_2"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_4_2_2"
 			"unit_count"					"3"
 			"spawn_radius"				"100"
 		}
@@ -8019,6 +8019,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_4_2_2"	
 					}
 				}
 			}
@@ -8028,10 +8029,9 @@
 	"my_create_dva_new_2_1"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_4_2_1"
 			"unit_count"					"3"
 			"spawn_radius"				"100"
 		}
@@ -8049,6 +8049,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_4_2_1"	
 					}
 				}
 			}
@@ -8058,10 +8059,9 @@
 	"my_create_dva_new_1_2"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_4_1_2"
 			"unit_count"					"3"
 			"spawn_radius"				"100"
 		}
@@ -8079,6 +8079,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_4_1_2"	
 					}
 				}
 			}
@@ -8088,10 +8089,9 @@
 	"my_create_dva_new_1_1"
 	{
 		"BaseClass"							"ability_datadriven"
-		"AbilityScript"					"spawn_units.lua"
+		
 		"AbilityValues"
 		{
-			"unit_name"					"npc_dota_custom_creep_4_1_1"
 			"unit_count"					"3"
 			"spawn_radius"				"100"
 		}
@@ -8109,6 +8109,7 @@
 					{
 						"ScriptFile"	"spawn_units.lua"
 						"Function"		"SpawnUnitsFromEvent"
+						"UnitName"		"npc_dota_custom_creep_4_1_1"	
 					}
 				}
 			}
