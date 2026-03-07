@@ -153,6 +153,12 @@
     text-overflow: clip;
 }
 
+#DotaPlusDarkButton
+{
+	visibility: collapse;
+}
+
+
 #TeamDarkenWash
 {
     width: 100%;
