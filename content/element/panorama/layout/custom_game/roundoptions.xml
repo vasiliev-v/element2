@@ -9,27 +9,55 @@
     
 	<Panel hittest="false" class="RoundOptionsPanel">
 		<Panel hittest="false" id="RoundOptions">
-			<Image hittest="false" id="BG_Image" src="s2r://panorama/images/custom_game/all/fon.png"/>
-			<Label hittest="false" id="question" text="#votetext"/>
-			<Image id="hero1_yes" src="s2r://panorama/images/custom_game/all/yes.png" style="height:42px;width:68px; margin-top:47px; margin-left:17px;"/>
-			<Image id="hero2_yes" src="s2r://panorama/images/custom_game/all/yes.png" style="height:42px;width:68px; margin-top:47px; margin-left:107px;"/>
-			<Image id="hero3_yes" src="s2r://panorama/images/custom_game/all/yes.png" style="height:42px;width:68px; margin-top:47px; margin-left:197px;"/>
-			<Image id="hero4_yes" src="s2r://panorama/images/custom_game/all/yes.png" style="height:42px;width:68px; margin-top:47px; margin-left:287px;"/>
-			<Image id="hero5_yes" src="s2r://panorama/images/custom_game/all/yes.png" style="height:42px;width:68px; margin-top:47px; margin-left:377px;"/>
-			<Image id="hero1_no" src="s2r://panorama/images/custom_game/all/no.png" style="height:42px;width:68px; margin-top:47px; margin-left:17px;"/>
-			<Image id="hero2_no" src="s2r://panorama/images/custom_game/all/no.png" style="height:42px;width:68px; margin-top:47px; margin-left:107px;"/>
-			<Image id="hero3_no" src="s2r://panorama/images/custom_game/all/no.png" style="height:42px;width:68px; margin-top:47px; margin-left:197px;"/>
-			<Image id="hero4_no" src="s2r://panorama/images/custom_game/all/no.png" style="height:42px;width:68px; margin-top:47px; margin-left:287px;"/>
-			<Image id="hero5_no" src="s2r://panorama/images/custom_game/all/no.png" style="height:42px;width:68px; margin-top:47px; margin-left:377px;"/>
-			<DOTAHeroImage id="hero1" heroname="" style="height:36px;width:62px; margin-top:50px; margin-left:20px;"/>
-			<DOTAHeroImage id="hero2" heroname="" style="height:36px;width:62px; margin-top:50px; margin-left:110px;"/>
-			<DOTAHeroImage id="hero3" heroname="" style="height:36px;width:62px; margin-top:50px; margin-left:200px;"/>
-			<DOTAHeroImage id="hero4" heroname="" style="height:36px;width:62px; margin-top:50px; margin-left:290px;"/>
-			<DOTAHeroImage id="hero5" heroname="" style="height:36px;width:62px; margin-top:50px; margin-left:380px;"/>
+
+			<Panel id="RoundOptionsHeader">
+				<Label hittest="false" id="question" text="#votetext"/>
+			</Panel>
+
+			<Panel id="VoteHeroesRow">
+				<Panel class="VoteHeroCard" style="margin-left:17px;">
+					<Panel class="VoteHeroFrame"/>
+					<Image id="hero1_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
+					<Image id="hero1_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
+					<DOTAHeroImage id="hero1" heroname="" class="VoteHeroImage"/>
+				</Panel>
+
+				<Panel class="VoteHeroCard" style="margin-left:107px;">
+					<Panel class="VoteHeroFrame"/>
+					<Image id="hero2_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
+					<Image id="hero2_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
+					<DOTAHeroImage id="hero2" heroname="" class="VoteHeroImage"/>
+				</Panel>
+
+				<Panel class="VoteHeroCard" style="margin-left:197px;">
+					<Panel class="VoteHeroFrame"/>
+					<Image id="hero3_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
+					<Image id="hero3_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
+					<DOTAHeroImage id="hero3" heroname="" class="VoteHeroImage"/>
+				</Panel>
+
+				<Panel class="VoteHeroCard" style="margin-left:287px;">
+					<Panel class="VoteHeroFrame"/>
+					<Image id="hero4_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
+					<Image id="hero4_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
+					<DOTAHeroImage id="hero4" heroname="" class="VoteHeroImage"/>
+				</Panel>
+
+				<Panel class="VoteHeroCard" style="margin-left:377px;">
+					<Panel class="VoteHeroFrame"/>
+					<Image id="hero5_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
+					<Image id="hero5_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
+					<DOTAHeroImage id="hero5" heroname="" class="VoteHeroImage"/>
+				</Panel>
+			</Panel>
+
 			<Label hittest="false" id="confirmation" text="#voteyestext"/>
-			<Button id="Vote_Yes" onactivate='Yes()'>
+
+			<Button id="Vote_Yes" onactivate="Yes()">
 				<Image id="yes_button" src="s2r://panorama/images/custom_game/all/button.png"/>
+				<Label id="VoteButtonText" text="#ready"/>
 			</Button>
+
             <ToggleButton id="Auto_Vote" text="Auto Vote" onactivate="Toggle()" />
             <Label hittest="false" id="readytext" text="#ready"/>
 		</Panel>

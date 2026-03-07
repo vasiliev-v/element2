@@ -2,138 +2,248 @@
 {
     width: 100%;
     height: 100%;
-    overflow: clip;
-}
-
-#confirmation 
-{
-    horizontal-align: center;
-	vertical-align: top;
-	font-size: 20px;
-    font-weight: bold;
-	margin-top: 110px;
-	color: #00FF00;
-}
-
-#noheader
-{
-margin-top:40px;
-margin-left: 113px;
-horizontal-align:left;
-color: #FFEA00;
-font-size: 20px;
-font-weight: bold;
-}
-
-#yesheader
-{
-margin-top:40px;
-margin-right: 109px;
-horizontal-align:right;
-color: #FFEA00;
-font-size: 20px;
-font-weight: bold;
-}
-
-#noresults
-{
-margin-top:60px;
-margin-left: 100px;
-horizontal-align:left;
-}
-
-#yesresults
-{
-margin-top:60px;
-margin-right: 100px;
-horizontal-align:right;
+    overflow: noclip;
 }
 
 #RoundOptions
 {
-  horizontal-align: left;
-  margin-left:0px;
-  margin-top:150px;
-  vertical-align: top;
-  width: 500px;
-  height: 150px;
- }
- #BG_Image
-{
-  width: 500px;
-  height: 300px;
- }
+    horizontal-align: left;
+    vertical-align: top;
+    margin-left: 0px;
+    margin-top: 150px;
 
- #Vote_Yes
-{
-	horizontal-align: center;
-  vertical-align: top;
- margin-top: 100px;
-  width: 140px;
-    height: 35px;
- }
+    width: 500px;
+    height: 150px;
 
- #Auto_Vote
+    background-color: rgba(20, 20, 20, 0.96);
+    border: 2px solid rgba(184, 255, 69, 0.35);
+    box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.70);
+}
+
+/* ==========================
+   HEADER
+   ========================== */
+
+#RoundOptionsHeader
 {
-	horizontal-align: center;
-  vertical-align: top;
- margin-top: 105px;
- margin-left: 300px;
- }
- 
+    width: 100%;
+    height: 42px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(rgba(75,104,52,0.92)), to(rgba(39,68,15,0.6)));
+    border-bottom: 1px solid rgba(184,255,69,0.22);
+}
+
 #question
-  {
-    horizontal-align: right;
-	vertical-align: top;
-	margin-right: 85px;
-	font-size: 20px;
-    font-weight: bold;
-	margin-top: 10px;
-	text-transform: uppercase;
-	color: #FFEA00;
- }
- #readytext
- {
-	horizontal-align: center;
-	margin-top: 105px;
-	font-size: 20px;
-	text-transform: uppercase;
-	color: #0000FF;
- }
+{
+    horizontal-align: center;
+    vertical-align: center;
 
- .CreatePanelClass
- {
-    //transform: translate3d( 0px, 0px, 0px );
+    font-size: 18px;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+
+    color: white;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+/* ==========================
+   HEROES ROW
+   ========================== */
+
+#VoteHeroesRow
+{
+    width: 100%;
+    height: 60px;
+    margin-top: 46px;
+}
+
+.VoteHeroCard
+{
+    width: 68px;
+    height: 42px;
+}
+
+.VoteHeroFrame
+{
+    width: 68px;
+    height: 42px;
+
+    background-color: rgba(0,0,0,0.35);
+    border: 1px solid rgba(184,255,69,0.22);
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
+}
+
+.VoteHeroMark
+{
+    width: 68px;
+    height: 42px;
+    opacity: 0.9;
+}
+
+.VoteHeroImage
+{
+    width: 62px;
+    height: 36px;
+    margin-top: 3px;
+    margin-left: 3px;
+    border-radius: 4px;
+}
+
+/* ==========================
+   STATUS TEXT
+   ========================== */
+
+#confirmation
+{
+    horizontal-align: center;
+    vertical-align: top;
+
+    font-size: 18px;
+    font-weight: semi-bold;
+
+    margin-top: 110px;
+    color: #B8FF45;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+/* ==========================
+   READY BUTTON
+   ========================== */
+
+#Vote_Yes
+{
+    horizontal-align: center;
+    vertical-align: top;
+
+    margin-top: 100px;
+
+    width: 140px;
+    height: 35px;
+
+    background-color: rgba(0,0,0,0.88);
+    border-radius: 18px;
+    border: 2px solid rgba(184,255,69,0.5);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.55);
+
+    transition-property: brightness, transform;
+    transition-duration: 0.2s;
+
+    overflow: noclip;
+}
+
+#Vote_Yes:hover
+{
+    brightness: 1.3;
+    transform: scale3d(1.05, 1.05, 1);
+}
+
+#yes_button
+{
+    width: 22px;
+    height: 22px;
+
+    horizontal-align: left;
+    vertical-align: center;
+    margin-left: 8px;
+}
+
+#VoteButtonText
+{
+    horizontal-align: center;
+    vertical-align: center;
+    margin-left: 10px;
+
+    color: #B8FF45;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 6px 2 #000000cc;
+}
+
+#readytext
+{
+    visibility: collapse;
+}
+
+/* ==========================
+   AUTO VOTE
+   ========================== */
+
+#Auto_Vote
+{
+    horizontal-align: center;
+    vertical-align: top;
+
+    margin-top: 103px;
+    margin-left: 300px;
+
+    color: white;
+    font-size: 15px;
+}
+
+#Auto_Vote Label
+{
+    color: rgba(255,255,255,0.88);
+    font-size: 15px;
+    text-shadow: 0px 0px 3px 2 #00000099;
+}
+
+/* ==========================
+   LEGACY HIDDEN
+   ========================== */
+
+#BG_Image,
+#noheader,
+#yesheader,
+#noresults,
+#yesresults
+{
+    visibility: collapse;
+}
+
+/* ==========================
+   ANIMATION
+   ========================== */
+
+.CreatePanelClass
+{
     animation-name: CreatePanel;
     animation-duration: .42s;
     animation-iteration-count: 1;
- }
- @keyframes 'CreatePanel'
- {
-     0%
-     {
-        transform: translate3d( -500px, 0px, 0px );
-     }
-     100%
-     {
-        transform: translate3d( 0px, 0px, 0px );
-     }
- }
- .OffPanelClass
- {
-    transform: translate3d( -499px, 0px, 0px );
+}
+
+@keyframes 'CreatePanel'
+{
+    0%
+    {
+        transform: translate3d(-500px, 0px, 0px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+    }
+}
+
+.OffPanelClass
+{
+    transform: translate3d(-499px, 0px, 0px);
     animation-name: OffPanel;
     animation-duration: .42s;
     animation-iteration-count: 1;
- }
- @keyframes 'OffPanel'
- {
-     0%
-     {
-        transform: translate3d( 0px, 0px, 0px );
-     }
-     100%
-     {
-        transform: translate3d( -499px, 0px, 0px );
-     }
- }
+}
+
+@keyframes 'OffPanel'
+{
+    0%
+    {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translate3d(-499px, 0px, 0px);
+        opacity: 0.95;
+    }
+}
