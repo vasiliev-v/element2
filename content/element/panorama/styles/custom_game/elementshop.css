@@ -329,7 +329,7 @@
 
 .CraftRowPanel
 {
-    width: 250px;
+    width: 320px;
     height: 36px;
     background-color: rgba(255,255,255,0.01);
 }
@@ -465,3 +465,21 @@
 
     text-shadow: 0px 0px 6px 2 #000000cc;
 }   
+
+.NextCraftSlot
+{
+    width: 44px;
+    height: 32px;
+    border: 1px solid rgba(184,255,69,0.25);
+    background-color: rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
+    transition-property: brightness, border, transform;
+    transition-duration: 0.15s;
+}
+
+.NextCraftSlot:hover
+{
+    brightness: 1.2;
+    border: 1px solid rgba(184,255,69,0.55);
+    transform: scale3d(1.03,1.03,1);
+}

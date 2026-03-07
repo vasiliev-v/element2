@@ -262,6 +262,22 @@ function UpdateShop(table_name, key, data)
         {
             return function() { BuyItem(value); };
         })(i));
+
+        var plus3 = $.CreatePanel("Label", craftPanel, "");
+        plus3.AddClass("CraftPlus");
+        plus3.text = "+";
+        plus3.style.marginLeft = "254px";
+        plus3.style.marginTop = "7px";
+
+        // стандартный элемент для следующего крафта
+        var nextElem = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        nextElem.itemname = elems[crafts[i - 1][0] - 1]; // можно любой из базовых
+        nextElem.AddClass("NextCraftSlot");
+        nextElem.style.marginLeft = "274px";
+        nextElem.SetPanelEvent("onactivate", (function(value)
+        {
+            return function() { Buy(value); };
+        })(crafts[i - 1][0]));
     }
 
     for (var i = 1; i <= 10; i++)
