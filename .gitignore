@@ -22,3 +22,5 @@
 # Map overviews
 content/dota_addons/trollnelves2/materials/overviews/*
 game/dota_addons/trollnelves2/resource/overviews/*
+game/element/tools_asset_info.bin
+*.bin

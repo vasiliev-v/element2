@@ -17,7 +17,7 @@ end
 
 -- Keeps track of the targets health
 function OnTakeDamage( event )
-    --DeepPrintTable(event)
+    ----DeepPrintTable(event)
 	local damage = event.Damage
 	local caster = event.caster
 	local ability	= event.ability

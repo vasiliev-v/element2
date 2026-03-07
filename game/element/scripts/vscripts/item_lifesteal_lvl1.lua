@@ -1,7 +1,7 @@
 LinkLuaModifier( "modifier_my_lifesteal_lvl1", "item_lifesteal_lvl1", LUA_MODIFIER_MOTION_NONE )
 
 function OnCreated(event)
-    DeepPrintTable(event)
+    --DeepPrintTable(event)
 	local target = event.target
 	local ability = event.ability
     target:AddNewModifier(target, ability, "modifier_my_lifesteal_lvl1", {})

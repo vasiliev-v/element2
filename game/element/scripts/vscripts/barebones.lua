@@ -711,7 +711,7 @@ mode = nil
 -- have completely connected
 function GameMode:PlayerConnect(keys)
 	print('[BAREBONES] PlayerConnect')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
     
     --Timers:RemoveTimer("disconnected" .. tostring(keys.userid))
     
@@ -720,7 +720,7 @@ end
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:OnConnectFull(keys)
 	print ('[BAREBONES] OnConnectFull')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 	GameMode:CaptureGameMode()
 
 	--local entIndex = keys.index+1
@@ -1097,7 +1097,7 @@ end
 -- Cleanup a player when they leave
 function GameMode:OnDisconnect(keys)
 	print('[BAREBONES] Player Disconnected ' .. tostring(keys.userid))
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
     
 	--local name = keys.name
 	--local networkid = keys.networkid
@@ -1124,7 +1124,7 @@ end
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
 	print("[BAREBONES] GameRules State Changed")
-	-- DeepPrintTable(keys)
+	-- --DeepPrintTable(keys)
 
 	local newState = GameRules:State_Get()
 	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
@@ -1147,7 +1147,7 @@ function GameMode:OnGameRulesStateChange(keys)
                 _G.patreons[id] = tonumber(lvl)
             end
             --print("Patreons Loaded")
-            --DeepPrintTable(_G.patreons)
+            ----DeepPrintTable(_G.patreons)
             local pplc = PlayerResource:GetPlayerCount()
             for i=0,pplc-1 do
                 local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(i))
@@ -1178,7 +1178,7 @@ function GameMode:OnGameRulesStateChange(keys)
                             parts["15"] = "normal"
                         end
                     end
-                    -- DeepPrintTable(parts)
+                    -- --DeepPrintTable(parts)
                     CustomNetTables:SetTableValue("Particles_Tabel",tostring(i),parts)
                 else
                     parts = {}
@@ -1207,7 +1207,7 @@ function GameMode:OnGameRulesStateChange(keys)
                             parts["15"] = "normal"
                         end
                     end
-                    -- DeepPrintTable(parts)
+                    -- --DeepPrintTable(parts)
                     CustomNetTables:SetTableValue("Particles_Tabel",tostring(i),parts)
                 end
             end
@@ -1228,7 +1228,7 @@ function GameMode:OnGameRulesStateChange(keys)
                         tops[i] = token
                         i = i + 1
                     end
-                    --DeepPrintTable(tops)
+                    ----DeepPrintTable(tops)
                     if tops[4] == "allok" then
                         local arr = {}
                         for token in string.gmatch(tops[1].." ", "([^ ]*) ") do
@@ -1319,7 +1319,7 @@ function GameMode:OnGameRulesStateChange(keys)
                             arrstr["15"] = "normal"
                         end
                     end
-                    --DeepPrintTable(arrstr)
+                    ----DeepPrintTable(arrstr)
                     CustomNetTables:SetTableValue("Particles_Tabel",tostring(i),arrstr)
                 end
                 
@@ -1478,7 +1478,7 @@ LinkLuaModifier( "modifier_easy_mode", LUA_MODIFIER_MOTION_NONE )
 -- An NPC has spawned somewhere in game.  This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	print("[BAREBONES] NPC Spawned")
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
     
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
@@ -1766,7 +1766,7 @@ end
 -- operations here
 function GameMode:OnEntityHurt(keys)
 	--print("[BAREBONES] Entity Hurt")
-	--DeepPrintTable(keys)
+	----DeepPrintTable(keys)
 	--local entCause = EntIndexToHScript(keys.entindex_attacker)
 	--local entVictim = EntIndexToHScript(keys.entindex_killed)
 end
@@ -1774,7 +1774,7 @@ end
 -- An item was picked up off the ground
 function GameMode:OnItemPickedUp(keys)
 	print ( '[BAREBONES] OnItemPickedUp' )
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	-- local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
@@ -1808,7 +1808,7 @@ end
 -- state as necessary
 function GameMode:OnLoadPlayerVote(keys)
 	-- print ( 'OnLoadPlayerVote' )
-	-- DeepPrintTable(keys)
+	-- --DeepPrintTable(keys)
     local ttime = GameMode:GetTimeToWave()
     if keys ~= nil and keys.PlayerID ~= nil and ttime > 1 and ttime < 60 then
         local heroes = GetAllRealHeroes()
@@ -1819,7 +1819,7 @@ end
 -- An item was purchased by a player
 function GameMode:OnItemPurchased( keys )
 	print ( '[BAREBONES] OnItemPurchased' )
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	-- The playerID of the hero who is buying something
 	--local plyID = keys.PlayerID
@@ -1836,7 +1836,7 @@ end
 -- An ability was used by a player
 function GameMode:OnAbilityUsed(keys)
 	print('[BAREBONES] AbilityUsed')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	--local player = EntIndexToHScript(keys.PlayerID)
 	--local abilityname = keys.abilityname
@@ -1846,7 +1846,7 @@ LinkLuaModifier( "modifier_my_black_king_bar", "modifiers/modifier_my_black_king
 -- A non-player entity (necro-book, chen creep, etc) used an ability
 function GameMode:OnNonPlayerUsedAbility(keys)
 	print('[BAREBONES] OnNonPlayerUsedAbility')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	local abilityname = keys.abilityname
     
@@ -1864,7 +1864,7 @@ end
 -- A player changed their name
 function GameMode:OnPlayerChangedName(keys)
 	print('[BAREBONES] OnPlayerChangedName')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	--local newName = keys.newname
 	--local oldName = keys.oldName
@@ -1873,7 +1873,7 @@ end
 -- A player leveled up an ability
 function GameMode:OnPlayerLearnedAbility( keys)
 	print ('[BAREBONES] OnPlayerLearnedAbility')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	--local player = EntIndexToHScript(keys.player)
     -- local abilityname = keys.abilityname
@@ -1894,7 +1894,7 @@ end
 -- A channelled ability finished by either completing or being interrupted
 function GameMode:OnAbilityChannelFinished(keys)
 	print ('[BAREBONES] OnAbilityChannelFinished')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	--local abilityname = keys.abilityname
 	--local interrupted = keys.interrupted == 1
@@ -1903,7 +1903,7 @@ end
 -- A player leveled up
 function GameMode:OnPlayerLevelUp(keys)
 	--print ('[BAREBONES] OnPlayerLevelUp')
-	-- DeepPrintTable(keys)
+	-- --DeepPrintTable(keys)
 
 	--local player = EntIndexToHScript(keys.player)
     local hero = EntIndexToHScript(keys.hero_entindex)
@@ -1936,8 +1936,8 @@ end
 
 -- A player last hit a creep, a tower, or a hero
 function GameMode:OnLastHit(keys)
-	print ('[BAREBONES] OnLastHit')
-	DeepPrintTable(keys)
+	--print ('[BAREBONES] OnLastHit')
+	----DeepPrintTable(keys)
 
 	--local isFirstBlood = keys.FirstBlood == 1
 	--local isHeroKill = keys.HeroKill == 1
@@ -1947,8 +1947,8 @@ end
 
 -- A tree was cut down by tango, quelling blade, etc
 function GameMode:OnTreeCut(keys)
-	print ('[BAREBONES] OnTreeCut')
-	DeepPrintTable(keys)
+	--print ('[BAREBONES] OnTreeCut')
+	----DeepPrintTable(keys)
 
 	--local treeX = keys.tree_x
 	--local treeY = keys.tree_y
@@ -1957,7 +1957,7 @@ end
 -- A rune was activated by a player
 function GameMode:OnRuneActivated (keys)
 	print ('[BAREBONES] OnRuneActivated')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	--local player = PlayerResource:GetPlayer(keys.PlayerID)
 	--local rune = keys.rune
@@ -1967,7 +1967,7 @@ end
 -- A player took damage from a tower
 function GameMode:OnPlayerTakeTowerDamage(keys)
 	print ('[BAREBONES] OnPlayerTakeTowerDamage')
-	DeepPrintTable(keys)
+	--DeepPrintTable(keys)
 
 	--local player = PlayerResource:GetPlayer(keys.PlayerID)
 	--local damage = keys.damage
@@ -1976,7 +1976,7 @@ end
 -- A player picked a hero
 function GameMode:OnPlayerPickHero(keys)
 	print ('[BAREBONES] OnPlayerPickHero')
-	-- DeepPrintTable(keys)
+	-- --DeepPrintTable(keys)
 
 	local heroClass = keys.hero
 	local heroEntity = EntIndexToHScript(keys.heroindex)
@@ -1999,8 +1999,8 @@ end
 
 -- A player killed another player in a multi-team context
 function GameMode:OnTeamKillCredit(keys)
-	print ('[BAREBONES] OnTeamKillCredit')
-	DeepPrintTable(keys)
+	--print ('[BAREBONES] OnTeamKillCredit')
+	----DeepPrintTable(keys)
 
 	--local killerPlayer = PlayerResource:GetPlayer(keys.killer_userid)
 	--local victimPlayer = PlayerResource:GetPlayer(keys.victim_userid)
@@ -2011,8 +2011,8 @@ end
 
 -- An entity died
 function GameMode:OnEntityKilled( keys )
-	print( '[BAREBONES] OnEntityKilled Called' )
-	DeepPrintTable( keys )
+	--print( '[BAREBONES] OnEntityKilled Called' )
+	----DeepPrintTable( keys )
 
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )

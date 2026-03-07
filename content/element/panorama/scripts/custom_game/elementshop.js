@@ -31,14 +31,29 @@ var crafts = [
     [1,6,4]
 ];
 
-var elems = ["item_ice","item_fire","item_water","item_energy","item_earth","item_life","item_void","item_air","item_light","item_shadow"];
-var items = ["item_light_fire_earth","item_light_life_earth","item_air_earth_shadow","item_air_life_void","item_air_fire_life","item_energy_fire_void","item_energy_shadow_water","item_energy_earth_water","item_fire_earth_water","item_ice_shadow_air","item_energy_void_ice","item_shadow_light_ice","item_water_life_shadow","item_light_water_void","item_void_ice_earth","item_void_fire_shadow","item_energy_light_air","item_light_life_ice","item_energy_life_fire","item_ice_air_water","item_air_void_water","item_void_shadow_water","item_shadow_energy_light","item_air_fire_light","item_water_ice_fire","item_ice_fire_earth","item_air_earth_energy","item_void_light_life","item_earth_shadow_life","item_ice_life_energy"];
+var elems = [
+    "item_ice","item_fire","item_water","item_energy","item_earth",
+    "item_life","item_void","item_air","item_light","item_shadow"
+];
+
+var items = [
+    "item_light_fire_earth","item_light_life_earth","item_air_earth_shadow",
+    "item_air_life_void","item_air_fire_life","item_energy_fire_void",
+    "item_energy_shadow_water","item_energy_earth_water","item_fire_earth_water",
+    "item_ice_shadow_air","item_energy_void_ice","item_shadow_light_ice",
+    "item_water_life_shadow","item_light_water_void","item_void_ice_earth",
+    "item_void_fire_shadow","item_energy_light_air","item_light_life_ice",
+    "item_energy_life_fire","item_ice_air_water","item_air_void_water",
+    "item_void_shadow_water","item_shadow_energy_light","item_air_fire_light",
+    "item_water_ice_fire","item_ice_fire_earth","item_air_earth_energy",
+    "item_void_light_life","item_earth_shadow_life","item_ice_life_energy"
+];
+
 var x3mode = false;
 
 function Open()
 {
-    //$.Msg();
-    if ($("#Shop").visible == true)
+    if ($("#Shop").visible === true)
     {
         $("#Shop").visible = false;
         $("#ShopInfo").visible = false;
@@ -47,13 +62,14 @@ function Open()
     {
         $("#Shop").visible = true;
         $("#ShopInfo").visible = true;
+
         if ($("#ShopInfo").BHasClass("ShopInfoAnim"))
         {
             $("#ShopInfo").RemoveClass("ShopInfoAnim");
             $("#ShopInfo").AddClass("ShopInfoAnim");
         }
-        //GameEvents.SendCustomGameEventToServer( "Levels", { id: Players.GetLocalPlayer()} );
     }
+
     $("#readytext").RemoveClass("ElementShopText");
 }
 
@@ -79,126 +95,149 @@ function OnInfo()
 
 function ToggleX3mode()
 {
-    if (x3mode == true)
-    {
-        x3mode = false
-        $("#ToggleX3mode").RemoveClass("selectedfilter");
-    }
-    else
-    {
-        x3mode = true
-        $("#ToggleX3mode").AddClass("selectedfilter");
-    }
-    UpdateShop( "Elements_Tabel", Players.GetLocalPlayer(), CustomNetTables.GetTableValue( "Elements_Tabel", Players.GetLocalPlayer() ) );
+    x3mode = !x3mode;
+    $("#ToggleX3mode").SetHasClass("selectedfilter", x3mode);
+
+    UpdateShop(
+        "Elements_Tabel",
+        Players.GetLocalPlayer(),
+        CustomNetTables.GetTableValue("Elements_Tabel", String(Players.GetLocalPlayer()))
+            || CustomNetTables.GetTableValue("Elements_Tabel", Players.GetLocalPlayer())
+    );
 }
 
 function Buy(myint)
 {
-	//$.Msg( "Buy ", $("#myitem1").itemname);
-	GameEvents.SendCustomGameEventToServer( "Buy_Element", {num:myint} );
+    GameEvents.SendCustomGameEventToServer("Buy_Element", { num: myint });
 }
 
 function BuyItem(myint)
 {
-	//$.Msg( "Buy ", $("#myitem1").itemname);
-    for (var i = 0; i < 3;i++)
+    for (var i = 0; i < 3; i++)
     {
-        GameEvents.SendCustomGameEventToServer( "Buy_Element", {num:crafts[myint-1][i]} );
+        GameEvents.SendCustomGameEventToServer("Buy_Element", { num: crafts[myint - 1][i] });
     }
 }
 
-function UpdateShop( table_name, key, data )
+function GetElementCount(data, index)
 {
-    var ID = Players.GetLocalPlayer();
-	//$.Msg( ID, ": ", "Table ", table_name, " changed: '", key, "' = ", data );
-    if (ID == key)
+    if (!data) return 0;
+
+    var value = data[index];
+    if (value == null)
     {
-        for (var i = 1; i <= 10;i++)
+        value = data[String(index)];
+    }
+
+    if (value == null) return 0;
+
+    value = Number(value);
+    return isNaN(value) ? 0 : value;
+}
+
+function UpdateShop(table_name, key, data)
+{
+    var localPlayerId = Players.GetLocalPlayer();
+
+    if (String(localPlayerId) !== String(key))
+    {
+        return;
+    }
+
+    if (!data)
+    {
+        data = {};
+    }
+
+    for (var i = 1; i <= 10; i++)
+    {
+        var count = GetElementCount(data, i);
+        var label = $("#lvlmyitemtext" + i);
+
+        if (label)
         {
-            if (data[i] != null)
+            label.text = "x " + count;
+        }
+    }
+
+    for (var y = 1; y <= 30; y++)
+    {
+        var craftPanel = $("#craft" + y);
+        if (!craftPanel) continue;
+
+        var needOff = false;
+
+        for (var j = 0; j < 3; j++)
+        {
+            var elemId = crafts[y - 1][j];
+            var count = GetElementCount(data, elemId);
+
+            if (x3mode)
             {
-                $("#lvlmyitemtext"+i).text = "x "+data[i];
+                if (count < 3)
+                {
+                    needOff = true;
+                    break;
+                }
+            }
+            else
+            {
+                if (count < 1)
+                {
+                    needOff = true;
+                    break;
+                }
             }
         }
-        for (var y = 1; y <= 30;y++)
-        {
-            $("#craft"+y).RemoveClass("offcraft");
-            for (var i = 0; i <= 2;i++)
-            {
-                if (x3mode == true)
-                {
-                    if (data[crafts[y-1][i]] < 3)
-                    {
-                        $("#craft"+y).AddClass("offcraft");
-                        break;
-                    }
-                }
-                else
-                {
-                    if (data[crafts[y-1][i]] == 0)
-                    {
-                        $("#craft"+y).AddClass("offcraft");
-                        break;
-                    }
-                }
-            }
-        }
+
+        craftPanel.SetHasClass("offcraft", needOff);
     }
 }
 
 (function()
 {
-    CustomNetTables.SubscribeNetTableListener( "Elements_Tabel", UpdateShop );
-    // $("#Shop").visible = false;
-    // $("#ShopInfo").visible = false;
-    for (var i = 1; i <= 30;i++)
+    CustomNetTables.SubscribeNetTableListener("Elements_Tabel", UpdateShop);
+
+    for (var i = 1; i <= 30; i++)
     {
-        var mtop = 10+38*(i-1)-380*Math.floor((i-1)/10);
-        var mleft = 15+270*Math.floor((i-1)/10);
-        var craftPanel = $.CreatePanel("Panel", $("#ShopInfo"), "craft"+i);
+        var mtop = 10 + 38 * (i - 1) - 380 * Math.floor((i - 1) / 10);
+        var mleft = 15 + 270 * Math.floor((i - 1) / 10);
+
+        var craftPanel = $.CreatePanel("Panel", $("#ShopInfo"), "craft" + i);
         craftPanel.hittest = false;
 
         var craftItem1 = $.CreatePanel("DOTAItemImage", craftPanel, "");
-        craftItem1.itemname = elems[crafts[i-1][0]-1];
+        craftItem1.itemname = elems[crafts[i - 1][0] - 1];
         craftItem1.style.height = "32px";
         craftItem1.style.width = "44px";
         craftItem1.style.marginTop = mtop + "px";
         craftItem1.style.marginLeft = mleft + "px";
         craftItem1.SetPanelEvent("onactivate", (function(value)
         {
-            return function()
-            {
-                Buy(value);
-            };
-        })(crafts[i-1][0]));
+            return function() { Buy(value); };
+        })(crafts[i - 1][0]));
 
         var craftItem2 = $.CreatePanel("DOTAItemImage", craftPanel, "");
-        craftItem2.itemname = elems[crafts[i-1][1]-1];
+        craftItem2.itemname = elems[crafts[i - 1][1] - 1];
         craftItem2.style.height = "32px";
         craftItem2.style.width = "44px";
         craftItem2.style.marginTop = mtop + "px";
         craftItem2.style.marginLeft = (mleft + 50) + "px";
         craftItem2.SetPanelEvent("onactivate", (function(value)
         {
-            return function()
-            {
-                Buy(value);
-            };
-        })(crafts[i-1][1]));
+            return function() { Buy(value); };
+        })(crafts[i - 1][1]));
 
         var craftItem3 = $.CreatePanel("DOTAItemImage", craftPanel, "");
-        craftItem3.itemname = elems[crafts[i-1][2]-1];
+        craftItem3.itemname = elems[crafts[i - 1][2] - 1];
         craftItem3.style.height = "32px";
         craftItem3.style.width = "44px";
         craftItem3.style.marginTop = mtop + "px";
         craftItem3.style.marginLeft = (mleft + 100) + "px";
         craftItem3.SetPanelEvent("onactivate", (function(value)
         {
-            return function()
-            {
-                Buy(value);
-            };
-        })(crafts[i-1][2]));
+            return function() { Buy(value); };
+        })(crafts[i - 1][2]));
 
         var strImage = $.CreatePanel("Image", craftPanel, "");
         strImage.SetImage("file://{images}/custom_game/game_info/str.png");
@@ -208,18 +247,21 @@ function UpdateShop( table_name, key, data )
         strImage.style.marginLeft = (mleft + 150) + "px";
 
         var resultItem = $.CreatePanel("DOTAItemImage", craftPanel, "");
-        resultItem.itemname = items[i-1];
+        resultItem.itemname = items[i - 1];
         resultItem.style.height = "32px";
         resultItem.style.width = "44px";
         resultItem.style.marginTop = mtop + "px";
         resultItem.style.marginLeft = (mleft + 190) + "px";
         resultItem.SetPanelEvent("onactivate", (function(value)
         {
-            return function()
-            {
-                BuyItem(value);
-            };
+            return function() { BuyItem(value); };
         })(i));
     }
-    UpdateShop( "Elements_Tabel", Players.GetLocalPlayer(), CustomNetTables.GetTableValue( "Elements_Tabel", Players.GetLocalPlayer() ) )
+
+    var initialData =
+        CustomNetTables.GetTableValue("Elements_Tabel", String(Players.GetLocalPlayer())) ||
+        CustomNetTables.GetTableValue("Elements_Tabel", Players.GetLocalPlayer()) ||
+        {};
+
+    UpdateShop("Elements_Tabel", Players.GetLocalPlayer(), initialData);
 })();
