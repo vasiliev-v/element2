@@ -1480,7 +1480,7 @@ function GameMode:OnNPCSpawned(keys)
 	print("[BAREBONES] NPC Spawned")
 	--DeepPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-    
+    print(npc:GetUnitName())
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
         npc.bFirstSpawned = true
         npc.zone = "main_zone"
@@ -1551,13 +1551,6 @@ function GameMode:OnNPCSpawned(keys)
 
         if not _G.hardmode then
             npc:AddNewModifier(npc, nil, "modifier_easy_mode", {})
-        end
-
-        if _G.patreons[tostring(PlayerResource:GetSteamID(id))] ~= nil then
-            if _G.patreons[tostring(PlayerResource:GetSteamID(id))] > 3 then
-                info.hero = npc
-                Pets.CreatePet( info )
-            end
         end
 	end
 end
@@ -2011,12 +2004,12 @@ end
 
 -- An entity died
 function GameMode:OnEntityKilled( keys )
-	--print( '[BAREBONES] OnEntityKilled Called' )
+	print( '[BAREBONES] OnEntityKilled Called' )
 	----DeepPrintTable( keys )
 
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
-    
+    print(killedUnit:GetUnitName())
     local plc = PlayerResource:GetPlayerCount()
     
     if killedUnit:GetUnitLabel() == "npc_dota_custom_creep_50_1" and not _G.shadow_arena then

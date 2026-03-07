@@ -153,9 +153,9 @@
     text-overflow: clip;
 }
 
-#DotaPlusDarkButton
+.DotaPlusDarkButton
 {
-	visibility: collapse;
+	visibility: collapse; 
 }
 
 
