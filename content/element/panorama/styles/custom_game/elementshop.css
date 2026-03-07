@@ -33,20 +33,13 @@
 {
     horizontal-align: center;
     vertical-align: top;
-
     margin-top: 99px;
-
     width: 120px;
     height: 40px;
-
     background-color: rgba(0,0,0,0.85);
-
     border-radius: 20px;
-
     border: 2px solid rgba(184,255,69,0.5);
-
     box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.55);
-
     transition-property: brightness, transform;
     transition-duration: 0.2s;
     pre-transform-scale2d: 1;
@@ -150,7 +143,7 @@
     vertical-align: bottom;
     margin-left: 150px;
     margin-bottom: 60px;
-    width: 850px;
+    width: 1062px;
     height: 450px;
 }
 
@@ -214,14 +207,14 @@
     width: 1px;
     height: 380px;
     background-color: rgba(184,255,69,0.16);
-    margin-left: 275px;
+    margin-left: 347px;
     margin-top: 50px;
     box-shadow: 0px 0px 4px 0 rgba(184,255,69,0.15);
 }
 
 .ShopInfoDivider2
 {
-    margin-left: 545px;
+    margin-left: 689px;
 }
 
 /* ==========================
@@ -261,16 +254,12 @@
 {
     width: 24px;
     height: 100px;
-
     horizontal-align: right;
     vertical-align: center;
-
     margin-right: 7px;
-
     background-color: rgba(75,104,52,0.85);
     border: 1px solid rgba(184,255,69,0.4);
     border-radius: 8px;
-
     transition-property: brightness, transform;
     transition-duration: 0.2s;
 }
@@ -329,9 +318,22 @@
 
 .CraftRowPanel
 {
-    width: 320px;
+    width: 330px;
     height: 36px;
     background-color: rgba(255,255,255,0.01);
+}
+
+.CraftMainPart
+{
+    width: 252px;
+    height: 36px;
+}
+
+.CraftNextPart
+{
+    width: 74px;
+    height: 36px;
+    margin-left: 254px;
 }
 
 .CraftSlot
@@ -363,6 +365,17 @@
     text-shadow: 0px 0px 4px 2 #000000cc;
 }
 
+.CraftPlusRed
+{
+    width: 18px;
+    height: 18px;
+    color: #ff4d4d;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 0px 6px 2 #550000cc;
+}
+
 .CraftArrow
 {
     width: 20px;
@@ -390,6 +403,18 @@
     brightness: 1.25;
     border: 1px solid rgba(184,255,69,0.65);
     transform: scale3d(1.03, 1.03, 1);
+}
+
+.NextCraftSlot
+{
+    width: 44px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.65);
+    background-color: rgba(255,255,255,0.12);
+    box-shadow: 0px 0px 8px 1px rgba(255,255,255,0.18);
+    wash-color: white;
+    saturation: 1;
+    brightness: 1.0;
 }
 
 .offcraft
@@ -426,7 +451,8 @@
 
 .ShopInfoAnim2
 {
-    transform: translate3d(-970px, 0px, 0px);
+    transform: translate3d(-1100px, 0px, 0px);
+    opacity: 0;
     animation-name: OffAnim;
     animation-duration: 0.4s;
     animation-iteration-count: 1;
@@ -441,8 +467,8 @@
     }
     100%
     {
-        transform: translate3d(-970px, 0px, 0px);
-        opacity: 0.9;
+        transform: translate3d(-1100px, 0px, 0px);
+        opacity: 0;
     }
 }
 
@@ -456,30 +482,9 @@
 {
     horizontal-align: center;
     vertical-align: center;
-
     color: #B8FF45;
     font-size: 14px;
     font-weight: bold;
-
     text-transform: uppercase;
-
     text-shadow: 0px 0px 6px 2 #000000cc;
-}   
-
-.NextCraftSlot
-{
-    width: 44px;
-    height: 32px;
-    border: 1px solid rgba(184,255,69,0.25);
-    background-color: rgba(0,0,0,0.35);
-    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
-    transition-property: brightness, border, transform;
-    transition-duration: 0.15s;
-}
-
-.NextCraftSlot:hover
-{
-    brightness: 1.2;
-    border: 1px solid rgba(184,255,69,0.55);
-    transform: scale3d(1.03,1.03,1);
 }

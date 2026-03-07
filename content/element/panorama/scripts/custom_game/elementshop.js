@@ -49,6 +49,19 @@ var items = [
     "item_void_light_life","item_earth_shadow_life","item_ice_life_energy"
 ];
 
+var nextVisualItems = [
+    "item_radiance","item_guardian_greaves","item_assault",
+    "item_solar_crest","item_vladmir","item_rod_of_atos",
+    "item_butterfly","item_sphere","item_sange_and_yasha",
+    "item_pipe","item_octarine_core","item_dagon_5",
+    "item_blade_mail","item_dragon_lance","item_satanic",
+    "item_echo_sabre","item_heart","item_greater_crit",
+    "item_desolator","item_shivas_guard","item_diffusal_blade",
+    "item_cyclone","item_veil_of_discord","item_mjollnir",
+    "item_octarine_core","item_skadi","item_monkey_king_bar",
+    "item_spirit_vessel","item_crimson_guard","item_aluneth"
+];
+
 var x3mode = false;
 
 function Open()
@@ -162,8 +175,8 @@ function UpdateShop(table_name, key, data)
 
     for (var y = 1; y <= 30; y++)
     {
-        var craftPanel = $("#craft" + y);
-        if (!craftPanel) continue;
+        var craftMain = $("#craftMain" + y);
+        if (!craftMain) continue;
 
         var needOff = false;
 
@@ -190,7 +203,7 @@ function UpdateShop(table_name, key, data)
             }
         }
 
-        craftPanel.SetHasClass("offcraft", needOff);
+        craftMain.SetHasClass("offcraft", needOff);
     }
 }
 
@@ -201,7 +214,7 @@ function UpdateShop(table_name, key, data)
     for (var i = 1; i <= 30; i++)
     {
         var mtop = 52 + 38 * (i - 1) - 380 * Math.floor((i - 1) / 10);
-        var mleft = 15 + 270 * Math.floor((i - 1) / 10);
+        var mleft = 15 + 340 * Math.floor((i - 1) / 10);
 
         var craftPanel = $.CreatePanel("Panel", $("#ShopInfo"), "craft" + i);
         craftPanel.hittest = false;
@@ -209,7 +222,15 @@ function UpdateShop(table_name, key, data)
         craftPanel.style.marginTop = mtop + "px";
         craftPanel.style.marginLeft = mleft + "px";
 
-        var craftItem1 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        var craftMain = $.CreatePanel("Panel", craftPanel, "craftMain" + i);
+        craftMain.AddClass("CraftMainPart");
+        craftMain.hittest = false;
+
+        var craftNext = $.CreatePanel("Panel", craftPanel, "craftNext" + i);
+        craftNext.AddClass("CraftNextPart");
+        craftNext.hittest = false;
+
+        var craftItem1 = $.CreatePanel("DOTAItemImage", craftMain, "");
         craftItem1.itemname = elems[crafts[i - 1][0] - 1];
         craftItem1.AddClass("CraftSlot");
         craftItem1.style.marginLeft = "0px";
@@ -218,13 +239,14 @@ function UpdateShop(table_name, key, data)
             return function() { Buy(value); };
         })(crafts[i - 1][0]));
 
-        var plus1 = $.CreatePanel("Label", craftPanel, "");
+        var plus1 = $.CreatePanel("Label", craftMain, "");
         plus1.AddClass("CraftPlus");
         plus1.text = "+";
         plus1.style.marginLeft = "48px";
         plus1.style.marginTop = "7px";
+        plus1.hittest = false;
 
-        var craftItem2 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        var craftItem2 = $.CreatePanel("DOTAItemImage", craftMain, "");
         craftItem2.itemname = elems[crafts[i - 1][1] - 1];
         craftItem2.AddClass("CraftSlot");
         craftItem2.style.marginLeft = "68px";
@@ -233,13 +255,14 @@ function UpdateShop(table_name, key, data)
             return function() { Buy(value); };
         })(crafts[i - 1][1]));
 
-        var plus2 = $.CreatePanel("Label", craftPanel, "");
+        var plus2 = $.CreatePanel("Label", craftMain, "");
         plus2.AddClass("CraftPlus");
         plus2.text = "+";
         plus2.style.marginLeft = "116px";
         plus2.style.marginTop = "7px";
+        plus2.hittest = false;
 
-        var craftItem3 = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        var craftItem3 = $.CreatePanel("DOTAItemImage", craftMain, "");
         craftItem3.itemname = elems[crafts[i - 1][2] - 1];
         craftItem3.AddClass("CraftSlot");
         craftItem3.style.marginLeft = "136px";
@@ -248,13 +271,14 @@ function UpdateShop(table_name, key, data)
             return function() { Buy(value); };
         })(crafts[i - 1][2]));
 
-        var arrow = $.CreatePanel("Label", craftPanel, "");
+        var arrow = $.CreatePanel("Label", craftMain, "");
         arrow.AddClass("CraftArrow");
         arrow.text = "›";
         arrow.style.marginLeft = "187px";
         arrow.style.marginTop = "6px";
+        arrow.hittest = false;
 
-        var resultItem = $.CreatePanel("DOTAItemImage", craftPanel, "");
+        var resultItem = $.CreatePanel("DOTAItemImage", craftMain, "");
         resultItem.itemname = items[i - 1];
         resultItem.AddClass("ResultSlot");
         resultItem.style.marginLeft = "206px";
@@ -263,29 +287,27 @@ function UpdateShop(table_name, key, data)
             return function() { BuyItem(value); };
         })(i));
 
-        var plus3 = $.CreatePanel("Label", craftPanel, "");
-        plus3.AddClass("CraftPlus");
+        var plus3 = $.CreatePanel("Label", craftNext, "");
+        plus3.AddClass("CraftPlusRed");
         plus3.text = "+";
-        plus3.style.marginLeft = "254px";
+        plus3.style.marginLeft = "0px";
         plus3.style.marginTop = "7px";
+        plus3.hittest = false;
 
-        // стандартный элемент для следующего крафта
-        var nextElem = $.CreatePanel("DOTAItemImage", craftPanel, "");
-        nextElem.itemname = elems[crafts[i - 1][0] - 1]; // можно любой из базовых
+        var nextElem = $.CreatePanel("DOTAItemImage", craftNext, "");
+        nextElem.itemname = nextVisualItems[i - 1];
         nextElem.AddClass("NextCraftSlot");
-        nextElem.style.marginLeft = "274px";
-        nextElem.SetPanelEvent("onactivate", (function(value)
-        {
-            return function() { Buy(value); };
-        })(crafts[i - 1][0]));
+        nextElem.style.marginLeft = "24px";
+        nextElem.hittest = false;
+        nextElem.enabled = false;
     }
 
-    for (var i = 1; i <= 10; i++)
+    for (var k = 1; k <= 10; k++)
     {
-        var top = 52 + (i - 1) * 38;
+        var top = 52 + (k - 1) * 38;
 
-        var slot = $("#myitem" + i);
-        var count = $("#lvlmyitemtext" + i);
+        var slot = $("#myitem" + k);
+        var count = $("#lvlmyitemtext" + k);
 
         if (slot)
         {
@@ -304,6 +326,6 @@ function UpdateShop(table_name, key, data)
         CustomNetTables.GetTableValue("Elements_Tabel", String(Players.GetLocalPlayer())) ||
         CustomNetTables.GetTableValue("Elements_Tabel", Players.GetLocalPlayer()) ||
         {};
-    
+
     UpdateShop("Elements_Tabel", Players.GetLocalPlayer(), initialData);
 })();
