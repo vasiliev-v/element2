@@ -150,24 +150,12 @@
 		"ItemInitialCharges"			"1"
 		"ItemRequiresCharges" 			"1"
 		"SideShop"						"0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"175"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"175"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_all_stats" "10"
+            "bonus_health" "175"
+            "bonus_mana" "175"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -250,49 +238,17 @@
 		"ItemRequiresCharges"			"1"
 		"AbilityManaCost"				"0"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"24"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cdr"				"12"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"450"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"3"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"350"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_int" "24"
+            "bonus_str" "3"
+            "bonus_agi" "3"
+            "spell_amp" "12"
+            "bonus_cdr" "12"
+            "bonus_mana" "450"
+            "mana_regen" "3"
+            "cast_range" "350"
+        }
 	}
 
 	"item_recipe_aluneth"
@@ -373,29 +329,13 @@
 		"ItemIsNeutralDrop"				"1"
 		"ItemPurchasable"				"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"350"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1200"
-			}		
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"status_resistance"			"25"
-			}	
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"			"20"
-			}		
-		}
+		"AbilityValues"
+        {
+            "bonus_mana" "350"
+            "aura_radius" "1200"
+            "status_resistance" "25"
+            "magic_resistance" "20"
+        }
 	}
 
 //#############---WAVE-EFFECTS---##################################################################################
@@ -1386,94 +1326,26 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"34"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"90"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"static_duration"		"15.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"static_chance"			"20"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"static_strikes"		"4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"static_damage"			"200"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"static_primary_radius"	"600"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"static_seconary_radius""900"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"static_radius"			"900"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"static_cooldown"		"1.0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chain_chance"			"25"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chain_damage"			"170"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chain_strikes"			"12"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chain_radius"			"900"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"chain_delay"			"0.25"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"chain_cooldown"		"0.2"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_range"			"800"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "34"
+            "bonus_attack_speed" "90"
+            "static_duration" "15.0"
+            "static_chance" "20"
+            "static_strikes" "4"
+            "static_damage" "200"
+            "static_primary_radius" "600"
+            "static_seconary_radius" "900"
+            "static_radius" "900"
+            "static_cooldown" "1.0"
+            "chain_chance" "25"
+            "chain_damage" "170"
+            "chain_strikes" "12"
+            "chain_radius" "900"
+            "chain_delay" "0.25"
+            "chain_cooldown" "0.2"
+            "tooltip_range" "800"
+        }
 	}
 
 	"item_recipe_upgraded_mjollnir"
@@ -1506,24 +1378,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"350"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen_pct"		"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_strength" "50"
+            "bonus_health" "350"
+            "health_regen_pct" "2"
+        }
 	}
 
 	"item_recipe_upgraded_heart"
@@ -1556,29 +1416,13 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"upgraded; crit"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"90"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"35"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"250"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_crit_damage"	"275"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "90"
+            "crit_chance" "35"
+            "crit_multiplier" "250"
+            "tooltip_crit_damage" "275"
+        }
 	}
 
 	 "item_recipe_upgraded_greater_crit"
@@ -1613,39 +1457,15 @@
 		"ItemAliases"					"upgraded; lifesteal"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lifesteal_percent"		"25"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"unholy_lifesteal_percent"	"200"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"unholy_lifesteal_total_tooltip"	"225"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"unholy_duration"		"6"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_strength" "30"
+            "bonus_damage" "60"
+            "lifesteal_percent" "25"
+            "unholy_lifesteal_percent" "200"
+            "unholy_lifesteal_total_tooltip" "225"
+            "unholy_duration" "6"
+        }
 	}
 
 	"item_recipe_upgraded_satanic"
@@ -1681,69 +1501,20 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen"			"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"		"35"
-			}			
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"barrier_debuff_duration"	"50.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_resist"		"35"
-			}			
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen"		"4"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resistance_aura"	"15"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1200"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier_block"			"600"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier_duration"		"12.0"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier_radius"		"1200"
-			}			
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"barrier_block_creep"	"400"
-			}
-			// "12"
-			// {
-			// 	"var_type"				"FIELD_INTEGER"
-			// 	"bonus_all_stats"		"2"
-			// }
-		}
+		"AbilityValues"
+        {
+            "health_regen" "10"
+            "magic_resistance" "35"
+            "barrier_debuff_duration" "50.0"
+            "tooltip_resist" "35"
+            "aura_health_regen" "4"
+            "magic_resistance_aura" "15"
+            "aura_radius" "1200"
+            "barrier_block" "600"
+            "barrier_duration" "12.0"
+            "barrier_radius" "1200"
+            "barrier_block_creep" "400"
+        }
 	}
 
 	"item_recipe_upgraded_pipe"
@@ -1776,24 +1547,12 @@
 		"ItemAliases"					"upgraded"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"7.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "60"
+            "corruption_armor" "-8"
+            "corruption_duration" "7.0"
+        }
 	}
 
 	"item_recipe_upgraded_desolator"
@@ -1828,39 +1587,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"upgraded; cast range"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"all_stats"				"15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"450"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"40"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_cast_range"		"250"
-			}
-		}
+		"AbilityValues"
+        {
+            "all_stats" "15"
+            "hp" "450"
+            "mana" "450"
+            "cooldown" "40"
+            "mana_regen" "10"
+            "bonus_cast_range" "250"
+        }
 	}
 
 	"item_recipe_upgraded_octarine_core"
@@ -1898,59 +1633,19 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"13"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn"	"60"
-			}
-			"04"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_melee"	"18"
-			}
-			"05"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_ranged"	"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"purge_rate"			"5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"purge_root_duration"	"3.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"purge_slow_duration"	"4.0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_burn"		"0.8"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"	"600"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_agility" "25"
+            "bonus_intellect" "13"
+            "feedback_mana_burn" "60"
+            "feedback_mana_burn_illusion_melee" "18"
+            "feedback_mana_burn_illusion_ranged" "10"
+            "purge_rate" "5"
+            "purge_root_duration" "3.0"
+            "purge_slow_duration" "4.0"
+            "damage_per_burn" "0.8"
+            "cast_range_tooltip" "600"
+        }
 	}
 
 	"item_recipe_upgraded_diffusal_blade"
@@ -1984,39 +1679,15 @@
 		"ItemAliases"					"upgraded"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"status_resistance"		"30"
-			}			
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"20"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"16"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"16"
-			}	
-		}
+		"AbilityValues"
+        {
+            "bonus_strength" "20"
+            "bonus_agility" "20"
+            "status_resistance" "30"
+            "bonus_attack_speed" "20"
+            "movement_speed_percent_bonus" "16"
+            "bonus_damage" "16"
+        }
 	}
 
 	"item_recipe_upgraded_sange_and_yasha"
@@ -2050,29 +1721,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"35"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"35"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"35"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_agility" "40"
+            "bonus_evasion" "35"
+            "bonus_attack_speed" "35"
+            "bonus_damage" "35"
+        }
 	}
 
 	"item_recipe_upgraded_butterfly"
@@ -2105,29 +1760,13 @@
 		"ItemAliases"					"upgraded"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"80"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"100"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "50"
+            "bonus_attack_speed" "40"
+            "bonus_chance" "80"
+            "bonus_chance_damage" "100"
+        }
 	}
 
 	"item_recipe_upgraded_monkey_king_bar"
@@ -2166,44 +1805,16 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 40 70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.2"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dpt"					"5 15 25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps"					"25 75 125"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "10 40 70"
+            "armor" "5 10 15"
+            "hp" "100 250 500"
+            "tick_interval" "0.2"
+            "duration" "1"
+            "dpt" "5 15 25"
+            "dps" "25 75 125"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_fire_earth"
@@ -2284,44 +1895,16 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 40 70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.2"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dpt"					"5 15 25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps"					"25 75 125"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "10 40 70"
+            "armor" "5 10 15"
+            "hp" "100 250 500"
+            "tick_interval" "0.2"
+            "duration" "1"
+            "dpt" "5 15 25"
+            "dps" "25 75 125"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_fire_earth_2"
@@ -2401,44 +1984,16 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 40 70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.2"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dpt"					"5 15 25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps"					"25 75 125"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "10 40 70"
+            "armor" "5 10 15"
+            "hp" "100 250 500"
+            "tick_interval" "0.2"
+            "duration" "1"
+            "dpt" "5 15 25"
+            "dps" "25 75 125"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_fire_earth_3"
@@ -2521,29 +2076,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"4 8 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal"					"400 800 1400"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "5 10 20"
+            "armor" "4 8 12"
+            "hp" "150 250 500"
+            "heal" "400 800 1400"
+        }
 		"OnSpellStart"
 		{
 			"ActOnTargets"
@@ -2624,29 +2163,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"4 8 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal"					"400 800 1400"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "5 10 20"
+            "armor" "4 8 12"
+            "hp" "150 250 500"
+            "heal" "400 800 1400"
+        }
 		"OnSpellStart"
 		{
 			"ActOnTargets"
@@ -2727,29 +2250,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"4 8 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal"					"400 800 1400"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "5 10 20"
+            "armor" "4 8 12"
+            "hp" "150 250 500"
+            "heal" "400 800 1400"
+        }
 		"OnSpellStart"
 		{
 			"ActOnTargets"
@@ -2829,24 +2336,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 6 9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 30"
+            "armor" "3 6 9"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_earth_shadow_aura_emitter"
@@ -2908,24 +2403,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"					"10 20 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 6 9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 30"
+            "armor" "3 6 9"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_earth_shadow_aura_emitter_2"
@@ -2987,24 +2470,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"					"10 20 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 6 9"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 30"
+            "armor" "3 6 9"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_earth_shadow_aura_emitter_3"
@@ -3067,29 +2538,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 6 9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"evasion"				"5 10 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "3 6 9"
+            "mana_regen" "1 2 3"
+            "aura_radius" "750"
+            "evasion" "5 10 15"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_life_void_aura_emitter"
@@ -3152,29 +2607,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 6 9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"evasion"				"5 10 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "3 6 9"
+            "mana_regen" "1 2 3"
+            "aura_radius" "750"
+            "evasion" "5 10 15"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_life_void_aura_emitter_2"
@@ -3237,29 +2676,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 6 9"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"evasion"				"5 10 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "3 6 9"
+            "mana_regen" "1 2 3"
+            "aura_radius" "750"
+            "evasion" "5 10 15"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_life_void_aura_emitter_3"
@@ -3323,24 +2746,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"4 7 10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"8 16 32"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "4 7 10"
+            "damage" "8 16 32"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_fire_life_aura_emitter"
@@ -3402,24 +2813,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"4 7 10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"8 16 32"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "4 7 10"
+            "damage" "8 16 32"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_fire_life_aura_emitter_2"
@@ -3481,24 +2880,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"4 7 10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"8 16 32"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "regen" "4 7 10"
+            "damage" "8 16 32"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_fire_life_aura_emitter_3"
@@ -3560,29 +2947,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.5 0.75 1.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 25 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "mana_regen" "1 2 3"
+            "int" "5 10 20"
+            "duration" "0.5 0.75 1.0"
+            "damage" "10 25 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_fire_void"
@@ -3656,29 +3027,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.5 0.75 1.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 25 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "mana_regen" "1 2 3"
+            "int" "5 10 20"
+            "duration" "0.5 0.75 1.0"
+            "damage" "10 25 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_fire_void_2"
@@ -3752,29 +3107,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.5 0.75 1.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 25 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "mana_regen" "1 2 3"
+            "int" "5 10 20"
+            "duration" "0.5 0.75 1.0"
+            "damage" "10 25 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_fire_void_3"
@@ -3849,29 +3188,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 15 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"miss"					"15 20 25"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 40"
+            "int" "5 15 40"
+            "agil" "5 15 40"
+            "miss" "15 20 25"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_shadow_water"
@@ -3923,29 +3246,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 15 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"miss"					"15 20 25"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 40"
+            "int" "5 15 40"
+            "agil" "5 15 40"
+            "miss" "15 20 25"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_shadow_water_2"
@@ -3998,29 +3305,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 15 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"miss"					"15 20 25"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 40"
+            "int" "5 15 40"
+            "agil" "5 15 40"
+            "miss" "15 20 25"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_shadow_water_3"
@@ -4075,24 +3366,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"all_stats"				"8 17 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"15.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_absorb"			"150.0 300.0 600.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "all_stats" "8 17 30"
+            "duration" "15.0"
+            "damage_absorb" "150.0 300.0 600.0"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -4209,24 +3488,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"all_stats"				"8 17 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"15.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_absorb"			"150.0 300.0 600.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "all_stats" "8 17 30"
+            "duration" "15.0"
+            "damage_absorb" "150.0 300.0 600.0"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -4343,24 +3610,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"all_stats"				"8 17 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"15.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_absorb"			"150.0 300.0 600.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "all_stats" "8 17 30"
+            "duration" "15.0"
+            "damage_absorb" "150.0 300.0 600.0"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -4476,34 +3731,14 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_agil"				"5 15 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"8 20 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"60 100 160"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 40"
-			}
-		}
+		"AbilityValues"
+        {
+            "str_agil" "5 15 40"
+            "damage" "8 20 40"
+            "bonus_chance" "20"
+            "bonus_chance_damage" "60 100 160"
+            "agil" "5 15 40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_fire_earth_water"
@@ -4570,34 +3805,14 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_agil"				"5 15 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"8 20 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"60 100 160"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 40"
-			}
-		}
+		"AbilityValues"
+        {
+            "str_agil" "5 15 40"
+            "damage" "8 20 40"
+            "bonus_chance" "20"
+            "bonus_chance_damage" "60 100 160"
+            "agil" "5 15 40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_fire_earth_water"
@@ -4664,34 +3879,14 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_agil"				"5 15 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"8 20 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"60 100 160"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 40"
-			}
-		}
+		"AbilityValues"
+        {
+            "str_agil" "5 15 40"
+            "damage" "8 20 40"
+            "bonus_chance" "20"
+            "bonus_chance_damage" "60 100 160"
+            "agil" "5 15 40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_fire_earth_water"
@@ -4760,29 +3955,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_res"				"15 20 25"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 30"
+            "mana" "100 200 400"
+            "magic_res" "15 20 25"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_shadow_air_aura_emitter"
@@ -4845,29 +4024,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_res"				"15 20 25"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 30"
+            "mana" "100 200 400"
+            "magic_res" "15 20 25"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_shadow_air_aura_emitter_2"
@@ -4930,29 +4093,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_res"				"15 20 25"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 30"
+            "mana" "100 200 400"
+            "magic_res" "15 20 25"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_shadow_air_aura_emitter_3"
@@ -5015,24 +4162,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-		}
+		"AbilityValues"
+        {
+            "cooldown" "5 10 15"
+            "mana" "150 300 500"
+            "mana_regen" "1 2 3"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_void_ice_1"
@@ -5097,24 +4232,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-		}
+		"AbilityValues"
+        {
+            "cooldown" "5 10 15"
+            "mana" "150 300 500"
+            "mana_regen" "1 2 3"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_void_ice_2"
@@ -5179,24 +4302,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-		}
+		"AbilityValues"
+        {
+            "cooldown" "5 10 15"
+            "mana" "150 300 500"
+            "mana_regen" "1 2 3"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_void_ice_3"
@@ -5269,34 +4380,14 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"75"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"8 16 32"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"adamage"				"250 750 2000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dur"					"0.3"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "8 16 32"
+            "mana" "150 300 500"
+            "hp" "150 300 500"
+            "adamage" "250 750 2000"
+            "dur" "0.3"
+        }
 		"OnSpellStart"
 		{
 			"FireEffect"
@@ -5391,34 +4482,14 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"75"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"8 16 32"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"adamage"					"250 750 2000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dur"					"0.3"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "8 16 32"
+            "mana" "150 300 500"
+            "hp" "150 300 500"
+            "adamage" "250 750 2000"
+            "dur" "0.3"
+        }
 		"OnSpellStart"
 		{
 			"FireEffect"
@@ -5512,34 +4583,14 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"75"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"8 16 32"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"adamage"					"250 750 2000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dur"					"0.3"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "8 16 32"
+            "mana" "150 300 500"
+            "hp" "150 300 500"
+            "adamage" "250 750 2000"
+            "dur" "0.3"
+        }
 		"OnSpellStart"
 		{
 			"FireEffect"
@@ -5627,29 +4678,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"5 10 20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"otrash"				"30 40 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 40"
+            "agil" "5 15 30"
+            "hp_regen" "5 10 20"
+            "otrash" "30 40 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_water_life_shadow"
@@ -5710,29 +4745,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"10 20 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"5 10 20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"otrash"				"30 40 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 40"
+            "agil" "5 15 30"
+            "hp_regen" "5 10 20"
+            "otrash" "30 40 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_water_life_shadow"
@@ -5793,29 +4812,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"				"10 20 40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"					"5 10 20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"otrash"					"30 40 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "10 20 40"
+            "agil" "5 15 30"
+            "hp_regen" "5 10 20"
+            "otrash" "30 40 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_water_life_shadow"
@@ -5877,29 +4880,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"0 20 40"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "150 300 500"
+            "agil" "5 15 30"
+            "mana_regen" "1 2 3"
+            "attack_speed" "0 20 40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_water_void"
@@ -6063,29 +5050,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"0 20 40"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "150 300 500"
+            "agil" "5 15 30"
+            "mana_regen" "1 2 3"
+            "attack_speed" "0 20 40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_water_void_2"
@@ -6249,29 +5220,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"5 15 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"0 20 40"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "150 300 500"
+            "agil" "5 15 30"
+            "mana_regen" "1 2 3"
+            "attack_speed" "0 20 40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_water_void_3"
@@ -6438,34 +5393,14 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"3 7 11"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lifesteal_percent"		"5 10 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "armor" "5 10 15"
+            "hp_regen" "3 7 11"
+            "aura_radius" "1000"
+            "lifesteal_percent" "5 10 15"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_ice_earth"
@@ -6544,34 +5479,14 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"3 7 11"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lifesteal_percent"		"5 10 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "armor" "5 10 15"
+            "hp_regen" "3 7 11"
+            "aura_radius" "1000"
+            "lifesteal_percent" "5 10 15"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_ice_earth_2"
@@ -6663,34 +5578,14 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"3 7 11"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lifesteal_percent"		"5 10 15"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "armor" "5 10 15"
+            "hp_regen" "3 7 11"
+            "aura_radius" "1000"
+            "lifesteal_percent" "5 10 15"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_ice_earth_3"
@@ -6781,29 +5676,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"10 20 35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 20 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"15 25 50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"otrash"				"20 40 60"
-			}
-		}
+		"AbilityValues"
+        {
+            "str" "10 20 35"
+            "damage" "10 20 40"
+            "attack_speed" "15 25 50"
+            "otrash" "20 40 60"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_fire_shadow"
@@ -6878,29 +5757,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"10 20 35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 20 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"15 25 50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"otrash"				"20 40 60"
-			}
-		}
+		"AbilityValues"
+        {
+            "str" "10 20 35"
+            "damage" "10 20 40"
+            "attack_speed" "15 25 50"
+            "otrash" "20 40 60"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_fire_shadow"
@@ -6975,29 +5838,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"10 20 35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 20 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"15 25 50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"otrash"				"20 40 60"
-			}
-		}
+		"AbilityValues"
+        {
+            "str" "10 20 35"
+            "damage" "10 20 40"
+            "attack_speed" "15 25 50"
+            "otrash" "20 40 60"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_fire_shadow"
@@ -7073,24 +5920,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "int" "5 10 20"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_light_air_aura_emitter"
@@ -7154,24 +5989,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "int" "5 10 20"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_light_air_aura_emitter_2"
@@ -7235,24 +6058,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "int" "5 10 20"
+            "aura_radius" "750"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_light_air_aura_emitter_3"
@@ -7315,29 +6126,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 8 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"15 30 50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"50 75 100"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "150 300 500"
+            "regen" "3 8 12"
+            "damage" "15 30 50"
+            "speed" "50 75 100"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_life_ice"
@@ -7390,29 +6185,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 8 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"15 30 50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"50 75 100"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "150 300 500"
+            "regen" "3 8 12"
+            "damage" "15 30 50"
+            "speed" "50 75 100"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_life_ice"
@@ -7465,29 +6244,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 8 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"15 30 50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"50 75 100"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "150 300 500"
+            "regen" "3 8 12"
+            "damage" "15 30 50"
+            "speed" "50 75 100"
+        }
 		"Modifiers"
 		{
 			"modifier_item_light_life_ice"
@@ -7540,29 +6303,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_res"				"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per"			"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"min_armor"				"-2 -4 -6"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
-			}
-		}
+		"AbilityValues"
+        {
+            "magic_res" "5 10 15"
+            "damage_per" "10"
+            "min_armor" "-2 -4 -6"
+            "duration" "6"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_life_fire"
@@ -7637,29 +6384,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_res"				"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per"			"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"min_armor"				"-2 -4 -6"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
-			}
-		}
+		"AbilityValues"
+        {
+            "magic_res" "5 10 15"
+            "damage_per" "10"
+            "min_armor" "-2 -4 -6"
+            "duration" "6"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_life_fire_2"
@@ -7734,29 +6465,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_res"				"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per"			"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"min_armor"				"-2 -4 -6"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
-			}
-		}
+		"AbilityValues"
+        {
+            "magic_res" "5 10 15"
+            "damage_per" "10"
+            "min_armor" "-2 -4 -6"
+            "duration" "6"
+        }
 		"Modifiers"
 		{
 			"modifier_item_energy_life_fire_3"
@@ -7832,39 +6547,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 250 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_movement_speed"	"-30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-20 -30 -50"
-			}
-		}
+		"AbilityValues"
+        {
+            "armor" "5 10 15"
+            "mana" "100 250 400"
+            "aura_radius" "750"
+            "slow_duration" "2.0"
+            "slow_movement_speed" "-30"
+            "slow_attack_speed" "-20 -30 -50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_air_water_aura_emitter"
@@ -7952,39 +6643,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 250 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_movement_speed"	"-30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-20 -30 -50"
-			}
-		}
+		"AbilityValues"
+        {
+            "armor" "5 10 15"
+            "mana" "100 250 400"
+            "aura_radius" "750"
+            "slow_duration" "2.0"
+            "slow_movement_speed" "-30"
+            "slow_attack_speed" "-20 -30 -50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_air_water_aura_emitter_2"
@@ -8073,39 +6740,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 250 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_movement_speed"	"-30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-20 -30 -50"
-			}
-		}
+		"AbilityValues"
+        {
+            "armor" "5 10 15"
+            "mana" "100 250 400"
+            "aura_radius" "750"
+            "slow_duration" "2.0"
+            "slow_movement_speed" "-30"
+            "slow_attack_speed" "-20 -30 -50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_air_water_aura_emitter_3"
@@ -8193,29 +6836,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"5 10 20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "5 10 20"
+            "agi" "5 10 20"
+            "damage" "5 10 20"
+            "aura_radius" "900"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_void_water_aura_emitter"
@@ -8280,29 +6907,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"5 10 20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "5 10 20"
+            "agi" "5 10 20"
+            "damage" "5 10 20"
+            "aura_radius" "900"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_void_water_aura_emitter_2"
@@ -8367,29 +6978,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi"					"5 10 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"5 10 20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "5 10 20"
+            "agi" "5 10 20"
+            "damage" "5 10 20"
+            "aura_radius" "900"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_void_water_aura_emitter_3"
@@ -8454,29 +7049,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"5 15 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"10 15 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 150 200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"800"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "5 15 30"
+            "speed" "10 15 20"
+            "hp" "100 150 200"
+            "aura_radius" "800"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_fire_light_aura_emitter"
@@ -8541,29 +7120,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"5 15 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"10 15 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 150 200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"800"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "5 15 30"
+            "speed" "10 15 20"
+            "hp" "100 150 200"
+            "aura_radius" "800"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_fire_light_aura_emitter_2"
@@ -8628,29 +7191,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"5 15 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"10 15 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 150 200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"800"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "5 15 30"
+            "speed" "10 15 20"
+            "hp" "100 150 200"
+            "aura_radius" "800"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_fire_light_aura_emitter_3"
@@ -8715,29 +7262,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 6 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"anti_miss"				"10 20 40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "armor" "3 6 12"
+            "anti_miss" "10 20 40"
+            "aura_radius" "900"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_earth_energy_aura_emitter"
@@ -8828,29 +7359,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 6 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"anti_miss"				"10 20 40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "armor" "3 6 12"
+            "anti_miss" "10 20 40"
+            "aura_radius" "900"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_earth_energy_aura_emitter_2"
@@ -8941,29 +7456,13 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"100 200 400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 6 12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"anti_miss"				"10 20 40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "100 200 400"
+            "armor" "3 6 12"
+            "anti_miss" "10 20 40"
+            "aura_radius" "900"
+        }
 		"Modifiers"
 		{
 			"modifier_item_air_earth_energy_aura_emitter_3"
@@ -9053,24 +7552,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_range"			"100 175 250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 300"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "100 175 250"
+            "mana_regen" "5 10 15"
+            "mana" "100 200 300"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_shadow_water"
@@ -9123,24 +7610,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_range"			"100 175 250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 300"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "100 175 250"
+            "mana_regen" "5 10 15"
+            "mana" "100 200 300"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_shadow_water_2"
@@ -9193,24 +7668,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_range"			"100 175 250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 300"
-			}
-		}
+		"AbilityValues"
+        {
+            "cast_range" "100 175 250"
+            "mana_regen" "5 10 15"
+            "mana" "100 200 300"
+        }
 		"Modifiers"
 		{
 			"modifier_item_void_shadow_water_3"
@@ -9263,19 +7726,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_lifesteal"		"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"10 25 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "spell_lifesteal" "5 10 20"
+            "int" "10 25 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_water_ice_fire"
@@ -9341,19 +7796,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_lifesteal"		"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"10 25 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "spell_lifesteal" "5 10 20"
+            "int" "10 25 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_water_ice_fire_2"
@@ -9419,19 +7866,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_lifesteal"		"5 10 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"10 25 50"
-			}
-		}
+		"AbilityValues"
+        {
+            "spell_lifesteal" "5 10 20"
+            "int" "10 25 50"
+        }
 		"Modifiers"
 		{
 			"modifier_item_water_ice_fire_3"
@@ -9502,39 +7941,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 7 12"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hps"					"75 100 125"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3 4 5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tickint"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "mana_regen" "1 2 3"
+            "hp" "150 300 500"
+            "regen" "3 7 12"
+            "hps" "75 100 125"
+            "duration" "3 4 5"
+            "tickint" "0.5"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -9626,39 +8041,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 7 12"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hps"					"75 100 125"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3 4 5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tickint"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "mana_regen" "1 2 3"
+            "hp" "150 300 500"
+            "regen" "3 7 12"
+            "hps" "75 100 125"
+            "duration" "3 4 5"
+            "tickint" "0.5"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -9750,39 +8141,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"3 7 12"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hps"					"75 100 125"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3 4 5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tickint"				"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "mana_regen" "1 2 3"
+            "hp" "150 300 500"
+            "regen" "3 7 12"
+            "hps" "75 100 125"
+            "duration" "3 4 5"
+            "tickint" "0.5"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -9869,24 +8236,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"block"					"15 30 65"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 400 1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"2 4 8"
-			}
-		}
+		"AbilityValues"
+        {
+            "block" "15 30 65"
+            "hp" "150 400 1000"
+            "regen" "2 4 8"
+        }
 		"Modifiers"
 		{
 			"modifier_item_earth_shadow_life"
@@ -9953,24 +8308,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"block"					"15 30 65"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 400 1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"2 4 8"
-			}
-		}
+		"AbilityValues"
+        {
+            "block" "15 30 65"
+            "hp" "150 400 1000"
+            "regen" "2 4 8"
+        }
 		"Modifiers"
 		{
 			"modifier_item_earth_shadow_life_2"
@@ -10037,24 +8380,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"block"					"15 30 65"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 400 1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"2 4 8"
-			}
-		}
+		"AbilityValues"
+        {
+            "block" "15 30 65"
+            "hp" "150 400 1000"
+            "regen" "2 4 8"
+        }
 		"Modifiers"
 		{
 			"modifier_item_earth_shadow_life_3"
@@ -10121,24 +8452,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 7 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_amp"				"5 10 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "5 10 15"
+            "armor" "3 7 15"
+            "spell_amp" "5 10 20"
+        }
 		"Modifiers"
 		{
 			"modifier_item_shadow_energy_light"
@@ -10191,24 +8510,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 7 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_amp"				"5 10 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "5 10 15"
+            "armor" "3 7 15"
+            "spell_amp" "5 10 20"
+        }
 		"Modifiers"
 		{
 			"modifier_item_shadow_energy_light_2"
@@ -10261,24 +8568,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"5 10 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"3 7 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_amp"				"5 10 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "5 10 15"
+            "armor" "3 7 15"
+            "spell_amp" "5 10 20"
+        }
 		"Modifiers"
 		{
 			"modifier_item_shadow_energy_light_3"
@@ -10331,39 +8626,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 40 70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -20 -30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_slow"			"-10 -15 -20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1 1.5 2"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "10 40 70"
+            "armor" "5 10 15"
+            "mana" "100 250 500"
+            "slow" "-10 -20 -30"
+            "attack_slow" "-10 -15 -20"
+            "duration" "1 1.5 2"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_fire_earth"
@@ -10441,39 +8712,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 40 70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -20 -30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_slow"			"-10 -15 -20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1 1.5 2"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "10 40 70"
+            "armor" "5 10 15"
+            "mana" "100 250 500"
+            "slow" "-10 -20 -30"
+            "attack_slow" "-10 -15 -20"
+            "duration" "1 1.5 2"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_fire_earth_2"
@@ -10551,39 +8798,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"10 40 70"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"5 10 15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 250 500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -20 -30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_slow"			"-10 -15 -20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1 1.5 2"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "10 40 70"
+            "armor" "5 10 15"
+            "mana" "100 250 500"
+            "slow" "-10 -20 -30"
+            "attack_slow" "-10 -15 -20"
+            "duration" "1 1.5 2"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_fire_earth_3"
@@ -10661,24 +8884,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mcst"					"10 15 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"4 8 14"
-			}
-		}
+		"AbilityValues"
+        {
+            "mcst" "10 15 20"
+            "mana" "100 200 400"
+            "regen" "4 8 14"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_life_energy"
@@ -10731,24 +8942,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mcst"					"10 15 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"4 8 14"
-			}
-		}
+		"AbilityValues"
+        {
+            "mcst" "10 15 20"
+            "mana" "100 200 400"
+            "regen" "4 8 14"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_life_energy_2"
@@ -10801,24 +9000,12 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"artifact"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mcst"					"10 15 20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"100 200 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"4 8 14"
-			}
-		}
+		"AbilityValues"
+        {
+            "mcst" "10 15 20"
+            "mana" "100 200 400"
+            "regen" "4 8 14"
+        }
 		"Modifiers"
 		{
 			"modifier_item_ice_life_energy_3"
@@ -10879,44 +9066,16 @@
 		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"59"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"7"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"9"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"3000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range_tooltip"			"800"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"500"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_intellect" "59"
+            "bonus_all_stats" "7"
+            "bonus_damage" "9"
+            "damage" "3000"
+            "range_tooltip" "800"
+            "mana" "500"
+            "hp" "500"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -10984,59 +9143,19 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"fire radiance"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"120"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"aura_radius"				"800"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"aura_damage_per_second"	"80"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"17"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"700"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dpt"					"30"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps"					"150"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blind_pct"				"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "120"
+            "aura_radius" "800"
+            "aura_damage_per_second" "80"
+            "armor" "17"
+            "hp" "700"
+            "tick_interval" "0.2"
+            "duration" "2"
+            "dpt" "30"
+            "dps" "150"
+            "blind_pct" "20"
+        }
 		"Modifiers"
 		{
 			"modifier_item_radiance_datadriven"
@@ -11165,64 +9284,20 @@
 		"ItemQuality"					"artifact"
 		"ItemAlertable"					"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana"					"250"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"16"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_health_regen"		"20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_armor"			"5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1000"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"1750"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_amount"			"600"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_radius"			"9999"
-			}
-		}
+		"AbilityValues"
+        {
+            "speed" "50"
+            "bonus_all_stats" "5"
+            "hp" "500"
+            "mana" "250"
+            "bonus_armor" "16"
+            "aura_health_regen" "20"
+            "aura_armor" "5"
+            "aura_radius" "1000"
+            "heal_amount" "1750"
+            "mana_amount" "600"
+            "heal_radius" "9999"
+        }
 		"OnSpellStart"
 		{
 			"AttachEffect"
@@ -11317,34 +9392,14 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"fire desolator"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"55"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"magic_res"					"20"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_per"				"12"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"6"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"min_armor"					"-12"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "55"
+            "magic_res" "20"
+            "damage_per" "12"
+            "duration" "6"
+            "min_armor" "-12"
+        }
 		"Modifiers"
 		{
 			"modifier_item_fire_desol"
@@ -11428,34 +9483,14 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"water butterfly"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"30"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"agil"				"80"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"int"				"40"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"at_speed"			"70"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"miss"				"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "30"
+            "agil" "80"
+            "int" "40"
+            "at_speed" "70"
+            "miss" "50"
+        }
 		"OnSpellStart"
 		{
 			"ActOnTargets"
@@ -11548,74 +9583,22 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"shivas shield"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_armor"			"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"400"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"2.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_movement_speed"	"-30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_attack_speed"		"-50"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow_attack_speed_aura"	"-15"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_final_radius"	"900"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"blast_speed_per_second"	"350"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_damage"			"400"
-			}
-			"13"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"blast_movement_speed_debuff"	"-40"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "30"
+            "armor" "15"
+            "aura_armor" "15"
+            "mana" "400"
+            "aura_radius" "900"
+            "slow_duration" "2.0"
+            "slow_movement_speed" "-30"
+            "slow_attack_speed" "-50"
+            "slow_attack_speed_aura" "-15"
+            "blast_final_radius" "900"
+            "blast_speed_per_second" "350"
+            "blast_damage" "400"
+            "blast_movement_speed_debuff" "-40"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -11757,34 +9740,14 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"energy sphere"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_all"				"45"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"7"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mana_regen_percentage"	"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"2.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"absorption_tooltip"	"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_all" "45"
+            "regen" "7"
+            "bonus_mana_regen_percentage" "3"
+            "damage_per_mana" "2.0"
+            "absorption_tooltip" "25"
+        }
 		"OnToggleOn"
 		{
 			"FireSound"
@@ -11935,39 +9898,15 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"water blades"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"28"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"6"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"otrash"				"80"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "40"
+            "agil" "30"
+            "hp_regen" "20"
+            "damage" "28"
+            "armor" "6"
+            "otrash" "80"
+        }
 		
 		"precache"
 		{
@@ -12054,54 +9993,18 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"energy core; octarine"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"1350"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_lifesteal"		"13"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cdr_aura"				"12.5"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cdr_aura_radius"		"300"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_cast_range"		"250"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "15"
+            "hp" "500"
+            "mana" "1350"
+            "mana_regen" "3"
+            "cooldown" "25"
+            "spell_lifesteal" "13"
+            "cdr_aura" "12.5"
+            "cdr_aura_radius" "300"
+            "bonus_cast_range" "250"
+        }
 	}
 
 // Energy Core Recipe
@@ -12144,54 +10047,18 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"power satanic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"55"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"11"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"400"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lifesteal_percent"		"20"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"lifesteal_percent2"	"180"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "str" "25"
+            "damage" "55"
+            "armor" "15"
+            "hp_regen" "11"
+            "hp" "400"
+            "aura_radius" "1000"
+            "lifesteal_percent" "20"
+            "lifesteal_percent2" "180"
+            "duration" "5"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -12308,39 +10175,15 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"heart of light"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str"					"45"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"250"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"1.8"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_aura"				"600"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "str" "45"
+            "bonus_health" "250"
+            "regen" "1.8"
+            "aura_radius" "1000"
+            "hp_aura" "600"
+            "int" "20"
+        }
 		"Modifiers"
 		{
 			"modifier_item_heart_of_light_aura_emitter"
@@ -12410,39 +10253,15 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"earth cuirass"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"40"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"975"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_red"				"-8"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_attack_speed"		"50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_armor"			"14"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "40"
+            "armor" "12"
+            "aura_radius" "975"
+            "armor_red" "-8"
+            "aura_attack_speed" "50"
+            "aura_armor" "14"
+        }
 		"Modifiers"
 		{
 			"modifier_item_earth_cuirass_aura_emitter"
@@ -12535,39 +10354,15 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"dragon staff"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"44"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"3"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"150"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"12"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"range"					"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "500"
+            "agil" "44"
+            "mana_regen" "3"
+            "attack_speed" "150"
+            "str" "12"
+            "range" "200"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -12751,44 +10546,16 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					""
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"400"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"		"30"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resistance_aura"	"30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "30"
+            "mana" "400"
+            "aura_radius" "900"
+            "health_regen" "10"
+            "magic_resistance" "30"
+            "magic_resistance_aura" "30"
+            "duration" "3"
+        }
 		"OnSpellStart"
 		{
 			"ActOnTargets"
@@ -12884,64 +10651,20 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"cursed devourer"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str"					"56"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"agil"					"56"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"status_res"			"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"16"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_speed_bonus"	"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"56"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"40"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"200"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_slow_movement"	"-26"
-			}			
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_slow_attack"		"-26"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"5.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "str" "56"
+            "agil" "56"
+            "status_res" "20"
+            "bonus_attack_speed" "16"
+            "movement_speed_bonus" "10"
+            "damage" "56"
+            "bonus_chance" "40"
+            "bonus_chance_damage" "200"
+            "maim_slow_movement" "-26"
+            "maim_slow_attack" "-26"
+            "maim_duration" "5.0"
+        }
 		"Modifiers"
 		{
 			"modifier_item_earth_s_and_y"
@@ -13040,84 +10763,24 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"solar crest of void; void shield; scov"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"evasion"				"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"12"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"valor_cast_range_tooltip"	"1000"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"disarmor"				"-12"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"all_atr"				"12"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"20"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attakspeed"			"100"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"disattakspeed"			"-50"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonspeed"			 	"12"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"disbonspeed"		 	"-5"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"evasion_self"			"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "aura_radius" "1000"
+            "regen" "12"
+            "mana_regen" "5"
+            "evasion" "15"
+            "armor" "12"
+            "duration" "8"
+            "valor_cast_range_tooltip" "1000"
+            "disarmor" "-12"
+            "all_atr" "12"
+            "speed" "20"
+            "attakspeed" "100"
+            "disattakspeed" "-50"
+            "bonspeed" "12"
+            "disbonspeed" "-5"
+            "evasion_self" "20"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -13231,49 +10894,17 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"talisman of atos"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"55"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"45"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"12"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1.0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"7"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"red_duration"			"3.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_red"			"-50"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "55"
+            "int" "45"
+            "bonus_strength" "12"
+            "bonus_agility" "12"
+            "duration" "1.0"
+            "mana_regen" "7"
+            "red_duration" "3.0"
+            "damage_red" "-50"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -13384,89 +11015,25 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"life urn; vessel of the souls; vessel; vots; lv"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"800"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"12"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"2"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"all_atr"				"2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"valor_cast_range_tooltip"	"1000"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps"					"200"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hps"					"250"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mr"					"-20"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_min"			"-60"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_amp"			"25"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg_red"				"-15"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tickint"				"0.5"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_cooldown"			"15"
-			}
-		}
+		"AbilityValues"
+        {
+            "hp" "800"
+            "regen" "12"
+            "mana_regen" "5"
+            "speed" "30"
+            "armor" "2"
+            "all_atr" "2"
+            "duration" "8"
+            "valor_cast_range_tooltip" "1000"
+            "dps" "200"
+            "hps" "250"
+            "mr" "-20"
+            "hp_regen_min" "-60"
+            "hp_regen_amp" "25"
+            "dmg_red" "-15"
+            "tickint" "0.5"
+            "base_cooldown" "15"
+        }
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -13581,39 +11148,15 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"fire core; octarine"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"800"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"25"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_lifesteal"		"50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_cast_range"		"250"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "50"
+            "hp" "500"
+            "mana" "800"
+            "cooldown" "25"
+            "spell_lifesteal" "50"
+            "bonus_cast_range" "250"
+        }
 	}
 
 // Fire Core Recipe
@@ -13651,54 +11194,18 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"skadi bow"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"75"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"all_atr"				"25"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"250"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"800"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-50"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_slow"			"-65"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_min"			"-40"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "75"
+            "all_atr" "25"
+            "armor" "15"
+            "hp" "250"
+            "mana" "800"
+            "duration" "2.5"
+            "slow" "-50"
+            "attack_slow" "-65"
+            "hp_regen_min" "-40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_skadi_bow"
@@ -13789,44 +11296,16 @@
 		"ItemQuality"					"artifact"
 		"ItemAliases"					""
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"35"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"400"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"12"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dpa"					"100"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"anti_miss"				"50"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"40"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "35"
+            "hp" "400"
+            "aura_radius" "1000"
+            "armor" "12"
+            "dpa" "100"
+            "anti_miss" "50"
+            "damage" "40"
+        }
 		"Modifiers"
 		{
 			"modifier_item_monkey_king_bow"
@@ -13940,49 +11419,17 @@
 		"ItemQuality"					"artifact"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"19"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"45"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cyclone_duration"		"2.5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"300"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"350"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"	"575"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_intellect" "10"
+            "bonus_mana_regen" "19"
+            "bonus_movement_speed" "45"
+            "cyclone_duration" "2.5"
+            "radius" "300"
+            "bonus_mana" "350"
+            "cast_range_tooltip" "575"
+            "cast_range" "300"
+        }
 	}
 
 // Mystery Scepter of Divinity Recipe
@@ -14019,49 +11466,17 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
 		"AbilityCooldown"				"5.0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str"					"47"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"55"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"60"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"10"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"2.25"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_speed"			"-100"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.8"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"otrash"				"80"
-			}
-		}
+		"AbilityValues"
+        {
+            "str" "47"
+            "damage" "55"
+            "attack_speed" "60"
+            "int" "10"
+            "mana_regen" "2.25"
+            "slow_speed" "-100"
+            "duration" "0.8"
+            "otrash" "80"
+        }
 		"Modifiers"
 		{
 			"modifier_item_kingsbane"
@@ -14166,54 +11581,18 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"agil"					"6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str"					"6"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"21"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"regen"					"5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"10"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"enemy_duration"		"5"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mag_resist"			"-35"
-			}
-		}
+		"AbilityValues"
+        {
+            "int" "30"
+            "agil" "6"
+            "str" "6"
+            "armor" "21"
+            "regen" "5"
+            "spell_amp" "25"
+            "duration" "10"
+            "enemy_duration" "5"
+            "mag_resist" "-35"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -14318,54 +11697,18 @@
 		"ItemQuality"					"artifact"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"all_sts"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lifesteal_percent"		"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_aura"			"18"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen_aura"			"10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen"			"3"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"35"
-			}
-		}
+		"AbilityValues"
+        {
+            "all_sts" "5"
+            "lifesteal_percent" "15"
+            "armor" "5"
+            "damage_aura" "18"
+            "regen_aura" "10"
+            "mana_regen" "3"
+            "aura_radius" "1000"
+            "regen" "5"
+            "damage" "35"
+        }
 		"Modifiers"
 		{
 			"modifier_item_vampire_robe_aura_emitter"
@@ -14459,64 +11802,20 @@
 		"ItemQuality"					"artifact"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"agi"					"20"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_break"			"70"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"prc"					"0.8"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_int"				"30"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_agi"				"30"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_damage"			"30"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"1000"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-100"
-			}
-		}
+		"AbilityValues"
+        {
+            "agi" "20"
+            "int" "10"
+            "duration" "4"
+            "range" "600"
+            "mana_break" "70"
+            "prc" "0.8"
+            "aura_int" "30"
+            "aura_agi" "30"
+            "aura_damage" "30"
+            "aura_radius" "1000"
+            "slow" "-100"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -14622,54 +11921,18 @@
 		"ItemQuality"					"artifact"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"24"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_str"				"5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"				"5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_cdr"				"32"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"850"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"15"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"3"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_int" "24"
+            "bonus_str" "5"
+            "bonus_agi" "5"
+            "spell_amp" "12"
+            "bonus_cdr" "32"
+            "bonus_mana" "850"
+            "regen" "15"
+            "mana_regen" "3"
+            "cast_range" "500"
+        }
 	}
 
 // Ice Aluneth Recipe
@@ -14706,39 +11969,15 @@
 		"ItemQuality"					"artifact"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"130"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"100"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp"					"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen"					"12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_m"				"250"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"crit_c"				"35"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "130"
+            "speed" "100"
+            "hp" "500"
+            "regen" "12"
+            "crit_m" "250"
+            "crit_c" "35"
+        }
 	}
 
 // The Caustic Finale Recipe
@@ -14778,49 +12017,17 @@
 		"AbilityCooldown"				"45.0"
 		"ItemQuality"					"artifact"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"redirect"				"40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"redirect_range"		"900"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hp"					"1250"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"regen"					"15"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"all_stats"				"2"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"8"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"block"					"100"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "3.5"
+            "redirect" "40"
+            "redirect_range" "900"
+            "hp" "1250"
+            "regen" "15"
+            "all_stats" "2"
+            "armor" "8"
+            "block" "100"
+        }
 		"precache"
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
@@ -14870,89 +12077,25 @@
 		"ItemQuality"					"artifact"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"24"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"65"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_hp"				"200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"30"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_speed"			"20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_range"			"1000"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"15"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"act_c"					"20"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"act_d"					"200"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"act_j"					"4"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"chance"				"25"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"proc_damage"			"180"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"jumps"					"12"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"jump_range"			"900"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"jump_deley"			"0.2"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tooltip_range"			"1000"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "24"
+            "attack_speed" "65"
+            "aura_hp" "200"
+            "aura_damage" "30"
+            "aura_speed" "20"
+            "aura_range" "1000"
+            "duration" "15"
+            "act_c" "20"
+            "act_d" "200"
+            "act_j" "4"
+            "chance" "25"
+            "proc_damage" "180"
+            "jumps" "12"
+            "jump_range" "900"
+            "jump_deley" "0.2"
+            "tooltip_range" "1000"
+        }
 		"OnSpellStart"
 		{
 			"ApplyModifier"
@@ -15063,14 +12206,10 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_damage_for_wawe"		"0.2"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_for_wawe" "0.2"
+        }
 	}
 
 // Glimmerdark Shield
@@ -15092,14 +12231,10 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_armor_for_wawe"		"0.025"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_armor_for_wawe" "0.025"
+        }
 	}
 
 // Guardian Shell
@@ -15121,14 +12256,10 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wawe"		"0.04"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mag_res_for_wawe" "0.04"
+        }
 	}
 
 // Dredged Trident
@@ -15151,14 +12282,10 @@
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wawe"	"0.1"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_attack_speed_for_wawe" "0.1"
+        }
 	}
 
 // Oblivions Locket
@@ -15184,19 +12311,11 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wawe"		"0.075"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_all_stats_for_wawe" "0.075"
+            "extra_spell_damage_percent" "-50"
+        }
 	}
 
 // Ambient Sorcery
@@ -15218,14 +12337,10 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mana_cst_for_wawe"		"0.075"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_mana_cst_for_wawe" "0.075"
+        }
 	}
 
 // Wand Of The Brine
@@ -15247,14 +12362,10 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wawe"		"0.075"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_spell_amp_for_wawe" "0.075"
+        }
 	}
 
 // Seal Base
@@ -15305,49 +12416,17 @@
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_for_wawe"			"0.25"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_armor_for_wawe"			"0.05"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wawe"		"0.05"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wawe"	"0.15"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wawe"		"0.1"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wawe"		"0.1"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mana_cst_for_wawe"		"0.1"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_for_wawe" "0.25"
+            "bonus_armor_for_wawe" "0.05"
+            "bonus_mag_res_for_wawe" "0.05"
+            "bonus_attack_speed_for_wawe" "0.15"
+            "bonus_all_stats_for_wawe" "0.1"
+            "extra_spell_damage_percent" "-50"
+            "bonus_spell_amp_for_wawe" "0.1"
+            "bonus_mana_cst_for_wawe" "0.1"
+        }
 	}
 
 // Seal Recipe
@@ -15414,49 +12493,17 @@
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_for_wawe"			"0.25"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_armor_for_wawe"			"0.05"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wawe"		"0.05"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wawe"	"0.15"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wawe"		"0.1"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wawe"		"0.1"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mana_cst_for_wawe"		"0.1"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_for_wawe" "0.25"
+            "bonus_armor_for_wawe" "0.05"
+            "bonus_mag_res_for_wawe" "0.05"
+            "bonus_attack_speed_for_wawe" "0.15"
+            "bonus_all_stats_for_wawe" "0.1"
+            "extra_spell_damage_percent" "-50"
+            "bonus_spell_amp_for_wawe" "0.1"
+            "bonus_mana_cst_for_wawe" "0.1"
+        }
 	}
 
 // Activated Seal Recipe
@@ -15725,124 +12772,32 @@
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_damage_for_wawe"		"0.25"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bonus_armor_for_wawe"		"0.1"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wawe"		"0.05"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wawe"	"0.2"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wawe"		"0.15"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wawe"		"0.1"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mana_cst_for_wawe"		"0.1"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"68"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"100"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stat_res"				"20"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"20"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"speed"					"30"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"56"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"5"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spirit_attack_speed"	"250"
-			}
-			"18"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance"			"40"
-			}
-			"19"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"300"
-			}
-			"20"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_slow_movement"	"-26"
-			}			
-			"21"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"maim_slow_attack"		"-26"
-			}
-			"22"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"maim_duration"			"5.0"
-			}
-			"22"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"range"					"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_for_wawe" "0.25"
+            "bonus_armor_for_wawe" "0.1"
+            "bonus_mag_res_for_wawe" "0.05"
+            "bonus_attack_speed_for_wawe" "0.2"
+            "bonus_all_stats_for_wawe" "0.15"
+            "extra_spell_damage_percent" "-50"
+            "bonus_spell_amp_for_wawe" "0.1"
+            "bonus_mana_cst_for_wawe" "0.1"
+            "str" "68"
+            "agil" "100"
+            "stat_res" "20"
+            "attack_speed" "20"
+            "speed" "30"
+            "damage" "56"
+            "hp" "500"
+            "mana_regen" "5"
+            "spirit_attack_speed" "250"
+            "bonus_chance" "40"
+            "bonus_chance_damage" "300"
+            "maim_slow_movement" "-26"
+            "maim_slow_attack" "-26"
+            "maim_duration" "5.0"
+            "range" "200"
+        }
 	}
 
 // Staff Of Water Recipe
@@ -15888,94 +12843,26 @@
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_for_wawe"			"0.25"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_armor_for_wawe"			"0.1"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wawe"		"0.05"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wawe"	"0.2"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wawe"		"0.15"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wawe"		"0.1"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mana_cst_for_wawe"		"0.1"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"78"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"50"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"30"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"10"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"100"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"6"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"20"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"2"
-			}
-			"18"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"otrash"				"90"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_for_wawe" "0.25"
+            "bonus_armor_for_wawe" "0.1"
+            "bonus_mag_res_for_wawe" "0.05"
+            "bonus_attack_speed_for_wawe" "0.2"
+            "bonus_all_stats_for_wawe" "0.15"
+            "extra_spell_damage_percent" "-50"
+            "bonus_spell_amp_for_wawe" "0.1"
+            "bonus_mana_cst_for_wawe" "0.1"
+            "damage" "78"
+            "str" "50"
+            "agil" "30"
+            "int" "10"
+            "attack_speed" "100"
+            "armor" "6"
+            "hp_regen" "20"
+            "mana_regen" "2"
+            "otrash" "90"
+        }
 	}
 
 // Shadow Cuirass Recipe
@@ -16028,114 +12915,30 @@
 		"CustomShop"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilityChannelAnimation"		"ACT_DOTA_TELEPORT"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_for_wawe"			"0.25"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_armor_for_wawe"			"0.1"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wawe"		"0.05"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wawe"	"0.2"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wawe"		"0.15"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wawe"		"0.1"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mana_cst_for_wawe"		"0.1"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"85"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"12"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agil"					"12"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"9"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana"					"1350"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_damage"			"20"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"15"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen_p"			"5"
-			}
-			"18"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_cdr"				"32"
-			}
-			"19"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_range"			"500"
-			}
-			"20"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_stack"		"1500"
-			}			
-			"21"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"1000"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_for_wawe" "0.25"
+            "bonus_armor_for_wawe" "0.1"
+            "bonus_mag_res_for_wawe" "0.05"
+            "bonus_attack_speed_for_wawe" "0.2"
+            "bonus_all_stats_for_wawe" "0.15"
+            "extra_spell_damage_percent" "-50"
+            "bonus_spell_amp_for_wawe" "0.1"
+            "bonus_mana_cst_for_wawe" "0.1"
+            "int" "85"
+            "str" "12"
+            "agil" "12"
+            "damage" "9"
+            "hp" "500"
+            "mana" "1350"
+            "spell_damage" "20"
+            "hp_regen" "15"
+            "mana_regen_p" "5"
+            "mana_cdr" "32"
+            "spell_range" "500"
+            "damage_per_stack" "1500"
+            "range" "1000"
+        }
 	}
 
 // Ice Staff Recipe
@@ -16158,14 +12961,10 @@
 	"item_spirit_vessel"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"AbilitySpecial"
-		{
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"enemy_hp_drain"		"0"
-			}
-		}
+		"AbilityValues"
+        {
+            "enemy_hp_drain" "0"
+        }
 	}
 	
 // Urn of Shadows
@@ -16185,23 +12984,11 @@
 		"ItemIsNeutralDrop"				"1"
 		"ItemPurchasable"				"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"		"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"status_resistance"		"25"
-			}			
-		}
+		"AbilityValues"
+        {
+            "armor" "10"
+            "magic_resistance" "20"
+            "status_resistance" "25"
+        }
 	}
 }

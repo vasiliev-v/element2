@@ -108,23 +108,105 @@ function HasTalent(unit, talentName)
     return false
 end
 
-function GetTalentSpecialValueFor(ability, value)
-    local base = ability:GetSpecialValueFor(value)
-    local talentName
-    local kv = ability:GetAbilityKeyValues()
-    for k,v in pairs(kv) do -- trawl through keyvalues
-        if k == "AbilitySpecial" then
-            for l,m in pairs(v) do
-                if m[value] then
-                    talentName = m["LinkedSpecialBonus"]
-                end
+function GetTalentSpecialValueFor(ability, valueName)
+    if not ability or ability:IsNull() then
+        return 0
+    end
+
+    local caster = ability:GetCaster()
+    local kv = ability:GetAbilityKeyValues() or {}
+    local abilityValues = kv.AbilityValues or {}
+
+    local function ToNumber(v)
+        if v == nil then
+            return nil
+        end
+        return tonumber(v)
+    end
+
+    local function GetAbilityLevelIndex(ab)
+        local lvl = ab:GetLevel()
+        if lvl == nil or lvl < 1 then
+            return 1
+        end
+        return lvl
+    end
+
+    local function ParseValueByLevel(raw, level)
+        if raw == nil then
+            return nil
+        end
+
+        if type(raw) == "number" then
+            return raw
+        end
+
+        if type(raw) ~= "string" then
+            return nil
+        end
+
+        local parts = {}
+        for token in string.gmatch(raw, "%S+") do
+            table.insert(parts, token)
+        end
+
+        if #parts == 0 then
+            return nil
+        end
+
+        if #parts == 1 then
+            return tonumber(parts[1]) or parts[1]
+        end
+
+        local index = math.max(1, math.min(level, #parts))
+        return tonumber(parts[index]) or parts[index]
+    end
+
+    local base = nil
+    local talentName = nil
+    local level = GetAbilityLevelIndex(ability)
+
+    local entry = abilityValues[valueName]
+
+    if type(entry) == "table" then
+        -- случай:
+        -- "shock_damage"
+        -- {
+        --     "value" "75 135 195 ..."
+        --     "LinkedSpecialBonus" "special_bonus_xxx"
+        -- }
+        base = ParseValueByLevel(entry.value, level)
+        talentName = entry.LinkedSpecialBonus
+    elseif entry ~= nil then
+        -- случай:
+        -- "shock_speed" "900"
+        base = ParseValueByLevel(entry, level)
+    end
+
+    -- fallback на стандартные AbilitySpecial / SpecialValues
+    if base == nil then
+        local ok, result = pcall(function()
+            return ability:GetSpecialValueFor(valueName)
+        end)
+        if ok then
+            base = result
+        end
+    end
+
+    if base == nil then
+        base = 0
+    end
+
+    if talentName and caster then
+        local talent = caster:FindAbilityByName(talentName)
+        if talent and talent:GetLevel() > 0 then
+            local bonus = talent:GetSpecialValueFor("value")
+            if bonus then
+                base = base + bonus
             end
         end
     end
-    if talentName then 
-        local talent = ability:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
-    end
+
     return base
 end
 

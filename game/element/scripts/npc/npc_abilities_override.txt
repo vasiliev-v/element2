@@ -200,38 +200,14 @@
 	{
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"45"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_health"			"250"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"hp_regen_amp"			"50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"health_regen_rate"		"0.5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cooldown_melee"		"0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cooldown_ranged_tooltip"		"0"
-			}
 		}
 	}
 
@@ -261,58 +237,18 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"45"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_health_regen"	"7.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"bonus_mana_regen"		"3.75"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cleave_damage_percent"	"50"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cleave_damage_percent_creep"	"50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"quelling_bonus"			"18"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"quelling_bonus_ranged"	"5"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cleave_starting_width"			"150"
-			}			
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cleave_ending_width"			"360"
-			}			
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"cleave_distance"			"650"
-			}
 		}
 	}
     
@@ -341,53 +277,17 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_intellect"		"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"aura_radius"			"900"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"aura_attack_speed"		"-25"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_damage"			"200"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
+  			    "blast_damage"			"200"
 				"blast_movement_speed"	"-40"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"blast_debuff_duration"	"4.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"blast_radius"			"900"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"blast_speed"			"350"
-			}
 		}
 	}
     
@@ -411,43 +311,15 @@
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_intelligence"	"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_health"			"425"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_mana"			"425"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_cooldown"		"25"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"hero_lifesteal"		"25"
-			}			
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"creep_lifesteal"		"20"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"active_duration"		"7"
-			}
 		}
 	}
     
@@ -707,13 +579,9 @@
 	{
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"160"
-			}
 		}
 	}
     

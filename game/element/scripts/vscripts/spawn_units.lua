@@ -11,12 +11,11 @@ local function SpawnUnitsForAbility(keys, caster)
 	if not ability or not caster then
 		return
 	end
-	DeepPrintTable(keys)
+
 	local unitName = keys.UnitName
 	local unitCount = ability:GetSpecialValueFor("unit_count")
 	local spawnRadius = ability:GetSpecialValueFor("spawn_radius")
-print("print(unitName)")
-	print(unitName .. " " .. unitCount )
+
 	if not unitName or unitName == "" then
 		return
 	end
