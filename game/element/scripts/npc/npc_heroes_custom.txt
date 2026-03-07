@@ -1353,6 +1353,10 @@
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"275"
 		"MovementTurnRate"		"0.500000"
+		"Facets"
+		{
+			  
+		}
     }
     
 	"npc_dota_hero_axe"
