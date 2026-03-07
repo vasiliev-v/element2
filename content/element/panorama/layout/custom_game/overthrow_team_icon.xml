@@ -2,8 +2,10 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/custom_game/overthrow_team_icon.css" />
-		<Include src="file://{resources}/scripts/custom_game/team_icon.js" />
 	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/team_icon.js" />
+	</scripts>
 	<Panel class="TeamIcon">
 	</Panel>
 </root>

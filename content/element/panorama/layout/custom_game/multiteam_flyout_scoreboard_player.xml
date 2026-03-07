@@ -4,9 +4,9 @@
 		<include src="s2r://panorama/styles/custom_game/shared_scoreboard_styles.css" />
         <include src="s2r://panorama/styles/custom_game/multiteam_flyout_scoreboard.css" />
     </styles>
-	<Scripts>
-		<Include src="file://{resources}/scripts/custom_game/player_actions.js" />
-	</Scripts>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/player_actions.js" />
+	</scripts>
 	<Panel class="PlayerRow">
 		<Panel id="PlayerRowContainer">
 			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">

@@ -1,4 +1,4 @@
-debug.oldTraceback = debug.oldTraceback or debug.traceback
+--debug.oldTraceback = debug.oldTraceback or debug.traceback
 --debug.traceback = function()
 --	local result = debug.oldTraceback()
 --	-- print(result)--CustomGameEventManager:Send_ServerToAllClients("DebugMessage", { msg = result })

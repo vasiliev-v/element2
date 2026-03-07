@@ -582,6 +582,7 @@
 		"AbilityValues"
 		{
 				"bonus_damage"			"160"
+				"bonus_damage_base"			"160000000"
 		}
 	}
     

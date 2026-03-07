@@ -5,206 +5,463 @@
     overflow: clip;
 }
 
-#confirmation 
+#ShopRoot
 {
-    horizontal-align: center;
-	vertical-align: top;
-	font-size: 20px;
-    font-weight: bold;
-	margin-top: 110px;
-	color: #00FF00;
+    width: 100%;
+    height: 100%;
 }
 
-#noheader
-{
-margin-top:40px;
-margin-left: 113px;
-horizontal-align:left;
-color: #FFEA00;
-font-size: 20px;
-font-weight: bold;
-}
-
-#yesheader
-{
-margin-top:40px;
-margin-right: 109px;
-horizontal-align:right;
-color: #FFEA00;
-font-size: 20px;
-font-weight: bold;
-}
-
-#noresults
-{
-margin-top:60px;
-margin-left: 100px;
-horizontal-align:left;
-}
-
-#yesresults
-{
-margin-top:60px;
-margin-left: 100px;
-horizontal-align:left;
-}
+/* ==========================
+   OPEN BUTTON BLOCK
+   ========================== */
 
 #ElementShop
 {
-  horizontal-align: left;
-  margin-left:5px;
-  margin-bottom:-1px;
-  vertical-align: bottom;
-  width: 120px;
-  height: 148px;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-left: 5px;
+    margin-bottom: -1px;
+    width: 140px;
+    height: 148px;
 }
- #Shop
-{
-  horizontal-align: left;
-  margin-left:0px;
-  margin-bottom:60px;
-  vertical-align: bottom;
-  width: 150px;
-  height: 400px;
- }
- #ShopInfo
-{
-  horizontal-align: left;
-  margin-left:150px;
-  margin-bottom:60px;
-  vertical-align: bottom;
-  width: 830px;
-  height: 400px;
- }
- #BG_Image
-{
-  horizontal-align: left;
-  vertical-align: bottom;
-  margin-left:0px;
-  margin-bottom:0px;
-  width: 279px;
-  height: 60px;
- }
 
- #Vote_Yes
+.ElementShopButtonWrap
 {
-	horizontal-align: center;
-  vertical-align: top;
-  margin-right:5px;
- margin-top: 99px;
-  width: 140px;
-    height: 37px;
- }
+}
 
- #refresh
+#Vote_Yes
 {
-	horizontal-align: center;
-  vertical-align: top;
-  margin-right:5px;
- margin-top: 99px;
-  width: 280px;
-    height: 60px;
- }
- 
-#question
-  {
-    horizontal-align: right;
-	vertical-align: top;
-	margin-right: 85px;
-	font-size: 20px;
-    font-weight: bold;
-	margin-top: 10px;
-	text-transform: uppercase;
-	color: #FFEA00;
- }
- #readytext
- {
-    text-shadow:0px 1px 0px 3.0 #00000077;
-	horizontal-align: center;
-	margin-top: 107px;
-    font-weight: bold;
-	font-size: 18px;
-	text-transform: uppercase;
-	color: #CC22CC;
-    font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
- }
- #refreshtext
- {
-    text-shadow:0px 1px 0px 3.0 #00000077;
-	horizontal-align: center;
-	margin-top: 117px;
-    font-weight: bold;
-	font-size: 21px;
-	text-transform: uppercase;
-	color: #CC22CC;
-    font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
- }
+    horizontal-align: center;
+    vertical-align: top;
 
- .ElementShopText
- {
+    margin-top: 99px;
+
+    width: 120px;
+    height: 40px;
+
+    background-color: rgba(0,0,0,0.85);
+
+    border-radius: 20px;
+
+    border: 2px solid rgba(184,255,69,0.5);
+
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.55);
+
+    transition-property: brightness, transform;
+    transition-duration: 0.2s;
+    pre-transform-scale2d: 1;
+}
+
+#Vote_Yes:hover
+{
+    brightness: 1.3;
+    transform: scale3d(1.08, 1.08, 1);
+}
+
+#yes_button
+{
+    width: 100%;
+    height: 100%;
+    wash-color: white;
+}
+
+#readytext
+{
+    horizontal-align: center;
+    margin-top: 160px;
+    font-weight: semi-bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #B8FF45;
+    text-shadow: 0px 0px 6px 2 #000000cc;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, YDYGO 540, Gulim, MingLiU;
+}
+
+.ElementShopText
+{
     animation-name: OpacityPulse;
     animation-duration: .82s;
     animation-iteration-count: infinite;
- }
- @keyframes 'OpacityPulse'
- {
-     0%
-     {
-         text-shadow: 0px 0px 0px #CC22CC;
-     }
-     50%
-     {
-         text-shadow: 0px 0px 15px #CC22CC,0px 0px 20px #CC22CC,0px 0px 25px #CC22CC;
-     }
-     100%
-     {
-         text-shadow: 0px 0px 0px #CC22CC;
-     }
- }
+}
 
- .offcraft
- {
-     saturation: 0;
- }
+@keyframes 'OpacityPulse'
+{
+    0%
+    {
+        text-shadow: 0px 0px 0px #B8FF45;
+    }
+    50%
+    {
+        text-shadow: 0px 0px 10px #B8FF45, 0px 0px 18px #B8FF45;
+    }
+    100%
+    {
+        text-shadow: 0px 0px 0px #B8FF45;
+    }
+}
 
- .ShopInfoAnim
- {
+/* ==========================
+   LEFT SHOP PANEL
+   ========================== */
+
+#Shop
+{
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-left: 0px;
+    margin-bottom: 60px;
+    width: 160px;
+    height: 450px;
+}
+
+.ShopStyled
+{
+    background-color: rgba(20, 20, 20, 0.93);
+    border: 2px solid rgba(184, 255, 69, 0.35);
+    box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.65);
+}
+
+.ShopLeftHeader
+{
+    width: 100%;
+    height: 42px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(rgba(75,104,52,0.9)), to(rgba(39,68,15,0.65)));
+    border-bottom: 1px solid rgba(184, 255, 69, 0.25);
+}
+
+.ShopLeftTitle
+{
+    horizontal-align: center;
+    vertical-align: center;
+    color: #B8FF45;
+    font-size: 16px;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px 2 #000000aa;
+}
+
+/* ==========================
+   INFO PANEL
+   ========================== */
+
+#ShopInfo
+{
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-left: 150px;
+    margin-bottom: 60px;
+    width: 850px;
+    height: 450px;
+}
+
+.ShopInfoStyled
+{
+    background-color: rgba(20, 20, 20, 0.95);
+    border: 2px solid rgba(184, 255, 69, 0.35);
+    box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.70);
+}
+
+.ShopInfoHeader
+{
+    width: 100%;
+    height: 42px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(rgba(75,104,52,0.92)), to(rgba(39,68,15,0.6)));
+    border-bottom: 1px solid rgba(184,255,69,0.22);
+}
+
+.ShopTitle
+{
+    horizontal-align: center;
+    vertical-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+.TopRoundButton
+{
+    horizontal-align: right;
+    margin-top: 6px;
+    margin-right: 42px;
+    width: 30px;
+    height: 30px;
+    background-color: #111111;
+    border-radius: 50%;
+    border: 1px solid rgba(184,255,69,0.5);
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5);
+    transition-property: brightness, transform;
+    transition-duration: 0.2s;
+}
+
+.TopRoundButton:hover
+{
+    brightness: 1.4;
+    transform: scale3d(1.05, 1.05, 1);
+}
+
+.TopRoundButtonIcon
+{
+    width: 22px;
+    height: 22px;
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+.ShopInfoDivider
+{
+    width: 2px;
+    height: 340px;
+    background-color: rgba(184,255,69,0.16);
+    margin-left: 260px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 4px 0 rgba(184,255,69,0.15);
+}
+
+.ShopInfoDivider2
+{
+    margin-left: 530px;
+}
+
+/* ==========================
+   SIDE BUTTONS
+   ========================== */
+
+.SideHideButton
+{
+    width: 24px;
+    height: 100px;
+    horizontal-align: right;
+    vertical-align: center;
+    margin-right: 6px;
+    background-color: rgba(75,104,52,0.85);
+    border: 1px solid rgba(184,255,69,0.4);
+    border-radius: 8px;
+    transition-property: brightness, transform;
+    transition-duration: 0.2s;
+}
+
+.SideHideButton:hover
+{
+    brightness: 1.3;
+    transform: translateX(2px);
+}
+
+.SideHideButton Label
+{
+    horizontal-align: center;
+    vertical-align: center;
+    color: #B8FF45;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.SideShowButton
+{
+    width: 24px;
+    height: 100px;
+
+    horizontal-align: right;
+    vertical-align: center;
+
+    margin-right: 7px;
+
+    background-color: rgba(75,104,52,0.85);
+    border: 1px solid rgba(184,255,69,0.4);
+    border-radius: 8px;
+
+    transition-property: brightness, transform;
+    transition-duration: 0.2s;
+}
+
+.SideShowButton:hover
+{
+    brightness: 1.3;
+    transform: translateX(2px);
+}
+
+.SideShowButton Label
+{
+    horizontal-align: center;
+    vertical-align: center;
+    color: #B8FF45;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* ==========================
+   BASE ELEMENT SLOTS
+   ========================== */
+
+.BaseElementSlot
+{
+    width: 44px;
+    height: 36px;
+    border: 1px solid rgba(184,255,69,0.20);
+    background-color: rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.4);
+    transition-property: brightness, transform, border;
+    transition-duration: 0.15s;
+}
+
+.BaseElementSlot:hover
+{
+    brightness: 1.25;
+    transform: scale3d(1.03, 1.03, 1);
+    border: 1px solid rgba(184,255,69,0.55);
+}
+
+.ElementCountLabel
+{
+    width: 42px;
+    height: 24px;
+    color: white;
+    font-size: 20px;
+    font-weight: semi-bold;
+    text-shadow: 0px 0px 4px 3 #000000cc;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================
+   DYNAMIC CRAFT PANELS
+   ========================== */
+
+.CraftRowPanel
+{
+    width: 250px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.01);
+}
+
+.CraftSlot
+{
+    width: 44px;
+    height: 32px;
+    border: 1px solid rgba(184,255,69,0.18);
+    background-color: rgba(0,0,0,0.42);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
+    transition-property: brightness, border, transform;
+    transition-duration: 0.15s;
+}
+
+.CraftSlot:hover
+{
+    brightness: 1.2;
+    border: 1px solid rgba(184,255,69,0.50);
+    transform: scale3d(1.03, 1.03, 1);
+}
+
+.CraftPlus
+{
+    width: 18px;
+    height: 18px;
+    color: rgba(255,255,255,0.8);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+.CraftArrow
+{
+    width: 20px;
+    height: 20px;
+    color: #B8FF45;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+.ResultSlot
+{
+    width: 44px;
+    height: 32px;
+    border: 1px solid rgba(184,255,69,0.38);
+    background-color: rgba(75,104,52,0.18);
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.45);
+    transition-property: brightness, border, transform;
+    transition-duration: 0.15s;
+}
+
+.ResultSlot:hover
+{
+    brightness: 1.25;
+    border: 1px solid rgba(184,255,69,0.65);
+    transform: scale3d(1.03, 1.03, 1);
+}
+
+.offcraft
+{
+    saturation: 0.15;
+    brightness: 0.45;
+    opacity: 0.75;
+}
+
+/* ==========================
+   ANIMATIONS
+   ========================== */
+
+.ShopInfoAnim
+{
     animation-name: CreateAnim;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
- }
- @keyframes 'CreateAnim'
- {
-     0%
-     {
-        transform: translate3d( -850px, 0px, 0px );
-     }
-     100%
-     {
-        transform: translate3d( 0px, 0px, 0px );
-     }
- }
+}
 
- .ShopInfoAnim2
- {
-    transform: translate3d( -970px, 0px, 0px );
+@keyframes 'CreateAnim'
+{
+    0%
+    {
+        transform: translate3d(-850px, 0px, 0px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+    }
+}
+
+.ShopInfoAnim2
+{
+    transform: translate3d(-970px, 0px, 0px);
     animation-name: OffAnim;
     animation-duration: 0.4s;
     animation-iteration-count: 1;
- }
- @keyframes 'OffAnim'
- {
-     0%
-     {
-        transform: translate3d( 0px, 0px, 0px );
-     }
-     100%
-     {
-        transform: translate3d( -970px, 0px, 0px );
-     }
- }
+}
 
- .selectedfilter
- {
-     border: 2px solid #00FF00;
- }
+@keyframes 'OffAnim'
+{
+    0%
+    {
+        transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translate3d(-970px, 0px, 0px);
+        opacity: 0.9;
+    }
+}
+
+.selectedfilter
+{
+    border: 2px solid #B8FF45;
+    box-shadow: 0px 0px 8px 1px rgba(184,255,69,0.35);
+}
+
+#ElementButtonText
+{
+    horizontal-align: center;
+    vertical-align: center;
+
+    color: #B8FF45;
+    font-size: 14px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    text-shadow: 0px 0px 6px 2 #000000cc;
+}   

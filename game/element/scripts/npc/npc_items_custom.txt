@@ -12991,4 +12991,60 @@
             "status_resistance" "25"
         }
 	}
+
+
+		"item_test_1"
+	{
+		"BaseClass"						"item_datadriven"
+
+		"AbilityTextureName"			"custom/lia_potion_of_invulnerability"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	
+		"AbilityCooldown"				"1"
+		
+		"ItemKillable"                  "1"
+		"ItemSellable"                  "1"
+		"ItemDroppable"                 "1"
+		"ItemPermanent"					"0"
+		"ItemPurchasable"		 		"0"
+		"ItemCost"						"80"
+		"ItemShopTags"					"common"
+		"ItemQuality"					"common"
+		"ItemAliases"					"poi;potion of invulnerability;зелье неу�?звимо�?ти;зн"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemInitialCharges"			"1"
+	
+		"AbilityValues"
+		{
+			"duration"				"60"
+		}
+	
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_potion_of_invulnerability"
+				"Duration"		"%duration"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_potion_of_invulnerability"
+			{
+				"EffectName"		"particles/items3_fx/lotus_orb_shield.vpcf"
+				"EffectAttachType"	"follow_origin"
+	
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"	
+				}
+			}
+		}
+	}
+
 }

@@ -3,9 +3,9 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/custom_game/patreon.css" />
 	</styles>
-	<Scripts>
-		<Include src="file://{resources}/scripts/custom_game/patreon.js" />
-	</Scripts>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/patreon.js" />
+	</scripts>
 
 	<Panel hittest="false" class="CustomUIContainerGameInfo3">
 		<Panel id="GameInfoPanel">

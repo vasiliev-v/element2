@@ -3,9 +3,9 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/custom_game/tops.css" />
 	</styles>
-	<Scripts>
-		<Include src="file://{resources}/scripts/custom_game/tops.js" />
-	</Scripts>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/tops.js" />
+	</scripts>
 
 	<Panel hittest="false" class="CustomUIContainerGameInfo2">
 		<Panel id="GameInfoPanel">

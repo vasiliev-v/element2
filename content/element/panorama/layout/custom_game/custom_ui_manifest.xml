@@ -30,6 +30,6 @@
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
 		-->
 	</Panel>
-</root>
+</root> 
 
 
