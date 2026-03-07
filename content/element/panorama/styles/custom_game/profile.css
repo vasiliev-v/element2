@@ -2,222 +2,332 @@
 {
     width: 100%;
     height: 100%;
-    //overflow: clip;
-}
-
-#confirmation 
-{
-    horizontal-align: center;
-	vertical-align: top;
-	font-size: 20px;
-    font-weight: bold;
-	margin-top: 110px;
-	color: #00FF00;
-}
-
-#noheader
-{
-margin-top:40px;
-margin-left: 113px;
-horizontal-align:left;
-color: #FFEA00;
-font-size: 20px;
-font-weight: bold;
-}
-
-#yesheader
-{
-margin-top:40px;
-margin-right: 109px;
-horizontal-align:right;
-color: #FFEA00;
-font-size: 20px;
-font-weight: bold;
-}
-
-#noresults
-{
-margin-top:60px;
-margin-left: 100px;
-horizontal-align:left;
-}
-
-#yesresults
-{
-margin-top:60px;
-margin-left: 100px;
-horizontal-align:left;
+    overflow: noclip;
 }
 
 #ProfileButton
 {
-  horizontal-align: left;
-  margin-left:135px;
-  margin-bottom:-1px;
-  vertical-align: bottom;
-  width: 120px;
-  height: 148px;
+    horizontal-align: left;
+    margin-left: 135px;
+    margin-bottom: -1px;
+    vertical-align: bottom;
+    width: 140px;
+    height: 148px;
 }
- #Profile
+
+#Vote_Yes
 {
-  horizontal-align: center;
-  vertical-align: center;
-  margin-left:0px;
-  margin-top:0px;
-  width: 640px;
-  height: 480px;
- }
- #MaxProfile
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 99px;
+
+    width: 130px;
+    height: 40px;
+
+    background-color: rgba(0,0,0,0.88);
+    border-radius: 20px;
+    border: 2px solid rgba(184,255,69,0.5);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.55);
+
+    transition-property: brightness, transform;
+    transition-duration: 0.2s;
+    overflow: noclip;
+}
+
+#Vote_Yes:hover
 {
-  horizontal-align: center;
-  vertical-align: center;
-  margin-left:0px;
-  margin-bottom:100px;
-  width: 600px;
-  height: 550px;
- }
- .CreatePanelClass
- {
+    brightness: 1.3;
+    transform: scale3d(1.06, 1.06, 1);
+}
+
+#yes_button
+{
+    width: 26px;
+    height: 26px;
+    vertical-align: center;
+    horizontal-align: left;
+    margin-left: 8px;
+}
+
+#ProfileButtonText
+{
+    vertical-align: center;
+    horizontal-align: center;
+    margin-left: 10px;
+
+    color: #B8FF45;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 6px 2 #000000cc;
+}
+
+#readytext
+{
+    visibility: collapse;
+}
+
+#MaxProfile
+{
+    horizontal-align: center;
+    vertical-align: center;
+    margin-left: 0px;
+    margin-bottom: 100px;
+    width: 600px;
+    height: 550px;
+}
+
+#Profile
+{
+    horizontal-align: center;
+    vertical-align: center;
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 640px;
+    height: 1180px;
+
+    background-color: rgba(20, 20, 20, 0.96);
+    border: 2px solid rgba(184, 255, 69, 0.35);
+    box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.70);
+}
+
+#ProfileHeaderBar
+{
+    width: 100%;
+    height: 48px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(rgba(75,104,52,0.92)), to(rgba(39,68,15,0.6)));
+    border-bottom: 1px solid rgba(184,255,69,0.22);
+}
+
+#ProfileHeaderTitle
+{
+    horizontal-align: center;
+    vertical-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+#ProfileTopGlow
+{
+    width: 560px;
+    height: 120px;
+    margin-top: 62px;
+    margin-left: 46px;
+
+    background-color: rgba(0,0,0,0.18);
+    border: 1px solid rgba(184,255,69,0.20);
+    border-radius: 12px;
+}
+
+#ava
+{
+    border: 2px solid rgba(184,255,69,0.35);
+    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.45);
+}
+
+#UserName Label
+{
+    font-size: 28px;
+    font-weight: semi-bold;
+    color: white;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+.mytest
+{
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, YDYGO 540, Gulim, MingLiU;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.StatText
+{
+    color: rgba(255,255,255,0.88);
+    text-shadow: 0px 0px 4px 2 #00000099;
+}
+
+#RelicsBlock
+{
+    width: 350px;
+    height: 92px;
+    margin-top: 190px;
+    margin-left: 210px;
+
+    background-color: rgba(0,0,0,0.22);
+    border: 1px solid rgba(184,255,69,0.20);
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.30);
+}
+
+#HeroesBlock
+{
+    width: 390px;
+    height: 220px;
+    margin-top: 292px;
+    margin-left: 205px;
+
+    background-color: rgba(0,0,0,0.22);
+    border: 1px solid rgba(184,255,69,0.20);
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.30);
+}
+
+.SectionTitle
+{
+    color: #B8FF45;
+    font-size: 18px;
+    font-weight: semi-bold;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+.RelicCount
+{
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: semi-bold;
+    text-shadow: 0px 0px 4px 3 #000000cc;
+}
+
+#PlayersButtons
+{
+    width: 600px;
+    height: 80px;
+}
+
+.SelPlButton
+{
+    width: 82px;
+    height: 49px;
+    background-color: rgba(0,0,0,0.35);
+    border: 1px solid rgba(184,255,69,0.20);
+    border-radius: 8px;
+
+    transition-property: brightness, transform, border;
+    transition-duration: 0.2s;
+}
+
+.SelPlButton:hover
+{
+    brightness: 1.2;
+    transform: translateY(-1px);
+    border: 1px solid rgba(184,255,69,0.50);
+}
+
+.SelPlButtonBg
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.SelPlButtonAct
+{
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(184,255,69,0.75);
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px 1px rgba(184,255,69,0.22);
+}
+
+#CloseButton
+{
+    width: 30px;
+    height: 30px;
+
+    background-color: rgba(0,0,0,0.45);
+    border: 1px solid rgba(184,255,69,0.35);
+    border-radius: 50%;
+
+    transition-property: brightness, transform;
+    transition-duration: 0.2s;
+}
+
+#CloseButton:hover
+{
+    brightness: 1.3;
+    transform: scale3d(1.08, 1.08, 1);
+}
+
+#CloseButtonLabel
+{
+    horizontal-align: center;
+    vertical-align: center;
+    color: #B8FF45;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Heroes
+{
+    saturation: 0;
+    wash-color: #7f7f7f;
+    opacity: 0.75;
+}
+
+.Heroes2
+{
+    saturation: 1;
+    wash-color: white;
+    opacity: 1;
+    box-shadow: 0px 0px 4px 0 rgba(184,255,69,0.20);
+}
+
+#confirmation,
+#noheader,
+#yesheader,
+#noresults,
+#yesresults,
+#question,
+#refresh,
+#BG_Image
+{
+    visibility: collapse;
+}
+
+.CreatePanelClass
+{
     opacity: 1;
     animation-name: CreatePanel;
     animation-duration: .22s;
     animation-iteration-count: 1;
- }
- @keyframes 'CreatePanel'
- {
-     0%
-     {
-         opacity: 0;
-     }
-     100%
-          {
-         opacity: 1;
-     }
- }
- .OffPanelClass
- {
+}
+
+@keyframes 'CreatePanel'
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale3d(0.97, 0.97, 1);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.OffPanelClass
+{
     opacity: 0;
     animation-name: OffPanel;
     animation-duration: .22s;
     animation-iteration-count: 1;
- }
- @keyframes 'OffPanel'
- {
-     0%
-     {
-         opacity: 1;
-     }
-     100%
-          {
-         opacity: 0;
-     }
- }
- #BG_Image
-{
-  horizontal-align: left;
-  vertical-align: bottom;
-  margin-left:0px;
-  margin-bottom:0px;
-  width: 279px;
-  height: 60px;
- }
-
- .SelPlButton
-{
-  width: 82px;
-  height: 49px;
- }
-
- .SelPlButtonimg
-{
-  width: 82px;
-  height: 46px;
- }
-
- #CloseButton,
- #CloseButtonimg
-{
-  width: 45px;
-  height: 33px;
- }
-
- #Vote_Yes
-{
-	horizontal-align: center;
-    vertical-align: top;
-    margin-right:5px;
-    margin-top: 99px;
-    width: 140px;
-    height: 37px;
- }
-
- #refresh
-{
-	horizontal-align: center;
-    vertical-align: top;
-    margin-right:5px;
-    margin-top: 99px;
-    width: 280px;
-    height: 60px;
- }
- 
-#question
-{
-    horizontal-align: right;
-	vertical-align: top;
-	margin-right: 85px;
-	font-size: 20px;
-    font-weight: bold;
-	margin-top: 10px;
-	text-transform: uppercase;
-	color: #FFEA00;
- }
- #readytext
- {
-    text-shadow:0px 1px 0px 3.0 #00000077;
-	horizontal-align: center;
-	margin-top: 107px;
-    font-weight: bold;
-	font-size: 18px;
-	text-transform: uppercase;
-	color: #CC22CC;
-    font-family:Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
-    //animation-name: OpacityPulse;
-    //animation-duration: .82s;
-    //animation-iteration-count: infinite;
- }
- #UserName Label
- {
-	font-size: 28px;
- }
- @keyframes 'OpacityPulse'
- {
-     0%
-     {
-         text-shadow: 0 1px #AA22AA;
-     }
-     50%
-     {
-         text-shadow: 0 0 5px #AA22AA;
-     }
-     100%
-     {
-         text-shadow: 0 0 1px #AA22AA;
-     }
- }
- .mytest
- {
-    font-family: impact, sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
- }
- 
- .Heroes
-{
-    saturation: 0;
 }
- 
- .Heroes2
+
+@keyframes 'OffPanel'
 {
-    saturation: 1;
+    0%
+    {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+    100%
+    {
+        opacity: 0;
+        transform: scale3d(0.97, 0.97, 1);
+    }
 }

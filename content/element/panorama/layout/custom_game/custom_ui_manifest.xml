@@ -14,20 +14,22 @@
 		<CustomUIElement type="EndScreen" 			layoutfile="file://{resources}/layout/custom_game/multiteam_end_screen.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particlesui.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/rsui.xml" />
-		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info.xml" />
+		
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tws_quest_affixes.xml" /> 
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/roundoptions.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/relicshop.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/elementshop.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/profile.xml" />
+        
         
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/boss_hp.xml" /> 
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/damagetop.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/endswaves.xml" />
 		<!-- 
+		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info.xml" />
 		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/patreon.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tops.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
+		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/profile.xml" />
 		-->
 	</Panel>
 </root> 

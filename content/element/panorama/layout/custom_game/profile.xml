@@ -9,75 +9,89 @@
     
 	<Panel hittest="false" class="ProfilePanel">
 		<Panel hittest="false" id="ProfileButton">
-			<Button id="Vote_Yes" onactivate='Yes()'>
+			<Button id="Vote_Yes" onactivate="Yes()">
 				<Image id="yes_button" src="s2r://panorama/images/custom_game/all/buttonrelic.png"/>
+				<Label id="ProfileButtonText" text="#profile"/>
 			</Button>
             <Label hittest="false" id="readytext" text="#profile"/>
 		</Panel>
-        <Panel hittest="false" id="MaxProfile" >
-            <Panel hittest="false" id="Profile" >
-                <Image hittest="false" id="buttonBG_Image" src="s2r://panorama/images/custom_game/all/profilebg.png"/>
-                <Image hittest="false" id="nameimg" src="s2r://panorama/images/custom_game/all/name.png" style="height:50px;width:417px; margin-top:14px; margin-left:180px;"/>
-                <Image hittest="false" id="relicimg" src="s2r://panorama/images/custom_game/all/relic.png" style="height:70px;width:330px; margin-top:164px; margin-left:200px;"/>
-                <Image hittest="false" id="Heroesimg" src="s2r://panorama/images/custom_game/all/heroes.png" style="height:210px;width:380px; margin-top:254px; margin-left:195px;"/>
+
+        <Panel hittest="false" id="MaxProfile">
+            <Panel hittest="false" id="Profile">
+                <Panel hittest="false" id="ProfileHeaderBar">
+                    <Label hittest="false" id="ProfileHeaderTitle" text="#profile" />
+                </Panel>
+
+                <Panel hittest="false" id="ProfileTopGlow" />
+
                 <DOTAAvatarImage id="ava" steamid="local" style="height:110px;width:110px; margin-top:15px; margin-left:60px;"/>
                 <DOTAUserName id="UserName" steamid="local" style="margin-top:22px; margin-left:200px;"/>
-                <Label hittest="false" id="relicstext" class="mytest" text="#relics" style="margin-top:144px; margin-left:210px;"/>
-                <Panel hittest="false" id="Relics" style="margin-top:139px; margin-left:210px;">
-                    <DOTAItemImage id="lvlmyitem1" itemname="item_corrupting_blade" style="height:24px;width:32px; margin-top:40px; margin-left:8px;"/>
-                    <DOTAItemImage id="lvlmyitem2" itemname="item_glimmerdark_shield" style="height:24px;width:32px; margin-top:40px; margin-left:45px;"/>
-                    <DOTAItemImage id="lvlmyitem3" itemname="item_guardian_shell" style="height:24px;width:32px; margin-top:40px; margin-left:82px;"/>
-                    <DOTAItemImage id="lvlmyitem4" itemname="item_dredged_trident" style="height:24px;width:32px; margin-top:40px; margin-left:119px;"/>
-                    <DOTAItemImage id="lvlmyitem5" itemname="item_oblivions_locket" style="height:24px;width:32px; margin-top:40px; margin-left:156px;"/>
-                    <DOTAItemImage id="lvlmyitem6" itemname="item_ambient_sorcery" style="height:24px;width:32px; margin-top:40px; margin-left:193px;"/>
-                    <DOTAItemImage id="lvlmyitem7" itemname="item_wand_of_the_brine" style="height:24px;width:32px; margin-top:40px; margin-left:230px;"/>
-                    <DOTAItemImage id="lvlmyitem8" itemname="item_seal_0" style="height:24px;width:32px; margin-top:40px; margin-left:267px;"/>
-                    <Label hittest="false" id="lvlmyitemtext1" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:15px;"/>
-                    <Label hittest="false" id="lvlmyitemtext2" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:52px;"/>
-                    <Label hittest="false" id="lvlmyitemtext3" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:89px;"/>
-                    <Label hittest="false" id="lvlmyitemtext4" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:126px;"/>
-                    <Label hittest="false" id="lvlmyitemtext5" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:163px;"/>
-                    <Label hittest="false" id="lvlmyitemtext6" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:200px;"/>
-                    <Label hittest="false" id="lvlmyitemtext7" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:237px;"/>
-                    <Label hittest="false" id="lvlmyitemtext8" text="-" style="height:24px;width:32px; margin-top:70px; margin-left:274px;"/>
+
+                <Label hittest="false" id="hardwins" text="#lhardwins" class="mytest StatText" style="margin-top:67px; margin-left:210px;"/>
+                <Label hittest="false" id="wins" text="#lwins" class="mytest StatText" style="margin-top:91px; margin-left:210px;"/>
+                <Label hittest="false" id="plays" text="#lplays" class="mytest StatText" style="margin-top:115px; margin-left:210px;"/>
+
+                <Panel hittest="false" id="RelicsBlock">
+                    <Label hittest="false" id="relicstext" class="mytest SectionTitle" text="#relics" style="margin-top:6px; margin-left:10px;"/>
+                    <Panel hittest="false" id="Relics" style="margin-top:30px; margin-left:10px;">
+                        <DOTAItemImage id="lvlmyitem1" itemname="item_corrupting_blade" style="height:24px;width:32px; margin-top:12px; margin-left:8px;"/>
+                        <DOTAItemImage id="lvlmyitem2" itemname="item_glimmerdark_shield" style="height:24px;width:32px; margin-top:12px; margin-left:45px;"/>
+                        <DOTAItemImage id="lvlmyitem3" itemname="item_guardian_shell" style="height:24px;width:32px; margin-top:12px; margin-left:82px;"/>
+                        <DOTAItemImage id="lvlmyitem4" itemname="item_dredged_trident" style="height:24px;width:32px; margin-top:12px; margin-left:119px;"/>
+                        <DOTAItemImage id="lvlmyitem5" itemname="item_oblivions_locket" style="height:24px;width:32px; margin-top:12px; margin-left:156px;"/>
+                        <DOTAItemImage id="lvlmyitem6" itemname="item_ambient_sorcery" style="height:24px;width:32px; margin-top:12px; margin-left:193px;"/>
+                        <DOTAItemImage id="lvlmyitem7" itemname="item_wand_of_the_brine" style="height:24px;width:32px; margin-top:12px; margin-left:230px;"/>
+                        <DOTAItemImage id="lvlmyitem8" itemname="item_seal_0" style="height:24px;width:32px; margin-top:12px; margin-left:267px;"/>
+
+                        <Label hittest="false" id="lvlmyitemtext1" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:8px;"/>
+                        <Label hittest="false" id="lvlmyitemtext2" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:45px;"/>
+                        <Label hittest="false" id="lvlmyitemtext3" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:82px;"/>
+                        <Label hittest="false" id="lvlmyitemtext4" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:119px;"/>
+                        <Label hittest="false" id="lvlmyitemtext5" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:156px;"/>
+                        <Label hittest="false" id="lvlmyitemtext6" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:193px;"/>
+                        <Label hittest="false" id="lvlmyitemtext7" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:230px;"/>
+                        <Label hittest="false" id="lvlmyitemtext8" text="-" class="RelicCount" style="height:24px;width:32px; margin-top:42px; margin-left:267px;"/>
+                    </Panel>
                 </Panel>
-                <Label hittest="false" id="hardwins" text="#lhardwins" class="mytest" style="margin-top:67px; margin-left:210px;"/>
-                <Label hittest="false" id="wins" text="#lwins" class="mytest" style="margin-top:91px; margin-left:210px;"/>
-                <Label hittest="false" id="plays" text="#lplays" class="mytest" style="margin-top:115px; margin-left:210px;"/>
-                <Label hittest="false" id="refreshtext" class="mytest" text="#ahclabel" style="margin-top:234px; margin-left:210px;"/>
-                <Panel hittest="false" id="ProfileHeroes" style="margin-top:264px; margin-left:210px;">
+
+                <Panel hittest="false" id="HeroesBlock">
+                    <Label hittest="false" id="refreshtext" class="mytest SectionTitle" text="#ahclabel" style="margin-top:8px; margin-left:10px;"/>
+                        <Panel hittest="false" id="ProfileHeroes" style="margin-top:48px; margin-left:12px;">
+                    </Panel>
                 </Panel>
             </Panel>
-                <Panel hittest="false" id="PlayersButtons" style="margin-top:-11px;">
-                    <Button id="SelPlButton0" class="SelPlButton" onactivate='SelectPl(0)' style="margin-left:60px;">
-                        <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" />
-                        <Image id="spba0" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
-                        <DOTAHeroImage id="plhero0" heroname="npc_dota_hero_weaver" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
-                    </Button>
-                    <Button id="SelPlButton1" class="SelPlButton" onactivate='SelectPl(1)' style="margin-left:142px;">
-                        <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" />
-                        <Image id="spba1" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
-                        <DOTAHeroImage id="plhero1" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
-                    </Button>
-                    <Button id="SelPlButton2" class="SelPlButton" onactivate='SelectPl(2)' style="margin-left:224px;">
-                        <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" />
-                        <Image id="spba2" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
-                        <DOTAHeroImage id="plhero2" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
-                    </Button>
-                    <Button id="SelPlButton3" class="SelPlButton" onactivate='SelectPl(3)' style="margin-left:306px;">
-                        <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" />
-                        <Image id="spba3" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
-                        <DOTAHeroImage id="plhero3" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
-                    </Button>
-                    <Button id="SelPlButton4" class="SelPlButton" onactivate='SelectPl(4)' style="margin-left:388px;">
-                        <Image class="SelPlButtonimg" src="s2r://panorama/images/custom_game/all/selectpldis.png" />
-                        <Image id="spba4" class="SelPlButtonAct" src="s2r://panorama/images/custom_game/all/selectplact.png" />
-                        <DOTAHeroImage id="plhero4" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
-                    </Button>
-                    <Button id="CloseButton" onactivate='Close()' style="margin-top:13px; margin-left:540px;">
-                        <Image id="CloseButtonimg" src="s2r://panorama/images/custom_game/all/closeb.png" />
-                    </Button>
-                </Panel>
+
+            <Panel hittest="false" id="PlayersButtons" style="margin-top:-11px;">
+                <Button id="SelPlButton0" class="SelPlButton" onactivate="SelectPl(0)" style="margin-left:60px;">
+                    <Panel class="SelPlButtonBg" />
+                    <Panel id="spba0" class="SelPlButtonAct" />
+                    <DOTAHeroImage id="plhero0" heroname="npc_dota_hero_weaver" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
+                </Button>
+                <Button id="SelPlButton1" class="SelPlButton" onactivate="SelectPl(1)" style="margin-left:142px;">
+                    <Panel class="SelPlButtonBg" />
+                    <Panel id="spba1" class="SelPlButtonAct" />
+                    <DOTAHeroImage id="plhero1" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
+                </Button>
+                <Button id="SelPlButton2" class="SelPlButton" onactivate="SelectPl(2)" style="margin-left:224px;">
+                    <Panel class="SelPlButtonBg" />
+                    <Panel id="spba2" class="SelPlButtonAct" />
+                    <DOTAHeroImage id="plhero2" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
+                </Button>
+                <Button id="SelPlButton3" class="SelPlButton" onactivate="SelectPl(3)" style="margin-left:306px;">
+                    <Panel class="SelPlButtonBg" />
+                    <Panel id="spba3" class="SelPlButtonAct" />
+                    <DOTAHeroImage id="plhero3" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
+                </Button>
+                <Button id="SelPlButton4" class="SelPlButton" onactivate="SelectPl(4)" style="margin-left:388px;">
+                    <Panel class="SelPlButtonBg" />
+                    <Panel id="spba4" class="SelPlButtonAct" />
+                    <DOTAHeroImage id="plhero4" heroname="" style="height:36px;width:62px; margin-top:10px; margin-left:10px;"/>
+                </Button>
+
+                <Button id="CloseButton" onactivate="Close()" style="margin-top:13px; margin-left:540px;">
+                    <Label id="CloseButtonLabel" text="✕" />
+                </Button>
+            </Panel>
         </Panel>
 	</Panel>
 </root>
