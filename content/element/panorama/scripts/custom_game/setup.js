@@ -73,6 +73,24 @@
 		shopManager.FindChildTraverse("PopularItems").style.visibility = "collapse"; 
 		shopManager.FindChildTraverse("BuybackProtection").style.visibility = "collapse"; 
 
+		centerBlock.FindChildTraverse("ContentsContainer").GetParent().style.visibility = "collapse";
+		centerBlock.FindChildTraverse("StatBranch").style.visibility = "collapse";
+		centerBlock.FindChildTraverse("StatBranch").SetPanelEvent("onmouseover", function () {
+		});
+		centerBlock.FindChildTraverse("StatBranch").SetPanelEvent("onactivate", function () {
+		});
+
+		// Remove xp circle
+	// centerBlock.FindChildTraverse("xp").style.visibility = "collapse";
+	// centerBlock.FindChildTraverse("stragiint").style.visibility = "collapse";
+		//Fuck that levelup button
+		centerBlock.FindChildTraverse("level_stats_frame").style.visibility = "collapse";
+		// Hide tp slot
+		centerBlock.FindChildTraverse("inventory_tpscroll_container").style.visibility = "collapse";
+
+		centerBlock.FindChildTraverse("inventory_tpscroll_HotkeyContainer").style.visibility = "collapse";
+
+
 		}
 		
 

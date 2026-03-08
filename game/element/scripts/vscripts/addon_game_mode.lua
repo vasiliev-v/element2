@@ -22,7 +22,6 @@
 require( 'timers' )
 require( 'barebones' )
 require( 'quest_system')
-require( 'pets')
 require( 'add_zones')
 require( 'libraries/animations' )
 require( 'libraries/physics' )
@@ -993,17 +992,6 @@ function GameMode:OnGameInProgress()
             acc[i] = false
         end
         CustomGameEventManager:Send_ServerToAllClients( "Display_RoundVote", { count = #heroes })
-        
-        for n=1, 4 do
-            if RandomInt( 1, 4 ) == 1 then
-                --spawn item
-                local portal_point = Entities:FindByName( nil, "portal_point_"..n):GetAbsOrigin()
-                local item = CreateItem("item_portal", nil, nil)
-                table.insert(_G.portal_items, item)
-                table.insert(_G.portal_item_drops, CreateItemOnPositionSync( portal_point, item ))
-                -- skip_autovote = true
-            end
-        end
 
         for n=1, #heroes do
             if PlayerResource:GetConnectionState(heroes[n]:GetPlayerOwnerID()) ~= 2 then
@@ -1189,27 +1177,6 @@ function GameMode:_Stats(iswin)
         req:Send(function(result)
             print(result.Body)
         end)
-    end
-end
-
-function GameMode:CheckWearables(unit)
-    if tostring(PlayerResource:GetSteamID(unit:GetPlayerID())) == "76561198112013738" then
-        if unit:GetName() == "npc_dota_hero_juggernaut" then
-            GameMode:RemoveAllWearables(unit)
-            GameMode:AttachWearable(unit,"models/items/juggernaut/armor_for_the_favorite_arms/armor_for_the_favorite_arms.vmdl","particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_shoulder_ambient.vpcf")
-            GameMode:AttachWearable(unit,"models/items/juggernaut/armor_for_the_favorite_back/armor_for_the_favorite_back.vmdl","particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_shoulder_ambient.vpcf")
-            GameMode:AttachWearable(unit,"models/items/juggernaut/armor_for_the_favorite_head/armor_for_the_favorite_head.vmdl","particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_eyes.vpcf")
-            GameMode:AttachWearable(unit,"models/items/juggernaut/armor_for_the_favorite_legs/armor_for_the_favorite_legs.vmdl","particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_body_ambient.vpcf")
-            GameMode:AttachWearable(unit,"models/items/juggernaut/armor_for_the_favorite_weapon/armor_for_the_favorite_weapon.vmdl","particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_weapon.vpcf")
-        end
-        --if unit:GetName() == "npc_dota_hero_dazzle" then
-        --    GameMode:RemoveAllWearables(unit)
-        --    GameMode:AttachWearable(unit,"models/items/dazzle/darkclaw_acolyte_back/darkclaw_acolyte_back.vmdl","particles/econ/items/dazzle/dazzle_darkclaw/dazzle_darkclaw_ambient_head.vpcf")
-        --    GameMode:AttachWearable(unit,"models/items/dazzle/darkclaw_acolyte_misc/darkclaw_acolyte_misc.vmdl",nil)
-        --    GameMode:AttachWearable(unit,"models/items/dazzle/darkclaw_acolyte_legs/darkclaw_acolyte_legs.vmdl",nil)
-        --    GameMode:AttachWearable(unit,"models/items/dazzle/darkclaw_acolyte_arms/darkclaw_acolyte_arms.vmdl",nil)
-        --    GameMode:AttachWearable(unit,"models/items/dazzle/darkclaw_acolyte_weapon/darkclaw_acolyte_weapon.vmdl","particles/econ/items/dazzle/dazzle_darkclaw/dazzle_darkclaw_ambient.vpcf")
-        --end
     end
 end
 

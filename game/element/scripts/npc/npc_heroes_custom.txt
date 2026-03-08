@@ -39,6 +39,7 @@
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"305"
 		"MovementTurnRate"		"0.800000"
+		"Facets"				""
 	}
 
     "npc_dota_hero_shredder"
@@ -77,6 +78,7 @@
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_tusk"
@@ -114,6 +116,7 @@
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"300"
 		"MovementTurnRate"		"0.700000"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_antimage"
@@ -152,6 +155,7 @@
 		"StatusHealthRegen"		"0.25"
 		"MovementSpeed"		"310"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_ember_spirit"
@@ -189,6 +193,7 @@
 		"MovementSpeed"		"305"
 		"MovementTurnRate"		"0.500000"
 		"HasAggressiveStance"		"1"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_mirana"
@@ -228,6 +233,7 @@
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.500000"
 		"HasAggressiveStance"		"1"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_vengefulspirit"
@@ -268,6 +274,7 @@
 		"ArmorPhysical"		"0"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_queenofpain"
@@ -306,6 +313,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_earth_spirit"
@@ -343,6 +351,7 @@
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.600000"
 		"HasAggressiveStance"		"1"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_death_prophet"
@@ -381,6 +390,7 @@
 		"AttributeIntelligenceGain"		"2.500000"
 		"MovementSpeed"		"310"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_pangolier"
@@ -420,6 +430,7 @@
 		"StatusHealthRegen"		"0.25"
 		"MovementSpeed"				"305"
 		"MovementTurnRate"			"1.000000"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_naga_siren"
@@ -459,6 +470,7 @@
 		"MovementSpeed"		"320"
 		"MovementTurnRate"		"0.500000"
 		"StatusHealthRegen"		"1.5"
+		"Facets"				""
 	}
 		
 	"npc_dota_hero_lich"
@@ -497,6 +509,7 @@
 		"AttributeAgilityGain"		"2.0"
 		"MovementSpeed"		"305"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
 
 	"npc_dota_hero_sand_king"
@@ -525,6 +538,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
 
     "npc_dota_hero_night_stalker"
@@ -553,6 +567,7 @@
 		"StatusHealthRegen"		"3.25000"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_broodmother"
@@ -580,6 +595,7 @@
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"270"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_oracle"
@@ -610,6 +626,7 @@
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"305"
 		"MovementTurnRate"		"0.700000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_skywrath_mage"
@@ -640,6 +657,7 @@
 		"AttributeIntelligenceGain"		"2.500000"
 		"MovementSpeed"		"330"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_pudge"
@@ -670,6 +688,7 @@
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"275"
 		"MovementTurnRate"		"0.700000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_shadow_shaman"
@@ -699,6 +718,7 @@
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_bane"
@@ -731,6 +751,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"310"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_ancient_apparition"
@@ -763,6 +784,7 @@
 		"AttributeIntelligenceGain"		"2.500000"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_lion"
@@ -793,6 +815,7 @@
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_dark_willow"
@@ -823,6 +846,7 @@
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.700000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_batrider"
@@ -854,6 +878,7 @@
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"1.000000"
 		"VisionDaytimeRange"		"1200"
+		"Facets"				""
     }
     
     "npc_dota_hero_earthshaker"
@@ -883,6 +908,7 @@
 		"StatusHealthRegen"		"2.50000"
 		"MovementSpeed"		"310"
 		"MovementTurnRate"		"0.900000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_elder_titan"
@@ -911,6 +937,7 @@
 		"AttributeIntelligenceGain"		"2.000000"
 		"MovementSpeed"		"310"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_rattletrap"
@@ -938,6 +965,7 @@
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"310"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_pugna"
@@ -967,6 +995,7 @@
 		"AttributeIntelligenceGain"		"2.50000"
 		"MovementSpeed"		"335"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
     
     "npc_dota_hero_warlock"
@@ -996,6 +1025,7 @@
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"295	"
 		"MovementTurnRate"		"0.50000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_spirit_breaker"
@@ -1025,6 +1055,7 @@
 		"StatusHealthRegen"		"1.5000"
 		"MovementSpeed"		"280"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_riki"
@@ -1054,6 +1085,7 @@
 		"MovementSpeed"		"275"
 		"MovementTurnRate"		"0.600000"
 		"StatusHealthRegen"		"3.0000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_brewmaster"
@@ -1082,6 +1114,7 @@
 		"StatusHealthRegen"		"2.0000"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_razor"
@@ -1111,6 +1144,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_huskar"
@@ -1140,6 +1174,7 @@
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"275"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_kunkka"
@@ -1168,6 +1203,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
 	}
     
     "npc_dota_hero_silencer"
@@ -1200,6 +1236,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
     
     "npc_dota_hero_troll_warlord"
@@ -1231,6 +1268,7 @@
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
     
     "npc_dota_hero_bristleback"
@@ -1258,6 +1296,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"1.000000"
+		"Facets"				""
     }
     
     "npc_dota_hero_venomancer"
@@ -1289,6 +1328,7 @@
 		"AttributeAgilityGain"		"2.500000"
 		"MovementSpeed"		"275"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
     
     "npc_dota_hero_shadow_demon"
@@ -1323,6 +1363,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
     
     "npc_dota_hero_medusa"
@@ -1353,10 +1394,8 @@
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"275"
 		"MovementTurnRate"		"0.500000"
-		"Facets"
-		{
-			
-		}
+		"Facets"				""
+         
     }
     
 	"npc_dota_hero_axe"
@@ -1386,6 +1425,7 @@
 		"StatusHealthRegen"		"4.250000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
     
     "npc_dota_hero_viper"
@@ -1417,6 +1457,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"275"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
     "npc_dota_hero_ogre_magi"
 	{
@@ -1445,6 +1486,7 @@
 		"StatusHealthRegen"		"4.7500000"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
     "npc_dota_hero_disruptor"
 	{
@@ -1477,6 +1519,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"300"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
 
     "npc_dota_hero_weaver"
@@ -1508,6 +1551,7 @@
 		"AttributeAgilityGain"		"2.250000"
 		"MovementSpeed"		"280"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
 
     "npc_dota_hero_slardar"
@@ -1539,6 +1583,7 @@
 		"AttributeIntelligenceGain"		"1.400000"
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
+		"Facets"				""
     }
     
     "npc_dota_hero_treant"
@@ -1572,6 +1617,7 @@
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"270"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
 
     "npc_dota_hero_drow_ranger"
@@ -1608,6 +1654,7 @@
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.700000"
+		"Facets"				""
     }
 
     "npc_dota_hero_zuus"
@@ -1639,6 +1686,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"300"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
 
     "npc_dota_hero_jakiro"
@@ -1670,6 +1718,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
     
     "npc_dota_hero_legion_commander"
@@ -1700,6 +1749,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"320"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
     
     "npc_dota_hero_sniper"
@@ -1730,6 +1780,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.700000"
+		"Facets"				""
     }
 
     "npc_dota_hero_tidehunter"
@@ -1758,6 +1809,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"305"
 		"MovementTurnRate"		"0.400000"
+		"Facets"				""
     }
 
     "npc_dota_hero_templar_assassin"
@@ -1790,6 +1842,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"305"
 		"MovementTurnRate"		"0.700000"
+		"Facets"				""
     }
 
     "npc_dota_hero_leshrac"
@@ -1820,6 +1873,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"325"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
 
     "npc_dota_hero_omniknight"
@@ -1849,6 +1903,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"305"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
 
     "npc_dota_hero_luna"
@@ -1880,6 +1935,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"335"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
 
     "npc_dota_hero_lina"
@@ -1910,6 +1966,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"295"
 		"MovementTurnRate"		"0.500000"
+		"Facets"				""
     }
 
     "npc_dota_hero_gyrocopter"
@@ -1941,6 +1998,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"325"
 		"MovementTurnRate"		"0.600000"
+		"Facets"				""
     }
 
     "npc_dota_hero_abaddon"
@@ -1968,6 +2026,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"310"
+		"Facets"				""
 	}
     
     "npc_dota_hero_centaur"
@@ -1996,6 +2055,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"300"
+		"Facets"				""
 	}
     
     "npc_dota_hero_dragon_knight"
@@ -2025,6 +2085,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"290"
+		"Facets"				""
 	}
     
     "npc_dota_hero_lycan"
@@ -2052,6 +2113,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"305"
+		"Facets"				""
 	}
     
     "npc_dota_hero_sven"
@@ -2081,6 +2143,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"290"
+		"Facets"				""
 	}
     
     "npc_dota_hero_clinkz"
@@ -2112,6 +2175,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"300"
+		"Facets"				""
 	}
     
     "npc_dota_hero_juggernaut"
@@ -2141,6 +2205,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"StatusHealthRegen"		"0.750000"
 		"MovementSpeed"		"305"
+		"Facets"				""
 	}
     
     "npc_dota_hero_phantom_assassin"
@@ -2176,6 +2241,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"310"
+		"Facets"				""
 	}
     
     "npc_dota_hero_nevermore"
@@ -2208,6 +2274,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"StatusHealthRegen"		"0.500000"
 		"MovementSpeed"		"315"
+		"Facets"				""
 	}
     
     "npc_dota_hero_crystal_maiden"
@@ -2238,6 +2305,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"280"
+		"Facets"				""
 	}
     
     "npc_dota_hero_dazzle"
@@ -2267,6 +2335,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"305"
+		"Facets"				""
     }
     
     "npc_dota_hero_windrunner"
@@ -2301,6 +2370,7 @@
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"		"160"
 		"MovementSpeed"		"295"
+		"Facets"				""
     }
     
     "npc_dota_hero_winter_wyvern"
@@ -2334,6 +2404,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"285"
+		"Facets"				""
     }
     
     "npc_dota_hero_witch_doctor"
@@ -2365,6 +2436,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"305"
+		"Facets"				""
     }
 
 	"npc_dota_hero_snapfire"
@@ -2404,5 +2476,6 @@
 		"MovementTurnRate"			"0.500000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"220"
+		"Facets"				""
 	}
 }

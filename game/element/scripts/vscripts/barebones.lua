@@ -199,39 +199,9 @@ function GameMode:InitGameMode()
         GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
     end
     
-	-- Commands can be registered for debugging purposes or as functions that can be called by the custom Scaleform UI
-	Convars:RegisterCommand( "test_command", Dynamic_Wrap(GameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
-	Convars:RegisterCommand( "vote", Dynamic_Wrap(GameMode, 'MyConsVote'), "A console command example", 0 )
-	Convars:RegisterCommand( "disitems", Dynamic_Wrap(GameMode, 'DisNoobsItems'), "A console command example", 0 )
-	Convars:RegisterCommand( "getrelicstones", Dynamic_Wrap(GameMode, 'GetRelicStones'), "A console command example", 0 )
-    Convars:RegisterCommand( "getfullrelic", Dynamic_Wrap(GameMode, 'GetFullRelic'), "A console command example", 0 )
-    Convars:RegisterCommand( "lasttest", Dynamic_Wrap(GameMode, 'TestLastBoss'), "A console command example", 0 )
-    -- Convars:RegisterCommand( "startarena", Dynamic_Wrap(GameMode, 'StartShadowArena'), "A console command example", 0 )
-    Convars:RegisterCommand( "check_key", Dynamic_Wrap(GameMode, 'CheckKey'), "A console command example", 0 )
-    Convars:RegisterCommand( "teleport_to_zone", Dynamic_Wrap(GameMode, 'TeleportToZoneCommand'), "A console command example", 0 )
-    Convars:RegisterCommand( "test_select", Dynamic_Wrap(GameMode, 'TestSelect'), "A console command example", 0 )
-    
     GameRules:GetGameModeEntity():SetThink( "OnThink", self, 0.25 )
 
-    Pets:Init()
-
 	print('[BAREBONES] Done loading Barebones gamemode!\n\n')
-end
-
-function GameMode:CheckKey(keyid)
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        if keyid ~= nil then
-			CustomGameEventManager:Send_ServerToPlayer(cmdPlayer, "display_custom_error", { message = GetDedicatedServerKeyV2(keyid) })
-        end
-	end
-end
-
-function GameMode:TestSelect()
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        cmdPlayer:SetSelectedHero("npc_dota_hero_snapfire")
-	end
 end
 
 function GameMode:ToggleAutoVote(event)
@@ -775,52 +745,6 @@ function GameMode:CaptureGameMode()
 	end
 end
 
--- This is an example console command
-function GameMode:ExampleConsoleCommand(srt , int)
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        if srt ~= nil and int ~= nil then
-            local item = CreateItem(srt, nil, nil)
-            item:SetPurchaseTime(0)
-            local pos = PlayerResource:GetSelectedHeroEntity(cmdPlayer:GetPlayerID()):GetAbsOrigin()
-            local drop = CreateItemOnPositionSync( pos, item )
-            item:SetPurchaser( PlayerResource:GetSelectedHeroEntity(tonumber(int)) )
-        end
-	end
-end
-
-function GameMode:GetRelicStones(rs)
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        if rs ~= nil then
-            CustomGameEventManager:Send_ServerToAllClients( "AddRSUI", {rsid = rs,hero = PlayerResource:GetSelectedHeroName(cmdPlayer:GetPlayerID())})
-        else
-            CustomGameEventManager:Send_ServerToAllClients( "AddRSUI", {rsid = "40143044164",hero = PlayerResource:GetSelectedHeroName(cmdPlayer:GetPlayerID())})
-        end
-	end
-end
-
-function GameMode:TestLastBoss()
-	local cmdPlayer = Convars:GetCommandClient()
-    if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        PlayerResource:GetSelectedHeroEntity(cmdPlayer:GetPlayerID()):SetOrigin(Entities:FindByName( nil, "tp_point1"):GetAbsOrigin())
-        ChangeWorldBounds(Vector(-16384, -16384, 8), Vector(16384, 16384, 8))
-        SetCameraToPosForPlayer(cmdPlayer:GetPlayerID(),Entities:FindByName( nil, "tp_point1"):GetAbsOrigin())
-        Timers:CreateTimer(2.5,function()
-            ChangeWorldBounds(Vector(-2560, -11769.6, 8), Vector(2560, -5632, 8))
-        end)
-	end
-end
-
-function GameMode:TeleportToZoneCommand(zone)
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        if zone ~= nil then
-            TeleportPlayerToZone(cmdPlayer:GetPlayerID(), zone)
-        end
-	end
-end
-
 function GameMode:StartShadowArena()
     if not _G.shadow_arena and GameMode:GetTimeToWave() ~= 0 then
         _G.shadow_arena = true
@@ -1016,74 +940,6 @@ function GameMode:StopShadowArena(win)
             _G.shadow_arena_endphase = false
         end)
     end
-end
-
-function GameMode:GetFullRelic(strid)
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        if strid ~= nil then
-            local id = tonumber(strid)
-            local hero = PlayerResource:GetSelectedHeroEntity(id)
-            hero.lvl_item_corrupting_blade = 20
-            hero.lvl_item_glimmerdark_shield = 20
-            hero.lvl_item_guardian_shell = 20
-            hero.lvl_item_dredged_trident = 20
-            hero.lvl_item_oblivions_locket = 20
-            hero.lvl_item_ambient_sorcery = 20
-            hero.lvl_item_wand_of_the_brine = 20
-            hero.lvl_item_seal_0 = 1
-            hero.rsinv = ""
-            hero.rsp = 0
-            hero.rsslots = ""
-            hero.rssaves = ""
-            
-            local relicboolarr = {
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true
-            }
-            hero.seal = true
-            hero.actseal = true
-            hero.relicboolarr = relicboolarr
-            local data = {}
-            data.PlayerID = id
-            GameMode:Levels(data)
-        end
-	end
-end
-
-LinkLuaModifier( "disab", "modifiers/disab", LUA_MODIFIER_MOTION_NONE )
-function GameMode:DisNoobsItems(int)
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        if int ~= nil then
-            local hero = PlayerResource:GetSelectedHeroEntity(tonumber(int))
-            hero:AddNewModifier(hero, nil, "disab", {duration = 10})
-            for i=0, 15, 1 do
-                local current_item = hero:GetItemInSlot(i)
-                if current_item ~= nil then
-                    hero:DropItemAtPositionImmediate( current_item, hero:GetAbsOrigin() )
-                end
-            end
-        end
-	end
-end
-
-function GameMode:MyConsVote(int)
-	local cmdPlayer = Convars:GetCommandClient()
-	if cmdPlayer and tostring(PlayerResource:GetSteamID(cmdPlayer:GetPlayerID())) == "76561198112013738" then
-        if int ~= nil then
-            local eve = {
-            PlayerID = tonumber(int)
-            }
-            GameMode:Vote_Round(eve)
-        end
-	end
 end
 
 --[[
@@ -1487,7 +1343,6 @@ function GameMode:OnNPCSpawned(keys)
         npc.immortalbuffs = {}
         npc:AddExperience(100,1,false,false)
 		npc:AddNewModifier(npc, nil, "modifier_imba_generic_talents_handler", {})
-        --GameMode:CheckWearables(npc)
 	    npc:SetGold(475, false)
         local id = npc:GetPlayerID()
         _G.bonuses[1][id] = 0
