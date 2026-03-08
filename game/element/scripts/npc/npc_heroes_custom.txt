@@ -1355,7 +1355,7 @@
 		"MovementTurnRate"		"0.500000"
 		"Facets"
 		{
-			  
+			
 		}
     }
     

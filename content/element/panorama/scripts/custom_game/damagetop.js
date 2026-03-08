@@ -1,7 +1,5 @@
 function open(info)
 {
-    $.Msg(info);
-    
     if (info.hero1 != null && info.damage1 != 0)
     {
         $("#DamageTop").visible = true;
@@ -16,7 +14,7 @@ function open(info)
         $("#topp").visible = false;
         $("#DamageTop").visible = false;
     }
-    
+
     if (info.hero2 != null)
     {
         $("#hero2").visible = true;
@@ -27,7 +25,7 @@ function open(info)
     {
         $("#hero2").visible = false;
     }
-    
+
     if (info.hero3 != null)
     {
         $("#hero3").visible = true;
@@ -38,7 +36,7 @@ function open(info)
     {
         $("#hero3").visible = false;
     }
-    
+
     if (info.hero4 != null)
     {
         $("#hero4").visible = true;
@@ -49,7 +47,7 @@ function open(info)
     {
         $("#hero4").visible = false;
     }
-    
+
     if (info.hero5 != null)
     {
         $("#hero5").visible = true;
@@ -64,13 +62,13 @@ function open(info)
 
 function close()
 {
-	$("#DamageTop").visible = false;
+    $("#DamageTop").visible = false;
 }
 
 (function()
 {
-    GameEvents.Subscribe( "Open_DamageTop", open)
-    GameEvents.Subscribe( "Close_DamageTop", close)
-    
+    GameEvents.Subscribe("Open_DamageTop", open);
+    GameEvents.Subscribe("Close_DamageTop", close);
+
     $("#DamageTop").visible = false;
 })();

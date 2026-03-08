@@ -65,6 +65,13 @@
 		//FindDotaHudElement("CommonItems").style.visibility = "collapse";
 		//FindDotaHudElement("QuickBuySlot8").style.visibility = "collapse";
 		FindDotaHudElement("GlyphScanContainer").style.visibility = "collapse";
+		newUI.FindChildTraverse("inventory_neutral_craft_holder").style.visibility = "collapse";  
+
+		var shopManager = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("shop");
+		shopManager.FindChildTraverse("GridNeutralsTab").style.visibility = "collapse";
+		shopManager.FindChildTraverse("RequestSuggestion").style.visibility = "collapse"; 
+		shopManager.FindChildTraverse("PopularItems").style.visibility = "collapse"; 
+		shopManager.FindChildTraverse("BuybackProtection").style.visibility = "collapse"; 
 
 		}
 		

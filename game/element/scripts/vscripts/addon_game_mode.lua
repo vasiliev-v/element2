@@ -811,6 +811,8 @@ function Precache( context )
     PrecacheResource("particle", "particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_body_ambient.vpcf", context)
     PrecacheResource("particle", "particles/econ/items/juggernaut/armor_of_the_favorite/juggernaut_favorite_weapon.vpcf", context)
     
+    PrecacheModel("models/heroes/phoenix/phoenix_egg.vmdl", context)
+
     PrecacheModel("models/courier/baby_rosh/babyroshan_elemental.vmdl", context)
     PrecacheModel("models/items/courier/el_gato_beyond_the_summit/el_gato_beyond_the_summit.vmdl", context)
     

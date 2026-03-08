@@ -18,9 +18,13 @@ function Toggle()
 
 function UpdateVote(info)
 {
-    var id = info.id + 1
-	$("#hero"+id+"_no").visible = false;
-	$("#hero"+id+"_yes").visible = true;
+    var id = info.id + 1;
+
+    $("#hero" + id).heroname = Players.GetPlayerSelectedHero(info.id);
+    $("#hero" + id).visible = true;
+
+    $("#hero" + id + "_no").visible = false;
+    $("#hero" + id + "_yes").visible = true;
 }
 
 function open(info)
@@ -50,11 +54,20 @@ function open(info)
     
     var count = info.count
     
-    for (var i = 1; i <= count;i++)
-    {
-        $("#hero"+i).heroname = Players.GetPlayerSelectedHero(i-1);
-        $("#hero"+i+"_no").visible = true;
-    }
+    for (var i = 1; i <= 5; i++)
+	{
+		$("#hero"+i).heroname = "";
+		$("#hero"+i).visible = false;
+		$("#hero"+i+"_yes").visible = false;
+		$("#hero"+i+"_no").visible = false;
+	}
+
+	var count = info.count;
+
+	for (var i = 1; i <= count; i++)
+	{
+		$("#hero"+i+"_no").visible = true;
+	}
 }
 
 function close()

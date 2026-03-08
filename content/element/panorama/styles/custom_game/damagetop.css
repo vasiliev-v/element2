@@ -2,64 +2,123 @@
 {
     width: 100%;
     height: 100%;
-    overflow: clip;
+    overflow: noclip;
 }
 
 #DamageTop
 {
-  horizontal-align: center;
-  margin-left:380px;
-  vertical-align: top;
- }
- 
+    horizontal-align: center;
+    vertical-align: top;
+    margin-left: 380px;
+    margin-top: 0px;
+
+    width: 250px;
+    height: 156px;
+
+    background-color: rgba(20, 20, 20, 0.94);
+    border: 2px solid rgba(184, 255, 69, 0.35);
+    box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.70);
+}
+
+/* ==========================
+   HEADER
+   ========================== */
+
 #topp
 {
-  horizontal-align: left;
-  margin-left:0px;
-  vertical-align: top;
-  width: 250px;
-  height: 20px;
- }
- 
- #TPtext
- {
-  margin-left:5px;
-  font-size: 18px;
-  font-weight: bold;
- }
- 
- #hero1,
- #hero2,
- #hero3,
- #hero4,
- #hero5
- {
-  horizontal-align: left;
-  margin-left:0px;
-  vertical-align: top;
-  width: 250px;
-  height: 28px;
- }
- 
- #DamageH1,
- #DamageH2,
- #DamageH3,
- #DamageH4,
- #DamageH5
- {
-  horizontal-align: right;
-  margin-right:10px;
-  margin-top:3px;
-  font-size: 18px;
-  font-weight: bold;
- }
- 
- #ihero1,
- #ihero2,
- #ihero3,
- #ihero4,
- #ihero5
- {
-  margin-top:2px;
-  margin-left:4px;
- }
+    horizontal-align: left;
+    vertical-align: top;
+    margin-left: 0px;
+    width: 250px;
+    height: 20px;
+}
+
+#TopHeaderBg
+{
+    width: 100%;
+    height: 20px;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(rgba(75,104,52,0.92)), to(rgba(39,68,15,0.6)));
+    border-bottom: 1px solid rgba(184,255,69,0.20);
+}
+
+#TPtext
+{
+    margin-left: 8px;
+    margin-top: -1px;
+
+    font-size: 16px;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+
+    color: white;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}
+
+/* ==========================
+   ROWS
+   ========================== */
+
+#hero1,
+#hero2,
+#hero3,
+#hero4,
+#hero5
+{
+    horizontal-align: left;
+    vertical-align: top;
+    margin-left: 0px;
+
+    width: 250px;
+    height: 28px;
+}
+
+.DamageRow
+{
+}
+
+.DamageRowBg
+{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.28);
+    border-top: 1px solid rgba(184,255,69,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.35);
+}
+
+#hero1 .DamageRowBg,
+#hero2 .DamageRowBg,
+#hero3 .DamageRowBg,
+#hero4 .DamageRowBg,
+#hero5 .DamageRowBg
+{
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.20);
+}
+
+#ihero1,
+#ihero2,
+#ihero3,
+#ihero4,
+#ihero5
+{
+    margin-top: 2px;
+    margin-left: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.35);
+}
+
+#DamageH1,
+#DamageH2,
+#DamageH3,
+#DamageH4,
+#DamageH5
+{
+    horizontal-align: right;
+    margin-right: 10px;
+    margin-top: 3px;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #B8FF45;
+    text-shadow: 0px 0px 4px 2 #000000cc;
+}

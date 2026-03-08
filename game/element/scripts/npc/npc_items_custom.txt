@@ -12387,6 +12387,7 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
+		"ItemIsNeutralActiveDrop"				"1"
 	}
 
 // Seal
@@ -12416,6 +12417,7 @@
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemIsNeutralActiveDrop"				"1"
 		"AbilityValues"
         {
             "bonus_damage_for_wawe" "0.25"
