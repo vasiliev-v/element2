@@ -10,7 +10,7 @@ function open()
 
 (function()
 {
-    GameEvents.Subscribe( "endswaves", open)
+    GameEvents.SubscribeProtected( "endswaves", open)
     
     $("#endswaves").visible = false;
 })();

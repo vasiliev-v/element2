@@ -13,38 +13,38 @@
 			<Panel id="RoundOptionsHeader">
 				<Label hittest="false" id="question" text="#votetext"/>
 			</Panel>
-
+ 
 			<Panel id="VoteHeroesRow">
-				<Panel class="VoteHeroCard" style="margin-left:17px;">
-					<Panel class="VoteHeroFrame"/>
+				<Panel id="hero_card1" class="VoteHeroCard" style="margin-left:17px;">
+					<Panel id="hero_frame1" class="VoteHeroFrame"/>
 					<DOTAHeroImage id="hero1" heroname="" class="VoteHeroImage"/>
 					<Image id="hero1_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
 					<Image id="hero1_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
 				</Panel>
 
-				<Panel class="VoteHeroCard" style="margin-left:107px;">
-					<Panel class="VoteHeroFrame"/>
+				<Panel id="hero_card2" class="VoteHeroCard" style="margin-left:107px;">
+					<Panel id="hero_frame2" class="VoteHeroFrame"/>
 					<DOTAHeroImage id="hero2" heroname="" class="VoteHeroImage"/>
 					<Image id="hero2_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
 					<Image id="hero2_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
 				</Panel>
 
-				<Panel class="VoteHeroCard" style="margin-left:197px;">
-					<Panel class="VoteHeroFrame"/>
+				<Panel id="hero_card3" class="VoteHeroCard" style="margin-left:197px;">
+					<Panel id="hero_frame3" class="VoteHeroFrame"/>
 					<DOTAHeroImage id="hero3" heroname="" class="VoteHeroImage"/>
 					<Image id="hero3_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
 					<Image id="hero3_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
 				</Panel>
 
-				<Panel class="VoteHeroCard" style="margin-left:287px;">
-					<Panel class="VoteHeroFrame"/>
+				<Panel id="hero_card4" class="VoteHeroCard" style="margin-left:287px;">
+					<Panel id="hero_frame4" class="VoteHeroFrame"/>
 					<DOTAHeroImage id="hero4" heroname="" class="VoteHeroImage"/>
 					<Image id="hero4_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
 					<Image id="hero4_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>
 				</Panel>
 
-				<Panel class="VoteHeroCard" style="margin-left:377px;">
-					<Panel class="VoteHeroFrame"/>
+				<Panel id="hero_card5" class="VoteHeroCard" style="margin-left:377px;">
+					<Panel id="hero_frame5" class="VoteHeroFrame"/>
 					<DOTAHeroImage id="hero5" heroname="" class="VoteHeroImage"/>
 					<Image id="hero5_yes" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/yes.png"/>
 					<Image id="hero5_no" class="VoteHeroMark" src="s2r://panorama/images/custom_game/all/no.png"/>

@@ -138,22 +138,8 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('player_stats_updated', Dynamic_Wrap(GameMode, 'OnPSUpdated'), self)
     
 	CustomGameEventManager:RegisterListener("Vote_Round", Dynamic_Wrap(GameMode, 'Vote_Round'))
-	CustomGameEventManager:RegisterListener("Buy_Relic", Dynamic_Wrap(GameMode, 'Buy_Relic'))
-	CustomGameEventManager:RegisterListener("UpdateTops", Dynamic_Wrap(GameMode, 'UpdateTops'))
-	CustomGameEventManager:RegisterListener("Levels", Dynamic_Wrap(GameMode, 'Levels'))
-	CustomGameEventManager:RegisterListener("SelectPart", Dynamic_Wrap(GameMode, 'SelectPart'))
 	CustomGameEventManager:RegisterListener("ToggleAutoVote", Dynamic_Wrap(GameMode, 'ToggleAutoVote'))
-	CustomGameEventManager:RegisterListener("RefreshRelics", Dynamic_Wrap(GameMode, 'LoadRelics'))
 	CustomGameEventManager:RegisterListener("Buy_Element", Dynamic_Wrap(GameMode, 'Buy_Element'))
-	CustomGameEventManager:RegisterListener("UpdateProfiles", Dynamic_Wrap(GameMode, 'UpdateProfiles'))
-	CustomGameEventManager:RegisterListener("SniatRS", Dynamic_Wrap(GameMode, 'SniatRS'))
-	CustomGameEventManager:RegisterListener("EqipRS", Dynamic_Wrap(GameMode, 'EqipRS'))
-	CustomGameEventManager:RegisterListener("PureRS", Dynamic_Wrap(GameMode, 'PureRS'))
-	CustomGameEventManager:RegisterListener("SetDefaultPart", Dynamic_Wrap(GameMode, 'SetDefaultPart'))
-	CustomGameEventManager:RegisterListener("SaveSet", Dynamic_Wrap(GameMode, 'SaveSet'))
-	CustomGameEventManager:RegisterListener("LoadSet", Dynamic_Wrap(GameMode, 'LoadSet'))
-	CustomGameEventManager:RegisterListener("SetColor", Dynamic_Wrap(GameMode, 'SetColor'))
-	CustomGameEventManager:RegisterListener("UpgradeRS", Dynamic_Wrap(GameMode, 'UpgradeRS'))
 	CustomGameEventManager:RegisterListener("OnLoadPlayerVote", Dynamic_Wrap(GameMode, 'OnLoadPlayerVote'))
     
     --GameRules:GetGameModeEntity():SetCustomTerrainWeatherEffect( "particles/rain_fx/econ_snow.vpcf" )
@@ -165,7 +151,6 @@ function GameMode:InitGameMode()
 	-- Change random seed
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
 	math.randomseed(tonumber(timeTxt))
-    GameMode:GetNum("http://")
     CustomNetTables:SetTableValue("Hero_Stats","wave",{0})
     for i=0,4 do
         local tbl = {
@@ -189,8 +174,6 @@ function GameMode:InitGameMode()
     _G.wave_effect_mods = {}
     _G.portal_items = {}
     _G.portal_item_drops = {}
-
-    _G.DedicatedServerKey = GetDedicatedServerKeyV2("2")
     
     if GetMapName() == "hard" then
         GameRules.DropTable = LoadKeyValues("scripts/kv/hard_item_drops.kv")
@@ -329,207 +312,7 @@ function GameMode:EqipRS(event)
 end
 
 puretimerok = true
-function GameMode:PureRS(event)
-    if event == nil or event.PlayerID == nil then return end
-    if puretimerok == true then
-        puretimerok = false
-        Timers:CreateTimer(5, function()
-            puretimerok = true
-            CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(event.PlayerID), "PureButtonReady", {})
-        end)
-        local hero = PlayerResource:GetSelectedHeroEntity(event.PlayerID)
-        local pureok = false
-        local inslot = false
-        local newlist = {}
-        local rspure = 0
-        for k,v in pairs(event.rs) do
-            for i=1,8 do
-                if hero.rsslots[i] == v then
-                    inslot = true
-                    break
-                end
-            end
-            for i=1,#hero.rsinv do
-                if hero.rsinv[i] == v then
-                    if inslot == false then
-                        table.remove(hero.rsinv,i)
-                        pureok = true
-                    end
-                    break
-                end
-            end
-            if pureok then
-                table.insert(newlist,v)
-                local fchr = string.sub(v, 1, 1)
-                if fchr == "1" then rspure = rspure + 1
-                elseif fchr == "2" then rspure = rspure + 3
-                elseif fchr == "3" then rspure = rspure + 15
-                elseif fchr == "4" then rspure = rspure + 60
-                end
-            end
-        end
-        hero.rsp = hero.rsp + rspure
-        if #newlist > 0 then
-            local rstr = ""
-            for i=1,#newlist do
-                if rstr == "" then
-                    rstr = rstr .. newlist[i]
-                else
-                    rstr = rstr .. "|" .. newlist[i]
-                end
-            end
-            --print(rstr)
-            local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/relicstones1.php")
-            req:SetHTTPRequestGetOrPostParameter("id", tostring(PlayerResource:GetSteamID(event.PlayerID)))
-            req:SetHTTPRequestGetOrPostParameter("rsids", rstr)
-            req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-            req:Send(function(result)
-                print(result.Body)
-            end)
-        end
-        GameMode:UpdateRS(event.PlayerID)
-        GameMode:Levels(event)
-    end
-end
 
-function GameMode:SetDefaultPart(event)
-    local player = PlayerResource:GetPlayer(event.PlayerID)
-    if player.parttimerok == nil then player.parttimerok = true end
-    if player.parttimerok == true then
-        player.parttimerok = false
-        Timers:CreateTimer(30, function()
-            player.parttimerok = true
-            CustomGameEventManager:Send_ServerToPlayer( player, "DefaultButtonReady", {})
-        end)
-        local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/data.php")
-        req:SetHTTPRequestGetOrPostParameter("inid", tostring(PlayerResource:GetSteamID(event.PlayerID)))
-        req:SetHTTPRequestGetOrPostParameter("part", "defaults")
-        req:SetHTTPRequestGetOrPostParameter("reson", tostring(event.part))
-        req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-        req:Send(function(result)
-            print(result.Body)
-        end)
-    end
-end
-
-function GameMode:SaveSet(event)
-    if event == nil or event.PlayerID == nil then return end
-    local hero = PlayerResource:GetSelectedHeroEntity(event.PlayerID)
-    if hero == nil or hero.rsslots == nil then return end
-    if hero.sevesettimerok == nil then hero.sevesettimerok = true end
-    if hero.sevesettimerok == true then
-        hero.sevesettimerok = false
-        Timers:CreateTimer(5, function()
-            hero.sevesettimerok = true
-            CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(event.PlayerID), "ReadySetButton", {})
-        end)
-        local rstr = ""
-        for i=1,8 do
-            if i ~= 8 then
-                rstr = rstr .. hero.rsslots[i] .. "|"
-            else
-                rstr = rstr .. hero.rsslots[i]
-            end
-        end
-        if hero.rssaves == nil then
-            hero.rssaves = {}
-        end
-        hero.rssaves[tonumber(event.num)] = rstr
-        local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/relicstones1.php")
-        req:SetHTTPRequestGetOrPostParameter("id", tostring(PlayerResource:GetSteamID(event.PlayerID)))
-        req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-        req:SetHTTPRequestGetOrPostParameter("savenum", tostring(event.num))
-        req:SetHTTPRequestGetOrPostParameter("slots", rstr)
-        req:Send(function(result)
-            print(result.Body)
-        end)
-        GameMode:UpdateRS(event.PlayerID)
-        GameMode:Levels(event)
-    end
-end
-
-function GameMode:UpgradeRS(event)
-    if event == nil or event.PlayerID == nil then return end
-    local hero = PlayerResource:GetSelectedHeroEntity(event.PlayerID)
-    for i=1,#hero.rsinv do
-        if hero.rsinv[i] == event.rs then
-            local rares = string.sub(event.rs, 1, 1)
-            local qual = string.sub(event.rs, 8, 8)
-            if qual ~= "5" and rares == "4" then
-                local cost = 0
-                if     qual == "0" then cost = 40
-                elseif qual == "1" then cost = 80
-                elseif qual == "2" then cost = 160
-                elseif qual == "3" then cost = 320
-                elseif qual == "4" then cost = 640
-                end
-                if hero.rsp ~= nil and hero.rsp >= cost then
-                    hero.rsinv[i] = string.sub(event.rs, 1, 7) .. tonumber(qual)+1 .. string.sub(event.rs, 9)
-                    hero.rsp = hero.rsp - cost
-                    local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/relicstones1.php")
-                    req:SetHTTPRequestGetOrPostParameter("id", tostring(PlayerResource:GetSteamID(event.PlayerID)))
-                    req:SetHTTPRequestGetOrPostParameter("uprsid", event.rs)
-                    req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-                    req:Send(function(result)
-                        print(result.Body)
-                    end)
-                end
-            end
-            GameMode:Levels(event)
-            break
-        end
-    end
-end
-
-function GameMode:SetColor(event)
-    if event == nil or event.PlayerID == nil then return end
-    local hero = PlayerResource:GetSelectedHeroEntity(event.PlayerID)
-    if event.colorid ~= 1 then
-        for i=1,#hero.sealcolors do
-            if hero.sealcolors[i] == event.colorid then
-                hero.sealcolor = event.colorid
-                break
-            end
-        end
-    else
-        hero.sealcolor = event.colorid
-    end
-    --print(hero.sealcolor)
-end
-
-function GameMode:LoadSet(event)
-    if event == nil or event.PlayerID == nil then return end
-    local hero = PlayerResource:GetSelectedHeroEntity(event.PlayerID)
-    if hero == nil or hero.rsinv == nil or hero.rssaves == nil then return end
-    local thisslots = {}
-    hero.rsslots = {"","","","","","","",""}
-    for token in string.gmatch(hero.rssaves[tonumber(event.num)].."|", "([^|]*)|") do
-        local moshnoadd = true
-        local estininv = false
-        for i=1,#hero.rsinv do
-            if hero.rsinv[i] == token then
-                estininv = true
-                break
-            end
-        end
-        for i=1,8 do
-            if hero.rsslots[i] == token then
-                moshnoadd = false
-                break
-            end
-        end
-        if moshnoadd == true and estininv == true then
-            table.insert(thisslots,token)
-        else
-            table.insert(thisslots,"")
-        end
-    end
-    if #thisslots == 8 then
-        hero.rsslots = thisslots
-    end
-    GameMode:UpdateRS(event.PlayerID)
-    GameMode:Levels(event)
-end
 
 for i=1,6 do
     if i<10 then
@@ -668,7 +451,6 @@ function GameMode:_CheckForDefeat()
                 }
                 CustomNetTables:SetTableValue("Hero_Stats",tostring(i),tbl)
             end
-            GameMode:_Stats(nil)
             GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
             -- return
         end
@@ -986,317 +768,9 @@ function GameMode:OnGameRulesStateChange(keys)
 	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 		for i = 0, PlayerResource:GetPlayerCount()-1 do
 			PlayerResource:SetCustomTeamAssignment(i, DOTA_TEAM_GOODGUYS)
-		end
-	elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-            
-    --###########################################################################################################################################################
-            
-        print("Load Patreons")
-        local patreonreq = CreateHTTPRequestScriptVM( "GET", "https://pastebin.com/raw/Njy7mF0F")
-        patreonreq:Send(function(result)
-            --print(result.Body)
-            for token in string.gmatch(result.Body, "([^|]*)|") do
-                --print(token)
-                local id = ""
-                local lvl = ""
-                id, lvl = token:match("([^,]+),([^,]+)")
-                _G.patreons[id] = tonumber(lvl)
-            end
-            --print("Patreons Loaded")
-            ----DeepPrintTable(_G.patreons)
-            local pplc = PlayerResource:GetPlayerCount()
-            for i=0,pplc-1 do
-                local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(i))
-                --print(parts)
-                if parts ~= nil then
-                    --patreon particles
-                    parts["11"] = "nill"
-                    parts["12"] = "nill"
-                    parts["13"] = "nill"
-                    parts["14"] = "nill"
-                    parts["15"] = "nill"
-                    local plvl = _G.patreons[tostring(PlayerResource:GetSteamID(i))]
-                    if plvl ~= nil then
-                        if plvl >= 1 then
-                            parts["7"] = "normal"
-                            parts["11"] = "normal"
-                        end
-                        if plvl >= 2 then
-                            parts["12"] = "normal"
-                        end
-                        if plvl >= 3 then
-                            parts["13"] = "normal"
-                        end
-                        if plvl >= 4 then
-                            parts["14"] = "normal"
-                        end
-                        if plvl >= 5 then
-                            parts["15"] = "normal"
-                        end
-                    end
-                    -- --DeepPrintTable(parts)
-                    CustomNetTables:SetTableValue("Particles_Tabel",tostring(i),parts)
-                else
-                    parts = {}
-                    --patreon particles
-                    parts["11"] = "nill"
-                    parts["12"] = "nill"
-                    parts["13"] = "nill"
-                    parts["14"] = "nill"
-                    parts["15"] = "nill"
-                    local plvl = _G.patreons[tostring(PlayerResource:GetSteamID(i))]
-                    if plvl ~= nil then
-                        if plvl >= 1 then
-                            parts["7"] = "normal"
-                            parts["11"] = "normal"
-                        end
-                        if plvl >= 2 then
-                            parts["12"] = "normal"
-                        end
-                        if plvl >= 3 then
-                            parts["13"] = "normal"
-                        end
-                        if plvl >= 4 then
-                            parts["14"] = "normal"
-                        end
-                        if plvl >= 5 then
-                            parts["15"] = "normal"
-                        end
-                    end
-                    -- --DeepPrintTable(parts)
-                    CustomNetTables:SetTableValue("Particles_Tabel",tostring(i),parts)
-                end
-            end
-        end)
-            
-    --###########################################################################################################################################################
-        
-        local req12 = CreateHTTPRequestScriptVM( "GET", GameMode.gjfll2 .. "/cache/tops.cache")
-        -- req12:SetHTTPRequestGetOrPostParameter("v", "3")
-        req12:Send(function(result)
-            local otvwins = result.Body
-            print(otvwins)
-            if otvwins ~= "" then
-                if otvwins ~= "none" then
-                    local i = 1
-                    local tops = {}
-                    for token in string.gmatch(otvwins.."&", "([^&]*)&") do
-                        tops[i] = token
-                        i = i + 1
-                    end
-                    ----DeepPrintTable(tops)
-                    if tops[4] == "allok" then
-                        local arr = {}
-                        for token in string.gmatch(tops[1].." ", "([^ ]*) ") do
-                            table.insert(arr,token)
-                        end
-                        GameMode:OnLoadTop(arr,1)
-                        arr = {}
-                        for token in string.gmatch(tops[2].." ", "([^ ]*) ") do
-                            table.insert(arr,token)
-                        end
-                        GameMode:OnLoadTop(arr,2)
-                        arr = {}
-                        for token in string.gmatch(tops[3].." ", "([^ ]*) ") do
-                            table.insert(arr,token)
-                        end
-                        GameMode:OnLoadTop(arr,3)
-                    end
-                end
-            end
-        end)
-        
-    --###########################################################################################################################################################
-        
-    local pplc = PlayerResource:GetPlayerCount()
-    local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/data.php")
-    for i=0,pplc-1 do
-        req:SetHTTPRequestGetOrPostParameter("id"..(i+1), tostring(PlayerResource:GetSteamID(i)))
-    end
-    req:SetHTTPRequestGetOrPostParameter("v", "12")
-    req:Send(function(result)
-        local potv = result.Body
-        print(potv)
-        if potv ~= "" then
-            --print(potv)
-            local i = 0
-            for token in string.gmatch(result.Body, "([^&]*)&") do
-                --print(token)
-                
-                local particlesdata = ""
-                local profiledata = ""
-                profiledata, particlesdata = token:match("([^?]+)?([^?]+)")
-                --print(particlesdata)
-                --print(profiledata)
-
-                local locstr = ""
-                local arrstr = {}
-                for n=1, string.len(particlesdata) do
-                    if string.char(string.byte(particlesdata, n)) ~= nil then
-                        if string.char(string.byte(particlesdata, n)) == "|" then
-                            table.insert(arrstr, locstr)
-                            locstr = ""
-                        else
-                            locstr = locstr .. string.char(string.byte(particlesdata, n))
-                        end
-                    end
-                end
-                if locstr ~= "" then
-                    table.insert(arrstr, locstr)
-                    locstr = ""
-                end
-                if arrstr[#arrstr] == "allok" then
-                    arrstr[#arrstr] = nil
-                    _G.defaultpart[i] = arrstr[#arrstr]
-                    arrstr[#arrstr] = nil
-
-                    --patreon particles
-                    local plvl = _G.patreons[tostring(PlayerResource:GetSteamID(i))]
-                    arrstr["11"] = "nill"
-                    arrstr["12"] = "nill"
-                    arrstr["13"] = "nill"
-                    arrstr["14"] = "nill"
-                    arrstr["15"] = "nill"
-                    if plvl ~= nil then
-                        if plvl >= 1 then
-                            arrstr["7"] = "normal"
-                            arrstr["11"] = "normal"
-                        end
-                        if plvl >= 2 then
-                            arrstr["12"] = "normal"
-                        end
-                        if plvl >= 3 then
-                            arrstr["13"] = "normal"
-                        end
-                        if plvl >= 4 then
-                            arrstr["14"] = "normal"
-                        end
-                        if plvl >= 5 then
-                            arrstr["15"] = "normal"
-                        end
-                    end
-                    ----DeepPrintTable(arrstr)
-                    CustomNetTables:SetTableValue("Particles_Tabel",tostring(i),arrstr)
-                end
-                
-                arrstr = {i}
-                for n=1, string.len(profiledata) do
-                    if string.char(string.byte(profiledata, n)) ~= nil then
-                        if string.char(string.byte(profiledata, n)) == "|" then
-                            table.insert(arrstr, locstr)
-                            locstr = ""
-                        else
-                            locstr = locstr .. string.char(string.byte(profiledata, n))
-                        end
-                    end
-                end
-                if locstr ~= "" then
-                    table.insert(arrstr, locstr)
-                    locstr = ""
-                end
-                if arrstr[#arrstr] == "allok" then
-                    arrstr[#arrstr] = nil
-                    local value = arrstr
-                    MyProfileArray[i] = value;
-                    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "MyProfileInfo", value)
-                end
-                i = i + 1
-            end
-        end
-    end)
-
-    -- local req2 = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "mygamesonline.org/data.php")
-    -- for i=0,pplc-1 do
-    --     req2:SetHTTPRequestGetOrPostParameter("id"..(i+1), tostring(PlayerResource:GetSteamID(i)))
-    -- end
-    -- req2:SetHTTPRequestGetOrPostParameter("v", "1")
-    -- req2:Send(function(result)
-    --     local potv = result.Body
-    --     --print(potv)
-    --     if potv ~= "" then
-    --         --print(potv)
-    --         local i = 0
-    --         for token in string.gmatch(result.Body, "([^&]*)&") do
-    --             local locstr = ""
-    --             local arrstr = {i}
-    --             for n=1, string.len(token) do
-    --                 if string.char(string.byte(token, n)) ~= nil then
-    --                     if string.char(string.byte(token, n)) == "|" then
-    --                         table.insert(arrstr, locstr)
-    --                         locstr = ""
-    --                     else
-    --                         locstr = locstr .. string.char(string.byte(token, n))
-    --                     end
-    --                 end
-    --             end
-    --             if locstr ~= "" then
-    --                 table.insert(arrstr, locstr)
-    --                 locstr = ""
-    --             end
-    --             if arrstr[#arrstr] == "allok" then
-    --                 arrstr[#arrstr] = nil
-    --                 local value = arrstr
-    --                 MyProfileArray[i] = value;
-    --                 CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "MyProfileInfo", value)
-    --             end
-    --             i = i + 1
-    --         end
-    --     end
-    -- end)
-           
-    --###########################################################################################################################################################
-           
+		end  
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameMode:OnGameInProgress()
-        local pplc = PlayerResource:GetPlayerCount()
-        for i=0,pplc-1 do
-            local hero = PlayerResource:GetSelectedHeroEntity(i)
-            if hero then
-                if _G.defaultpart[i] ~= nil and _G.defaultpart[i] ~= "" and PlayerResource:GetConnectionState(i) == 2 then
-                    if hero:FindModifierByName("part_mod") == nil then
-                        local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(i))
-                        if parts[_G.defaultpart[i]] ~= "nill" then
-                            --Say(nil,"text here", false)
-                            --GameRules:SendCustomMessage("<font color='#58ACFA'> использовал эффект </font>"..info.name.."#partnote".." test", 0, 0)
-                            local arr = {
-                                i,
-                                PlayerResource:GetPlayerName(i),
-                                _G.defaultpart[i],
-                                PlayerResource:GetSelectedHeroName(i)
-                            }
-                    
-                            -- local gameEvent = {}
-                            -- gameEvent["player_id"] = i
-                            -- gameEvent["teamnumber"] = -1
-                            -- gameEvent["locstring_value"] = _G.defaultpart[i]--"#DOTA_Tooltip_Ability_" .. ability:GetAbilityName()
-                            -- gameEvent["message"] = "#Combat_Message_use_ultimate"
-                            -- FireGameEvent( "dota_combat_event_message", gameEvent )
-                            CustomGameEventManager:Send_ServerToAllClients( "UpdateParticlesUI", arr)
-                            CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "SetSelectedParticles", arr)
-                            hero:AddNewModifier(hero, hero, "part_mod", {part = _G.defaultpart[i]})
-                        end
-                    end
-                end
-                local plvl = _G.patreons[tostring(PlayerResource:GetSteamID(i))]
-                if plvl ~= nil then
-                    if plvl >= 1 then
-                        hero:AddItemByName("item_purge_wave_effect")
-                    end
-                    if plvl >= 2 then
-                        hero:AddItemByName("item_speed_wave_effect")
-                    end
-                    if plvl >= 3 then
-                        hero:AddItemByName("item_regen_wave_effect")
-                    end
-                    if plvl >= 4 then
-                        hero:AddItemByName("item_armor_wave_effect")
-                    end
-                    -- if plvl >= 5 then
-                        
-                    -- end
-                end
-            end
-        end
 	end
     
     if newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
@@ -1336,7 +810,7 @@ function GameMode:OnNPCSpawned(keys)
 	print("[BAREBONES] NPC Spawned")
 	--DeepPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
-    print(npc:GetUnitName())
+
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
         npc.bFirstSpawned = true
         npc.zone = "main_zone"
@@ -1356,9 +830,6 @@ function GameMode:OnNPCSpawned(keys)
         npc.rsp = 0
         local info = {}
         info.PlayerID = id
-        Timers:CreateTimer(1, function()
-            GameMode:LoadRelics(info)
-        end)
         value = {}
         value[1] = 1
         value[2] = 1
@@ -1410,206 +881,6 @@ function GameMode:OnNPCSpawned(keys)
 	end
 end
 
-function GameMode:LoadRelics(info)
-    if info == nil or info.PlayerID == nil then return end
-    local i = info.PlayerID
-    if not PlayerResource:IsValidPlayerID(i) then return end
-    local selectheroo = PlayerResource:GetSelectedHeroEntity(i)
-    if not selectheroo then return end
-    if selectheroo.needrefresh == nil then
-        selectheroo.needrefresh = true
-    end
-    if selectheroo.needrefresh then
-        local loaded = false
-        print("Start Load")
-        selectheroo.needrefresh = false
-        local i = info.PlayerID
-        -- print("Steam" .. i .. " " .. tostring(PlayerResource:GetSteamID(i)))
-        -- print(string.sub(tostring(PlayerResource:GetSteamID(i)),-1))
-        local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/lol21.php")
-        req:SetHTTPRequestGetOrPostParameter("id", tostring(PlayerResource:GetSteamID(i)))
-        req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-        req:Send(function(result)
-            local otv = result.Body
-            print(otv)
-            if otv ~= "" then
-                if otv ~= "none" then
-                    local locstr = ""
-                    local arrstr = {}
-                    --print(i .. " = " .. otv)
-                    for n=1, string.len(otv) do
-                        if string.char(string.byte(otv, n)) ~= nil then
-                            if string.char(string.byte(otv, n)) == " " then
-                                table.insert(arrstr, locstr)
-                                locstr = ""
-                            else
-                                locstr = locstr .. string.char(string.byte(otv, n))
-                            end
-                        end
-                    end
-                    if locstr ~= "" then
-                        table.insert(arrstr, locstr)
-                        locstr = ""
-                    end
-                    if arrstr[#arrstr] == "allok" then
-                        loaded = true
-                        arrstr[#arrstr] = nil
-                        local value = arrstr
-
-                        local seal = true
-                        local actseal = true
-                        local relicboolarr = {
-                            false,
-                            false,
-                            false,
-                            false,
-                            false,
-                            false,
-                            false,
-                            false
-                        }
-                        --####################################
-                        if tonumber(value[1]) > 0 then
-                            selectheroo.lvl_item_corrupting_blade = tonumber(value[1])
-                            relicboolarr[1] = true
-                            if tonumber(value[1]) < 20 then
-                                actseal = false
-                            end
-                        else
-                            seal = false
-                            actseal = false
-                            value[1] = nil
-                        end
-                        if tonumber(value[2]) > 0 then
-                            selectheroo.lvl_item_glimmerdark_shield = tonumber(value[2])
-                            relicboolarr[2] = true
-                            if tonumber(value[2]) < 20 then
-                                actseal = false
-                            end
-                        else
-                            seal = false
-                            actseal = false
-                            value[2] = nil
-                        end
-                        if tonumber(value[3]) > 0 then
-                            selectheroo.lvl_item_guardian_shell = tonumber(value[3])
-                            relicboolarr[3] = true
-                            if tonumber(value[3]) < 20 then
-                                actseal = false
-                            end
-                        else
-                            seal = false
-                            actseal = false
-                            value[3] = nil
-                        end
-                        if tonumber(value[4]) > 0 then
-                            selectheroo.lvl_item_dredged_trident = tonumber(value[4])
-                            relicboolarr[4] = true
-                            if tonumber(value[4]) < 20 then
-                                actseal = false
-                            end
-                        else
-                            seal = false
-                            actseal = false
-                            value[4] = nil
-                        end
-                        if tonumber(value[5]) > 0 then
-                            selectheroo.lvl_item_oblivions_locket = tonumber(value[5])
-                            relicboolarr[5] = true
-                            if tonumber(value[5]) < 20 then
-                                actseal = false
-                            end
-                        else
-                            seal = false
-                            actseal = false
-                            value[5] = nil
-                        end
-                        if tonumber(value[6]) > 0 then
-                            selectheroo.lvl_item_ambient_sorcery = tonumber(value[6])
-                            relicboolarr[6] = true
-                            if tonumber(value[6]) < 20 then
-                                actseal = false
-                            end
-                        else
-                            seal = false
-                            actseal = false
-                            value[6] = nil
-                        end
-                        if tonumber(value[7]) > 0 then
-                            selectheroo.lvl_item_wand_of_the_brine = tonumber(value[7])
-                            relicboolarr[7] = true
-                            if tonumber(value[7]) < 20 then
-                                actseal = false
-                            end
-                        else
-                            seal = false
-                            actseal = false
-                            value[7] = nil
-                        end
-                        if tonumber(value[8]) > 0 then
-                            selectheroo.lvl_item_seal_0 = tonumber(value[8])
-                            relicboolarr[8] = true
-                        else
-                            seal = false
-                            actseal = false
-                            value[8] = nil
-                        end
-                        --####################################
-                        selectheroo.seal = seal
-                        selectheroo.actseal = actseal
-                        selectheroo.relicboolarr = relicboolarr
-                        selectheroo.sealcolors = {}
-                        local arrstr2 = {}
-                        for n=1, string.len(value[18]) do
-                            if string.char(string.byte(value[18], n)) ~= nil then
-                                if string.char(string.byte(value[18], n)) == "|" then
-                                    table.insert(arrstr2, locstr)
-                                    locstr = ""
-                                else
-                                    locstr = locstr .. string.char(string.byte(value[18], n))
-                                end
-                            end
-                        end
-                        if locstr ~= "" then
-                            table.insert(arrstr2, locstr)
-                            locstr = ""
-                        end
-                        selectheroo.rsinv = arrstr2
-                        selectheroo.rsp = tonumber(value[9])
-                        selectheroo.rsslots = {"","","","","","","",""}
-                        selectheroo.rssaves = {value[10],value[11],value[12],value[13],value[14],value[15],value[16],value[17]}
-                        local data = {}
-                        data.PlayerID = i
-                        data.num = 1
-                        GameMode:LoadSet(data)
-                        if selectheroo.rsslots[1] ~= "" then
-                            selectheroo.sealcolor = tonumber(string.sub(selectheroo.rsslots[1], 2, 2))+2
-                        else
-                            selectheroo.sealcolor = 1
-                        end
-                        if _G.patreons[tostring(PlayerResource:GetSteamID(i))] ~= nil then
-                            if _G.patreons[tostring(PlayerResource:GetSteamID(i))] > 2 then
-                                selectheroo.sealcolor = 12
-                            end
-                        end
-                        GameMode:Levels(data)
-                    end
-                else
-                    loaded = true
-                    local selectheroo = PlayerResource:GetSelectedHeroEntity(i)
-                    selectheroo.nullrelics = true
-                end
-            end
-        end)
-        
-        Timers:CreateTimer(10, function()
-            if loaded == false then
-                selectheroo.needrefresh = true
-                CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(i), "NeedRefresh", {})
-            end
-        end)
-    end
-end
 -- An entity somewhere has been hurt.  This event fires very often with many units so don't do too many expensive
 -- operations here
 function GameMode:OnEntityHurt(keys)
@@ -1868,7 +1139,6 @@ function GameMode:OnEntityKilled( keys )
     local plc = PlayerResource:GetPlayerCount()
     
     if killedUnit:GetUnitLabel() == "npc_dota_custom_creep_50_1" and not _G.shadow_arena then
-        GameMode:_Stats("1")
         for i=0,plc-1 do
             local sch = PlayerResource:GetSelectedHeroEntity(i).damage_schetchik
             if sch == nil then
@@ -2006,41 +1276,6 @@ function GameMode:OnEntityKilled( keys )
                 item:LaunchLootInitialHeight(false, 0, 200, 0.75, pos_launch)
             end
         end
-        -- if not GameRules:IsCheatMode() then
-        --     if killedUnit:GetUnitLabel() == "npc_dota_custom_creep_5_1" then
-        --         for i=0,plc-1 do
-        --             local pl = PlayerResource:GetSelectedHeroEntity(i)
-        --             if pl.nullrelics == true then
-        --                 local rlcsfd = {
-        --                     "item_corrupting_blade",
-        --                     "item_glimmerdark_shield",
-        --                     "item_guardian_shell",
-        --                     "item_dredged_trident",
-        --                     "item_oblivions_locket",
-        --                     "item_ambient_sorcery",
-        --                     "item_wand_of_the_brine"
-        --                 }
-        --                 local item_name = rlcsfd[RandomInt(1, #rlcsfd)]
-        --                 local item = CreateItem(item_name, nil, nil)
-        --                 item:SetPurchaseTime(0)
-        --                 local pos = killedUnit:GetAbsOrigin()
-        --                 local drop = CreateItemOnPositionSync( pos, item )
-        --                 local pos_launch = pos+RandomVector(RandomFloat(100,125))
-        --                 item:LaunchLoot(false, 200, 0.75, pos_launch)
-        --                 item.bIsRelic = true
-        --                 item:SetPurchaser( pl )
-        --                 local otv = ""
-        --                 local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "mygamesonline.org/lol21.php")
-        --                 req:SetHTTPRequestGetOrPostParameter("id", tostring(PlayerResource:GetSteamID(pl)))
-        --                 req:SetHTTPRequestGetOrPostParameter("name", item_name)
-        --                 req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-        --                 req:Send(function(result)
-        --                     otv = result.Body
-        --                 end)
-        --             end
-        --         end
-        --     end
-        -- end
     end
 	-- Put code here to handle when an entity gets killed
 end
@@ -2159,15 +1394,7 @@ function RollDrops(unit)
                                     end
                                 end
                                 
-                                --EmitSoundOn( "Hero_LegionCommander.Duel.Victory", WinningHero )
-                                local otv = ""
-                                local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/lol21.php")
-                                req:SetHTTPRequestGetOrPostParameter("id", tostring(WinningSteamID))
-                                req:SetHTTPRequestGetOrPostParameter("name", item_name)
-                                req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-                                req:Send(function(result)
-                                    otv = result.Body
-                                end)
+                        
                             end
                         end
                     else
@@ -2285,18 +1512,6 @@ function RollDrops(unit)
                                         else
                                             WinningHero.rsinv = {rsid}
                                         end
-                                    end
-
-                                    if rsid ~= nil then
-                                        CustomGameEventManager:Send_ServerToAllClients( "AddRSUI", {rsid = rsid,hero = WinningHero:GetName()})
-                                        local otv = ""
-                                        local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/relicstones1.php")
-                                        req:SetHTTPRequestGetOrPostParameter("id", tostring(WinningSteamID))
-                                        req:SetHTTPRequestGetOrPostParameter("rsid", rsid)
-                                        req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-                                        req:Send(function(result)
-                                            otv = result.Body
-                                        end)
                                     end
                                 end
                             end

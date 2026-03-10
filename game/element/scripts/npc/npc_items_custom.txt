@@ -12418,7 +12418,7 @@
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"ItemIsNeutralActiveDrop"				"1"
+		//"ItemIsNeutralActiveDrop"				"1"
 		"ItemDroppable"					"0"
 		"AbilityValues"
         {

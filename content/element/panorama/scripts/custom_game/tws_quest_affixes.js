@@ -108,10 +108,10 @@ function RemoveQuestPUI(data){
 }
 
 (function(){ 
-    GameEvents.Subscribe( "createquest", CreatQuest);
-    GameEvents.Subscribe( "createachquest", CreatAchQuest);
-    GameEvents.Subscribe( "createaffixes", CreatAffixes);
-    GameEvents.Subscribe( "refreshquestdata", RefreshQuestData);
-    GameEvents.Subscribe( "refreshachquestdata", RefreshAchQuestData);
-    GameEvents.Subscribe( "removequestpui", RemoveQuestPUI);
+    GameEvents.SubscribeProtected( "createquest", CreatQuest);
+    GameEvents.SubscribeProtected( "createachquest", CreatAchQuest);
+    GameEvents.SubscribeProtected( "createaffixes", CreatAffixes);
+    GameEvents.SubscribeProtected( "refreshquestdata", RefreshQuestData);
+    GameEvents.SubscribeProtected( "refreshachquestdata", RefreshAchQuestData);
+    GameEvents.SubscribeProtected( "removequestpui", RemoveQuestPUI);
 })();

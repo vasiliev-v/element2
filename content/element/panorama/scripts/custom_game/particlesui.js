@@ -16,5 +16,5 @@ function UpdateParticlesUI( data )
     $("#Line3").visible = false;
     $("#Line4").visible = false;
     $("#Line5").visible = false;
-    GameEvents.Subscribe( "UpdateParticlesUI", UpdateParticlesUI);
+    GameEvents.SubscribeProtected( "UpdateParticlesUI", UpdateParticlesUI);
 })();

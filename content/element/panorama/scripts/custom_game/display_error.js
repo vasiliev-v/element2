@@ -1,4 +1,4 @@
-GameEvents.Subscribe("display_custom_error", function(msg) {
+GameEvents.SubscribeProtected("display_custom_error", function(msg) {
   $.Msg(msg.message);
   GameEvents.SendEventClientSide("dota_hud_error_message", {
     "splitscreenplayer": 0,

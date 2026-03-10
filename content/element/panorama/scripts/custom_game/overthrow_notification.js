@@ -214,11 +214,11 @@ function ClearKillMessage()
 }
 
 (function () {
-	GameEvents.Subscribe( "item_will_spawn", OnItemWillSpawn );
-	GameEvents.Subscribe( "item_has_spawned", OnItemHasSpawned );
-	GameEvents.Subscribe( "overthrow_item_drop", OnItemDrop );
-    GameEvents.Subscribe( "time_remaining", AlertTimer );
-    GameEvents.Subscribe( "overtime_alert", OnOvertimeStart );
-    GameEvents.Subscribe( "kill_alert", OnLeaderKilled );
+	GameEvents.SubscribeProtected( "item_will_spawn", OnItemWillSpawn );
+	GameEvents.SubscribeProtected( "item_has_spawned", OnItemHasSpawned );
+	GameEvents.SubscribeProtected( "overthrow_item_drop", OnItemDrop );
+    GameEvents.SubscribeProtected( "time_remaining", AlertTimer );
+    GameEvents.SubscribeProtected( "overtime_alert", OnOvertimeStart );
+    GameEvents.SubscribeProtected( "kill_alert", OnLeaderKilled );
 })();
 

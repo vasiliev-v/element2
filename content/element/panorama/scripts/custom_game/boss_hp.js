@@ -50,7 +50,7 @@ function RemoveHPPUI(data){
 }
 
 (function(){ 
-    GameEvents.Subscribe( "createhp", CreatHP);
-    GameEvents.Subscribe( "refreshhpdata", RefreshHPData);
-    GameEvents.Subscribe( "removehppui", RemoveHPPUI);
+    GameEvents.SubscribeProtected( "createhp", CreatHP);
+    GameEvents.SubscribeProtected( "refreshhpdata", RefreshHPData);
+    GameEvents.SubscribeProtected( "removehppui", RemoveHPPUI);
 })();

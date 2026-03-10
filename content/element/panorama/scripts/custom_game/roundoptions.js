@@ -25,6 +25,9 @@ function UpdateVote(info)
 
     $("#hero" + id + "_no").visible = false;
     $("#hero" + id + "_yes").visible = true;
+
+    $("#hero_card" + id).RemoveClass("VoteHeroCardNotReady");
+    $("#hero_card" + id).AddClass("VoteHeroCardReady");
 }
 
 function open(info)
@@ -33,41 +36,38 @@ function open(info)
     {
         $("#RoundOptions").visible = true;
     }
-    
+
     $("#RoundOptions").RemoveClass("OffPanelClass");
     $("#RoundOptions").AddClass("CreatePanelClass");
-    
-	$("#readytext").visible = true;
+
+    $("#readytext").visible = true;
     $("#Vote_Yes").visible = true;
-	$("#confirmation").visible = false;
-    
-	$("#hero1_yes").visible = false;
-	$("#hero2_yes").visible = false;
-	$("#hero3_yes").visible = false;
-	$("#hero4_yes").visible = false;
-	$("#hero5_yes").visible = false;
-	$("#hero1_no").visible = false;
-	$("#hero2_no").visible = false;
-	$("#hero3_no").visible = false;
-	$("#hero4_no").visible = false;
-	$("#hero5_no").visible = false;
-    
-    var count = info.count
-    
+    $("#confirmation").visible = false;
+
     for (var i = 1; i <= 5; i++)
-	{
-		$("#hero"+i).heroname = "";
-		$("#hero"+i).visible = false;
-		$("#hero"+i+"_yes").visible = false;
-		$("#hero"+i+"_no").visible = false;
-	}
+    {
+        $("#hero" + i).visible = false;
+        $("#hero" + i).heroname = "";
 
-	var count = info.count;
+        $("#hero" + i + "_yes").visible = false;
+        $("#hero" + i + "_no").visible = false;
 
-	for (var i = 1; i <= count; i++)
-	{
-		$("#hero"+i+"_no").visible = true;
-	}
+        $("#hero_card" + i).RemoveClass("VoteHeroCardReady");
+        $("#hero_card" + i).RemoveClass("VoteHeroCardNotReady");
+    }
+
+    var count = info.count;
+
+    for (var i = 1; i <= count; i++)
+    {
+        $("#hero" + i).heroname = Players.GetPlayerSelectedHero(i - 1);
+        $("#hero" + i).visible = true;
+
+        $("#hero" + i + "_no").visible = false;
+        $("#hero" + i + "_yes").visible = false;
+
+        $("#hero_card" + i).AddClass("VoteHeroCardNotReady");
+    }
 }
 
 function close()
@@ -79,9 +79,9 @@ function close()
 
 (function()
 {
-    GameEvents.Subscribe( "Display_RoundVote", open)
-    GameEvents.Subscribe( "Close_RoundVote", close)
-    GameEvents.Subscribe( "Update_Vote", UpdateVote)
+    GameEvents.SubscribeProtected( "Display_RoundVote", open)
+    GameEvents.SubscribeProtected( "Close_RoundVote", close)
+    GameEvents.SubscribeProtected( "Update_Vote", UpdateVote)
     
 	GameEvents.SendCustomGameEventToServer( "OnLoadPlayerVote", { } );
     

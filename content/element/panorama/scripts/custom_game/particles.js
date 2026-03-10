@@ -157,8 +157,8 @@ function SetSelectedParticles(data)
 
 (function()
 {
-    GameEvents.Subscribe( "DefaultButtonReady", DefaultButtonReady);
-    GameEvents.Subscribe( "SetSelectedParticles", SetSelectedParticles);
+    GameEvents.SubscribeProtected( "DefaultButtonReady", DefaultButtonReady);
+    GameEvents.SubscribeProtected( "SetSelectedParticles", SetSelectedParticles);
     for (var x = 1; x < names.length+1; x = x + 1)
     {
         var stl = (100*(x-1)) + 20

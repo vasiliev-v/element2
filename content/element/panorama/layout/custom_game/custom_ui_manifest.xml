@@ -1,5 +1,6 @@
 <root>
 	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/events_protector.js" />
 		<include src="s2r://panorama/scripts/custom_game/display_error.js" />
 		<include src="s2r://panorama/scripts/custom_game/main_hud.js" />
 		<include src="s2r://panorama/scripts/custom_game/setup.js" />
@@ -24,6 +25,7 @@
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/boss_hp.xml" /> 
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/damagetop.xml" />
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/endswaves.xml" />
+		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/craft6panel.xml" />
 		<!-- 
 		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info.xml" />
 		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/patreon.xml" />

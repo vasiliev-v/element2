@@ -160,6 +160,6 @@ function IntTick()
 (function()
 {
     $("#Line1").visible = false;
-    GameEvents.Subscribe( "AddRSUI", AddRSUI);
+    GameEvents.SubscribeProtected( "AddRSUI", AddRSUI);
     IntTick();
 })();

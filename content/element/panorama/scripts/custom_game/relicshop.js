@@ -1152,10 +1152,10 @@ function SetColor(colorid)
 
 (function()
 {
-    GameEvents.Subscribe( "My_lvl", UpdtLvl);
-    GameEvents.Subscribe( "NeedRefresh", NeedRefresh);
-    GameEvents.Subscribe( "PureButtonReady", PureButtonReady);
-    GameEvents.Subscribe( "ReadySetButton", ReadySetButton);
+    GameEvents.SubscribeProtected( "My_lvl", UpdtLvl);
+    GameEvents.SubscribeProtected( "NeedRefresh", NeedRefresh);
+    GameEvents.SubscribeProtected( "PureButtonReady", PureButtonReady);
+    GameEvents.SubscribeProtected( "ReadySetButton", ReadySetButton);
     $("#AllRelicPanel").visible = false;
 	$("#RButton").visible = false;
 	$("#spba0").visible = false;

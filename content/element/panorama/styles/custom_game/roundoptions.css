@@ -68,7 +68,7 @@
     height: 42px;
 
     background-color: rgba(0,0,0,0.35);
-    border: 1px solid rgba(184,255,69,0.22);
+    border: 2px solid rgba(184,255,69,0.18);
     border-radius: 6px;
     box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.35);
 }
@@ -246,4 +246,16 @@
         transform: translate3d(-520px, 0px, 0px);
         opacity: 0.95;
     }
+}
+
+.VoteHeroCardNotReady .VoteHeroFrame
+{
+    border: 2px solid #ff4d4d;
+    box-shadow: 0px 0px 8px 1px rgba(255, 77, 77, 0.35);
+}
+
+.VoteHeroCardReady .VoteHeroFrame
+{
+    border: 2px solid rgba(184,255,69,0.75);
+    box-shadow: 0px 0px 8px 1px rgba(184,255,69,0.22);
 }

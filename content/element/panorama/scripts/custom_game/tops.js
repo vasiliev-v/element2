@@ -74,9 +74,9 @@ function UpdateTopHardWins(info)
 
 (function()
 {
-    GameEvents.Subscribe( "UpdateTopPlays", UpdateTopPlays)
-    GameEvents.Subscribe( "UpdateTopWins", UpdateTopWins)
-    GameEvents.Subscribe( "UpdateTopHardWins", UpdateTopHardWins)
+    GameEvents.SubscribeProtected( "UpdateTopPlays", UpdateTopPlays)
+    GameEvents.SubscribeProtected( "UpdateTopWins", UpdateTopWins)
+    GameEvents.SubscribeProtected( "UpdateTopHardWins", UpdateTopHardWins)
     
     GameEvents.SendCustomGameEventToServer( "UpdateTops", {} );
 })();

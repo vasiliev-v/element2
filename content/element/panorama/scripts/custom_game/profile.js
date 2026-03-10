@@ -152,9 +152,9 @@ function OnSteamIds(myids)
 
 (function()
 {
-    GameEvents.Subscribe( "MyProfileInfo", UpdateMyInfo)
-    GameEvents.Subscribe( "My_lvl", UpdtLvl);
-    GameEvents.Subscribe( "SteamIds", OnSteamIds);
+    GameEvents.SubscribeProtected( "MyProfileInfo", UpdateMyInfo)
+    GameEvents.SubscribeProtected( "My_lvl", UpdtLvl);
+    GameEvents.SubscribeProtected( "SteamIds", OnSteamIds);
     for (var x = 1; x < heroids.length + 1; x++)
     {
         var heroId = heroids[x - 1];

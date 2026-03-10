@@ -23,4 +23,4 @@ function MoveCamera( data )
     GameUI.SetCameraTargetPosition(g_nBossCameraEntIndex, 1.5);
 }
 
-GameEvents.Subscribe( "move_camera", MoveCamera );
+GameEvents.SubscribeProtected( "move_camera", MoveCamera );

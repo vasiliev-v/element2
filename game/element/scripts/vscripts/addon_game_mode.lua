@@ -1,32 +1,17 @@
---debug.oldTraceback = debug.oldTraceback or debug.traceback
---debug.traceback = function()
---	local result = debug.oldTraceback()
---	-- print(result)--CustomGameEventManager:Send_ServerToAllClients("DebugMessage", { msg = result })
---    local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/luadebug.php")
---    req:SetHTTPRequestGetOrPostParameter("debug", result)
---    req:Send(function(req_result)
---        print(req_result.Body)
---    end)
---	return result
---end
-
--- if IsClient() then
---     print("IsClient()")
--- end
-
 --[[
 	Basic Barebones
 ]]
 
 -- Required files to be visible from anywhere
-require( 'timers' )
-require( 'barebones' )
-require( 'quest_system')
-require( 'add_zones')
-require( 'libraries/animations' )
-require( 'libraries/physics' )
-require( 'libraries/code' )
-require( 'libraries/utils' )
+require('events_protector')
+require('timers')
+require('barebones')
+require('quest_system')
+require('add_zones')
+require('libraries/animations')
+require('libraries/physics')
+require('libraries/utils')
+require("craft6_system")
 
 _G.GAME_ROUND = 0
 time_ = 0
@@ -838,6 +823,7 @@ end
 function Activate()
 	GameRules.GameMode = GameMode()
     GameRules.GameMode:InitGameMode()
+    Craft6System:Init()
 end
 
 --shop_en = true
@@ -1132,51 +1118,6 @@ function GameMode:OnGameInProgress()
     --        table.insert(pointents, unit)
     --    end
     --end
-    end
-end
-
-function GameMode:_Stats(iswin)
-    local plc = PlayerResource:GetPlayerCount()
-    if not GameRules:IsCheatMode() and _G.GAME_ROUND ~= 0 and cheats == false and GameRules:GetDOTATime(false,false) > 35 and plc > 0 then
-        local req = CreateHTTPRequestScriptVM( "POST", GameMode.gjfll2 .. "/data.php")
-        req:SetHTTPRequestGetOrPostParameter("v", _G.DedicatedServerKey)
-        if iswin ~= nil then
-            req:SetHTTPRequestGetOrPostParameter("test", "-1" .. iswin)
-        else
-            req:SetHTTPRequestGetOrPostParameter("test", tostring(_G.GAME_ROUND))
-        end
-        req:SetHTTPRequestGetOrPostParameter("players", tostring(plc))
-        req:SetHTTPRequestGetOrPostParameter("time", tostring(math.floor(GameRules:GetDOTATime(false,false))))
-        if _G.hardmode == true then
-            req:SetHTTPRequestGetOrPostParameter("hardmode", "true")
-        else
-            req:SetHTTPRequestGetOrPostParameter("hardmode", "false")
-        end
-        -- if _G.userelic == true then
-        --     req:SetHTTPRequestGetOrPostParameter("userelic", "true")
-        -- else
-        --     req:SetHTTPRequestGetOrPostParameter("userelic", "false")
-        -- end
-        for i=0,plc-1 do
-            if PlayerResource:GetConnectionState(i) == 2 then
-                req:SetHTTPRequestGetOrPostParameter("hero" .. i+1,tostring(PlayerResource:GetSelectedHeroID(i)))
-                req:SetHTTPRequestGetOrPostParameter("id" .. i+1, tostring(PlayerResource:GetSteamID(i)))
-                -- if iswin ~= nil then
-                --     local hero = PlayerResource:GetSelectedHeroEntity( i )
-                --     req:SetHTTPRequestGetOrPostParameter("lvl" .. i+1, tostring(hero:GetLevel()))
-                --     req:SetHTTPRequestGetOrPostParameter("gold" .. i+1, tostring(hero:GetGold()))
-                --     for u=0, 9, 1 do
-                --         local current_item = hero:GetItemInSlot(u)
-                --         if current_item ~= nil then
-                --             req:SetHTTPRequestGetOrPostParameter("item" .. i+1 .. "_" .. u+1, current_item:GetName())
-                --         end
-                --     end
-                -- end
-            end
-        end
-        req:Send(function(result)
-            print(result.Body)
-        end)
     end
 end
 

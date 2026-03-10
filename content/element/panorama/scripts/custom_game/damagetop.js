@@ -67,8 +67,8 @@ function close()
 
 (function()
 {
-    GameEvents.Subscribe("Open_DamageTop", open);
-    GameEvents.Subscribe("Close_DamageTop", close);
+    GameEvents.SubscribeProtected("Open_DamageTop", open);
+    GameEvents.SubscribeProtected("Close_DamageTop", close);
 
     $("#DamageTop").visible = false;
 })();

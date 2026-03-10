@@ -51,10 +51,10 @@ function OnGameStateChanged( table, key, data )
 	UpdateKillsToWin();
 	CustomNetTables.SubscribeNetTableListener( "game_state", OnGameStateChanged );
 
-    GameEvents.Subscribe( "countdown", UpdateTimer );
-    GameEvents.Subscribe( "show_timer", ShowTimer );
-    GameEvents.Subscribe( "timer_alert", AlertTimer );
-    GameEvents.Subscribe( "overtime_alert", HideTimer );
+    GameEvents.SubscribeProtected( "countdown", UpdateTimer );
+    GameEvents.SubscribeProtected( "show_timer", ShowTimer );
+    GameEvents.SubscribeProtected( "timer_alert", AlertTimer );
+    GameEvents.SubscribeProtected( "overtime_alert", HideTimer );
 	//UpdateTimer();
 })();
 

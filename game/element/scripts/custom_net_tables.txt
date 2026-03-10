@@ -6,6 +6,7 @@
 		"Particles_Tabel",
 		"Elements_Tabel",
 		"RelicStats_Tabel",
-		"disable_help"
+		"disable_help",
+		"craft6_table"
 	]
 }
