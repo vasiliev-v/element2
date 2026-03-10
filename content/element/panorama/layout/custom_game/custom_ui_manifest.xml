@@ -1,38 +1,38 @@
 <root>
 	<scripts>
-		<include src="s2r://panorama/scripts/custom_game/events_protector.js" />
-		<include src="s2r://panorama/scripts/custom_game/display_error.js" />
-		<include src="s2r://panorama/scripts/custom_game/main_hud.js" />
-		<include src="s2r://panorama/scripts/custom_game/setup.js" />
+		<include src="file://{resources}/layout/custom_game/scripts/events_protector.js" />
+		<include src="file://{resources}/layout/custom_game/scripts/display_error.js" />
+		<include src="file://{resources}/layout/custom_game/scripts/main_hud.js" />
+		<include src="file://{resources}/layout/custom_game/scripts/setup.js" />
 	</scripts>
 		
 	<Panel>
 		<CustomUIElement type="HudTopBar"			layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard.xml" />
-		<CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/overthrow_item_notification.xml" />
+		<CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/overthrow_item_notification/overthrow_item_notification.xml" />
 		<CustomUIElement type="GameSetup"			layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
 		<CustomUIElement type="FlyoutScoreboard"	layoutfile="file://{resources}/layout/custom_game/multiteam_flyout_scoreboard.xml" />
-		<CustomUIElement type="HeroSelection" 		layoutfile="file://{resources}/layout/custom_game/multiteam_hero_select_overlay.xml" />
-		<CustomUIElement type="EndScreen" 			layoutfile="file://{resources}/layout/custom_game/multiteam_end_screen.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particlesui.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/rsui.xml" />
+		<CustomUIElement type="HeroSelection" 		layoutfile="file://{resources}/layout/custom_game/multiteam_hero_select_overlay/multiteam_hero_select_overlay.xml" />
+		<CustomUIElement type="EndScreen" 			layoutfile="file://{resources}/layout/custom_game/multiteam_end_screen/multiteam_end_screen.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particlesui/particlesui.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/rsui/rsui.xml" />
 		
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tws_quest_affixes.xml" /> 
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/roundoptions.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tws_quest_affixes/tws_quest_affixes.xml" /> 
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/roundoptions/roundoptions.xml" />
         
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/elementshop.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/elementshop/elementshop.xml" />
         
         
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/boss_hp.xml" /> 
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/damagetop.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/endswaves.xml" />
-		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/craft6panel.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/boss_hp/boss_hp.xml" /> 
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/damagetop/damagetop.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/endswaves/endswaves.xml" />
+		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/craft6panel/craft6panel.xml" />
 		<!-- 
-		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/relicshop.xml" />
-		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info.xml" />
-		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/patreon.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tops.xml" />
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles.xml" />
-		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/profile.xml" />
+		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/relicshop/relicshop.xml" />
+		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info/overthrow_game_info.xml" />
+		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/patreon/patreon.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tops/tops.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/particles/particles.xml" />
+		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/profile/profile.xml" />
 		-->
 	</Panel>
 </root> 
