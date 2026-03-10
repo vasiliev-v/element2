@@ -5,7 +5,7 @@
     </styles>
 
     <scripts>
-         <include src="file://{resources}/layout/custom_game/scripts/shared_scoreboard_updater.js" />
+         <include src="file://{resources}/scripts/custom_game/shared_scoreboard_updater.js" />
        <include src="file://{resources}/layout/custom_game/multiteam_end_screen/multiteam_end_screen.js" />
     </scripts>
 
