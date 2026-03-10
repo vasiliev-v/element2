@@ -12526,226 +12526,183 @@
 		}
 	}
 
-	// "item_seal_2"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"BaseClass"						"item_lua"
-	// 	"AbilityTextureName"			"custom/item_seal_2"
-	// 	"ScriptFile"					"items/item_seal_2"
+	"item_seal_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/item_seal_2"
+		"ScriptFile"					"items/item_seal_2"
 
-	// 	"Model"							"models/props_gameplay/treasure_chest001.vmdl"
-	// 	"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	//	 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		
-	// 	// Item Info
-	// 	//-------------------------------------------------------------------------------------------------------------
-	//	 "MaxUpgradeLevel" "5"
-	//	 "ItemBaseLevel" "2"
-	// 	"ItemCost"						"0"
-	// 	"ItemPurchasable"				"0"
-	// 	"ItemQuality"					"artifact"
-	// 	"ItemStackable"					"0"
-	// 	"ItemSellable"					"0"
-	// 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
-	// 	"ItemPermanent"					"0"
-	// 	"ItemKillable"					"0"
-	// 	"ItemDisplayOwnership"			"1"
-	// 	"CustomShop"					"1"
-	//	 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		 "MaxUpgradeLevel" "5"
+		 "ItemBaseLevel" "2"
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					"artifact"
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+		 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		
-	// 	"AbilitySpecial"
-	// 	{
-	// 		"01"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_damage_for_wawe"		"2.5"
-	// 		}
-	// 		"02"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_armor_for_wawe"		"1"
-	// 		}
-	// 	}
-	// }
+		"AbilityValues"
+		{
+			"bonus_damage_for_wawe" "0.50"
+			"bonus_armor_for_wawe" "0.10"
+			"bonus_mag_res_for_wawe" "0.10"
+			"bonus_attack_speed_for_wawe" "0.30"
+			"bonus_all_stats_for_wawe" "0.20"
+			"extra_spell_damage_percent" "-45"
+			"bonus_spell_amp_for_wawe" "0.20"
+			"bonus_mana_cst_for_wawe" "0.20"
+		}
+	}
 	
-	// "item_seal_3"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"BaseClass"						"item_lua"
-	// 	"AbilityTextureName"			"custom/item_seal_3"
-	// 	"ScriptFile"					"items/item_seal_3"
+	"item_seal_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/item_seal_3"
+		"ScriptFile"					"items/item_seal_3"
 
-	// 	"Model"							"models/props_gameplay/treasure_chest001.vmdl"
-	// 	"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	//	 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		
-	// 	// Item Info
-	// 	//-------------------------------------------------------------------------------------------------------------
-	//	 "MaxUpgradeLevel" "5"
-	//	 "ItemBaseLevel" "3"
-	// 	"ItemCost"						"0"
-	// 	"ItemPurchasable"				"0"
-	// 	"ItemQuality"					"artifact"
-	// 	"ItemStackable"					"0"
-	// 	"ItemSellable"					"0"
-	// 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
-	// 	"ItemPermanent"					"0"
-	// 	"ItemKillable"					"0"
-	// 	"ItemDisplayOwnership"			"1"
-	// 	"CustomShop"					"1"
-	//	 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		 "MaxUpgradeLevel" "5"
+		 "ItemBaseLevel" "3"
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					"artifact"
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+		 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		
-	// 	"AbilitySpecial"
-	// 	{
-	// 		"01"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_damage_for_wawe"		"2.5"
-	// 		}
-	// 		"02"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_armor_for_wawe"		"1"
-	// 		}
-	// 		"03"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_mag_res_for_wawe"		"1"
-	// 		}
-	// 	}
-	// }
+		"AbilityValues"
+		{
+			"bonus_damage_for_wawe" "0.75"
+			"bonus_armor_for_wawe" "0.15"
+			"bonus_mag_res_for_wawe" "0.15"
+			"bonus_attack_speed_for_wawe" "0.45"
+			"bonus_all_stats_for_wawe" "0.30"
+			"extra_spell_damage_percent" "-40"
+			"bonus_spell_amp_for_wawe" "0.30"
+			"bonus_mana_cst_for_wawe" "0.30"
+		}
+	}
 	
-	// "item_seal_4"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"BaseClass"						"item_lua"
-	// 	"AbilityTextureName"			"custom/item_seal_4"
-	// 	"ScriptFile"					"items/item_seal_4"
+	"item_seal_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/item_seal_4"
+		"ScriptFile"					"items/item_seal_4"
 
-	// 	"Model"							"models/props_gameplay/treasure_chest001.vmdl"
-	// 	"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	//	 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		
-	// 	// Item Info
-	// 	//-------------------------------------------------------------------------------------------------------------
-	//	 "MaxUpgradeLevel" "5"
-	//	 "ItemBaseLevel" "4"
-	// 	"ItemCost"						"0"
-	// 	"ItemPurchasable"				"0"
-	// 	"ItemQuality"					"artifact"
-	// 	"ItemStackable"					"0"
-	// 	"ItemSellable"					"0"
-	// 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
-	// 	"ItemPermanent"					"0"
-	// 	"ItemKillable"					"0"
-	// 	"ItemDisplayOwnership"			"1"
-	// 	"CustomShop"					"1"
-	//	 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		 "MaxUpgradeLevel" "5"
+		 "ItemBaseLevel" "4"
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					"artifact"
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+		 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		
-	// 	"AbilitySpecial"
-	// 	{
-	// 		"01"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_damage_for_wawe"		"2.5"
-	// 		}
-	// 		"02"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_armor_for_wawe"		"1"
-	// 		}
-	// 		"03"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_mag_res_for_wawe"		"1"
-	// 		}
-	// 		"04"
-	// 		{
-	// 			"var_type"				"FIELD_INTEGER"
-	// 			"bonus_attack_speed_for_wawe"		"5"
-	// 		}
-	// 	}
-	// }
+		"AbilityValues"
+		{
+			"bonus_damage_for_wawe" "1.00"
+			"bonus_armor_for_wawe" "0.20"
+			"bonus_mag_res_for_wawe" "0.20"
+			"bonus_attack_speed_for_wawe" "0.60"
+			"bonus_all_stats_for_wawe" "0.40"
+			"extra_spell_damage_percent" "-35"
+			"bonus_spell_amp_for_wawe" "0.40"
+			"bonus_mana_cst_for_wawe" "0.40"
+		}
+	}
 	
-	// "item_seal_5"
-	// {
-	// 	// General
-	// 	//-------------------------------------------------------------------------------------------------------------
-	// 	"BaseClass"						"item_lua"
-	// 	"AbilityTextureName"			"custom/item_seal_5"
-	// 	"ScriptFile"					"items/item_seal_5"
+	"item_seal_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/item_seal_5"
+		"ScriptFile"					"items/item_seal_5"
 
-	// 	"Model"							"models/props_gameplay/treasure_chest001.vmdl"
-	// 	"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 
 
-	// 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-	//	 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		 "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
-	// 	"AbilityCastRange"				"100"
-	// 	"AbilityCastPoint"				"0.0"
-	// 	"AbilityChannelTime"			"1.0"
-	// 	"AbilityCooldown"				"10.0"
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityChannelTime"			"1.0"
+		"AbilityCooldown"				"10.0"
 		
-	// 	// Item Info
-	// 	//-------------------------------------------------------------------------------------------------------------
-	//	 "MaxUpgradeLevel" "5"
-	//	 "ItemBaseLevel" "5"
-	// 	"ItemCost"						"0"
-	// 	"ItemPurchasable"				"0"
-	// 	"ItemQuality"					"artifact"
-	// 	"ItemStackable"					"0"
-	// 	"ItemSellable"					"0"
-	// 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
-	// 	"ItemPermanent"					"0"
-	// 	"ItemKillable"					"0"
-	// 	"ItemDisplayOwnership"			"1"
-	// 	"CustomShop"					"1"
-	//	 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		 "MaxUpgradeLevel" "5"
+		 "ItemBaseLevel" "5"
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemQuality"					"artifact"
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+		 "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		
-	// 	"AbilitySpecial"
-	// 	{
-	// 		"01"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_damage_for_wawe"		"2.5"
-	// 		}
-	// 		"02"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_armor_for_wawe"		"1"
-	// 		}
-	// 		"03"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_mag_res_for_wawe"		"1"
-	// 		}
-	// 		"04"
-	// 		{
-	// 			"var_type"				"FIELD_INTEGER"
-	// 			"bonus_attack_speed_for_wawe"		"5"
-	// 		}
-	// 		"05"
-	// 		{
-	// 			"var_type"				"FIELD_FLOAT"
-	// 			"bonus_all_stats_for_wawe"		"1.5"
-	// 		}
-	// 		"06"
-	// 		{
-	// 			"var_type"				"FIELD_INTEGER"
-	// 			"extra_spell_damage_percent"				"-50"
-	// 		}
-	// 	}
-	// }
+		"AbilityValues"
+		{
+			"bonus_damage_for_wawe" "1.25"
+			"bonus_armor_for_wawe" "0.25"
+			"bonus_mag_res_for_wawe" "0.25"
+			"bonus_attack_speed_for_wawe" "0.75"
+			"bonus_all_stats_for_wawe" "0.50"
+			"extra_spell_damage_percent" "-35"
+			"bonus_spell_amp_for_wawe" "0.50"
+			"bonus_mana_cst_for_wawe" "0.50"
+		}
+	}
 	 
 //#############---LEGENDARY-ITEMS---##############################################################################
 

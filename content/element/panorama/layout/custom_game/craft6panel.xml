@@ -7,15 +7,15 @@
 		<include src="s2r://panorama/scripts/custom_game/craft6panel.js" />
 	</scripts>
 
-	<Panel hittest="false" class="Craft6PanelRoot">
-		<Panel hittest="false" id="Craft6OpenWrap">
+	<Panel class="Craft6PanelRoot">
+		<Panel id="Craft6OpenWrap">
 			<Button id="Craft6OpenButton" onactivate="ToggleCraft6Panel()">
 				<Image id="Craft6OpenIcon" src="s2r://panorama/images/custom_game/all/buttonrelic.png"/>
 				<Label id="Craft6OpenText" text="КРАФТ"/>
 			</Button>
 		</Panel>
 
-		<Panel hittest="false" id="Craft6Window" class="Craft6WindowHidden">
+		<Panel id="Craft6Window" class="Craft6WindowHidden">
 			<Panel id="Craft6Header">
 				<Label id="Craft6HeaderTitle" text="УЛУЧШЕННЫЙ КРАФТ" />
 				<Button id="Craft6CloseButton" onactivate="ToggleCraft6Panel()">
