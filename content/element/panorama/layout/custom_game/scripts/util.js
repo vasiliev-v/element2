@@ -61,3 +61,8 @@ function ConvertToSteamid64(steamid32)  //32位转64位
 function ConvertToSteamId32(steamid64) {   //64位转32位
     return steamid64.substr(3) - 61197960265728;
 }
+
+function FormatNumberWithCommas(value) { 
+    const str = String(value);
+    return str.replace(/\B(?=(\d{3})+(?!\d))/g, " "); 
+}
