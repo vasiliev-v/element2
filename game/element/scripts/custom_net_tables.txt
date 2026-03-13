@@ -7,6 +7,11 @@
 		"Elements_Tabel",
 		"RelicStats_Tabel",
 		"disable_help",
-		"craft6_table"
+		"craft6_table",
+		"scorestats",
+		"Pets_Tabel",
+		"Shop",
+        "Shop_active",
+        "game_spells_lib"
 	]
 }
