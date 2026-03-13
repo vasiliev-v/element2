@@ -1,8 +1,6 @@
 	function InitCustomUI()
 {
 	//GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY, false );      //Time of day (clock).
-    GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false);     //Heroes and team score at the top of the HUD.
-    GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false);      //Lefthand flyout scoreboard.
     //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, false );     //Hero actions UI.
     GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_MINIMAP, false );     //Minimap.
     //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PANEL, false );      //Entire Inventory UI
@@ -17,21 +15,11 @@
     GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_GAME_NAME, false);     //Hero selection game mode name display.
     GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_CLOCK, false);     //Hero selection clock.
     //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_MENU_BUTTONS, false );     //Top-left menu buttons in the HUD.
-    GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);      //Endgame scoreboard.
     GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false);     //Top-left menu buttons in the HUD.
     GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FIGHT_RECAP, false);     //
 
-	GameUI.CustomUIConfig().multiteam_top_scoreboard =
-		{
-			reorder_team_scores: true,
-			LeftInjectXMLFile: "file://{resources}/layout/custom_game/overthrow_scoreboard_left/overthrow_scoreboard_left.xml",
-			TeamOverlayXMLFile: "file://{resources}/layout/custom_game/overthrow_scoreboard_team_overlay/overthrow_scoreboard_team_overlay.xml"
-		};
-
 		GameUI.CustomUIConfig().team_logo_xml = "file://{resources}/layout/custom_game/overthrow_team_icon/overthrow_team_icon.xml";
 		GameUI.CustomUIConfig().team_logo_large_xml = "file://{resources}/layout/custom_game/overthrow_team_icon_large/overthrow_team_icon_large.xml";
-
-		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );
 
 		GameUI.CustomUIConfig().team_colors = {}
 		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "#00ff00;"; // { 61, 210, 150 }	--		Teal
@@ -90,13 +78,9 @@
 
 		centerBlock.FindChildTraverse("inventory_tpscroll_HotkeyContainer").style.visibility = "collapse";
 
-
 		}
 		
-
-
 InitCustomUI();
-
 
 function FindDotaHudElement(sId)
 {
