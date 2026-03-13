@@ -9,77 +9,37 @@
     transform: translatex(-50%);
     opacity: 0;
     margin-top: 150px;
-    transition: transform 0.1s ease 0.0s, opacity 0.2s ease 0.0s;
+    padding: 10px 12px 12px 12px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111ee ), to( #1c1c1cf4 ) );
+    border: 1px solid #4c4c4c;
     box-shadow: 0px 0px 150px -10px rgba(0, 0, 0, 0.75);
+    transition: transform 0.1s ease 0.0s, opacity 0.2s ease 0.0s;
 }
 
 .FlyoutScoreboardRoot.flyout_scoreboard_visible 
 {
-    transform: translatey( 0% );
+    transform: translatey(0%);
     opacity: 1;
-}
-
-#ChangePanelType 
-{
-    flow-children: right;
-    padding: 10px;
-}
-
-.ButtonSetStyle
-{
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: black;
-    margin-right: 10px;
-    border: 1px solid #B8FF45;
-    saturation: 0.4;
-}
-
-.ButtonSetStyle Label
-{
-    font-size: 14px;
-    color: #B8FF45;
-    text-shadow: 0px 0px 2px 2 black;
-    align: center center;
-    width: 100%;
-    text-align: center;
-}
-
-.ButtonSetStyle:hover
-{
-    brightness: 2;
-}
-
-.ButtonSetStyle:active
-{
-    brightness: 1.5;
-}
-
-.ButtonSetStyle.Active
-{
-    saturation: 1;
-    brightness: 2;
 }
 
 .Legend 
 {
     flow-children: right;
     margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
   
 .Legend Label 
 {
     text-transform: uppercase;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.35);
 }
 
 .LegendPanel 
 {
-    
 }
-
 
 .ScoreCol_TeamInfo 
 {
@@ -99,25 +59,15 @@
 
 .ScoreCol_PlayerDetails 
 {
-    width: 100px;
+    width: 140px;
 }
 
 .ScoreCol_Gold
 {
-    width: 74px;
-}
-
-.ScoreCol_Lumber
-{
-    width: 74px;
+    width: 70px;
 }
 
 .ScoreCol_Kills
-{
-    width: 50px;
-}
-
-.ScoreCol_Score
 {
     width: 50px;
 }
@@ -129,22 +79,22 @@
 
 .ScoreCol_ElfScore
 {
-    width: 50px;
+    width: 56px;
 }
 
 .ScoreCol_TrollScore
 {
-    width: 50px;
+    width: 56px;
 }
 
-.ScoreCol_Achivement
+.ScoreCol_Items
 {
-    width: 72px;
+    width: 228px;
 }
 
-.ScoreCol_Assists 
+.ScoreCol_Actions
 {
-    width: 50px;
+    width: 46px;
 }
 
 #TeamsContainer 
@@ -187,10 +137,10 @@
 
 .PlayerRow 
 {
-    padding-top: 8px;
-    height: 48px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(217, 217, 217, 0.1);
+    padding-top: 6px;
+    height: 46px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(217, 217, 217, 0.08);
 }
 
 #PlayerRowContainer 
@@ -206,7 +156,6 @@
 
 .ScoreboardPanel 
 {
-
 }
 
 #PlayerOneMainInformation 
@@ -235,6 +184,7 @@
 #PlayerAndHeroName 
 {
     padding-left: 8px;
+    vertical-align: center;
 }
 
 #PlayerName 
@@ -267,80 +217,9 @@
     text-overflow: shrink;
 }
 
-#AchivementContainer
-{
-    flow-children: right;
-    horizontal-align: center;
-    vertical-align: center;
-    overflow: noclip;
-}
-
-.ScoreboardAchievement
-{
-    width: 32px;
-    height: 32px;
-    border: 2px solid #BDFF00;
-    border-radius: 100%;
-    vertical-align: center;
-    horizontal-align: center;
-    margin-right: 6px;
-    flow-children: none;
-    overflow: noclip;
-    z-index: 1;
-}
-
-#AchievementGlow
-{
-    width: 100%;
-    height: 100%;
-    background-image: url("file://{images}/new_design/topbar/glow.png");
-    background-size: 100%;
-    wash-color: #B8FF45;
-    opacity: 0.6;
-}
-
-#AchievementIcon
-{
-    width: 100%;
-    height: 100%;
-    vertical-align: center;
-    horizontal-align: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    opacity: 0.9;
-    margin: 2px;
-    border-radius: 100%;
-}
-
-.ScoreboardAchievementCounter
-{
-    ignore-parent-flow: true;
-    z-index: 50;
-    horizontal-align: right;
-    vertical-align: top;
-    margin-bottom: 35px;
-    margin-right: -25px;
-    font-size: 14px;
-    color: white;
-    font-weight: semi-bold;
-    text-overflow: shrink;
-    text-shadow: 0px 0px 4px 4 black;
-    background-color: transparent;
-    border: 0px;
-    padding: 0px;
-    width: fit-children;
-    height: fit-children;
-}
-
 .PlayerGoldAmount
 {
     color: #FFD74B;
-}
-
-.PlayerLumberAmount
-{
-    color: #23BD33;
 }
 
 .ScoreCol_Kills Label
@@ -363,143 +242,36 @@
     color: white;
 }
 
-#GiveResourcesTable 
+#GoldContainer
 {
-    flow-children: right;
-    visibility: collapse;
+    vertical-align: center;
 }
 
-.local_player_teammate #GiveResourcesTable 
+#ItemsContainer
 {
+    flow-children: right;
+    vertical-align: center;
+    margin-left: 4px;
+}
+
+.ScoreboardItem
+{
+    width: 32px;
+    height: 24px;
+    margin-right: 4px;
+    vertical-align: center;
     visibility: visible;
 }
 
-#ResourcePanels 
-{
-    flow-children: right;
-}
-
-.ResourcePanelSwapOne 
-{
-    flow-children: right;
-}
-
-.GoldEntryMain
-{
-    flow-children: none;
-    width: 90px;
-    height: 32px;
-    border: 2px solid rgba(184, 255, 69, 0.5);
-    border-radius: 50px;
-    margin-left: 10px;
-    background-color: #141414;
-}
-
-#GoldEntry
-{
-    width: 100%;
-    horizontal-align: left;
-    margin-left: 28px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 0px solid black;
-    vertical-align: center;
-    height: 25px;
-    font-size: 13px;
-}
-
-.GoldIconEntry
-{
-    vertical-align: center;
-    margin-left: 5px;
-    width: 20px;
-    height: 20px;
-    background-size: 100%;
-    background-image: url("s2r://panorama/images/hud/icon_gold.psd");
-}
-
-.LumberEntryMain
-{
-    flow-children: none;
-    width: 90px;
-    height: 32px;
-    border: 2px solid rgba(184, 255, 69, 0.5);
-    border-radius: 50px;
-    margin-left: 10px;
-    background-color: #141414;
-}
-
-#LumberEntry
-{
-    width: 100%;
-    horizontal-align: left;
-    margin-left: 28px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 0px solid black;
-    vertical-align: center;
-    height: 25px;
-    font-size: 13px;
-}
-
-.LumberIconEntry
-{
-    vertical-align: center;
-    margin-left: 5px;
-    width: 24px;
-    height: 18px;
-    background-size: 100%;
-    background-image: url("file://{images}/custom_game/lumber_icon.png");
-}
-
-.GiveButton {
-    height: 30px;
-    width: 30px;
-    background-size: 100%;
-    background-image: url("file://{images}/new_design/flyout/send.png");
-    transition-property: brightness;
-    transition-duration: 0.15s;
-    margin-left: 10px;
-}
-
-.GiveButton:hover 
-{
-    brightness: 1.2;
-}
-
-.GiveButtonAll
-{
-    width: 70px;
-    height: 32px;
-    border-radius: 50px;
-    background-color: #4B6834;
-    border: 2px solid rgba(184, 255, 69, 0.5);
-    transition-property: brightness;
-    transition-duration: 0.15s;
-    margin-left: 10px;
-}
-
-.GiveButtonAll:hover 
-{
-    brightness: 1.2;
-}
-
-.GiveButtonAll Label
-{
-    align: center center;
-    color: #B8FF45;
-    font-weight: semi-bold;
-    font-size: 16px;
-}
-
-#DopPanels 
+#ActionContainer
 {
     flow-children: right;
     vertical-align: center;
-    margin-left: 30px;
+    margin-left: 8px;
 }
 
 .ButtonPlayer
 {
-    margin-right: 15px;
     width: 28px;
     height: 28px;
     border: 2px solid #444444;
@@ -510,38 +282,12 @@
     transition-duration: 0.15s;
 }
 
-.ButtonKick
-{
-    background-image: url("file://{images}/new_design/flyout/kick.png");
-    background-size: 40%;
-    background-repeat: no-repeat;
-    background-position: 50%;
-}
-
-.ButtonFlag
-{
-    background-image: url("file://{images}/new_design/flyout/flag.png");
-    background-size: 40% 60%;
-    background-repeat: no-repeat;
-    background-position: 50%;
-}
-
 .ButtonMute
 {
     background-image: url("file://{images}/new_design/flyout/mute.png");
     background-size: 60% 40%;
     background-repeat: no-repeat;
     background-position: 60%;
-}
-
-.ButtonFlag:hover
-{
-    background-color: #4B6834;
-}
-
-.ButtonKick:hover
-{
-    background-color: gradient( linear, 0% 0%, 0% 80%, from( #E95C5C), to( #994D4D));
 }
 
 .ButtonMute:hover
@@ -601,6 +347,7 @@
 {
     visibility: visible;
 }
+
 #_dynamic_team_6,
 #_dynamic_team_7,
 #_dynamic_team_8

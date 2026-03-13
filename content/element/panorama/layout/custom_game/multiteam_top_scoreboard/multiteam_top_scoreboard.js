@@ -1,140 +1,87 @@
-var PLAYERS_COUNTER_MAX = 0
+"use strict";
 
-function UpdateTeam( teamId )
+function intToARGB(i)
 {
-    let teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
-    let max_players = teamPlayers.length
-    if (PLAYERS_COUNTER_MAX < max_players)
-    {
-        $("#player_list_1").RemoveAndDeleteChildren()
-        $("#player_list_2").RemoveAndDeleteChildren()
-        PLAYERS_COUNTER_MAX = max_players
-    }
-    let player_counter = 0
-	for ( var playerId of teamPlayers )
-	{
-        player_counter = player_counter + 1
-		UpdatePlayer( playerId, player_counter, teamPlayers );
-	}
-    $("#GameTimerLabel").text = ConvertTimeMinutes(Math.floor(Game.GetDOTATime( false, false )))
-    let TimeUntil = FindDotaHudElement("TimeUntil")
-    let time_to_next_cycle = 0
-    $("#TimerToNextCycle").style.visibility = "collapse"
-    if (TimeUntil)
-    {
-        time_to_next_cycle = timeToSeconds(TimeUntil.text)
-    }
-    if (Game.IsDayTime())
-    {
-        $("#GameTimer").SetHasClass("IsNight", false)
-        $("#TimerToNextCycle").text = TimeUntil.text
-        
-    }
-    else
-    {
-        $("#GameTimer").SetHasClass("IsNight", true)
-        $("#TimerToNextCycle").text = TimeUntil.text
-    }
-    $("#TimeOfDayLineFront").style.width = (time_to_next_cycle / 300 * 100) + "%"
-    $.GetContextPanel().SetHasClass("AltPressed", GameUI.IsAltDown())
-    $.Schedule(0.1, function()
-    {
-        UpdateTeam( teamId )
-    })
+    return ("00" + (i & 0xFF).toString(16)).substr(-2) +
+           ("00" + ((i >> 8) & 0xFF).toString(16)).substr(-2) +
+           ("00" + ((i >> 16) & 0xFF).toString(16)).substr(-2) +
+           ("00" + ((i >> 24) & 0xFF).toString(16)).substr(-2);
 }
 
-function UpdatePlayer( playerId, player_counter, teamPlayers )
+function UpdateTeam(teamId)
 {
-    let heroName = Players.GetPlayerSelectedHero(playerId);
-    if (heroName !== "npc_dota_hero_treant") 
-    {
-        // Не отображать игрока, если у него не treant или он troll
-        if (heroName === "npc_dota_hero_troll") return;
+    const teamPlayers = Game.GetPlayerIDsOnTeam(teamId);
 
-        // Если игрок не treant, но не troll — показываем как мёртвого
+    for (let i = 0; i < teamPlayers.length; i++)
+    {
+        UpdatePlayer(teamPlayers[i]);
     }
 
-    let team_panel = $("#player_list_1")
-    if ((player_counter > Math.floor(teamPlayers.length / 2)) && teamPlayers.length > 1)
+    $.Schedule(0.1, function ()
     {
-        team_panel = $("#player_list_2")
+        UpdateTeam(teamId);
+    });
+}
+
+function UpdatePlayer(playerId)
+{
+    const heroName = Players.GetPlayerSelectedHero(playerId);
+    if (!heroName)
+    {
+        return;
     }
 
-	var playerPanelName = "player_" + playerId;
-    var playerPanel = team_panel.FindChildTraverse( playerPanelName );
-	if ( playerPanel === null )
-	{
-		playerPanel = $.CreatePanel( "Image", team_panel, playerPanelName );
-		playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/multiteam_top_scoreboard/multiteam_top_scoreboard_player.xml", false, false );
-		playerPanel.AddClass( "PlayerPanel" );
-        playerPanel.PlayerID = playerId
-	}
+    const teamPanel = $("#player_list_1");
+    const panelName = "player_" + playerId;
+    let playerPanel = teamPanel.FindChildTraverse(panelName);
 
-	var playerInfo = Game.GetPlayerInfo( playerId );
-	if ( !playerInfo ) return;
-
-	var localPlayerInfo = Game.GetLocalPlayerInfo();
-	if ( !localPlayerInfo ) return;
-
-    const isDead = playerInfo.player_respawn_seconds >= 0 || heroName !== "npc_dota_hero_treant";
-    playerPanel.SetHasClass( "player_dead", isDead );
-
-	if ( playerId == localPlayerInfo.player_id )
-	{
-		playerPanel.AddClass( "is_local_player" );
-	}
-
-    if (!playerPanel.SetColor)
+    if (playerPanel === null)
     {
-        var colorInt = Players.GetPlayerColor( playerId );
-        if (colorInt == 0)
+        playerPanel = $.CreatePanel("Panel", teamPanel, panelName);
+        playerPanel.BLoadLayout("file://{resources}/layout/custom_game/multiteam_top_scoreboard/multiteam_top_scoreboard_player.xml", false, false);
+        playerPanel.PlayerID = playerId;
+    }
+
+    const playerInfo = Game.GetPlayerInfo(playerId);
+    if (!playerInfo)
+    {
+        return;
+    }
+
+    playerPanel.SetHasClass("player_dead", playerInfo.player_respawn_seconds >= 0);
+
+    const heroIcon = playerPanel.FindChildInLayoutFile("HeroIcon");
+    if (heroIcon)
+    {
+        heroIcon.heroname = heroName;
+    }
+
+    if (!playerPanel._colorApplied)
+    {
+        let colorInt = Players.GetPlayerColor(playerId);
+        if (!colorInt)
         {
-            colorInt =  Math.floor(Math.random() * 42949278731);
+            colorInt = 0xFFFFFFFF;
         }
-        var colorString = "#" + intToARGB( colorInt );
-        var ElfGlow = playerPanel.FindChildInLayoutFile( "ElfGlow" );
-        ElfGlow.style.washColor = colorString;
-        var ElfAvatar = playerPanel.FindChildInLayoutFile( "ElfAvatar" );
-        ElfAvatar.style.border = "2px solid "+ colorString;
-        ElfAvatar.style.boxShadow = "0px 0px 8px -1px " + colorString
-        playerPanel.SetColor = true
-    }
 
-	var playerName = playerPanel.FindChildInLayoutFile( "PlayerName" );
-    playerName.text = Players.GetPlayerName( playerId )
+        const colorString = "#" + intToARGB(colorInt);
 
-	playerPanel.SetHasClass( "is_local_player", ( playerId == Game.GetLocalPlayerID() ) );
-}
+        const button = playerPanel.FindChildInLayoutFile("TopHeroButton");
+        const glow = playerPanel.FindChildInLayoutFile("TopHeroGlow");
 
-UpdateTeam( 2 );
+        if (button)
+        {
+            button.style.border = "1px solid " + colorString;
+            button.style.boxShadow = "0px 0px 6px -2px " + colorString;
+        }
 
-let topbar = FindDotaHudElement("topbar")
-if (topbar)
-{
-    topbar.style.opacity = "0"
-}
+        if (glow)
+        {
+            glow.style.washColor = colorString;
+        }
 
-function timeToSeconds(str) 
-{
-    const timePattern = /(\d{1,2}):(\d{2})/;
-    const match = str.match(timePattern);
-    if (match) 
-    {
-        const minutes = parseInt(match[1], 10);
-        const seconds = parseInt(match[2], 10);
-        const totalSeconds = (minutes * 60) + seconds;
-        return totalSeconds;
-    } 
-    else 
-    {
-        return null;
+        playerPanel._colorApplied = true;
     }
 }
 
-function intToARGB(i) 
-{ 
-                return ('00' + ( i & 0xFF).toString( 16 ) ).substr( -2 ) +
-                                               ('00' + ( ( i >> 8 ) & 0xFF ).toString( 16 ) ).substr( -2 ) +
-                                               ('00' + ( ( i >> 16 ) & 0xFF ).toString( 16 ) ).substr( -2 ) + 
-                                                ('00' + ( ( i >> 24 ) & 0xFF ).toString( 16 ) ).substr( -2 );
-}
+UpdateTeam(2);

@@ -1,274 +1,93 @@
-#TopBarScoreboard 
+#TopBarScoreboard
 {
     horizontal-align: center;
     vertical-align: top;
-    horizontal-align: center;
     width: 100%;
+    margin-top: 6px;
 }
 
 .PlayersPanels
 {
     horizontal-align: center;
+    flow-children: right;
+    height: 36px;
 }
 
 .player_list_1
 {
-    horizontal-align: center;
-    margin-right: 48%;
-    flow-children: left;
-    width: 600px;
-}
-
-.player_list_2
-{
-    horizontal-align: center;
-    margin-left: 48.2%;
     flow-children: right;
-    width: 600px;
+    horizontal-align: center;
+    width: fit-children;
+    margin-right: 420px;
 }
 
-.ScoreboardPlayerWrapper
+.TopHeroWrapper
 {
-    height: 200px;
-    margin-right: 5px;
-    flow-children: down;
+    width: 56px;
+    height: 36px;
+    margin-right: 6px;
 }
 
-.ScoreboardPlayer
+.TopHeroButton
 {
-    width: 44px;
-    height: 48px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition-property: transform, position;
-    transition-duration: 0s;
+    width: 56px;
+    height: 36px;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#111111ee), to(#1c1c1cf4));
+    border: 1px solid #4c4c4c;
+    box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.9);
+    transition-property: brightness, transform;
+    transition-duration: 0.15s;
+    overflow: noclip;
 }
 
-.LineTop
+.TopHeroButton:hover
+{
+    brightness: 1.15;
+    transform: translateY(1px);
+}
+
+.TopHeroGlow
 {
     width: 100%;
-    height: 2px;
-    background-image: url("file://{images}/new_design/topbar/line_top.png");
-    background-size: 100%;
-}
-
-.ElfAvatar
-{
-    width: 32px;
-    height: 32px;
-    border: 2px solid white;
-    border-radius: 100%;
-    background-color: black;
-    horizontal-align: center;
-    vertical-align: bottom;
-    margin-bottom: 6px;
-}
-
-.ElfIcon
-{
-    width: 32px;
-    height: 32px;
-    background-image: url("file://{images}/new_design/topbar/elf.png");
-    background-size: 100%;
-}
-
-.ElfGlow
-{
-    width: 32px;
-    height: 32px;
+    height: 100%;
     background-image: url("file://{images}/new_design/topbar/glow.png");
     background-size: 100%;
+    opacity: 0.16;
 }
 
-.TimerShadow
+.TopHeroImage
 {
-    width: 1424px;
-    height: 640px;
-    background-image: url("file://{images}/new_design/topbar/timer_shadow.png");
-    background-size: 100%;
+    width: 54px;
+    height: 30px;
     horizontal-align: center;
-    ui-scale: 34%;
-    transform: translateY(-8%);
-}
-
-.GameTimer
-{
-    width: 256px;
-    height: 110px;
-    horizontal-align: center;
-    flow-children: down;
-}
-
-.IconWithTimer
-{
-    horizontal-align: center;
-    flow-children: right;
-    margin-top: 30px;
-}
-
-.TimeIcon
-{
-    width: 24px;
-    height: 24px;
-    background-image: url("file://{images}/new_design/topbar/sun_icon.png");
-    background-size: 100%;
-    margin-right: 5px;
     vertical-align: center;
+    margin-top: 2px;
 }
 
-.IsNight .TimeIcon
+.TopHeroDeadIcon
 {
-    background-image: url("s2r://panorama/images/hud/reborn/icon_moon_psd.vtex");
-    background-size: 100%;
-    transform: scaleX(-1);
-}
-
-.GameTimerLabel
-{
-    font-weight: bold;
-    color: white;
-    font-size: 16px;
-    vertical-align: center;
-}
-
-.TimeOfDayLine
-{
-    width: 116px;
-    height: 2px;
-    horizontal-align: center;
-    margin-top: 5px;
-}
-
-.TimeOfDayLineBack
-{
-    background-color: #4D451F;
-    width: 100%;
-    height: 100%;
-    horizontal-align: center;
-}
-
-.TimeOfDayLineFront
-{
-    width: 50%;
-    height: 100%;
-    background-color: #FEE152;
-}
-
-.IsNight .TimeOfDayLineFront
-{
-    background-color: #4a94f5;  
-}
-
-.TimerToNextCycle
-{
-    font-weight: bold;
-    color: white;
-    font-size: 12px;
-    vertical-align: center;
-    horizontal-align: center;
-    text-transform: uppercase;
-}
-
-.player_dead .ElfGlow
-{
-    saturation: 0;
-}
-
-.player_dead .ElfIcon
-{
-    saturation: 0;
-}
-
-.PlayerDead
-{
+    width: 16px;
+    height: 16px;
     align: center center;
     background-image: url("file://{images}/new_design/flyout/kick.png");
     background-size: 100%;
-    width: 18px;
-    height: 18px;
     wash-color: red;
     img-shadow: 0px 0px 4px 5.0 #333333b0;
     opacity: 0;
 }
 
-.player_dead .PlayerDead
+.player_dead .TopHeroImage
+{
+    saturation: 0;
+    brightness: 0.45;
+}
+
+.player_dead .TopHeroGlow
+{
+    opacity: 0.05;
+}
+
+.player_dead .TopHeroDeadIcon
 {
     opacity: 1;
-}
-
-.PlayerName
-{  
-    z-index: 10;
-    color: white;
-    font-size: 16px;
-    margin-top: 2px;
-    width: 40px;
-    text-align: center;
-    height: 18px;
-    text-overflow: shrink;
-    horizontal-align: center;
-    transition-property: transform, position;
-    transition-duration: 0s;
-}
-
-.PlayerSettings
-{
-    width: 44px;
-    height: 0px;
-    background-color: rgba(184, 255, 69, 0.15);
-    //visibility: collapse;
-    opacity: 0;
-    transition-property: opacity, height;
-    transition-duration: 0.15s;
-    flow-children: down;
-}
-
-.AltPressed .PlayerSettings
-{
-    height: 89px;
-    visibility: visible;
-    opacity: 1;
-}
-
-.AltPressed .is_local_player .PlayerSettings
-{
-    height: 0px;
-    opacity: 0;
-    visibility: collapse;
-}
-
-.ButtonPlayer
-{
-    width: 32px;
-    height: 32px;
-    margin-top: 7px;
-    saturation: 0.9;
-    transition-property: saturation, brightness;
-    transition-duration: 0.15s;
-}
-
-.ButtonPlayer:hover
-{
-    saturation: 1;
-    brightness: 1.2;
-}
-
-.MuteButton
-{
-    background-image: url("file://{images}/new_design/topbar/mute.png");
-    background-size: 100%;
-    horizontal-align: center;
-}
-
-.MuteResource
-{
-    background-image: url("file://{images}/new_design/topbar/send.png");
-    background-size: 100%;
-    horizontal-align: center;
-}
-
-.player_muted .MuteButton
-{
-    wash-color: red;
 }

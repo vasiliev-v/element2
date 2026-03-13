@@ -1,29 +1,29 @@
 <root>
     <styles>
-		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
-		<include src="file://{resources}/layout/custom_game/styles/shared_scoreboard_styles.css" />
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="file://{resources}/layout/custom_game/styles/shared_scoreboard_styles.css" />
         <include src="file://{resources}/layout/custom_game/multiteam_flyout_scoreboard/multiteam_flyout_scoreboard.css" />
     </styles>
     <scripts>
-        <include src="file://{resources}/layout/custom_game/scripts/util.js" />   
+        <include src="file://{resources}/layout/custom_game/scripts/util.js" />
         <include src="file://{resources}/layout/custom_game/scripts/shared_scoreboard_updater.js" />
         <include src="file://{resources}/layout/custom_game/multiteam_flyout_scoreboard/multiteam_flyout_scoreboard.js" />
     </scripts>
+
     <Panel hittest="false" class="FlyoutScoreboardRoot">
-		<Panel id="Legend" class="Legend">
-			<Panel class="LegendPanel ScoreCol_TeamInfo" />
-			<Panel class="LegendPanel ScoreCol_Hero" />
-			<Label class="LegendPanel ScoreCol_PlayerDetails ScoreCol_Name" text="Name" />
-            <Label class="LegendPanel ScoreCol_Kills" text="#custom_end_screen_legend_kills" />
+        <Panel id="Legend" class="Legend">
+            <Panel class="LegendPanel ScoreCol_TeamInfo" />
+            <Panel class="LegendPanel ScoreCol_Hero" />
+            <Label class="LegendPanel ScoreCol_PlayerDetails ScoreCol_Name" text="Name" />
+            <Label class="LegendPanel ScoreCol_Gold" text="Gold" />
+            <Label class="LegendPanel ScoreCol_Kills" text="LH" />
             <Label class="LegendPanel ScoreCol_Deaths" text="#custom_end_screen_legend_deaths" />
             <Label class="LegendPanel ScoreCol_ElfScore" text="Norm" />
             <Label class="LegendPanel ScoreCol_TrollScore" text="Hard" />
-           <!--
-           <Label class="LegendPanel ScoreCol_Achivement" text="#Stats_Achivement" /> 
-           --> 
+            <Label class="LegendPanel ScoreCol_Items" text="Items" />
+            <Panel class="LegendPanel ScoreCol_Actions" />
         </Panel>
+
         <Panel id="TeamsContainer" />
     </Panel>
 </root>
-
-
