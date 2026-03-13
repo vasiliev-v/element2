@@ -54,11 +54,13 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "Assists", playerInfo.player_assists );
         
-        var tbl = CustomNetTables.GetTableValue( "Hero_Stats", playerId );
-        //$.Msg(tbl);
-		_ScoreboardUpdater_SetTextSafe( playerPanel, "TDamage", tbl["tdmg"] );
-		_ScoreboardUpdater_SetTextSafe( playerPanel, "DDamage", tbl["ddmg"] );
-		_ScoreboardUpdater_SetTextSafe( playerPanel, "Heal", tbl["heal"] );
+		var playerStats = CustomNetTables.GetTableValue( "hero_stats", String( playerId ) );
+		if ( playerStats )
+		{
+			_ScoreboardUpdater_SetTextSafe( playerPanel, "TDamage", playerStats.tdmg || 0 );
+			_ScoreboardUpdater_SetTextSafe( playerPanel, "DDamage", playerStats.ddmg || 0 );
+			_ScoreboardUpdater_SetTextSafe( playerPanel, "Heal", playerStats.heal || 0 );
+		}
 
 		var playerPortrait = playerPanel.FindChildInLayoutFile( "HeroIcon" );
 		if ( playerPortrait )
@@ -232,8 +234,15 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
 	{
 		teamsInfo.max_team_players = teamPlayers.length;
 	}
-    var tbl = CustomNetTables.GetTableValue( "Hero_Stats", "wave" );
-	_ScoreboardUpdater_SetTextSafe( teamPanel, "TeamScore", tbl[1] )
+	var waveStats = CustomNetTables.GetTableValue( "hero_stats", "wave" );
+	if ( waveStats && typeof waveStats.wave !== "undefined" )
+	{
+		_ScoreboardUpdater_SetTextSafe( teamPanel, "TeamScore", waveStats.wave );
+	}
+	else
+	{
+		_ScoreboardUpdater_SetTextSafe( teamPanel, "TeamScore", teamDetails.team_score );
+	}
 	_ScoreboardUpdater_SetTextSafe( teamPanel, "TeamName", $.Localize( teamDetails.team_name ) )
 	
 	if ( GameUI.CustomUIConfig().team_colors )
@@ -245,7 +254,7 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
 
 		if ( teamColorPanel )
 		{
-			teamNamePanel.style.backgroundColor = teamColor + ";";
+			teamColorPanel.style.backgroundColor = teamColor + ";";
 		}
 		
 		var teamColor_GradentFromTransparentLeft = teamPanel.FindChildInLayoutFile( "TeamColor_GradentFromTransparentLeft" );
@@ -455,4 +464,3 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
 	
 	return teamsList;
 }
-
