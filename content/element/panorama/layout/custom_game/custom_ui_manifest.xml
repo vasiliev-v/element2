@@ -19,7 +19,7 @@
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/tws_quest_affixes/tws_quest_affixes.xml" /> 
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/roundoptions/roundoptions.xml" />
         
-        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/elementshop/elementshop.xml" />
+        <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/elementshop/elementshop.xml" /> 
         
         
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/boss_hp/boss_hp.xml" /> 

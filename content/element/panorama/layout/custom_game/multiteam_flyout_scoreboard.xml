@@ -20,5 +20,5 @@
             <Label class="LegendPanel ScoreCol_Assists" text="#DOTA_Scoreboard_Assists" />
         </Panel>
         <Panel id="TeamsContainer" />
-    </Panel>
+    </Panel>  
 </root>

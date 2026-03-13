@@ -13,7 +13,7 @@ function _ScoreboardUpdater_SetTextSafe( panel, childName, textValue )
 	
 	childPanel.text = textValue;
 }
-
+ 
 
 //=============================================================================
 //=============================================================================

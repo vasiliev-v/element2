@@ -16,3 +16,4 @@
 
     ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, $( "#TeamsContainer" ) );
 })();
+   
