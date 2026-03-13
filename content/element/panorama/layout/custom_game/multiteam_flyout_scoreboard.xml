@@ -12,7 +12,7 @@
     <Panel hittest="false" class="FlyoutScoreboardRoot">
         <Panel class="Legend">
             <Panel class="LegendPanel ScoreCol_TeamInfo" />
-            <Panel class="LegendPanel ScoreCol_Hero" />
+            <Panel class="LegendPanel ScoreCol_Hero" /> 
             <Panel class="LegendPanel ScoreCol_PlayerDetails" />
             <Panel class="LegendPanel ScoreCol_TeamScore" />
             <Label class="LegendPanel ScoreCol_Kills" text="#DOTA_Scoreboard_Kills" />

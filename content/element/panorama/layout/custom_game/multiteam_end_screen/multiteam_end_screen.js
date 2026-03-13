@@ -3,7 +3,7 @@
 (function()
 {
 	if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
-
+ 
 	var scoreboardConfig =
 	{
 		"teamXmlName" : "file://{resources}/layout/custom_game/multiteam_end_screen_team/multiteam_end_screen_team.xml",
