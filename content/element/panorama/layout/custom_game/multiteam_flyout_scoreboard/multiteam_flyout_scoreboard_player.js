@@ -57,6 +57,8 @@ function UpdatePlayerRow() {
 
     panel.SetHasClass("player_muted", Game.IsPlayerMuted(playerId));
 
+    ApplyPlayerColor(panel, playerId);
+
     const muteButton = panel.FindChildTraverse("MuteButton");
     if (muteButton) {
         muteButton.visible = playerId !== localPlayer;
@@ -92,12 +94,71 @@ function UpdatePlayerRow() {
     $.Schedule(0.2, UpdatePlayerRow);
 }
 
+function ToPlayerColor(colorInt) {
+    const r = colorInt & 255;
+    const g = (colorInt >> 8) & 255;
+    const b = (colorInt >> 16) & 255;
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+function ApplyPlayerColor(panel, playerId) {
+    const colorPanel = panel.FindChildTraverse("TeamColor_GradentFromTransparentLeft");
+    if (!colorPanel) {
+        return;
+    }
+
+    let colorInt = Players.GetPlayerColor(playerId);
+    if (colorInt == null) {
+        return;
+    }
+
+    const color = ToPlayerColor(colorInt);
+function ToPlayerColor(colorInt) {
+    const r = colorInt & 255;
+    const g = (colorInt >> 8) & 255;
+    const b = (colorInt >> 16) & 255;
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+function ApplyPlayerColor(panel, playerId) {
+    const colorPanel = panel.FindChildTraverse("TeamColor_GradentFromTransparentLeft");
+    if (!colorPanel) {
+        return;
+    }
+
+    let colorInt = Players.GetPlayerColor(playerId);
+    if (colorInt == null) {
+        return;
+    }
+
+    const color = ToPlayerColor(colorInt);
+
+    /* полностью убираем стиль команды */
+    colorPanel.style.backgroundImage = "none";
+    colorPanel.style.washColor = "white";
+    colorPanel.style.opacity = "1";
+
+    /* красим ту же самую линию в цвет игрока */
+    colorPanel.style.backgroundColor = color;
+    colorPanel.style.boxShadow = "none";
+}
+    /* полностью убираем стиль команды */
+    colorPanel.style.backgroundImage = "none";
+    colorPanel.style.washColor = "white";
+    colorPanel.style.opacity = "1";
+
+    /* красим ту же самую линию в цвет игрока */
+    colorPanel.style.backgroundColor = color;
+    colorPanel.style.boxShadow = "none";
+}
+
 (function () {
     const panel = $.GetContextPanel();
     const playerId = panel.GetAttributeInt("player_id", -1);
     const localPlayer = Players.GetLocalPlayer();
 
     panel.SetHasClass("player_muted", Game.IsPlayerMuted(playerId));
+    ApplyPlayerColor(panel, playerId);
 
     const muteButton = panel.FindChildTraverse("MuteButton");
     if (muteButton && playerId === localPlayer) {

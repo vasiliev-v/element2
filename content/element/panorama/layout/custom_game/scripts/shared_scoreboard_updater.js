@@ -142,18 +142,6 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             }
         }
 
-        if ( GameUI.CustomUIConfig().team_colors )
-        {
-            var teamColor = GameUI.CustomUIConfig().team_colors[ playerInfo.player_team_id ];
-            var teamColorPanel = playerPanel.FindChildInLayoutFile( "TeamColor" );
-
-            var teamColor_GradentFromTransparentLeft = playerPanel.FindChildInLayoutFile( "TeamColor_GradentFromTransparentLeft" );
-            if ( teamColor_GradentFromTransparentLeft )
-            {
-                teamColor_GradentFromTransparentLeft.style.borderRight = "2px solid " + teamColor
-            } 
-        }
-
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "RespawnTimer", ( playerInfo.player_respawn_seconds + 1 ) ); // value is rounded down so just add one for rounded-up
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", playerInfo.player_name );
 		_ScoreboardUpdater_SetTextSafe( playerPanel, "Level", playerInfo.player_level );
