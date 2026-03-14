@@ -6,90 +6,6 @@ local function IsValidEntityHandle(entity)
 	return entity ~= nil and (not entity.IsNull or not entity:IsNull())
 end
 
-local function RemoveEntityByEntIndex(entindex, debugLabel)
-	if entindex == nil then
-		return false
-	end
-
-	local entity = EntIndexToHScript(entindex)
-	if not IsValidEntityHandle(entity) then
-		return false
-	end
-
-	UTIL_Remove(entity)
-	print(debugLabel)
-	return true
-end
-
-function item_tombstone:RemoveTombstoneArtifacts()
-	if not IsServer() then
-		return
-	end
-
-	local dropEntIndex = self.tombstone_drop_entindex
-	local visualEntIndex = self.tombstone_visual_entindex
-	local particleEnt = self.tombstone_particle
-	local thinkerEnt = self.tombstone_thinker
-	local dummyEnt = self.tombstone_dummy
-
-	local container = nil
-	if IsValidEntityHandle(self) and self.GetContainer then
-		container = self:GetContainer()
-	end
-
-	local containerRemoved = false
-	if IsValidEntityHandle(container) then
-		UTIL_Remove(container)
-		print("[TOMBSTONE] tombstone container removed")
-		containerRemoved = true
-	elseif RemoveEntityByEntIndex(dropEntIndex, "[TOMBSTONE] tombstone container removed") then
-		containerRemoved = true
-	end
-
-	local visualRemoved = false
-	if RemoveEntityByEntIndex(visualEntIndex, "[TOMBSTONE] tombstone visual removed") then
-		visualRemoved = true
-	elseif containerRemoved then
-		-- Для текущей реализации visual = container (dota_item_tombstone_drop)
-		print("[TOMBSTONE] tombstone visual removed")
-		visualRemoved = true
-	end
-
-	if IsValidEntityHandle(particleEnt) then
-		UTIL_Remove(particleEnt)
-		print("[TOMBSTONE] tombstone particle removed")
-	end
-
-	if IsValidEntityHandle(thinkerEnt) then
-		UTIL_Remove(thinkerEnt)
-		print("[TOMBSTONE] tombstone thinker removed")
-	end
-
-	if IsValidEntityHandle(dummyEnt) then
-		UTIL_Remove(dummyEnt)
-		print("[TOMBSTONE] tombstone dummy removed")
-	end
-
-	local itemRemoved = false
-	if IsValidEntityHandle(self) then
-		UTIL_Remove(self)
-		print("[TOMBSTONE] tombstone item removed")
-		itemRemoved = true
-	end
-
-	if not itemRemoved then
-		print("[TOMBSTONE] tombstone item remove skipped (invalid handle)")
-	end
-
-	if not containerRemoved then
-		print("[TOMBSTONE] tombstone container remove skipped (not found)")
-	end
-
-	if not visualRemoved then
-		print("[TOMBSTONE] tombstone visual remove skipped (not found)")
-	end
-end
-
 function item_tombstone:OnSpellStart()
 	if not IsServer() then
 		return
@@ -119,14 +35,12 @@ function item_tombstone:OnSpellStart()
 
 	if heroEntIndex == nil then
 		print("[TOMBSTONE] Abort: no stored hero entindex")
-		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
 	local deadHero = EntIndexToHScript(heroEntIndex)
 	if not IsValidEntityHandle(deadHero) then
 		print(string.format("[TOMBSTONE] Abort: deadHero handle invalid for entindex=%s", tostring(heroEntIndex)))
-		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
@@ -137,13 +51,11 @@ function item_tombstone:OnSpellStart()
 
 	if caster:GetTeamNumber() ~= deadTeam then
 		print(string.format("[TOMBSTONE] Abort: ally check failed caster_team=%s dead_team=%s", tostring(caster:GetTeamNumber()), tostring(deadTeam)))
-		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
 	if deadHero:IsAlive() then
 		print(string.format("[TOMBSTONE] Abort: target hero already alive hero=%s", tostring(deadHero:GetUnitName())))
-		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
@@ -168,9 +80,8 @@ function item_tombstone:OnSpellStart()
 
 	if deadHero:IsAlive() then
 		print(string.format("[TOMBSTONE] Respawn success: hero=%s hp=%s mana=%s", tostring(deadHero:GetUnitName()), tostring(deadHero:GetHealth()), tostring(deadHero:GetMana())))
-		self:RemoveTombstoneArtifacts()
+		UTIL_Remove(self)
 	else
 		print(string.format("[TOMBSTONE] Respawn failed: hero=%s", tostring(deadHero:GetUnitName())))
-		print("[TOMBSTONE] respawn failed, tombstone preserved")
 	end
 end

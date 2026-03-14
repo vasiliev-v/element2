@@ -1174,8 +1174,6 @@ function GameMode:CreateHeroTombstone( killedUnit )
 	newItem.tombstone_player_id = playerID
 	newItem.tombstone_team = teamNumber
 	newItem.tombstone_death_position = deathPosition
-	newItem.tombstone_drop_entindex = nil
-	newItem.tombstone_visual_entindex = nil
 
 	local tombstoneDrop = SpawnEntityFromTableSynchronous( "dota_item_tombstone_drop", {} )
 	if not tombstoneDrop or tombstoneDrop:IsNull() then
@@ -1188,11 +1186,7 @@ function GameMode:CreateHeroTombstone( killedUnit )
 	tombstoneDrop:SetAngles( 0, RandomFloat( 0, 360 ), 0 )
 	FindClearSpaceForUnit( tombstoneDrop, deathPosition, true )
 
-	newItem.tombstone_drop_entindex = tombstoneDrop:entindex()
-	newItem.tombstone_visual_entindex = tombstoneDrop:entindex()
-
 	print(string.format("[TOMBSTONE] Tombstone created: item_entindex=%s drop_entindex=%s hero_entindex=%s", tostring(newItem:entindex()), tostring(tombstoneDrop:entindex()), tostring(heroEntIndex)))
-	print(string.format("[TOMBSTONE] Stored tombstone links: drop_entindex=%s visual_entindex=%s", tostring(newItem.tombstone_drop_entindex), tostring(newItem.tombstone_visual_entindex)))
 end
 
 -- An entity died
