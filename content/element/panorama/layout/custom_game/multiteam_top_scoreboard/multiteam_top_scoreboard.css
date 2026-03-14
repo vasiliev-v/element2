@@ -10,7 +10,7 @@
 {
     horizontal-align: center;
     flow-children: right;
-    height: 36px;
+    height: 44px;
 }
 
 .player_list_1
@@ -24,26 +24,33 @@
 .TopHeroWrapper
 {
     width: 56px;
-    height: 36px;
+    height: 44px;
     margin-right: 6px;
 }
 
 .TopHeroButton
 {
     width: 56px;
-    height: 36px;
+    height: 44px;
     background-color: gradient(linear, 0% 0%, 0% 100%, from(#111111ee), to(#1c1c1cf4));
     border: 1px solid #4c4c4c;
     box-shadow: 0px 0px 6px -2px rgba(0,0,0,0.9);
-    transition-property: brightness, transform;
+    transition-property: brightness, box-shadow, border;
     transition-duration: 0.15s;
     overflow: noclip;
 }
 
 .TopHeroButton:hover
 {
-    brightness: 1.15;
-    transform: translateY(1px);
+    brightness: 1.12;
+}
+
+.TopHeroInnerBorder
+{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: inset 0px 0px 4px rgba(255,255,255,0.06);
 }
 
 .TopHeroGlow
@@ -52,7 +59,7 @@
     height: 100%;
     background-image: url("file://{images}/new_design/topbar/glow.png");
     background-size: 100%;
-    opacity: 0.16;
+    opacity: 0.18;
 }
 
 .TopHeroImage
@@ -60,8 +67,45 @@
     width: 54px;
     height: 32px;
     horizontal-align: center;
-    vertical-align: center;
+    vertical-align: top;
     margin-top: 2px;
+}
+
+.TopHeroBars
+{
+    flow-children: down;
+    width: 54px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 1px;
+}
+
+.TopHeroHPBar,
+.TopHeroManaBar
+{
+    width: 54px;
+    height: 4px;
+    background-color: rgba(0,0,0,0.85);
+    border: 0px;
+}
+
+.TopHeroManaBar
+{
+    margin-top: 1px;
+}
+
+.TopHeroHPFill
+{
+    width: 100%;
+    height: 100%;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#4e8e38), to(#8be35d));
+}
+
+.TopHeroManaFill
+{
+    width: 100%;
+    height: 100%;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#3558bf), to(#73a7ff));
 }
 
 .TopHeroDeadIcon
@@ -84,10 +128,22 @@
 
 .player_dead .TopHeroGlow
 {
-    opacity: 0.05;
+    opacity: 0.06;
 }
 
 .player_dead .TopHeroDeadIcon
 {
     opacity: 1;
+}
+
+.is_local_player_topbar .TopHeroButton
+{
+    border: 2px solid white;
+    box-shadow: 0px 0px 8px -1px rgba(255,255,255,0.35);
+}
+
+.is_local_player_topbar .TopHeroInnerBorder
+{
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: inset 0px 0px 6px rgba(255,255,255,0.12);
 }

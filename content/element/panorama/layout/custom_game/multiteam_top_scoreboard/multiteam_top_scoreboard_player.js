@@ -1,6 +1,6 @@
 "use strict";
 
-function ToggleMute()
+function showHero()
 {
     const panel = $.GetContextPanel();
     const playerId = panel.GetAttributeInt("player_id", -1);
@@ -8,25 +8,16 @@ function ToggleMute()
     if (playerId === -1)
         return;
 
-    const newIsMuted = !Game.IsPlayerMuted(playerId);
-    Game.SetPlayerMuted(playerId, newIsMuted);
-    panel.SetHasClass("player_muted", newIsMuted);
-}
-
-function showHero()
-{
-    const panel = $.GetContextPanel();
-    const target = panel.GetAttributeInt("player_id", -1);
-
-    if (target === -1)
-        return;
-
-    const heroEnt = Players.GetPlayerHeroEntityIndex(target);
-
+    const heroEnt = Players.GetPlayerHeroEntityIndex(playerId);
     if (heroEnt && heroEnt !== -1)
     {
         GameUI.MoveCameraToEntity(heroEnt);
     }
+}
+
+function Clamp(value, min, max)
+{
+    return Math.max(min, Math.min(max, value));
 }
 
 function UpdatePlayerRow()
@@ -36,70 +27,73 @@ function UpdatePlayerRow()
 
     if (playerId === -1)
     {
-        $.Schedule(0.2, UpdatePlayerRow);
+        $.Schedule(0.1, UpdatePlayerRow);
         return;
     }
 
     const localPlayer = Players.GetLocalPlayer();
-
-    panel.SetHasClass("player_muted", Game.IsPlayerMuted(playerId));
-
-    const muteButton = panel.FindChildTraverse("MuteButton");
-    if (muteButton)
-    {
-        muteButton.visible = playerId !== localPlayer;
-    }
-
-    const goldLabel = panel.FindChildTraverse("Gold");
-    if (goldLabel)
-    {
-        goldLabel.text = String(Players.GetGold(playerId));
-    }
-
-    const creepsLabel = panel.FindChildTraverse("Creeps");
-    if (creepsLabel)
-    {
-        creepsLabel.text = String(Players.GetLastHits(playerId));
-    }
-
+    const playerInfo = Game.GetPlayerInfo(playerId);
     const heroEnt = Players.GetPlayerHeroEntityIndex(playerId);
+
+    panel.SetHasClass("is_local_player_topbar", playerId === localPlayer);
+
+    if (playerInfo)
+    {
+        panel.SetHasClass("player_dead", playerInfo.player_respawn_seconds >= 0);
+    }
+    else
+    {
+        panel.SetHasClass("player_dead", false);
+    }
+
+    const hpFill = panel.FindChildTraverse("TopHeroHPFill");
+    const manaFill = panel.FindChildTraverse("TopHeroManaFill");
+    const deadIcon = panel.FindChildTraverse("TopHeroDeadIcon");
 
     if (heroEnt && heroEnt !== -1)
     {
-        for (let slot = 0; slot < 6; slot++)
-        {
-            const itemPanel = panel.FindChildTraverse("Item" + slot);
-            const itemEnt = Entities.GetItemInSlot(heroEnt, slot);
+        const health = Entities.GetHealth(heroEnt);
+        const maxHealth = Entities.GetMaxHealth(heroEnt);
+        const mana = Entities.GetMana(heroEnt);
+        const maxMana = Entities.GetMaxMana(heroEnt);
 
-            if (itemPanel)
-            {
-                if (itemEnt !== -1)
-                {
-                    itemPanel.visible = true;
-                    itemPanel.itemname = Abilities.GetAbilityName(itemEnt);
-                }
-                else
-                {
-                    itemPanel.visible = false;
-                    itemPanel.itemname = "";
-                }
-            }
+        const hpPct = maxHealth > 0 ? Clamp((health / maxHealth) * 100, 0, 100) : 0;
+        const manaPct = maxMana > 0 ? Clamp((mana / maxMana) * 100, 0, 100) : 0;
+
+        if (hpFill)
+        {
+            hpFill.style.width = hpPct + "%";
+        }
+
+        if (manaFill)
+        {
+            manaFill.style.width = manaPct + "%";
+        }
+
+        if (deadIcon)
+        {
+            deadIcon.visible = Entities.IsAlive(heroEnt) === false;
         }
     }
     else
     {
-        for (let slot = 0; slot < 6; slot++)
+        if (hpFill)
         {
-            const itemPanel = panel.FindChildTraverse("Item" + slot);
-            if (itemPanel)
-            {
-                itemPanel.visible = false;
-                itemPanel.itemname = "";
-            }
+            hpFill.style.width = "0%";
+        }
+
+        if (manaFill)
+        { 
+            manaFill.style.width = "0%";
+        }
+
+        if (deadIcon)
+        {
+            deadIcon.visible = false;
         }
     }
 
-    $.Schedule(0.2, UpdatePlayerRow);
+    $.Schedule(0.1, UpdatePlayerRow);
 }
 
 (function ()

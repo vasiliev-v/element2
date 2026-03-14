@@ -7,11 +7,23 @@
         <include src="s2r://panorama/layout/custom_game/multiteam_top_scoreboard/multiteam_top_scoreboard_player.js" />
     </scripts>
 
-	<Panel hittest="false" class="TopHeroWrapper">
-		<Panel class="TopHeroButton" id="TopHeroButton" onactivate="showHero()">
+	<Panel class="TopHeroWrapper">
+		<Button class="TopHeroButton" id="TopHeroButton" onactivate="showHero()">
+            <Panel class="TopHeroInnerBorder" id="TopHeroInnerBorder" />
             <Panel class="TopHeroGlow" id="TopHeroGlow" />
+
             <DOTAHeroImage id="HeroIcon" class="TopHeroImage" heroname="" heroimagestyle="landscape" />
-            <Panel class="TopHeroDeadIcon" />
-		</Panel>
+ 
+            <Panel class="TopHeroDeadIcon" id="TopHeroDeadIcon" />
+
+            <Panel class="TopHeroBars">
+                <Panel class="TopHeroHPBar">
+                    <Panel class="TopHeroHPFill" id="TopHeroHPFill" />
+                </Panel>
+                <Panel class="TopHeroManaBar">
+                    <Panel class="TopHeroManaFill" id="TopHeroManaFill" />
+                </Panel>
+            </Panel>
+		</Button>
 	</Panel>
 </root>

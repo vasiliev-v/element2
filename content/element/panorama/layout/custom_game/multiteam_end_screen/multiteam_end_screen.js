@@ -4,7 +4,6 @@
 {
 	if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
 
-	//$.Msg("Initializing multiteam_end_screen.js");
 	var scoreboardConfig =
 	{
 		"teamXmlName" : "file://{resources}/layout/custom_game/multiteam_end_screen/multiteam_end_screen_team.xml",
@@ -14,55 +13,217 @@
 	var endScoreboardHandle = ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, $( "#TeamsContainer" ) );
 	$.GetContextPanel().SetHasClass( "endgame", 1 );
 
-	var teamInfoList = ScoreboardUpdater_GetSortedTeamInfoList( endScoreboardHandle );
-	var delay = 0.2;
-	var delay_per_panel = 1 / teamInfoList.length;
-	for ( var teamInfo of teamInfoList )
+	function GetPlayerLastHits(playerId)
 	{
-	    var teamId = teamInfo.team_id;
-		var teamPanel = ScoreboardUpdater_GetTeamPanel( endScoreboardHandle, teamId );
-		teamPanel.SetHasClass( "team_endgame", false );
-		var callback = function( panel )
+		try
 		{
-			return function(){ panel.SetHasClass( "team_endgame", 1 ); }
-		}( teamPanel );
-		$.Schedule( delay, callback );
-		delay += delay_per_panel;
-
-
-		var teamPlayers = Game.GetPlayerIDsOnTeam( teamId );
-		var playersContainer = teamPanel.FindChildInLayoutFile( "PlayersContainer" );
-		if ( playersContainer )
-		{ 
-			for (var playerId of teamPlayers ) {
-				var playerPanel = playersContainer.FindChild("_dynamic_player_" + playerId);
-				if(playerPanel){
-					var playerResourceStats = CustomNetTables.GetTableValue("resources",playerId + "_resource_stats");
-					var playerStatsScore = CustomNetTables.GetTableValue("scorestats",playerId.toString());
-                    if(playerResourceStats != null) {
-						////$.Msg("Setting end game resources for playerId: ", playerId, "; playerResourceStats: ", playerResourceStats, "; ");
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", FormatNumberWithCommas(Math.round(playerResourceStats.gold/1000) ));
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerLumberAmount", FormatNumberWithCommas(Math.round(playerResourceStats.lumber/1000) ));
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGPSAmount", FormatNumberWithCommas(Math.round(playerResourceStats.goldGained/playerResourceStats.timePassed) ));
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerLPSAmount", FormatNumberWithCommas(Math.round(playerResourceStats.lumberGained/playerResourceStats.timePassed) ));
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldGivenAmount", FormatNumberWithCommas(Math.round(playerResourceStats.goldGiven/1000) ));
-					    _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerLumberGivenAmount", FormatNumberWithCommas(Math.round(playerResourceStats.lumberGiven/1000) ));
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerChangeScore", playerResourceStats.PlayerChangeScore );
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "GetGem", playerResourceStats.GetGem );
-					}
-					if(playerStatsScore != null)
-					{
-						_ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerScore", (parseInt(playerStatsScore.playerScoreElf) + parseInt(playerStatsScore.playerScoreTroll)).toString());			
-					}
-					
-				}
+			var info = Game.GetPlayerInfo(playerId);
+			if (info && info.player_team_data && info.player_team_data.last_hits != null)
+			{
+				return info.player_team_data.last_hits;
 			}
+		}
+		catch (e) {}
+
+		return 0;
+	}
+
+	function CreateItemImage(parent, itemName, extraClass)
+	{
+		if (!itemName || itemName === "")
+			return;
+
+		var itemPanel = $.CreatePanel("DOTAItemImage", parent, "");
+		itemPanel.itemname = itemName;
+
+		if (extraClass)
+		{
+			itemPanel.AddClass(extraClass);
 		}
 	}
 
+	function AddDivider(parent)
+	{
+		$.CreatePanel("Panel", parent, "").AddClass("EndScreenItemDivider");
+	}
+
+	function CreateGroup(parent, groupClass)
+	{
+		var panel = $.CreatePanel("Panel", parent, "");
+		panel.AddClass("EndScreenItemsGroup");
+		if (groupClass)
+		{
+			panel.AddClass(groupClass);
+		}
+		return panel;
+	}
+
+	function GetItemNameInSlot(heroEntIndex, slot)
+	{
+		var itemEntIndex = Entities.GetItemInSlot(heroEntIndex, slot);
+		if (itemEntIndex == -1)
+			return null;
+
+		var itemName = Abilities.GetAbilityName(itemEntIndex);
+		if (!itemName || itemName === "")
+			return null;
+
+		return itemName;
+	}
+
+	function UpdatePlayerItems(playerPanel, playerId)
+	{
+		var itemsContainer = playerPanel.FindChildInLayoutFile("PlayerItemsContainer");
+		if (!itemsContainer)
+			return;
+
+		itemsContainer.RemoveAndDeleteChildren();
+
+		var playerInfo = Game.GetPlayerInfo(playerId);
+		if (!playerInfo || playerInfo.player_selected_hero_entity_index == null || playerInfo.player_selected_hero_entity_index === -1)
+			return;
+
+		var heroEntIndex = playerInfo.player_selected_hero_entity_index;
+
+		var mainGroup = CreateGroup(itemsContainer, "EndScreenMainItem");
+		var backpackGroup = CreateGroup(itemsContainer, "EndScreenBackpackItem");
+		var neutralGroup = CreateGroup(itemsContainer, "EndScreenSpecialItem");
+		var tpGroup = CreateGroup(itemsContainer, "EndScreenSpecialItem");
+
+		var hasMain = false;
+		var hasBackpack = false;
+		var hasNeutral = false;
+		var hasTP = false;
+
+		var mainSlots = [0, 1, 2, 3, 4, 5];
+		var backpackSlots = [6, 7, 8];
+
+		for (var i = 0; i < mainSlots.length; i++)
+		{
+			var mainItem = GetItemNameInSlot(heroEntIndex, mainSlots[i]);
+			if (mainItem)
+			{
+				CreateItemImage(mainGroup, mainItem, "");
+				hasMain = true;
+			}
+		}
+
+		for (var j = 0; j < backpackSlots.length; j++)
+		{
+			var backpackItem = GetItemNameInSlot(heroEntIndex, backpackSlots[j]);
+			if (backpackItem)
+			{
+				CreateItemImage(backpackGroup, backpackItem, "");
+				hasBackpack = true;
+			}
+		}
+
+		var neutralItem = GetItemNameInSlot(heroEntIndex, 16);
+		if (neutralItem)
+		{
+			CreateItemImage(neutralGroup, neutralItem, "");
+			hasNeutral = true;
+		}
+
+		var tpItem = GetItemNameInSlot(heroEntIndex, 15);
+		if (tpItem && tpItem != "item_tpscroll")
+		{
+			CreateItemImage(tpGroup, tpItem, "");
+			hasTP = true;
+		}
+
+		if (!hasMain)
+		{
+			mainGroup.style.width = "0px";
+		}
+
+		if (hasMain && (hasBackpack || hasNeutral || hasTP))
+		{
+			AddDivider(itemsContainer);
+		}
+
+		if (!hasBackpack)
+		{
+			backpackGroup.style.width = "0px";
+		}
+
+		if (hasBackpack && (hasNeutral || hasTP))
+		{
+			AddDivider(itemsContainer);
+		}
+		else if (!hasBackpack)
+		{
+			backpackGroup.DeleteAsync(0);
+		}
+
+		if (!hasNeutral)
+		{
+			neutralGroup.style.width = "0px";
+		}
+
+		if (hasNeutral && hasTP)
+		{
+			AddDivider(itemsContainer);
+		}
+		else if (!hasNeutral)
+		{
+			neutralGroup.DeleteAsync(0);
+		}
+
+		if (!hasTP)
+		{
+			tpGroup.style.width = "0px";
+		}
+		else if (!hasTP)
+		{
+			tpGroup.DeleteAsync(0);
+		}
+	}
+
+	function UpdateExtraPlayerStats(teamPanel, teamId)
+	{
+		var teamPlayers = Game.GetPlayerIDsOnTeam(teamId);
+		var playersContainer = teamPanel.FindChildInLayoutFile("PlayersContainer");
+		if (!playersContainer)
+			return;
+
+		for (var i = 0; i < teamPlayers.length; i++)
+		{
+			var playerId = teamPlayers[i];
+			var playerPanel = playersContainer.FindChild("_dynamic_player_" + playerId);
+			if (!playerPanel)
+				continue;
+
+			_ScoreboardUpdater_SetTextSafe(playerPanel, "LastHits", String(GetPlayerLastHits(playerId)));
+			UpdatePlayerItems(playerPanel, playerId);
+		}
+	}
+
+	var teamInfoList = ScoreboardUpdater_GetSortedTeamInfoList( endScoreboardHandle );
+	var delay = 0.2;
+	var delay_per_panel = 1 / teamInfoList.length;
+
+	for ( var teamInfo of teamInfoList )
+	{
+		var teamId = teamInfo.team_id;
+		var teamPanel = ScoreboardUpdater_GetTeamPanel( endScoreboardHandle, teamId );
+
+		teamPanel.SetHasClass( "team_endgame", false );
+
+		var callback = function( panel )
+		{
+			return function(){ panel.SetHasClass( "team_endgame", 1 ); };
+		}( teamPanel );
+
+		$.Schedule( delay, callback );
+		delay += delay_per_panel;
+
+		UpdateExtraPlayerStats(teamPanel, teamId);
+	}
+
 	var winningTeamId = Game.GetGameWinner();
-	var winningTeamDetails = Game.GetTeamDetails( winningTeamId );
 	var endScreenVictory = $( "#EndScreenVictory" );
+
 	if ( endScreenVictory )
 	{
 		if (Game.GetMapInfo().map_display_name == "clanwars")
@@ -71,9 +232,8 @@
 		}
 		else
 		{
-			endScreenVictory.SetDialogVariable( "winning_team_name", winningTeamId == DOTATeam_t.DOTA_TEAM_BADGUYS && "The Mighty Troll has slain everyone!" || "Elves have defended successfully!" );
+			endScreenVictory.SetDialogVariable( "winning_team_name", winningTeamId == DOTATeam_t.DOTA_TEAM_BADGUYS && "You lose" || "Victory!" );
 		}
-		
 
 		if ( GameUI.CustomUIConfig().team_colors )
 		{

@@ -7,7 +7,7 @@
 	</scripts>
 		
 	<Panel>
-		<CustomUIElement type="HudTopBar"			layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard/multiteam_top_scoreboard.xml" />
+		<CustomUIElement type="HudTopBar"			layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard/multiteam_top_scoreboard.xml" /> 
 		<CustomUIElement type="Hud"					layoutfile="file://{resources}/layout/custom_game/overthrow_item_notification/overthrow_item_notification.xml" />
 		<CustomUIElement type="GameSetup"			layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
 		<CustomUIElement type="HeroSelection" 		layoutfile="file://{resources}/layout/custom_game/multiteam_hero_select_overlay/multiteam_hero_select_overlay.xml" />
@@ -27,6 +27,9 @@
         <CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/endswaves/endswaves.xml" />
 		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/craft6panel/craft6panel.xml" />
 		<!-- 
+		
+
+
 		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/relicshop/relicshop.xml" />
 		<CustomUIElement type="GameInfo" 			layoutfile="file://{resources}/layout/custom_game/overthrow_game_info/overthrow_game_info.xml" />
 		<CustomUIElement type="Hud"                 layoutfile="file://{resources}/layout/custom_game/patreon/patreon.xml" />

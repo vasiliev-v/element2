@@ -13,5 +13,5 @@
                 <Panel hittest="false" class="player_list_1" id="player_list_1" />
             </Panel>
 	    </Panel>
-    </Panel>
+    </Panel> 
 </root>

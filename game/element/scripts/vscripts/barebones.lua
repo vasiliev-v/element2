@@ -811,6 +811,16 @@ function GameMode:OnNPCSpawned(keys)
 	--DeepPrintTable(keys)
 	local npc = EntIndexToHScript(keys.entindex)
 
+    if npc:IsHero() then
+        Timers:CreateTimer(0.1,function() for i=0,15 do
+                local item = npc:GetItemInSlot(i)
+                if item and (item:GetName() == "item_enchanted_mango"  or item:GetName() == "item_tpscroll") then
+                    npc:TakeItem(item)
+                end
+            end
+        end)
+    end
+
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
         npc.bFirstSpawned = true
         npc.zone = "main_zone"
@@ -899,6 +909,12 @@ function GameMode:OnItemPickedUp(keys)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
+    local heroMain = PlayerResource:GetSelectedHeroEntity(keys.PlayerID)
+
+    if itemname == "item_tpscroll" then 
+        heroMain:TakeItem(itemEntity)
+        return
+    end 
     
     if itemname == "item_25gold" then
 		local plc = PlayerResource:GetPlayerCount()
@@ -1111,7 +1127,7 @@ function GameMode:OnPlayerPickHero(keys)
     local current_item = heroEntity:GetItemInSlot(16)
     if current_item ~= nil then
         if current_item:GetName() == "item_tpscroll" then
-            heroEntity:RemoveItem(current_item)
+            heroEntity:TakeItem(current_item)
         end
     end
 end

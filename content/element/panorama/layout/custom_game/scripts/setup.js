@@ -77,9 +77,9 @@
 		//Fuck that levelup button
 		centerBlock.FindChildTraverse("level_stats_frame").style.visibility = "collapse";
 		// Hide tp slot
-		centerBlock.FindChildTraverse("inventory_tpscroll_container").style.visibility = "collapse";
+		//centerBlock.FindChildTraverse("inventory_tpscroll_container").style.visibility = "collapse";
 
-		centerBlock.FindChildTraverse("inventory_tpscroll_HotkeyContainer").style.visibility = "collapse";
+		//centerBlock.FindChildTraverse("inventory_tpscroll_HotkeyContainer").style.visibility = "collapse";
 
 		}
 		

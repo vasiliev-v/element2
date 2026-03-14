@@ -11,7 +11,6 @@ function intToARGB(i)
 function UpdateTeam(teamId)
 {
     const teamPlayers = Game.GetPlayerIDsOnTeam(teamId);
-
     for (let i = 0; i < teamPlayers.length; i++)
     {
         UpdatePlayer(teamPlayers[i]);
@@ -32,6 +31,11 @@ function UpdatePlayer(playerId)
     }
 
     const teamPanel = $("#player_list_1");
+    if (!teamPanel)
+    {
+        return;
+    }
+
     const panelName = "player_" + playerId;
     let playerPanel = teamPanel.FindChildTraverse(panelName);
 
@@ -39,7 +43,7 @@ function UpdatePlayer(playerId)
     {
         playerPanel = $.CreatePanel("Panel", teamPanel, panelName);
         playerPanel.BLoadLayout("file://{resources}/layout/custom_game/multiteam_top_scoreboard/multiteam_top_scoreboard_player.xml", false, false);
-        playerPanel.PlayerID = playerId;
+        playerPanel.SetAttributeInt("player_id", playerId);
     }
 
     const playerInfo = Game.GetPlayerInfo(playerId);
@@ -56,32 +60,31 @@ function UpdatePlayer(playerId)
         heroIcon.heroname = heroName;
     }
 
-    if (!playerPanel._colorApplied)
+    let colorInt = Players.GetPlayerColor(playerId);
+    if (colorInt === undefined || colorInt === null)
     {
-        let colorInt = Players.GetPlayerColor(playerId);
-        if (!colorInt)
-        {
-            colorInt = 0xFFFFFFFF;
-        }
+        colorInt = 0xFFFFFFFF;
+    }
 
-        const colorString = "#" + intToARGB(colorInt);
+    const colorString = "#" + intToARGB(colorInt);
 
-        const button = playerPanel.FindChildInLayoutFile("TopHeroButton");
-        const glow = playerPanel.FindChildInLayoutFile("TopHeroGlow");
+    const button = playerPanel.FindChildInLayoutFile("TopHeroButton");
+    const glow = playerPanel.FindChildInLayoutFile("TopHeroGlow");
 
-        if (button)
-        {
-            button.style.border = "1px solid " + colorString;
-            button.style.boxShadow = "0px 0px 6px -2px " + colorString;
-        }
+    if (button)
+    {
+        button.style.border = "1px solid " + colorString;
+        button.style.boxShadow = "0px 0px 8px -2px " + colorString;
+    }
 
-        if (glow)
-        {
-            glow.style.washColor = colorString;
-        }
-
-        playerPanel._colorApplied = true;
+    if (glow)
+    {
+        glow.style.washColor = colorString;
     }
 }
 
-UpdateTeam(2);
+(function ()
+{
+    UpdateTeam(DOTATeam_t.DOTA_TEAM_GOODGUYS);
+    UpdateTeam(DOTATeam_t.DOTA_TEAM_BADGUYS);
+})();
