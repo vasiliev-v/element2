@@ -77,16 +77,16 @@
     width: 54px;
     horizontal-align: center;
     vertical-align: bottom;
-    margin-bottom: 1px;
+    margin-bottom: -5px;
 }
 
 .TopHeroHPBar,
 .TopHeroManaBar
 {
     width: 54px;
-    height: 4px;
-    background-color: rgba(0,0,0,0.85);
-    border: 0px;
+    height: 6px;
+    background-color: rgba(8,8,8,0.95);
+    border: 1px solid rgba(255,255,255,0.10);
 }
 
 .TopHeroManaBar
