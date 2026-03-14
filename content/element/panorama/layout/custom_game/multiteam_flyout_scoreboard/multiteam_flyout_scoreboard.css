@@ -37,15 +37,23 @@
     color: rgba(255, 255, 255, 0.35);
 }
 
-.LegendPanel 
+.Legend Label
 {
+    text-align: left;
+    vertical-align: center;
 }
 
-.ScoreCol_TeamInfo 
+.ScoreCol_TeamInfo
 {
-    padding-right: 6px;
-    width: 14px;
+    width: 8px;
+    padding-right: 4px;
 }
+
+.LegendPanel.ScoreCol_TeamInfo
+{
+    width: 12px;
+}
+
 
 .ScoreCol_Hero 
 {
@@ -118,20 +126,19 @@
     flow-children: right;
 }
 
-.TeamInfo 
+.TeamInfo
 {
-    vertical-align: center;
+    width: 10px;
     height: 32px;
+    vertical-align: center;
 }
 
 #TeamColor_GradentFromTransparentLeft
 {
     width: 3px;
     height: 26px;
-
     horizontal-align: center;
     vertical-align: center;
-
     border-radius: 2px;
 }
 
