@@ -45,7 +45,7 @@
 		}
 		"AbilityCastRange"				"100"
 		"AbilityCastPoint"				"0.0"
-		"AbilityChannelTime"			"6.0"
+		"AbilityChannelTime"			"10.0"
 		"ItemCost"						"99999"
 		"ItemPurchasable"				"0"
 		"ItemShopTags"					"consumable"
