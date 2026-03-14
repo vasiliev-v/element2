@@ -6,23 +6,6 @@ local function IsValidEntityHandle(entity)
 	return entity ~= nil and (not entity.IsNull or not entity:IsNull())
 end
 
-local function SafeEntIndexToHScript(entIndex)
-	if entIndex == nil or type(entIndex) ~= "number" or entIndex <= 0 then
-		return nil
-	end
-
-	local ok, entity = pcall(EntIndexToHScript, entIndex)
-	if not ok then
-		return nil
-	end
-
-	if not IsValidEntityHandle(entity) then
-		return nil
-	end
-
-	return entity
-end
-
 local function RemoveEntitySafe(entity, debugText)
 	if not IsValidEntityHandle(entity) then
 		return false
@@ -64,10 +47,9 @@ function item_tombstone:OnSpellStart()
 	end
 
 	self.tombstone_respawn_time = self.tombstone_respawn_time or 10
-	RemoveParticleSafe(self.tombstone_channel_fx)
-	self.tombstone_channel_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_morphling/morphling_replicate_timer.vpcf", PATTACH_CUSTOMORIGIN, nil)
+	self.tombstone_channel_fx = ParticleManager:CreateParticle("particles/econ/events/darkmoon_2017/darkmoon_calldown_marker.vpcf", PATTACH_CUSTOMORIGIN, nil)
 	ParticleManager:SetParticleControl(self.tombstone_channel_fx, 0, deathPosition)
-	ParticleManager:SetParticleControl(self.tombstone_channel_fx, 1, Vector(175, self.tombstone_respawn_time, self.tombstone_respawn_time))
+	ParticleManager:SetParticleControl(self.tombstone_channel_fx, 1, Vector(175, self.tombstone_respawn_time, 1))
 	ParticleManager:SetParticleControl(self.tombstone_channel_fx, 2, Vector(self.tombstone_respawn_time, 0, 0))
 end
 
@@ -162,7 +144,7 @@ function item_tombstone:OnChannelFinish(bInterrupted)
 
 	local dropEntIndex = self.tombstone_drop_entindex
 	if dropEntIndex ~= nil then
-		local dropEntity = SafeEntIndexToHScript(dropEntIndex)
+		local dropEntity = EntIndexToHScript(dropEntIndex)
 		if IsValidEntityHandle(dropEntity) and dropEntity ~= container then
 			removedContainer = RemoveEntitySafe(dropEntity, "[TOMBSTONE] tombstone container removed") or removedContainer
 		end
@@ -170,22 +152,22 @@ function item_tombstone:OnChannelFinish(bInterrupted)
 
 	local visualEntIndex = self.tombstone_visual_entindex
 	if visualEntIndex ~= nil then
-		local visualEntity = SafeEntIndexToHScript(visualEntIndex)
-		if IsValidEntityHandle(visualEntity) and visualEntity ~= container and visualEntity ~= self then
+		local visualEntity = EntIndexToHScript(visualEntIndex)
+		if IsValidEntityHandle(visualEntity) and visualEntity ~= container then
 			removedVisual = RemoveEntitySafe(visualEntity, "[TOMBSTONE] tombstone visual removed") or removedVisual
 		end
 	end
 
 	local dummyEntIndex = self.tombstone_dummy_entindex
 	if dummyEntIndex ~= nil then
-		local dummyEntity = SafeEntIndexToHScript(dummyEntIndex)
+		local dummyEntity = EntIndexToHScript(dummyEntIndex)
 		if IsValidEntityHandle(dummyEntity) then
 			removedVisual = RemoveEntitySafe(dummyEntity, "[TOMBSTONE] tombstone visual removed") or removedVisual
 		end
 	end
 
 	if self.tombstone_thinker_entindex ~= nil then
-		local thinkerEntity = SafeEntIndexToHScript(self.tombstone_thinker_entindex)
+		local thinkerEntity = EntIndexToHScript(self.tombstone_thinker_entindex)
 		if IsValidEntityHandle(thinkerEntity) then
 			RemoveEntitySafe(thinkerEntity, "[TOMBSTONE] tombstone visual removed")
 			removedVisual = true
