@@ -33,6 +33,8 @@
 
 	"item_tombstone"
 	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_tombstone.lua"
 		"AbilityName"					"item_tombstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"Model"							"models/props_gameplay/tombstoneb01.vmdl"
