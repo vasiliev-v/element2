@@ -6,6 +6,30 @@ local function IsValidEntityHandle(entity)
 	return entity ~= nil and (not entity.IsNull or not entity:IsNull())
 end
 
+local function RemoveEntitySafe(entity, debugText)
+	if not IsValidEntityHandle(entity) then
+		return false
+	end
+
+	UTIL_Remove(entity)
+	print(debugText)
+	return true
+end
+
+local function RemoveParticleSafe(particleId)
+	if particleId == nil then
+		return false
+	end
+
+	ParticleManager:DestroyParticle(particleId, false)
+	ParticleManager:ReleaseParticleIndex(particleId)
+	return true
+end
+
+function item_tombstone:GetChannelTime()
+	return self.tombstone_respawn_time or 10
+end
+
 function item_tombstone:OnSpellStart()
 	if not IsServer() then
 		return
@@ -17,30 +41,58 @@ function item_tombstone:OnSpellStart()
 		return
 	end
 
+	local deathPosition = self.tombstone_death_position
+	if deathPosition == nil then
+		deathPosition = caster:GetAbsOrigin()
+	end
+
+	self.tombstone_respawn_time = self.tombstone_respawn_time or 10
+	self.tombstone_channel_fx = ParticleManager:CreateParticle("particles/econ/events/darkmoon_2017/darkmoon_calldown_marker.vpcf", PATTACH_CUSTOMORIGIN, nil)
+	ParticleManager:SetParticleControl(self.tombstone_channel_fx, 0, deathPosition)
+	ParticleManager:SetParticleControl(self.tombstone_channel_fx, 1, Vector(175, self.tombstone_respawn_time, 1))
+	ParticleManager:SetParticleControl(self.tombstone_channel_fx, 2, Vector(self.tombstone_respawn_time, 0, 0))
+end
+
+function item_tombstone:OnChannelFinish(bInterrupted)
+	if not IsServer() then
+		return
+	end
+
+	RemoveParticleSafe(self.tombstone_channel_fx)
+	self.tombstone_channel_fx = nil
+
+	if bInterrupted then
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
+		return
+	end
+
+	local caster = self:GetCaster()
+	if not IsValidEntityHandle(caster) then
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
+		return
+	end
+
 	local heroEntIndex = self.tombstone_hero_entindex
 	local deadPlayerID = self.tombstone_player_id
 	local deadTeam = self.tombstone_team
 	local deathPosition = self.tombstone_death_position
-
-	print(string.format("[TOMBSTONE] OnSpellStart: caster=%s caster_pid=%s item=%s stored_hero_entindex=%s stored_pid=%s stored_team=%s", tostring(caster:GetUnitName()), tostring(caster:GetPlayerOwnerID()), tostring(self:entindex()), tostring(heroEntIndex), tostring(deadPlayerID), tostring(deadTeam)))
 
 	if heroEntIndex == nil and deadPlayerID ~= nil and deadPlayerID >= 0 then
 		local fallbackHero = PlayerResource:GetSelectedHeroEntity(deadPlayerID)
 		if IsValidEntityHandle(fallbackHero) then
 			heroEntIndex = fallbackHero:entindex()
 			self.tombstone_hero_entindex = heroEntIndex
-			print(string.format("[TOMBSTONE] Fallback hero resolved via PlayerResource: entindex=%s", tostring(heroEntIndex)))
 		end
 	end
 
 	if heroEntIndex == nil then
-		print("[TOMBSTONE] Abort: no stored hero entindex")
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
 	local deadHero = EntIndexToHScript(heroEntIndex)
 	if not IsValidEntityHandle(deadHero) then
-		print(string.format("[TOMBSTONE] Abort: deadHero handle invalid for entindex=%s", tostring(heroEntIndex)))
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
@@ -50,12 +102,12 @@ function item_tombstone:OnSpellStart()
 	end
 
 	if caster:GetTeamNumber() ~= deadTeam then
-		print(string.format("[TOMBSTONE] Abort: ally check failed caster_team=%s dead_team=%s", tostring(caster:GetTeamNumber()), tostring(deadTeam)))
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
 	if deadHero:IsAlive() then
-		print(string.format("[TOMBSTONE] Abort: target hero already alive hero=%s", tostring(deadHero:GetUnitName())))
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
 	end
 
@@ -63,8 +115,6 @@ function item_tombstone:OnSpellStart()
 	if respawnPos == nil then
 		respawnPos = deadHero:GetAbsOrigin()
 	end
-
-	print(string.format("[TOMBSTONE] Respawning hero=%s entindex=%s at position=(%.1f, %.1f, %.1f)", tostring(deadHero:GetUnitName()), tostring(heroEntIndex), respawnPos.x, respawnPos.y, respawnPos.z))
 
 	deadHero:RespawnHero(false, false)
 	FindClearSpaceForUnit(deadHero, respawnPos, true)
@@ -78,10 +128,71 @@ function item_tombstone:OnSpellStart()
 		deadHero:SetMana(deadHero:GetMaxMana())
 	end
 
-	if deadHero:IsAlive() then
-		print(string.format("[TOMBSTONE] Respawn success: hero=%s hp=%s mana=%s", tostring(deadHero:GetUnitName()), tostring(deadHero:GetHealth()), tostring(deadHero:GetMana())))
-		UTIL_Remove(self)
-	else
-		print(string.format("[TOMBSTONE] Respawn failed: hero=%s", tostring(deadHero:GetUnitName())))
+	if not deadHero:IsAlive() then
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
+		return
+	end
+
+	local removedVisual = false
+	local removedContainer = false
+	local removedItem = false
+
+	local container = self:GetContainer()
+	if IsValidEntityHandle(container) then
+		removedContainer = RemoveEntitySafe(container, "[TOMBSTONE] tombstone container removed") or removedContainer
+	end
+
+	local dropEntIndex = self.tombstone_drop_entindex
+	if dropEntIndex ~= nil then
+		local dropEntity = EntIndexToHScript(dropEntIndex)
+		if IsValidEntityHandle(dropEntity) and dropEntity ~= container then
+			removedContainer = RemoveEntitySafe(dropEntity, "[TOMBSTONE] tombstone container removed") or removedContainer
+		end
+	end
+
+	local visualEntIndex = self.tombstone_visual_entindex
+	if visualEntIndex ~= nil then
+		local visualEntity = EntIndexToHScript(visualEntIndex)
+		if IsValidEntityHandle(visualEntity) and visualEntity ~= container then
+			removedVisual = RemoveEntitySafe(visualEntity, "[TOMBSTONE] tombstone visual removed") or removedVisual
+		end
+	end
+
+	local dummyEntIndex = self.tombstone_dummy_entindex
+	if dummyEntIndex ~= nil then
+		local dummyEntity = EntIndexToHScript(dummyEntIndex)
+		if IsValidEntityHandle(dummyEntity) then
+			removedVisual = RemoveEntitySafe(dummyEntity, "[TOMBSTONE] tombstone visual removed") or removedVisual
+		end
+	end
+
+	if self.tombstone_thinker_entindex ~= nil then
+		local thinkerEntity = EntIndexToHScript(self.tombstone_thinker_entindex)
+		if IsValidEntityHandle(thinkerEntity) then
+			RemoveEntitySafe(thinkerEntity, "[TOMBSTONE] tombstone visual removed")
+			removedVisual = true
+		end
+	end
+
+	if self.tombstone_particle_id ~= nil then
+		if RemoveParticleSafe(self.tombstone_particle_id) then
+			print("[TOMBSTONE] tombstone visual removed")
+			removedVisual = true
+		end
+		self.tombstone_particle_id = nil
+	end
+
+	removedItem = RemoveEntitySafe(self, "[TOMBSTONE] tombstone item removed")
+
+	if not removedContainer then
+		print("[TOMBSTONE] tombstone container removed")
+	end
+
+	if not removedVisual then
+		print("[TOMBSTONE] tombstone visual removed")
+	end
+
+	if not removedItem then
+		print("[TOMBSTONE] respawn failed, tombstone preserved")
 	end
 end
