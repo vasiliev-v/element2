@@ -1144,6 +1144,51 @@ function GameMode:OnTeamKillCredit(keys)
 	--local killerTeamNumber = keys.teamnumber
 end
 
+function GameMode:CreateHeroTombstone( killedUnit )
+	if not killedUnit or killedUnit:IsNull() then
+		print("[TOMBSTONE] CreateHeroTombstone: killedUnit is nil")
+		return
+	end
+
+	if not killedUnit:IsRealHero() then
+		return
+	end
+
+	local playerID = killedUnit:GetPlayerOwnerID()
+	local teamNumber = killedUnit:GetTeamNumber()
+	local heroEntIndex = killedUnit:entindex()
+	local deathPosition = killedUnit:GetAbsOrigin()
+
+	print(string.format("[TOMBSTONE] Hero died: name=%s entindex=%s playerID=%s team=%s", tostring(killedUnit:GetUnitName()), tostring(heroEntIndex), tostring(playerID), tostring(teamNumber)))
+
+	local newItem = CreateItem( "item_tombstone", killedUnit, killedUnit )
+	if not newItem or newItem:IsNull() then
+		print("[TOMBSTONE] Failed to create item_tombstone")
+		return
+	end
+
+	newItem:SetPurchaseTime( 0 )
+	newItem:SetPurchaser( killedUnit )
+
+	newItem.tombstone_hero_entindex = heroEntIndex
+	newItem.tombstone_player_id = playerID
+	newItem.tombstone_team = teamNumber
+	newItem.tombstone_death_position = deathPosition
+
+	local tombstoneDrop = SpawnEntityFromTableSynchronous( "dota_item_tombstone_drop", {} )
+	if not tombstoneDrop or tombstoneDrop:IsNull() then
+		print("[TOMBSTONE] Failed to spawn tombstone drop entity")
+		UTIL_Remove(newItem)
+		return
+	end
+
+	tombstoneDrop:SetContainedItem( newItem )
+	tombstoneDrop:SetAngles( 0, RandomFloat( 0, 360 ), 0 )
+	FindClearSpaceForUnit( tombstoneDrop, deathPosition, true )
+
+	print(string.format("[TOMBSTONE] Tombstone created: item_entindex=%s drop_entindex=%s hero_entindex=%s", tostring(newItem:entindex()), tostring(tombstoneDrop:entindex()), tostring(heroEntIndex)))
+end
+
 -- An entity died
 function GameMode:OnEntityKilled( keys )
 	print( '[BAREBONES] OnEntityKilled Called' )
@@ -1181,13 +1226,7 @@ function GameMode:OnEntityKilled( keys )
 	end
     
 	if killedUnit and killedUnit:IsRealHero() then
-		local newItem = CreateItem( "item_tombstone", killedUnit, killedUnit )
-		newItem:SetPurchaseTime( 0 )
-		newItem:SetPurchaser( killedUnit )
-		local tombstone = SpawnEntityFromTableSynchronous( "dota_item_tombstone_drop", {} )
-		tombstone:SetContainedItem( newItem )
-		tombstone:SetAngles( 0, RandomFloat( 0, 360 ), 0 )
-		FindClearSpaceForUnit( tombstone, killedUnit:GetAbsOrigin(), true )	
+		self:CreateHeroTombstone(killedUnit)
 	end
     
     if killedUnit:GetTeam() == 3 and killedUnit:GetName() == "npc_dota_creature" then
