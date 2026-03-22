@@ -90,7 +90,7 @@ function item_tombstone:OnChannelFinish(bInterrupted)
 		return
 	end
 
-	local deadHero = EntIndexToHScript(heroEntIndex)
+	local deadHero = SafeEntIndexToHScript(heroEntIndex)
 	if not IsValidEntityHandle(deadHero) then
 		print("[TOMBSTONE] respawn failed, tombstone preserved")
 		return
