@@ -19074,12 +19074,11 @@
 	{
 		"BaseClass"           			"ability_lua"
 		"ScriptFile"					"abilities/ability_capture"
-		"AbilityTextureName"			"ability_capture_lua"
+		"AbilityTextureName"			"ability_tombstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
-		"AbilityTextureName" 			"ability_capture_lua"	
 		"IsOnCastBar"                   "0"
 		"MaxLevel"						"1"
 		"AbilityCastRange"				"150"

@@ -2338,15 +2338,15 @@ function GameMode:ExecuteOrderFilter( filterTable )
 		end
 	end
 
-    if order == DOTA_UNIT_ORDER_PICKUP_ITEM then
+    if orderType == DOTA_UNIT_ORDER_PICKUP_ITEM then
         if target then
             local item = target:GetContainedItem()
 			if item and item:GetAbilityName() == "item_tombstone" then
 				ExecuteOrderFromTable({
-					UnitIndex = hero:entindex(),
+					UnitIndex = unit:entindex(),
 					OrderType = DOTA_UNIT_ORDER_CAST_POSITION,
 					Position = target:GetAbsOrigin(),
-					AbilityIndex = hero:FindAbilityByName("ability_capture_lua"):entindex(),
+					AbilityIndex = unit:FindAbilityByName("ability_capture_lua"):entindex(),
 				})
 				return false
 			end
