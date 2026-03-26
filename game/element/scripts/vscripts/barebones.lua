@@ -821,6 +821,24 @@ function GameMode:OnNPCSpawned(keys)
         end)
     end
 
+    if npc:IsRealHero() and not npc:IsIllusion() and not npc:IsTempestDouble() and not npc:IsClone()then
+		self._defeatcounter = 5	
+		local items_on_the_ground = Entities:FindAllByClassname("dota_item_drop")
+		for _,item_ground in pairs(items_on_the_ground) do
+			if item_ground then
+				local item = item_ground:GetContainedItem()
+				local item_name = item:GetAbilityName()
+				if item_name == "item_tombstone" then
+					local hero = item:GetPurchaser()
+					if hero == npc then
+						hero:RemoveModifierByName("modifier_fountain_invulnerability")
+						UTIL_Remove(item_ground)
+					end
+				end
+			end
+		end
+	end
+
 	if npc:IsRealHero() and npc.bFirstSpawned == nil then
         npc.bFirstSpawned = true
         npc.zone = "main_zone"
@@ -885,6 +903,8 @@ function GameMode:OnNPCSpawned(keys)
         -- GameMode:Levels(data)
         ----------------------------
 
+        local ability = npc:AddAbility("ability_capture_lua")
+	    ability:SetLevel(1)
         if not _G.hardmode then
             npc:AddNewModifier(npc, nil, "modifier_easy_mode", {})
         end
@@ -902,41 +922,48 @@ end
 
 -- An item was picked up off the ground
 function GameMode:OnItemPickedUp(keys)
-	print ( '[BAREBONES] OnItemPickedUp' )
+	print('[BAREBONES] OnItemPickedUp')
 	--DeepPrintTable(keys)
 
-	-- local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
-    local heroMain = PlayerResource:GetSelectedHeroEntity(keys.PlayerID)
+	local heroMain = PlayerResource:GetSelectedHeroEntity(keys.PlayerID)
 
-    if itemname == "item_tpscroll" then 
-        heroMain:TakeItem(itemEntity)
-        return
-    end 
-    
-    if itemname == "item_25gold" then
+	if not heroMain or heroMain:IsNull() then
+		return
+	end
+
+	if not itemEntity or itemEntity:IsNull() then
+		return
+	end
+
+	if itemname == "item_tpscroll" then
+		heroMain:TakeItem(itemEntity)
+		return
+	end
+
+	if itemname == "item_25gold" then
 		local plc = PlayerResource:GetPlayerCount()
-        local value = (280 / (plc + 2))
-        for nPlayerID = 0, plc-1 do
-            if PlayerResource:IsValidPlayer( nPlayerID ) then
-				if PlayerResource:HasSelectedHero( nPlayerID ) then
-					local hero = PlayerResource:GetSelectedHeroEntity( nPlayerID )
-                    SendOverheadEventMessage( hero, OVERHEAD_ALERT_GOLD, hero, value, nil )
-                    PlayerResource:ModifyGold(nPlayerID,value,true,DOTA_ModifyGold_Unspecified)
+		local value = (280 / (plc + 2))
+
+		for nPlayerID = 0, plc - 1 do
+			if PlayerResource:IsValidPlayer(nPlayerID) then
+				if PlayerResource:HasSelectedHero(nPlayerID) then
+					local hero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
+					SendOverheadEventMessage(hero, OVERHEAD_ALERT_GOLD, hero, value, nil)
+					PlayerResource:ModifyGold(nPlayerID, value, true, DOTA_ModifyGold_Unspecified)
 				end
-            end
+			end
 		end
-        if not itemEntity:IsNull() then
-            itemEntity:Destroy()
-        end
-    --else
-        --GameMode:Check()
-    -- elseif itemname == "item_shadow_portal" then
-    --     _G.portal_item = CreateItem("item_shadow_portal", nil, nil)
-    --     _G.portal_item_drop = CreateItemOnPositionSync( Entities:FindByName( nil, "spawner"):GetAbsOrigin(), _G.portal_item )
-    end
+
+		if not itemEntity:IsNull() then
+			itemEntity:Destroy()
+		end
+
+		return
+	end
+
 end
 
 -- A player has reconnected to the game.  This function can be used to repaint Player-based particles or change
@@ -1144,54 +1171,6 @@ function GameMode:OnTeamKillCredit(keys)
 	--local killerTeamNumber = keys.teamnumber
 end
 
-function GameMode:CreateHeroTombstone( killedUnit )
-	if not killedUnit or killedUnit:IsNull() then
-		print("[TOMBSTONE] CreateHeroTombstone: killedUnit is nil")
-		return
-	end
-
-	if not killedUnit:IsRealHero() then
-		return
-	end
-
-	local playerID = killedUnit:GetPlayerOwnerID()
-	local teamNumber = killedUnit:GetTeamNumber()
-	local heroEntIndex = killedUnit:entindex()
-	local deathPosition = killedUnit:GetAbsOrigin()
-
-	print(string.format("[TOMBSTONE] Hero died: name=%s entindex=%s playerID=%s team=%s", tostring(killedUnit:GetUnitName()), tostring(heroEntIndex), tostring(playerID), tostring(teamNumber)))
-
-	local newItem = CreateItem( "item_tombstone", killedUnit, killedUnit )
-	if not newItem or newItem:IsNull() then
-		print("[TOMBSTONE] Failed to create item_tombstone")
-		return
-	end
-
-	newItem:SetPurchaseTime( 0 )
-	newItem:SetPurchaser( killedUnit )
-
-	newItem.tombstone_hero_entindex = heroEntIndex
-	newItem.tombstone_player_id = playerID
-	newItem.tombstone_team = teamNumber
-	newItem.tombstone_death_position = deathPosition
-	newItem.tombstone_respawn_time = 10
-
-	local tombstoneDrop = SpawnEntityFromTableSynchronous( "dota_item_tombstone_drop", {} )
-	if not tombstoneDrop or tombstoneDrop:IsNull() then
-		print("[TOMBSTONE] Failed to spawn tombstone drop entity")
-		UTIL_Remove(newItem)
-		return
-	end
-
-	tombstoneDrop:SetContainedItem( newItem )
-	tombstoneDrop:SetAngles( 0, RandomFloat( 0, 360 ), 0 )
-	FindClearSpaceForUnit( tombstoneDrop, deathPosition, true )
-	newItem.tombstone_drop_entindex = tombstoneDrop:entindex()
-	newItem.tombstone_visual_entindex = tombstoneDrop:entindex()
-
-	print(string.format("[TOMBSTONE] Tombstone created: item_entindex=%s drop_entindex=%s hero_entindex=%s", tostring(newItem:entindex()), tostring(tombstoneDrop:entindex()), tostring(heroEntIndex)))
-end
-
 -- An entity died
 function GameMode:OnEntityKilled( keys )
 	print( '[BAREBONES] OnEntityKilled Called' )
@@ -1229,7 +1208,13 @@ function GameMode:OnEntityKilled( keys )
 	end
     
 	if killedUnit and killedUnit:IsRealHero() then
-		self:CreateHeroTombstone(killedUnit)
+		local newItem = CreateItem( "item_tombstone", killedUnit, killedUnit )
+        newItem:SetPurchaseTime(0)
+        newItem:SetPurchaser(killedUnit)
+        local tombstone = SpawnEntityFromTableSynchronous( "dota_item_drop", {} )
+        tombstone:SetContainedItem( newItem )
+        tombstone:SetAngles( 0, RandomFloat( 0, 360 ), 0 )
+        FindClearSpaceForUnit( tombstone, killedUnit:GetAbsOrigin(), true )	
 	end
     
     if killedUnit:GetTeam() == 3 and killedUnit:GetName() == "npc_dota_creature" then
@@ -2352,6 +2337,22 @@ function GameMode:ExecuteOrderFilter( filterTable )
 			end
 		end
 	end
+
+    if order == DOTA_UNIT_ORDER_PICKUP_ITEM then
+        if target then
+            local item = target:GetContainedItem()
+			if item and item:GetAbilityName() == "item_tombstone" then
+				ExecuteOrderFromTable({
+					UnitIndex = hero:entindex(),
+					OrderType = DOTA_UNIT_ORDER_CAST_POSITION,
+					Position = target:GetAbsOrigin(),
+					AbilityIndex = hero:FindAbilityByName("ability_capture_lua"):entindex(),
+				})
+				return false
+			end
+		end	
+	end
+
 	return true
 end
 
