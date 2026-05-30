@@ -119,6 +119,7 @@ function GameMode:InitGameMode()
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(GameMode, 'OnEntityKilled'), self)
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(GameMode, 'OnConnectFull'), self)
 	ListenToGameEvent('player_disconnect', Dynamic_Wrap(GameMode, 'OnDisconnect'), self)
+    ListenToGameEvent('player_chat', Dynamic_Wrap(chatcommand, 'OnPlayerChat'), self)
 	ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(GameMode, 'OnItemPurchased'), self)
 	ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(GameMode, 'OnItemPickedUp'), self)
 	ListenToGameEvent('last_hit', Dynamic_Wrap(GameMode, 'OnLastHit'), self)
@@ -181,6 +182,8 @@ function GameMode:InitGameMode()
     else
         GameRules.DropTable = LoadKeyValues("scripts/kv/item_drops.kv")
     end
+
+    GameRules.Test = false
     
     GameRules:GetGameModeEntity():SetThink( "OnThink", self, 0.25 )
 

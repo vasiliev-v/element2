@@ -3,7 +3,7 @@
 	"addontitle"					"Element"
 	"addon_game_name"				"Element"
     
-    "maps"							"normal hard"
+    "maps"							"normal hard test"
 	"IsPlayable" 		"1"
 	"PenaltiesEnabled"	"0"
 	"CheckAFKPlayers"	"0"
@@ -12,6 +12,10 @@
 		"MaxPlayers"		"5"
 	}
 	"hard"
+	{
+		"MaxPlayers"		"5"
+	}
+	"test"
 	{
 		"MaxPlayers"		"5"
 	}

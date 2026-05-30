@@ -38,7 +38,7 @@
 		"StatusHealthRegen"		"0.5"
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"305"
-		"MovementTurnRate"		"0.800000"
+		//"MovementTurnRate"		"0.800000"
 		"Facets"				""
 	}
 
@@ -77,7 +77,7 @@
 		"AttributeBaseIntelligence"		"15"
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
 	}
 		
@@ -115,7 +115,7 @@
 		"AttributeBaseIntelligence"		"15"
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"300"
-		"MovementTurnRate"		"0.700000"
+		//"MovementTurnRate"		"0.700000"
 		"Facets"				""
 	}
 		
@@ -154,7 +154,7 @@
 		"AttributeAgilityGain"		"2.500000"
 		"StatusHealthRegen"		"0.25"
 		"MovementSpeed"		"310"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
 		
@@ -191,7 +191,7 @@
 		"AttributeBaseIntelligence"		"15"
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"305"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"HasAggressiveStance"		"1"
 		"Facets"				""
 	}
@@ -231,7 +231,7 @@
 		"AttributeBaseAgility"		"25"
 		"AttributeAgilityGain"		"2.70000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"HasAggressiveStance"		"1"
 		"Facets"				""
 	}
@@ -273,7 +273,7 @@
 		"StatusHealthRegen"		"0.25"
 		"ArmorPhysical"		"0"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
 	}
 		
@@ -312,7 +312,7 @@
 		"AttributeBaseAgility"		"20"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
 		
@@ -349,7 +349,7 @@
 		"AttributeBaseIntelligence"		"15"
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"HasAggressiveStance"		"1"
 		"Facets"				""
 	}
@@ -389,7 +389,7 @@
 		"AttributeBaseIntelligence"		"25"
 		"AttributeIntelligenceGain"		"2.500000"
 		"MovementSpeed"		"310"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
 		
@@ -429,7 +429,7 @@
 		"AttributeIntelligenceGain"	"1.500000"
 		"StatusHealthRegen"		"0.25"
 		"MovementSpeed"				"305"
-		"MovementTurnRate"			"1.000000"
+		//"MovementTurnRate"			"1.000000"
 		"Facets"				""
 	}
 		
@@ -468,7 +468,7 @@
 		"AttributeBaseIntelligence"		"15"
 		"AttributeIntelligenceGain"		"1.5000"
 		"MovementSpeed"		"320"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"StatusHealthRegen"		"1.5"
 		"Facets"				""
 	}
@@ -508,7 +508,7 @@
 		"AttributeBaseAgility"		"20"
 		"AttributeAgilityGain"		"2.0"
 		"MovementSpeed"		"305"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
 
@@ -537,7 +537,7 @@
 		"AttributeBaseAgility"		"20"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
 
@@ -566,7 +566,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"StatusHealthRegen"		"3.25000"
 		"MovementSpeed"		"285"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -594,7 +594,7 @@
 		"AttributeBaseIntelligence"		"18"
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"270"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -625,7 +625,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"305"
-		"MovementTurnRate"		"0.700000"
+		//"MovementTurnRate"		"0.700000"
 		"Facets"				""
 	}
     
@@ -656,7 +656,7 @@
 		"AttributeBaseIntelligence"		"25"
 		"AttributeIntelligenceGain"		"2.500000"
 		"MovementSpeed"		"330"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -687,7 +687,7 @@
 		"AttributeBaseAgility"		"14"
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"275"
-		"MovementTurnRate"		"0.700000"
+		//"MovementTurnRate"		"0.700000"
 		"Facets"				""
 	}
     
@@ -717,7 +717,7 @@
 		"AttributeBaseAgility"		"16"
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"285"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -750,7 +750,7 @@
 		"AttributeBaseAgility"		"23"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"310"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
 	}
     
@@ -783,7 +783,7 @@
 		"AttributeBaseIntelligence"		"23"
 		"AttributeIntelligenceGain"		"2.500000"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
 	}
     
@@ -814,7 +814,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -845,7 +845,7 @@
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.700000"
+		//"MovementTurnRate"		"0.700000"
 		"Facets"				""
 	}
     
@@ -876,7 +876,7 @@
 		"AttributeIntelligenceGain"		"2.500000"
 		"StatusHealthRegen"		"3.2500000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"1.000000"
+		//"MovementTurnRate"		"1.000000"
 		"VisionDaytimeRange"		"1200"
 		"Facets"				""
     }
@@ -907,7 +907,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"StatusHealthRegen"		"2.50000"
 		"MovementSpeed"		"310"
-		"MovementTurnRate"		"0.900000"
+		//"MovementTurnRate"		"0.900000"
 		"Facets"				""
 	}
     
@@ -936,7 +936,7 @@
 		"AttributeBaseIntelligence"		"23"
 		"AttributeIntelligenceGain"		"2.000000"
 		"MovementSpeed"		"310"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -964,7 +964,7 @@
 		"AttributeBaseIntelligence"		"17"
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"310"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
 	}
     
@@ -994,7 +994,7 @@
 		"AttributeBaseIntelligence"		"24"
 		"AttributeIntelligenceGain"		"2.50000"
 		"MovementSpeed"		"335"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
     
@@ -1024,7 +1024,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"1.500000"
 		"MovementSpeed"		"295	"
-		"MovementTurnRate"		"0.50000"
+		//"MovementTurnRate"		"0.50000"
 		"Facets"				""
 	}
     
@@ -1054,7 +1054,7 @@
 		"AttributeIntelligenceGain"		"1.500000"
 		"StatusHealthRegen"		"1.5000"
 		"MovementSpeed"		"280"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -1083,7 +1083,7 @@
 		"AttributeBaseAgility"		"30"
 		"AttributeAgilityGain"		"2.70000"
 		"MovementSpeed"		"275"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"StatusHealthRegen"		"3.0000"
 		"Facets"				""
 	}
@@ -1113,7 +1113,7 @@
 		"AttributeIntelligenceGain"		"1.50000"
 		"StatusHealthRegen"		"2.0000"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
 	}
     
@@ -1143,7 +1143,7 @@
 		"AttributeBaseAgility"		"22"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"285"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -1173,7 +1173,7 @@
 		"AttributeBaseIntelligence"		"15"
 		"AttributeIntelligenceGain"		"1.500000"
 		"MovementSpeed"		"275"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
 	}
     
@@ -1202,7 +1202,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
 	}
     
@@ -1235,7 +1235,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
     
@@ -1267,7 +1267,7 @@
 		"AttributeAgilityGain"		"2.200000"
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
     
@@ -1295,7 +1295,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"1.000000"
+		//"MovementTurnRate"		"1.000000"
 		"Facets"				""
     }
     
@@ -1327,7 +1327,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.500000"
 		"MovementSpeed"		"275"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
     
@@ -1362,7 +1362,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
     
@@ -1393,7 +1393,7 @@
 		"AttributeAgilityGain"		"2.400000"
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"275"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
          
     }
@@ -1424,7 +1424,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"StatusHealthRegen"		"4.250000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
     
@@ -1456,7 +1456,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"275"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
     "npc_dota_hero_ogre_magi"
@@ -1485,7 +1485,7 @@
 		"AttributeAgilityGain"		"2.000000"
 		"StatusHealthRegen"		"4.7500000"
 		"MovementSpeed"		"285"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
     "npc_dota_hero_disruptor"
@@ -1518,7 +1518,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"300"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
 
@@ -1550,7 +1550,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.250000"
 		"MovementSpeed"		"280"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
 
@@ -1575,7 +1575,7 @@
 		"AttackRange"		"150"
 		"ProjectileSpeed"		"0"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"15"
 		"AttributeStrengthGain"		"2.400000"
@@ -1616,7 +1616,7 @@
 		"AttributeAgilityGain"		"2.00000"
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"270"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
 
@@ -1653,7 +1653,7 @@
 		"AttributeAgilityGain"		"2.100000"
 		"VisionDaytimeRange"		"1800"
 		"MovementSpeed"		"285"
-		"MovementTurnRate"		"0.700000"
+		//"MovementTurnRate"		"0.700000"
 		"Facets"				""
     }
 
@@ -1685,7 +1685,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"300"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
 
@@ -1717,7 +1717,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
     
@@ -1748,7 +1748,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"320"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
     
@@ -1779,7 +1779,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"290"
-		"MovementTurnRate"		"0.700000"
+		//"MovementTurnRate"		"0.700000"
 		"Facets"				""
     }
 
@@ -1808,7 +1808,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"305"
-		"MovementTurnRate"		"0.400000"
+		//"MovementTurnRate"		"0.400000"
 		"Facets"				""
     }
 
@@ -1841,7 +1841,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"305"
-		"MovementTurnRate"		"0.700000"
+		//"MovementTurnRate"		"0.700000"
 		"Facets"				""
     }
 
@@ -1872,7 +1872,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"325"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
 
@@ -1902,7 +1902,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.00000"
 		"MovementSpeed"		"305"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
 
@@ -1934,7 +1934,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"335"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
 
@@ -1965,7 +1965,7 @@
 		"AttributeBaseAgility"		"5"
 		"AttributeAgilityGain"		"2.000000"
 		"MovementSpeed"		"295"
-		"MovementTurnRate"		"0.500000"
+		//"MovementTurnRate"		"0.500000"
 		"Facets"				""
     }
 
@@ -1997,7 +1997,7 @@
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"2.400000"
 		"MovementSpeed"		"325"
-		"MovementTurnRate"		"0.600000"
+		//"MovementTurnRate"		"0.600000"
 		"Facets"				""
     }
 
@@ -2473,7 +2473,7 @@
 		"AttributeBaseAgility"		"10"
 		"AttributeAgilityGain"		"2.0"
 		"MovementSpeed"				"300"
-		"MovementTurnRate"			"0.500000"
+		//"MovementTurnRate"			"0.500000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		"HealthBarOffset"			"220"
 		"Facets"				""

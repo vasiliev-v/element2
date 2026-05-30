@@ -198,21 +198,21 @@
 		}
 	}
 
-	"item_recipe_imba_ultimate_scepter_synth"
-	{
-		"ID"							"2160"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"recipe"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"2000"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_imba_ultimate_scepter_synth"
-		"ItemRequirements"
-		{
-			"01"						"item_ultimate_scepter"
-		}
-	}
+	//"item_recipe_imba_ultimate_scepter_synth"
+	//{
+	//	"ID"							"2160"
+	//	"BaseClass"						"item_datadriven"
+	//	"AbilityTextureName" 			"recipe"
+	//	"Model"							"models/props_gameplay/recipe.mdl"
+	//	"ItemCost"						"2000"
+	//	"ItemShopTags"					""
+	//	"ItemRecipe"					"1"
+	//	"ItemResult"					"item_imba_ultimate_scepter_synth"
+	//	"ItemRequirements"
+	//	{
+	//		"01"						"item_ultimate_scepter"
+	//	}
+	//}
 
 	"item_aluneth"
 	{
@@ -12767,7 +12767,7 @@
 		"ItemResult"					"item_op_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_earth_s_and_y;item_seal_act;item_dragon_staff"
+			"01"						"item_earth_s_and_y;item_dragon_staff"
 		}
 	}
 
@@ -12832,7 +12832,7 @@
 		"ItemResult"					"item_shadow_cuirass"
 		"ItemRequirements"
 		{
-			"01"						"item_water_blades;item_seal_act;item_kingsbane"
+			"01"						"item_water_blades;item_kingsbane"
 		}
 	}
 
@@ -12908,7 +12908,7 @@
 		"ItemResult"					"item_ice_staff"
 		"ItemRequirements"
 		{
-			"01"						"item_power_dagon;item_seal_act;item_ice_aluneth"
+			"01"						"item_power_dagon;item_ice_aluneth"
 		}
 	}
 	

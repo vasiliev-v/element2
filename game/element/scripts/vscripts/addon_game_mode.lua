@@ -5,6 +5,7 @@
 -- Required files to be visible from anywhere
 require('events_protector')
 require('timers')
+require('chatcommand')
 require('barebones')
 require('quest_system')
 require('add_zones')

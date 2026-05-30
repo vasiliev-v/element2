@@ -6,6 +6,6 @@ function OnSpellStart( keys )
             mod:Destroy()
         end
         _G.wave_effect_mods = {}
-        ability:SpendCharge()
+        ability:SpendCharge(1)
     end
 end

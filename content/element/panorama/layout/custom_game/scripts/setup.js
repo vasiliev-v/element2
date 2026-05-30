@@ -64,12 +64,12 @@
 		shopManager.FindChildTraverse("PopularItems").style.visibility = "collapse"; 
 		shopManager.FindChildTraverse("BuybackProtection").style.visibility = "collapse"; 
 
-		centerBlock.FindChildTraverse("ContentsContainer").GetParent().style.visibility = "collapse";
-		centerBlock.FindChildTraverse("StatBranch").style.visibility = "collapse";
-		centerBlock.FindChildTraverse("StatBranch").SetPanelEvent("onmouseover", function () {
-		});
-		centerBlock.FindChildTraverse("StatBranch").SetPanelEvent("onactivate", function () {
-		});
+		//centerBlock.FindChildTraverse("ContentsContainer").GetParent().style.visibility = "collapse";
+		//centerBlock.FindChildTraverse("StatBranch").style.visibility = "collapse";
+		//centerBlock.FindChildTraverse("StatBranch").SetPanelEvent("onmouseover", function () {
+		//});
+		//centerBlock.FindChildTraverse("StatBranch").SetPanelEvent("onactivate", function () {
+		//});
 
 		// Remove xp circle
 	// centerBlock.FindChildTraverse("xp").style.visibility = "collapse";

@@ -4,6 +4,6 @@ function OnSpellStart( keys )
     local charges = ability:GetCurrentCharges()
     if charges > 0 then
         table.insert(_G.wave_effect_mods, _G.gold_spirit:AddNewModifier(_G.gold_spirit, nil, "modifier_speed_wave_effect", {}))
-        ability:SpendCharge()
+        ability:SpendCharge(1)
     end
 end
